@@ -13,10 +13,10 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "fuzzy.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include   <fuzzy.hpp>
+#include <mtsptype.hpp>
 bool FzyIsUndecidable(FDB *FDBptr)
  {
   int i;

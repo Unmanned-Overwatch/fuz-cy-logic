@@ -16,8 +16,8 @@
 #include <stddef.h>
 #include "PDB.hpp"
 #include "VDB.hpp"
-#include "XSYSctl.hpp"
-#include "mtsptype.hpp"
+#include <XSYSctl.hpp>
+#include <mtsptype.hpp>
 void MdlFindFzyDomain(
   char *Varid,double *Hi,double *Lo,int *statusPtr)
  {

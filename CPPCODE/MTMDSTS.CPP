@@ -21,8 +21,8 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "XSYSctl.hpp"
-#include "mtypes.hpp"
+#include <XSYSctl.hpp>
+#include   <mtypes.hpp>
 void MdlSetTraceSwitch(int TraceOption,int TraceLevel,int *statusPtr)
  {
   if(TraceOption<0||TraceOption>8)

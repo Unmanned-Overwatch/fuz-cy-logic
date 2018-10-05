@@ -14,7 +14,7 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
-#include "mtsptype.hpp"
+#include <mtsptype.hpp>
 char *MtsFormatInt(int Number)
   {
     char  IntBuff[23];

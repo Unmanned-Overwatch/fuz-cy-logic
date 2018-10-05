@@ -18,9 +18,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include "RXB.hpp"
-#include "XSYSctl.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <XSYSctl.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 //
 static char *PgmId="mtfzexs";
 //

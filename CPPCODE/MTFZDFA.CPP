@@ -6,11 +6,11 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include "VDB.hpp"
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "XFZYctl.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyDisplayFSV(FSV *FSVptr,char *DisplayTitle)
  {
   VDB  *VDBptr;

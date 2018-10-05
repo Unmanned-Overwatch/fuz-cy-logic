@@ -12,10 +12,10 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 static char  wrkBuff[128];
 static char *DefuzzNames[]=
  {
@@ -26,7 +26,7 @@ static char *DefuzzNames[]=
   "Best Evidence",
   "Least Entropy",
   "Near Edge",
-  "Far Edge"
+  "  Edge"
  };
 void CompleteDefuzz(char*,double,float);
 double FzyDefuzzify(

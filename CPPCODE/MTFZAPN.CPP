@@ -9,10 +9,10 @@
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void CompleteNot(char*,FDB*);
 void FzyApplyNOT(
    int NotClass,float NotWeight,FDB *FDBptr,int *statusPtr)

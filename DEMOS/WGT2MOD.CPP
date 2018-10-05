@@ -15,12 +15,12 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
-#include "FDB.hpp"       // The Fuzzy Set descriptor
+#include <fdb.hpp>       // The Fuzzy Set descriptor
 #include "XFZYctl.hpp"   // The fuzzy parallel processor work area
-#include "XSYSctl.hpp"   // The System control region
-#include "mtypes.hpp"    // System constants and symbolics
-#include "fuzzy.hpp"     // Fuzzy Logic constants and symbolics
-#include "mtsptype.hpp"  // Function prototypes
+#include <XSYSctl.hpp>   // The System control region
+#include   <mtypes.hpp>    // System constants and symbolics
+#include   <fuzzy.hpp>     // Fuzzy Logic constants and symbolics
+#include <mtsptype.hpp>  // Function prototypes
 //
 //--These are the "logical" rules. In the high level fuzzy modelling
 //--system we would enter these rules exactly as shown.

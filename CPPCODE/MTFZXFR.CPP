@@ -15,11 +15,11 @@
 #include <string.h>
 #include <stdio.h>
 #include "XFZYctl.hpp"
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "FSV.hpp"
-#include "mtypes.hpp"
-#include "fuzzy.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include   <fuzzy.hpp>
+#include <mtsptype.hpp>
 void FzyResetFZYctl(int *statusPtr)
  {
   FDB  *FDBptr;

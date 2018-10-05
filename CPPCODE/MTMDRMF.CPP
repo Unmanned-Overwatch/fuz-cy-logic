@@ -16,9 +16,9 @@
 #include <string.h>
 #include <stddef.h>
 #include "PDB.hpp"
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void MdlRemoveFDB(char *Fzyid,PDB *PDBptr,int *statusPtr)
  {
   FDB    *FDBptr,*FDBprevptr=NULL;
@@ -37,7 +37,7 @@ void MdlRemoveFDB(char *Fzyid,PDB *PDBptr,int *statusPtr)
      return;
     }
 //
-//--Look at the FDB doctionary slot. If it's empty, then
+//--Look at the fdb doctionary slot. If it's empty, then
 //--return a null pointer saying that the fuzzyset doesn't
 //--exist. Otherwise look through the remainder of the chain
 //--for the fuzzy set name until we come to the chain end.

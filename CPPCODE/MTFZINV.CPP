@@ -12,7 +12,7 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "fuzzy.hpp"
+#include   <fuzzy.hpp>
 void FzyInitVector(float vector[],int VecLen,float InitVal)
   {
    int i;

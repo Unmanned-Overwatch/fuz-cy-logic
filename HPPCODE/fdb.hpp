@@ -1,4 +1,4 @@
-//--FDB.hpp [EDC Rev 1.0 04/01/93]
+//--fdb.hpp [EDC Rev 1.0 04/01/93]
 //--------------------------------------------------------------
 
 //--------------------------------------------------------------
@@ -9,7 +9,8 @@
 #ifndef __fdb
 #define __fdb
 #include "mtypes.hpp"
-struct FDB
+
+struct fdb
   {
     char        FDBid[IDENLEN+1],    /* Identifier name of Fuzzyset  */
                 FDBdesc[DESCLEN+1];  /* Description of Fuzzyset      */
@@ -20,6 +21,6 @@ struct FDB
                 FDBparms[4];         /* Generation parameters        */
     float       FDBalfacut;          /* AlfaCut for this fuzzy set   */
     truthfunc   FDBvector;           /* The fuzzy set truth vector   */
-    FDB        *FDBnext;             /* Pointer to next fuzzyset     */
+    fdb        *FDBnext;             /* Pointer to next fuzzyset     */
   };
 #endif

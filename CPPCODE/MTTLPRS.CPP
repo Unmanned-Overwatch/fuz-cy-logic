@@ -16,9 +16,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 bool IsDelimiter(char);
 void MtsEntoken(
    char *Line,char **Tokens,int MaxTokCnt,int *TokCnt,int *statusPtr)

@@ -16,8 +16,8 @@
 #include "PDB.hpp"
 #include "NDB.hpp"
 #include "eqpack.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void MdlAddNoiseWord(char *NoiseWord,PDB *PDBptr,int *statusPtr)
  {
   NDB    *NDBptr,*NDBwrkptr;

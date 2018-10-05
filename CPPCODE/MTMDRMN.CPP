@@ -17,8 +17,8 @@
 #include <stddef.h>
 #include "PDB.hpp"
 #include "NDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void MdlRemoveNDB(char *Nwrdid,PDB *PDBptr,int *statusPtr)
  {
   NDB    *NDBptr,*NDBprevptr=NULL;

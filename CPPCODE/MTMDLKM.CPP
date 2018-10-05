@@ -17,9 +17,9 @@
 #include <string.h>
 #include <stddef.h>
 #include "MDB.hpp"
-#include "XSYSctl.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <XSYSctl.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void MdlLinkMDB(MDB *MDBptr,bool ReqdLink,int *statusPtr)
  {
   MDB    *wrkMDBptr;

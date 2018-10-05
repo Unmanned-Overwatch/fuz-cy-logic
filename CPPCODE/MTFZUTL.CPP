@@ -13,10 +13,10 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "HDB.hpp"
-#include "mtypes.hpp"
-#include "fuzzy.hpp"
+#include   <mtypes.hpp>
+#include   <fuzzy.hpp>
 //
 //--Access routines for the Fuzzy set Class structure
 //

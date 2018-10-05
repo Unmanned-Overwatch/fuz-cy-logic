@@ -13,9 +13,9 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 double FzyGetScalar(const FDB* FDBptr,const int CellNo,int* statusPtr)
  {
    char *PgmId="mtfzgts";

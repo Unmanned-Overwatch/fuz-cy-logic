@@ -15,9 +15,9 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <math.h>
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include <mtsptype.hpp>
 void FzySCurve(
        FDB* FDBptr,
        double left,

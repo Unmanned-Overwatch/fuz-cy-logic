@@ -17,10 +17,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyImplMatrix(
    FDB *FDBptr1,FDB *FDBptr2,
     double DomValues[],int DomCnt,int *statusPtr)

@@ -13,8 +13,8 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "xsysctl.hpp"
-#include "mtypes.hpp"
+#include <XSYSctl.hpp>
+#include   <mtypes.hpp>
 bool MtsStartTrace(int TraceType,int Tracedepth)
  {
 

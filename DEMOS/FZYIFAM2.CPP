@@ -39,15 +39,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "FSV.hpp"
 #include "VDB.hpp"
 #include "SSYSctl.hpp"
 #include "SFZYctl.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
-char far * far dmdFDBnames[]=
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
+char   *   dmdFDBnames[]=
   {
    "FALLING",
    "REDUCED",
@@ -55,7 +55,7 @@ char far * far dmdFDBnames[]=
    "INCREASED",
    "RISING"
   };
-char far * far dmdFDBdesc[]=
+char   *   dmdFDBdesc[]=
   {
    "Significant decrease in product demand",
    "Moderate decrease in product demand",
@@ -63,7 +63,7 @@ char far * far dmdFDBdesc[]=
    "Moderate increase in product demand",
    "Significant increase in product demand"
   };
-char far * far qtyFDBnames[]=
+char   *   qtyFDBnames[]=
   {
    "MINIMAL",
    "LOW",
@@ -71,7 +71,7 @@ char far * far qtyFDBnames[]=
    "HIGH",
    "EXCESSIVE"
   };
-char far * far qtyFDBdesc[]=
+char   *   qtyFDBdesc[]=
   {
    "Quantity on hand is near depletion levels",
    "Quantity on hand is below the reorder point",
@@ -79,7 +79,7 @@ char far * far qtyFDBdesc[]=
    "Quantity on hand is above the reorder point",
    "Quantity on hand is well above required stockage"
   };
-char far * far invFDBnames[]=
+char   *   invFDBnames[]=
   {
    "LN",
    "MN",
@@ -89,7 +89,7 @@ char far * far invFDBnames[]=
    "MP",
    "LP"
   };
-char far * far invFDBdesc[]=
+char   *   invFDBdesc[]=
   {
    "Make large decrease in surplus inventory",
    "Make moderate decrease in surplus inventory",

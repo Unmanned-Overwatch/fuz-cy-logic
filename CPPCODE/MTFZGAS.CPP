@@ -11,8 +11,8 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <math.h>
-#include "FDB.hpp"
-#include "mtypes.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
 void FzyGaussianCurve(
   FDB *FDBptr,double Center,double WFactor,int *statusPtr)
  {

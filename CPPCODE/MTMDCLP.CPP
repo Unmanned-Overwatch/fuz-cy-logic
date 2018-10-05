@@ -15,12 +15,12 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include "PDB.hpp"
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "HDB.hpp"
 #include "VDB.hpp"
 #include "NDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 //--We could probably use a template for these or a void* pointer
 //--with a paramter to indicate casting since they are all exactly
 //--the same except for the pointer type.

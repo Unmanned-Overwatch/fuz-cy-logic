@@ -13,11 +13,11 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "XSYSctl.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <XSYSctl.hpp>
+#include <mtsptype.hpp>
 bool FzyIsMemberof(FDB *FDBptr,double Scalar,float *grade,int *statusPtr)
  {
   int  i;

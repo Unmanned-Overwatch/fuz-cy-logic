@@ -14,9 +14,9 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
 bool FzyUnitCompIndex(
    FDB* FDBptr,float mintv,float maxtv,float* avgtv,float* deltatv)
   {

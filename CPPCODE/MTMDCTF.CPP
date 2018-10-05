@@ -10,10 +10,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include <direct.h>
-#include "XSYSctl.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <XSYSctl.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void MdlConnecttoFMS(int *statusPtr)
   {
     int     i,cwditems,maxParts=8;

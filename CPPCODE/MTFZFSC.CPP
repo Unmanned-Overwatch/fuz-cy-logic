@@ -14,10 +14,10 @@
 *-------------------------------------------------------------*/
 #include <stddef.h>
 #include <string.h>
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 FDB *FzyFuzzyScalar(
    char *Varid,double Scalar,int SetType,int *statusPtr)
  {

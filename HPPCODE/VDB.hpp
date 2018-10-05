@@ -1,5 +1,5 @@
 //--VDB.hpp [EDC Rev 1.0 04/01/93]
-//--------------------------------------------------------------  
+//--------------------------------------------------------------
 
 //--------------------------------------------------------------
 //
@@ -9,7 +9,7 @@
 //--associated with the PDB (Policy Descriptor Block)
 #ifndef __vdb
 #define __vdb
-#include "FDB.hpp"
+#include "fdb.hpp"
 #include "mtypes.hpp"
 struct VDB
  {
@@ -32,7 +32,7 @@ struct VDB
              VDBtrace[8];        /* Autotrace switches                 */
   bool       VDBAlwaysask;       /* Always Ask (no Backward Chaining)  */
   float      VDBtruth;           /* Resolved truth of the variable     */
-  FDB       *VDBfuzzysets[16];   /* Associated fuzzy sets              */
+  fdb       *VDBfuzzysets[16];   /* Associated fuzzy sets              */
   void      *VDBowner;           /* Policy that owns this variable     */
   VDB       *VDBnext;            /* Pointer to next VDB in hash bucket */
  };

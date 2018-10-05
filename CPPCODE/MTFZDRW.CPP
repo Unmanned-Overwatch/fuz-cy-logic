@@ -9,10 +9,10 @@
 #define PLOTCOLS   70
 #include <stdio.h>
 #include <string.h>
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyDrawSet(FDB *FDBptr,int Medium,int *statusPtr)
   {
     char        WkArea[PLOTROWS][PLOTCOLS+1];

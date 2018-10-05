@@ -9,10 +9,10 @@
 | the predicate truth, thus this acts like a scaling factor.  |
 *-------------------------------------------------------------*/
 #include <stdlib.h>
-#include "fuzzy.hpp"
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <fuzzy.hpp>
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyCorrMinimum(float vector[],const float PredTruth,int *statusPtr)
    {
     int i;

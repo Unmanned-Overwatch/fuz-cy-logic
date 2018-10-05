@@ -13,9 +13,9 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 double FzyMonotonicLogic(
   FDB *fromFDBptr,FDB *toFDBptr,
     double fromValue,float *PremiseTruth,int *statusPtr)

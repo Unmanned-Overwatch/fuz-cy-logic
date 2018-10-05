@@ -12,9 +12,9 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "fuzzy.hpp"
-#include "FDB.hpp"
-#include "mtsptype.hpp"
+#include   <fuzzy.hpp>
+#include <fdb.hpp>
+#include <mtsptype.hpp>
 void FzyLinearCurve(
   FDB* FDBptr,double low,double high,int LineType,int *statusPtr)
   {

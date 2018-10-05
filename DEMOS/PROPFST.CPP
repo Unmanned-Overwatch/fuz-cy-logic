@@ -13,11 +13,11 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <string.h>
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "SSYSctl.hpp"
-#include "mtypes.hpp"
-#include "fuzzy.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include   <fuzzy.hpp>
+#include <mtsptype.hpp>
 void main(void)
  {
   FDB      *FDB1ptr;

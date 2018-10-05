@@ -21,14 +21,14 @@
 #include <stdio.h>
 #include <string.h>
 #include "PDB.hpp"       // The Policy descriptor
-#include "FDB.hpp"       // The Fuzzy Set descriptor
+#include <fdb.hpp>       // The Fuzzy Set descriptor
 #include "HDB.hpp"       // The Hedge descriptor
 #include "VDB.hpp"       // A Variable descriptor
 #include "XFZYctl.hpp"   // The fuzzy parallel processor work area
-#include "XSYSctl.hpp"   // The System control region
-#include "mtypes.hpp"    // System constants and symbolics
-#include "fuzzy.hpp"     // Fuzzy Logic constants and symbolics
-#include "mtsptype.hpp"  // Function prototypes
+#include <XSYSctl.hpp>   // The System control region
+#include   <mtypes.hpp>    // System constants and symbolics
+#include   <fuzzy.hpp>     // Fuzzy Logic constants and symbolics
+#include <mtsptype.hpp>  // Function prototypes
 //
 void   fshpr8policy(const char **Rules,
    double CompPrice,double Price[],float CIX[],int thisidx,int *statusPtr)

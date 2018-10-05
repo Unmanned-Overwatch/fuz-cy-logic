@@ -18,12 +18,12 @@
 #include <string.h>
 #include <math.h>
 #include "PDB.hpp"
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "SFZYctl.hpp"
 #include "SSYSctl.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 //
 //--These are the "logical" rules. In the high level fuzzy modelling
 //--system we would enter these rules exactly as shown.

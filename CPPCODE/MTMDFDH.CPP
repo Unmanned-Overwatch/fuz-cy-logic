@@ -17,8 +17,8 @@
 #include <stddef.h>
 #include "PDB.hpp"
 #include "HDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 HDB *MdlFindHDB(char *Hdgid,PDB *PDBptr,int *statusPtr)
  {
   HDB    *HDBptr,*HDBnull=NULL;

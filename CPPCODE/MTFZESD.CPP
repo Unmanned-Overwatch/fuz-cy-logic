@@ -15,10 +15,10 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyExtractSetdata(
   FDB   *FDBptr,       // target fuzzy set
   int    CompFactor,   // compression factor

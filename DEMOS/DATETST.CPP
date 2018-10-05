@@ -14,7 +14,7 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include "stdio.h"
-#include "mtsptype.hpp"
+#include <mtsptype.hpp>
 void main(void)
  {
    char   *thedate,

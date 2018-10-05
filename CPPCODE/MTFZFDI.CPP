@@ -15,10 +15,10 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <string.h>
-#include "FDB.hpp"
-#include "XSYSctl.hpp"
-#include "mtypes.hpp"
-#include "fuzzy.hpp"
+#include <fdb.hpp>
+#include <XSYSctl.hpp>
+#include   <mtypes.hpp>
+#include   <fuzzy.hpp>
 void FzyInitFDB(FDB* FDBptr)
   {
    int i;

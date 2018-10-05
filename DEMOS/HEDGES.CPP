@@ -16,11 +16,11 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include <stddef.h>
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "HDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 #include "SSYSctl.hpp"
 void main(void)
  {

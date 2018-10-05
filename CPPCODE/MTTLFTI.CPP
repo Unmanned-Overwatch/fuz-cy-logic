@@ -23,8 +23,8 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 //
 static const int maxbuff=24;
 char *MtsFormatTime(char *theTime,int FormatType,int *statusPtr)

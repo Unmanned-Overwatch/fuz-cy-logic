@@ -12,8 +12,8 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "fuzzy.hpp"
-#include "FDB.hpp"
+#include   <fuzzy.hpp>
+#include <fdb.hpp>
 float FzyGetHeight(FDB* FDBptr)
   {
    int i;

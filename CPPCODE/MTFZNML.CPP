@@ -12,9 +12,9 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
 void FzyNormalizeSet(FDB* FDBptr)
   {
    int   i;

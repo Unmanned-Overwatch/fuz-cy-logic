@@ -11,16 +11,16 @@
 #define __eqpack
 #include "mtypes.hpp"
 //--The basic operators as string for rapid indexing
-const char far EQBasicDelimiters[]=" \t,;+-*/=<>!()[]{}~|\0";
+const char   EQBasicDelimiters[]=" \t,;+-*/=<>!()[]{}~|\0";
 //--Table of all the valid  operators
-static const char far * far EQoperators[] =
+static const char   *   EQoperators[] =
   {
     "and",   "or",    "=",     "!",   "!=",  ",",   "->",
     ">",     ">=",    "<",     "<=",  "cn",  "om",  "has",
     "(",     ")",     "{",     "}",   "[",   "]",   "|",
     "||",    ";",     "+",     "-",   "*",   "**",  "/"
   };
-static const int far EQopSymbolics[] =
+static const int   EQopSymbolics[] =
   {
      1,       2,       3,       4,     5,     6,     7,
      8,       9,      10,      11,    12,    13,    14,
@@ -29,7 +29,7 @@ static const int far EQopSymbolics[] =
   };
 static const int EQOPERmax=28;
 //--Alternate source operators
-static const char far * far EQaltOperators[] =
+static const char   *   EQaltOperators[] =
   {
    "eq",           "are",           "was",
    "lt",           "gt",            "not",
@@ -41,7 +41,7 @@ static const char far * far EQaltOperators[] =
    "before",       "after",         "equal",
    "equals"
   };
-static const char far * far EQaltMappings[] =
+static const char   *   EQaltMappings[] =
   {
    "=",            "=",             "=",
    "<",            ">",             "!",
@@ -54,7 +54,7 @@ static const char far * far EQaltMappings[] =
    "="
   };
 static const int EQALTOPmax=25;
-static const char far * far EQNoiseWords[] =
+static const char   *   EQNoiseWords[] =
   {
    " ",
    "a",
@@ -77,7 +77,7 @@ static const char far * far EQNoiseWords[] =
    "would",
   };
 static const int EQNWRDmax=19;
-static const char far * far EQBuiltinFncs[] =
+static const char   *   EQBuiltinFncs[] =
  {
    "abs",
    "ceil",
@@ -115,7 +115,7 @@ static const char far * far EQBuiltinFncs[] =
    "time",
    "trunc"
  };
-static const int far EQfncsSymbolics[]=
+static const int   EQfncsSymbolics[]=
  {
    1005,   /* abs      */
    1010,   /* ceil     */

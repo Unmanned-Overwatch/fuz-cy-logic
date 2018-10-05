@@ -13,14 +13,14 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
-#include "FDB.hpp"       // The Fuzzy Set descriptor
+#include <fdb.hpp>       // The Fuzzy Set descriptor
 #include "VDB.hpp"       // A Variable descriptor
 #include "XFZYctl.hpp"   // The fuzzy parallel processor work area
-#include "XSYSctl.hpp"   // The System control region
-#include "mtypes.hpp"    // System constants and symbolics
-#include "fuzzy.hpp"     // Fuzzy Logic constants and symbolics
+#include <XSYSctl.hpp>   // The System control region
+#include   <mtypes.hpp>    // System constants and symbolics
+#include   <fuzzy.hpp>     // Fuzzy Logic constants and symbolics
 #include "mdltypes.hpp"
-#include "mtsptype.hpp"  // Function prototypes
+#include <mtsptype.hpp>  // Function prototypes
 //
 static const char *Rules[]=
  {

@@ -14,7 +14,7 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include "HDB.hpp"
-#include "mtypes.hpp"
+#include   <mtypes.hpp>
 void FzyInitHDB(HDB *HDBptr)
  {
   memset(HDBptr->HDBid,  '\0',IDENLEN+1);

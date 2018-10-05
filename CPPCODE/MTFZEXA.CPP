@@ -14,9 +14,9 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyExamineSet(FDB *FDBptr,int *statusPtr)
   {
    int        L,M,i,k,n,cellno,N1,N2;

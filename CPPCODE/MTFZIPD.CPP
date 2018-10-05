@@ -13,8 +13,8 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "mtypes.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
 void FzyIsolatePDR(FDB *FDBptr)
  {
   //--limit the non-zero region of the fuzzy truth membership array

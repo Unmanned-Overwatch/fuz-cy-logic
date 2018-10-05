@@ -13,9 +13,9 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stddef.h>
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 FDB *FzyApplyAND(
    FDB *FDBptr1,FDB *FDBptr2,int ANDClass,double ANDCoeff,int *statusPtr)
  {

@@ -6,7 +6,7 @@
 *-------------------------------------------------------------*/
 #include <stddef.h>
 #include "CIX.hpp"
-#include "fuzzy.hpp"
+#include   <fuzzy.hpp>
 void FzyInitCIX(CIX *CIXptr)
   {
    CIXptr->CIXmodelid=NULL;

@@ -13,9 +13,9 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <string.h>
-#include "FDB.hpp"
-#include "mtsptype.hpp"
-#include "mtypes.hpp"
+#include <fdb.hpp>
+#include <mtsptype.hpp>
+#include   <mtypes.hpp>
 void FzyTrueSet(FDB* FDBptr)
   {
     int     i;

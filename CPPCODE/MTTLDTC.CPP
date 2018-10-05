@@ -15,9 +15,9 @@
 #include <stdio.h>
 #include <string.h>
 #include "toknode.hpp"
-#include "mtsptype.hpp"
+#include <mtsptype.hpp>
 #define  VERYBIG  1024
-static char far * far TokenType[] =
+static char   *   TokenType[] =
      {
       "String",
       "Quoted String",

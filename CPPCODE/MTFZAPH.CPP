@@ -8,11 +8,11 @@
 #include <stdio.h>
 #include <string.h>
 double max(double,double);
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "HDB.hpp"
-#include "mtypes.hpp"
-#include "fuzzy.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include   <fuzzy.hpp>
+#include <mtsptype.hpp>
 void Complete_hedge(const HDB*,const FDB*,FDB*);
 void FzyApplyHedge(
    const FDB* inFDBptr,const HDB* HDBptr,FDB* outFDBptr,int *statusPtr)

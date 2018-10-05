@@ -5,8 +5,8 @@
 | basic elements in the fuzzy logic system and the routines   |
 | that return the lists of these elements.                    |
 *-------------------------------------------------------------*/
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
 //--Counting procedures--These procedures are the gateway for DLLs
 //--into the fundamental static units of the fuzzy system. The
 //--counts do NOT (currently) return information about items stored
@@ -109,7 +109,7 @@ char* FzyIdOfDefuzzMeth(int DefuzzType)
         "Best Evidence",
         "Least Entropy",
         "Near Edge",
-        "Far Edge"
+        "  Edge"
     };
    if(DefuzzType<1||DefuzzType>DefuzzMax) return(" ");
    return(BuiltinDEFUZZ[DefuzzType]);

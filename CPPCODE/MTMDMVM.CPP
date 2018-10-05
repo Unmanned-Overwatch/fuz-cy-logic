@@ -17,9 +17,9 @@
 #include <stdio.h>
 #include "MDB.hpp"
 #include "PDB.hpp"
-#include "XSYSctl.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <XSYSctl.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 MDB *MdlMakeVirtualModel(
    char *Modelid,char *Modeldesc,
     char *Policyid,PDB **PDBptr,int *statusPtr)

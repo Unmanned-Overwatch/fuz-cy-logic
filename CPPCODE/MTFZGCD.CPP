@@ -16,7 +16,7 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include <stdlib.h>
-#include "mtsptype.hpp"
+#include <mtsptype.hpp>
 void FzyGetCoordinates(
   char *Coords,double Values[],float Members[],
    int *VcntPtr,int *statusPtr)

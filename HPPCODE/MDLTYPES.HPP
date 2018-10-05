@@ -1,5 +1,5 @@
 //--mdltypes.hpp [EDC Rev 1.0 04/01/93]
-//--------------------------------------------------------------  
+//--------------------------------------------------------------
 
 //--------------------------------------------------------------
 //
@@ -14,26 +14,26 @@
 //
 //---------------------------------INCLUDES
 //
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "RXB.hpp"
 #include "PDB.hpp"
 //
 //---------------------------------TABLES
 //
-static char far * far CorrTypes[] =
+static char   *   CorrTypes[] =
   {
     "Minimum",
     "Product",
     "Default"
   };
-static char far * far ImplTypes[] =
+static char   *   ImplTypes[] =
   {
     "Product Sum",
     "Minimum/Maximum",
     "Average Weighted Space",
     "Bounded Add"
   };
-static char far * far DfuzTypes[] =
+static char   *   DfuzTypes[] =
   {
     "Centroid",
     "Maximum Plateau",
@@ -42,11 +42,11 @@ static char far * far DfuzTypes[] =
     "Best Evidence",
     "Least Entropy",
     "Near Edge",
-    "Far Edge"
+    "  Edge"
   };
-static int   far DefuzzMethods[]=
+static int     DefuzzMethods[]=
    {CENTROID,MAXPLATEAU,MAXIMUM,AVGMAXIMUM,NEAREDGE};
-static char far * far DefuzzNames[] =
+static char   *   DefuzzNames[] =
    {
      "Centroid",
      "Maximum Plateau",
@@ -66,7 +66,7 @@ static int    VDictCnt,
               VDmax=32,
               pRXBcnt,
               pRXBvaridx[16];
-static FDB   *pRXBfdb[16];
+static fdb   *pRXBfdb[16];
 static float  pRXBvart[16];
 //
 //---------------------------------DATA ELEMENTS
@@ -92,7 +92,7 @@ static int        FDBcnt,
                   thisDefuzzMethod;
 static const int  FzySetMax=8;
 static FILE      *mdlout;
-static FDB       *WrkFDBptr,
+static fdb       *WrkFDBptr,
                  *FDBarray[FzySetMax];
 static FSV       *FSVptr;
 static HDB       *HDBptr;
@@ -100,8 +100,8 @@ static VDB       *VDBptr;
 //
 //---------------------------------PROTOTYPES
 //
-void ConcludeRule(FDB*,int*);
-void ImplicitELSE(FDB*);
+void ConcludeRule(fdb*,int*);
+void ImplicitELSE(fdb*);
 void DisplayRule(int);
 //
 #endif

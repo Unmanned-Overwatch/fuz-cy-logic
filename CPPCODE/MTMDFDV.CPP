@@ -17,8 +17,8 @@
 #include <stddef.h>
 #include "PDB.hpp"
 #include "VDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 VDB *MdlFindVDB(char *Varid,PDB *PDBptr,int *statusPtr)
  {
   VDB    *VDBptr,*VDBnull=NULL;

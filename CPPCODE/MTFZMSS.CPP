@@ -15,10 +15,10 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyMemSeries(
       FDB* FDBptr,float TruthSeries[],const int Scnt,int *statusPtr)
    {

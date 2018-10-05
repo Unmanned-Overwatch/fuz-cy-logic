@@ -14,9 +14,9 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
 #include "CIX.hpp"
 bool FzyStatCompIndex(FDB *FDBptr,float ExpValTruth,CIX *CIXptr)
   {

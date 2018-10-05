@@ -13,10 +13,10 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <math.h>
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyShoulderedCurve(
    FDB* FDBptr,int CurveType,double Edge,double Floor,int *statusPtr)
   {

@@ -4,9 +4,9 @@
 | This procedure returns the storage associated with a fuzzy  |
 | set to the heap.                                            |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
 bool FzyDeleteSet(FDB* FDBptr)
   {
    delete FDBptr;

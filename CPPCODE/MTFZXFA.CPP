@@ -17,10 +17,10 @@
 #include <stdio.h>
 #include "XFZYctl.hpp"
 #include "VDB.hpp"
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "fuzzy.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include   <fuzzy.hpp>
+#include <mtsptype.hpp>
 #define Maxoutvars  32
 bool FzyAddFZYctl(VDB *VDBptr,FDB **FDBptr,FSV **FSVptr,int *statusPtr)
  {

@@ -11,9 +11,9 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <math.h>
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 float FzyGetMembership(
    FDB *FDBptr,double Scalar,int *VecPosptr,int *statusPtr)
  {

@@ -13,9 +13,9 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include <mtypes.hpp>
+#include <mtsptype.hpp>
 double FzyEquivalentScalar(FDB *FDBptr,float Grade,int *statusPtr)
  {
   int    i;

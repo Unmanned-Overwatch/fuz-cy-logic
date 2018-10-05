@@ -21,15 +21,15 @@
 #include <stdio.h>
 #include <string.h>
 #include "PDB.hpp"       // The Policy descriptor
-#include "FDB.hpp"       // The Fuzzy Set descriptor
+#include <fdb.hpp>       // The Fuzzy Set descriptor
 #include "HDB.hpp"       // The Hedge descriptor
 #include "VDB.hpp"       // A Variable descriptor
 #include "XFZYctl.hpp"   // The fuzzy parallel processor work area
-#include "XSYSctl.hpp"   // The System control region
-#include "mtypes.hpp"    // System constants and symbolics
-#include "fuzzy.hpp"     // Fuzzy Logic constants and symbolics
+#include <XSYSctl.hpp>   // The System control region
+#include   <mtypes.hpp>    // System constants and symbolics
+#include   <fuzzy.hpp>     // Fuzzy Logic constants and symbolics
 #include "mdltypes.hpp"  // Definitons for the modelling system
-#include "mtsptype.hpp"  // Function prototypes
+#include <mtsptype.hpp>  // Function prototypes
 //
 //--------static variables used in the policy procedures----------
 //
@@ -46,8 +46,8 @@ static const char *Rules[]=
 static int Rulecnt=0;
 static int Rulemax=4;
 //                         R1   R2  R3  R4
-static int far RuleIDX[4]={ 0,   1,  2,  3  };
-static int far RuleSLN[4]={ 1,   1,  1,  2  };
+static int   RuleIDX[4]={ 0,   1,  2,  3  };
+static int   RuleSLN[4]={ 1,   1,  1,  2  };
 static char  *PgmId="fshpol2";
 //
 //

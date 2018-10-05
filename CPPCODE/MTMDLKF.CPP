@@ -4,7 +4,7 @@
 
 *--------------------Procedure Description--------------------*
 | mtmdlkf.cpp  Earl Cox  04/01/93 Link Fuzzyset to Policy     |
-| This function takes a FDB and links it into the hash        |
+| This function takes a fdb and links it into the hash        |
 | dictionary of a policy. Every policy has its own            |
 | dictionary of fuzzy sets (forming the basic vocabulary of   |
 | the model in the policy.)                                   |
@@ -18,9 +18,9 @@
 #include <string.h>
 #include <stddef.h>
 #include "PDB.hpp"
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void MdlLinkFDB(FDB *FDBptr,PDB *PDBptr,int *statusPtr)
  {
   FDB    *FDBwrkptr;
@@ -42,7 +42,7 @@ void MdlLinkFDB(FDB *FDBptr,PDB *PDBptr,int *statusPtr)
      return;
     }
 //
-//--Look at the FDB doctionary slot. If it's empty, then
+//--Look at the fdb doctionary slot. If it's empty, then
 //--simply link in the fuzzy set and return. Otherwise, find
 //--the last node and link this one into the end of the chain.
   FDBwrkptr=PDBptr->PDBfuzzysets[slot];
@@ -59,11 +59,11 @@ void MdlLinkFDB(FDB *FDBptr,PDB *PDBptr,int *statusPtr)
         MtsSendError(65,PgmId,FDBptr->FDBid);
         return;
        }
-     if(FDBwrkptr->FDBnext==NULL)   // Is there a next FDB node?
+     if(FDBwrkptr->FDBnext==NULL)   // Is there a next fdb node?
        {                            // No...
-        FDBwrkptr->FDBnext=FDBptr;  // Link this FDB into chain
+        FDBwrkptr->FDBnext=FDBptr;  // Link this fdb into chain
         return;                     // Return to caller
        }
-     FDBwrkptr=FDBwrkptr->FDBnext;  // Move to next FDB node in chain
+     FDBwrkptr=FDBwrkptr->FDBnext;  // Move to next fdb node in chain
     }
  }

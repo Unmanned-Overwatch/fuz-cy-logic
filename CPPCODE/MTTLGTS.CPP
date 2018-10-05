@@ -14,7 +14,7 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include "string.h"
-#include "mtypes.hpp"
+#include   <mtypes.hpp>
 int MtsSearchTable(char *Word,char **Table,int tabmax,int *statusPtr)
   {
    int k,i;

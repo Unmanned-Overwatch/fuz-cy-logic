@@ -1,5 +1,5 @@
 //--PDB.hpp [EDC Rev 1/0 04/01/93]
-//--------------------------------------------------------------  
+//--------------------------------------------------------------
 
 //--------------------------------------------------------------
 //
@@ -10,7 +10,7 @@
 #ifndef __pdb
 #define __pdb
 #include "VDB.hpp"
-#include "FDB.hpp"
+#include "fdb.hpp"
 #include "HDB.hpp"
 #include "NDB.hpp"
 #include "mtypes.hpp"
@@ -23,7 +23,7 @@ struct PDB
              PDBhdbcnt,               // Count of hedges
              PDBndbcnt;               // Count of noise words
   VDB       *PDBvariables[VDBmax];    // Variable dictionary for policy
-  FDB       *PDBfuzzysets[FDBmax];    // Fuzzyset dictionary
+  fdb       *PDBfuzzysets[FDBmax];    // Fuzzyset dictionary
   HDB       *PDBhedges[HDBmax];       // Hedge dictionary
   NDB       *PDBnoise[NDBmax];        // Noise words for this policy
   PDB       *PDBnext;                 // Pointer to next policy

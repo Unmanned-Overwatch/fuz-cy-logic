@@ -7,7 +7,7 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include "VDB.hpp"
-#include "mtsptype.hpp"
+#include <mtsptype.hpp>
 VDB *VarCreateScalar(
    char *Varid,int VarType,double Domain[],char *Varvalue,int *statusPtr)
  {

@@ -16,9 +16,9 @@
 #include <string.h>
 #include <stdio.h>
 #include "XFZYctl.hpp"
-#include "mtypes.hpp"
-#include "fuzzy.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include   <fuzzy.hpp>
+#include <mtsptype.hpp>
 #define Maxoutvars  32
 void FzyInitFZYctl(int *statusPtr)
  {

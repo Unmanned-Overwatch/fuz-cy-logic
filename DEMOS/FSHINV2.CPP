@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include "SFZYctl.hpp"
 #include "SSYSctl.hpp"
-#include "mtsptype.hpp"
+#include <mtsptype.hpp>
 //
 //
 double InvModel2(double,double,float*,int*);

@@ -8,9 +8,9 @@
 #include <stdio.h>
 #include <string.h>
 double max(double,double);
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void Complete_hedge(FDB*,FDB*,double);
 //
 void FzyContrastHedge(

@@ -17,9 +17,9 @@
 #include <stdlib.h>
 #include "MDB.hpp"
 #include "PDB.hpp"
-#include "XSYSctl.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <XSYSctl.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void MdlGetcurrentEnvironment(MDB **MDBptr,PDB **PDBptr,int *statusPtr)
  {
   char  *PgmId="mtmdcen";

@@ -6,9 +6,9 @@
 | vector to the model log.                                    |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyDisplayMemVector(FDB *FDBptr,float AlfaCut,int *statusPtr)
   {
    int        i;

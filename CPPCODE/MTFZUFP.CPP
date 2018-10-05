@@ -14,10 +14,10 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "XFZYctl.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyUnCondProposition(FDB *inFDBptr,FSV *FSVptr)
  {
    int i;

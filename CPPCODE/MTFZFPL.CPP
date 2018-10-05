@@ -14,9 +14,9 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 static char   wrkBuff[225];
 void IssueWarning(FDB*,float,int);
 void FzyFindPlateau(

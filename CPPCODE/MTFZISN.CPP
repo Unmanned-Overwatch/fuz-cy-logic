@@ -12,9 +12,9 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "fuzzy.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include   <fuzzy.hpp>
 bool FzyIsNormal(FDB *FDBptr)
   {
    int i;

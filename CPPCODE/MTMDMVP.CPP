@@ -17,9 +17,9 @@
 #include <stdio.h>
 #include "MDB.hpp"
 #include "PDB.hpp"
-#include "XSYSctl.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <XSYSctl.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 PDB *MdlMakeVirtualModel(char *Policyid,char *Policydesc,int *statusPtr)
  {
   PDB     *PDBptr,*nullPDB=NULL;

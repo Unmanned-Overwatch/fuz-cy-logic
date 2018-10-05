@@ -8,9 +8,9 @@
 | setting that cell to the truth. All other cells are set to  |
 | minus one (-1). We then simply call the series expander.    |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyCoordSeries(
   FDB* FDBptr,
    double Scalars[],float Grades[],const int ValCnt,int *statusPtr)

@@ -13,8 +13,8 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include "FDB.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include <mtsptype.hpp>
 void FzySupportSet(
        FDB* FDBptr,double Scalars[],int Truth[],int* statusPtr)
   {

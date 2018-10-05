@@ -13,7 +13,7 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <math.h>
-#include "mtsptype.hpp"
+#include <mtsptype.hpp>
 void Mtsprimes(int maxPrimes,int Primes[],int *PCnt,int *statusPtr)
  {
   long MaxNum;

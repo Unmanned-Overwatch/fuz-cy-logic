@@ -12,8 +12,8 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
-#include "mtypes.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
 int FzyPlateauCnt(FDB *FDBptr,float height,int *statusPtr)
  {
   bool   inPlateau;

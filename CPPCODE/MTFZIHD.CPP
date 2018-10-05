@@ -16,8 +16,8 @@
 #include <stddef.h>
 #include "HDB.hpp"
 #include "PDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyInsertHedges(HDB **HDBarray,int *HdgCnt,int *statusPtr)
  {
   HDB  *HDBptr;

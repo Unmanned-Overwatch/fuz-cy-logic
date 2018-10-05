@@ -1,5 +1,5 @@
 //--FSV.hpp [EDC Rev 1.0 04/01/93]
-//--------------------------------------------------------------  
+//--------------------------------------------------------------
 
 //--------------------------------------------------------------
 //
@@ -8,7 +8,7 @@
 //--the fuzzy control block and link in one of these FSV structures.
 #ifndef __fsv
 #define __fsv
-#include "FDB.hpp"
+#include "fdb.hpp"
 #include "VDB.hpp"
 #include "mtypes.hpp"
 //--This is the entry node for each solution variable
@@ -23,7 +23,7 @@ struct  FSV
           FzySVimplMethod;       /* Implication Method                */
    double FzySVresult;           /* Defuzzified result [also in VDB]  */
    float  FzySValfacut;          /* Output space alfa cut (def=0.0)   */
-   FDB   *FzySVfdbptr;           /* Pointer to consequent fuzzy set   */
+   fdb   *FzySVfdbptr;           /* Pointer to consequent fuzzy set   */
    long   FzySVcntarray[VECMAX]; /* Possibility Density count array   */
   };
 #endif

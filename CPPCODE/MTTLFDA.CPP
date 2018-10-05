@@ -26,8 +26,8 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 char *MtsFormatDate(char *theDate,int FormatType,int *statusPtr)
  {
 //

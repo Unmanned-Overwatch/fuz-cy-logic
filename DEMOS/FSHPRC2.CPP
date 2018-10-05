@@ -17,12 +17,12 @@
 #include <stdio.h>
 #include <string.h>
 #include "PDB.hpp"
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "SFZYctl.hpp"
 #include "SSYSctl.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 //
 extern unsigned _stklen=50000;
 double fshpr2policy(double,double,float*,int*);

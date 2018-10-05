@@ -6,9 +6,9 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include "VDB.hpp"
-#include "XSYSctl.hpp"
-#include "mtypes.hpp"
-#include "fuzzy.hpp"
+#include <XSYSctl.hpp>
+#include   <mtypes.hpp>
+#include   <fuzzy.hpp>
 #define TraceMax  8
 #define FsetMax  16
 #define MethMax   4

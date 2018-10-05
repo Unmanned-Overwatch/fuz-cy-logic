@@ -15,10 +15,10 @@
 *-------------------------------------------------------------*/
 #include <stddef.h>
 #include <string.h>
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void Complete_Fuzzyset(const FDB*);
 //
 FDB* FzyCreateSet(

@@ -1,5 +1,5 @@
 //--XSYSctl [EDC Rev 1.0 04/01/93]
-//--------------------------------------------------------------  
+//--------------------------------------------------------------
 
 //--------------------------------------------------------------
 //
@@ -15,9 +15,14 @@
 #include "PDB.hpp"
 #include "RXB.hpp"
 #include "mtypes.hpp"
-extern struct
+
+#ifndef XSYSctl_HPP
+#define XSYSctl_HPP
+
+class XSYSctl
   {
-   char       XSYSmodel[IDENLEN+1],    /* Current model identifier    */
+public:
+   static char       XSYSmodel[IDENLEN+1],    /* Current model identifier    */
               XSYSpolicy[IDENLEN+1],   /* Currently focused policy    */
               XSYSstart[IDENLEN+1],    /* Model start specification   */
               XSYSdrive[_MAX_DRIVE],   /* Drive for this model        */
@@ -25,28 +30,30 @@ extern struct
               XSYSconfig[PATHMAX+1],   /* Configuration file name     */
               XSYSowner[IDENLEN+1],    /* Name of model owner         */
               XSYSpassword[WORDLEN+1]; /* Model password              */
-   int        XSYSpolldcnt;            /* Count of loaded segments    */
-   Ctlswitch  XSYStrace[16],           /* Interactive trace switches  */
+   static int        XSYSpolldcnt;            /* Count of loaded segments    */
+   static Ctlswitch  XSYStrace[16],           /* Interactive trace switches  */
               XSYSdebug,               /* Determines depth of debug   */
               XSYSmdltype;             /* How to interpret XSYSstart  */
-   bool       XSYSmdlprotect,          /* If YES, makes model readonly*/
+   static bool       XSYSmdlprotect,          /* If YES, makes model readonly*/
               XSYSmdlprivate,          /* A private model             */
               XSYSlogsession,          /* Write to the audit log      */
               XSYSerrmsgs,             /* Display errors at terminal  */
               XSYScasesense,           /* Is model case sensitive     */
               XSYSmdlrunning;          /* Is this model running?      */
-   long       XSYSrulecnt,             /* Total fired rules           */
+   static long       XSYSrulecnt,             /* Total fired rules           */
               XSYSvarcnt,              /* Total instantiated variables*/
               XSYSpolcnt,              /* Total performed policies    */
               XSYSiocnt,               /* Total I/O operations        */
               XSYSlinecnt;             /* Total lines executed        */
-   float      XSYSalfacut;             /* The global system alfacut   */
-   FILE      *XSYSfpErrors,            /* Error diagnostic files      */
+   static float      XSYSalfacut;             /* The global system alfacut   */
+   static FILE      *XSYSfpErrors,            /* Error diagnostic files      */
              *XSYSfpClientErrors,      /* Client error diagnostics    */
              *XSYSfpSyslog,            /* System log                  */
              *XSYSfpModellog;          /* Model log                   */
-   MDB       *XSYScurrMDBptr;          /* Pointer to current Model    */
-   PDB       *XSYScurrPDBptr;          /* Pointer to current Policy   */
-   RXB       *XSYSexplainptr;          /* Pointer to explanations     */
-   PDB       *XSYSpolicies[PDBmax];    /* The policy  dictionary      */
-  } XSYSctl;
+   static MDB       *XSYScurrMDBptr;          /* Pointer to current Model    */
+   static PDB       *XSYScurrPDBptr;          /* Pointer to current Policy   */
+   static RXB       *XSYSexplainptr;          /* Pointer to explanations     */
+   static PDB       *XSYSpolicies[PDBmax];    /* The policy  dictionary      */
+  };
+
+#endif

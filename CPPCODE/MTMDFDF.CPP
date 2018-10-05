@@ -6,7 +6,7 @@
 | mtmdfdf.cpp  Earl Cox  04/01/93 Find Fuzzyset in Policy     |
 | This function takes a character string containing the name  |
 | of a fuzzyset in the policy's  dictionary. On finding the   |
-| fuzzyset, we return the FDB address.                        |
+| fuzzyset, we return the fdb address.                        |
 *----------------Modification Audit/Change Log----------------*
 | Rev  Sar                                                    |
 | No   Code  Date      Rellvl  Mod  Description               |
@@ -16,9 +16,9 @@
 #include <string.h>
 #include <stddef.h>
 #include "PDB.hpp"
-#include "FDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 FDB *MdlFindFDB(char *Fzyid,PDB *PDBptr,int *statusPtr)
  {
   FDB    *FDBptr,*FDBnull=NULL;
@@ -43,7 +43,7 @@ FDB *MdlFindFDB(char *Fzyid,PDB *PDBptr,int *statusPtr)
      return(FDBnull);
     }
 //
-//--Look at the FDB doctionary slot. If it's empty, then
+//--Look at the fdb doctionary slot. If it's empty, then
 //--return a null pointer saying that the fuzzyset doesn't
 //--exist. Otherwise look through the remainder of the chain
 //--for the fuzzy set name until we come to the chain end.

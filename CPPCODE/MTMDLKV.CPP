@@ -18,8 +18,8 @@
 #include <stddef.h>
 #include "PDB.hpp"
 #include "VDB.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void MdlLinkVDB(VDB *VDBptr,PDB *PDBptr,int *statusPtr)
  {
   VDB    *VDBwrkptr;

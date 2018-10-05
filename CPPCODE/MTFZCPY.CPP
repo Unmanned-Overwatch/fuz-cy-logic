@@ -8,10 +8,10 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <string.h>
-#include "mtypes.hpp"
-#include "fuzzy.hpp"
-#include "FDB.hpp"
-#include "mtsptype.hpp"
+#include   <mtypes.hpp>
+#include   <fuzzy.hpp>
+#include <fdb.hpp>
+#include <mtsptype.hpp>
 void FzyCopySet(const FDB* inFDBptr,FDB* outFDBptr,int *statusPtr)
   {
     int i;

@@ -14,9 +14,9 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include "XSYSctl.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <XSYSctl.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 static char *PgmId="mttlwtl";
 void MtsWritetoLog(int LogType,char *LogText,int *statusPtr)
  {

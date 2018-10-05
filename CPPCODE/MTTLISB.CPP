@@ -18,7 +18,7 @@
 |  "0" as possible boolean character strings. [EDC]           |
 *-------------------------------------------------------------*/
 #include <string.h>
-#include "mtypes.hpp"
+#include   <mtypes.hpp>
 bool MtsIsBoolean(char *Item,int *Boolvalue)
  {
    *Boolvalue=-1;

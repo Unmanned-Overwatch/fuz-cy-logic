@@ -3,7 +3,7 @@
 
 
 *--------------------Procedure Description--------------------*
-| mtvrafd.cpp  Earl Cox  04/01/93 Attach FDB to VDB           |
+| mtvrafd.cpp  Earl Cox  04/01/93 Attach fdb to VDB           |
 | This function inserts a fuzzy set description into the      |
 | specified variable descriptor.                              |
 *----------------Modification Audit/Change Log----------------*
@@ -12,7 +12,7 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include "FDB.hpp"
+#include <fdb.hpp>
 #include "VDB.hpp"
 #define  FzysetMax  16
 void VarAttachFDB(FDB *FDBptr,VDB *VDBptr,int *statusPtr)

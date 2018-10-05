@@ -16,9 +16,9 @@
 #include <string.h>
 #include <stddef.h>
 #include "PDB.hpp"
-#include "XSYSctl.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <XSYSctl.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 PDB *MdlFindPDB(char *Polid,int *statusPtr)
  {
   PDB    *PDBptr,*PDBnull=NULL;

@@ -1,7 +1,4 @@
 /*------------------------------------------------------------*
-
-
-
 *--------------------Procedure Description--------------------*
 | mtfzpls.cpp   Earl Cox  04/01/93 Draw a fuzzy set           |
 | This procedure draws a set of fuzzy sets along the same     |
@@ -18,10 +15,10 @@
 #define BIGNUMBER  999999999
 #include <stdio.h>
 #include <string.h>
-#include "FDB.hpp"
-#include "fuzzy.hpp"
-#include "mtypes.hpp"
-#include "mtsptype.hpp"
+#include <fdb.hpp>
+#include   <fuzzy.hpp>
+#include   <mtypes.hpp>
+#include <mtsptype.hpp>
 void FzyPlotSets(
    char *Varid,FDB *FDBptr[],int FzySetCnt,int Medium,int *statusPtr)
   {

@@ -17,7 +17,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "PDB.hpp"
-#include "mtypes.hpp"
+#include   <mtypes.hpp>
 void MdlInitPDB(PDB *PDBptr)
   {
     int i,j;
