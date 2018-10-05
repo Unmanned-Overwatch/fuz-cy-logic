@@ -16,7 +16,7 @@
 *-------------------------------------------------------------*/
 #include <stdlib.h>
 #include "MDB.hpp"
-#include "PDB.hpp"
+#include <PDB.hpp>
 #include <XSYSctl.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>

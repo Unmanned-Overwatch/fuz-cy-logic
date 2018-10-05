@@ -11,13 +11,13 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include <string.h>
+#include <strings.h>
 #include <fdb.hpp>
 #include   <fuzzy.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
 static char  wrkBuff[128];
-static char *DefuzzNames[]=
+static char* DefuzzNames[]=
  {
   "Centroid",
   "Maximum Plateau",

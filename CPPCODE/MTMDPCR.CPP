@@ -14,7 +14,7 @@
 *-------------------------------------------------------------*/
 #include <stddef.h>
 #include <string.h>
-#include "PDB.hpp"
+#include <PDB.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
 void Complete_Policy(const PDB*);

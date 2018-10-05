@@ -17,7 +17,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
-#include "RXB.hpp"
+#include <RXB.hpp>
 #include <XSYSctl.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>

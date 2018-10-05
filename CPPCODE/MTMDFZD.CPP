@@ -14,7 +14,7 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stddef.h>
-#include "PDB.hpp"
+#include <PDB.hpp>
 #include "VDB.hpp"
 #include <XSYSctl.hpp>
 #include <mtsptype.hpp>

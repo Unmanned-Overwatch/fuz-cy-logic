@@ -16,8 +16,8 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include <stddef.h>
-#include "PDB.hpp"
-#include "HDB.hpp"
+#include <PDB.hpp>
+#include <HDB.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
 void MdlLinkHDB(HDB *HDBptr,PDB *PDBptr,int *statusPtr)

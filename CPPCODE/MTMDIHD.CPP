@@ -14,8 +14,8 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include <stddef.h>
-#include "HDB.hpp"
-#include "PDB.hpp"
+#include <HDB.hpp>
+#include <PDB.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
 void MdlInsertHedges(PDB *PDBptr,int *HdgCnt,int *statusPtr)

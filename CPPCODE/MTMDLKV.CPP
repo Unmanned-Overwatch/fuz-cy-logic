@@ -16,7 +16,7 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include <stddef.h>
-#include "PDB.hpp"
+#include <PDB.hpp>
 #include "VDB.hpp"
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>

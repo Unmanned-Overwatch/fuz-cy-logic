@@ -15,8 +15,8 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include "VDB.hpp"
-#include "FSV.hpp"
-#include "XFZYctl.hpp"
+#include <FSV.hpp>
+#include <XFZYctl.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
 FSV *FzyFindFZYctl(char *Varid,VDB **VDBptr)

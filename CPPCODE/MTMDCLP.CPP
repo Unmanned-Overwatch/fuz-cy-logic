@@ -14,11 +14,11 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include "PDB.hpp"
+#include <PDB.hpp>
 #include <fdb.hpp>
-#include "HDB.hpp"
+#include <HDB.hpp>
 #include "VDB.hpp"
-#include "NDB.hpp"
+#include <NDB.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
 //--We could probably use a template for these or a void* pointer

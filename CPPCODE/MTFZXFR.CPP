@@ -14,9 +14,9 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include <stdio.h>
-#include "XFZYctl.hpp"
+#include <XFZYctl.hpp>
 #include <fdb.hpp>
-#include "FSV.hpp"
+#include <FSV.hpp>
 #include   <mtypes.hpp>
 #include   <fuzzy.hpp>
 #include <mtsptype.hpp>

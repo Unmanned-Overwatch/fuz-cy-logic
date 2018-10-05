@@ -10,17 +10,17 @@
 #define __fdb
 #include "mtypes.hpp"
 
-struct fdb
+struct FDB
   {
     char        FDBid[IDENLEN+1],    /* Identifier name of Fuzzyset  */
                 FDBdesc[DESCLEN+1];  /* Description of Fuzzyset      */
-    Ctlswitch   FDBgentype;          /* Generator Set type           */
+    Ctlswitch   FDBgentype;          /* Generator Set type   CPP        */
     bool        FDBempty;            /* Is this a populated Fuzzyset?*/
     int         FDBorder;            /* Order of fuzzy set           */
     domainval   FDBdomain[2],        /* Lo and Hi edges of the set   */
                 FDBparms[4];         /* Generation parameters        */
     float       FDBalfacut;          /* AlfaCut for this fuzzy set   */
     truthfunc   FDBvector;           /* The fuzzy set truth vector   */
-    fdb        *FDBnext;             /* Pointer to next fuzzyset     */
+    FDB        *FDBnext;             /* Pointer to next fuzzyset     */
   };
 #endif

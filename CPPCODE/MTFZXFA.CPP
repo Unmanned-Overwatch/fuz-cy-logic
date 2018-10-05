@@ -15,7 +15,7 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include <stdio.h>
-#include "XFZYctl.hpp"
+#include <XFZYctl.hpp>
 #include "VDB.hpp"
 #include <fdb.hpp>
 #include   <mtypes.hpp>

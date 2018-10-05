@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include "VDB.hpp"
 #include <fdb.hpp>
-#include "XFZYctl.hpp"
+#include <XFZYctl.hpp>
 #include   <fuzzy.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>

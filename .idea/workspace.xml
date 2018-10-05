@@ -12,215 +12,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda12897-c163-4e03-8ca1-758ea6619eda" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZABA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZABA.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZAPA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZAPA.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZAPH.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZAPH.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZAPN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZAPN.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZBTS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZBTS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCDS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZCDS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCFP.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZCFP.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCHD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZCHD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCLS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZCLS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCOR.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZCOR.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCPA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZCPA.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCPO.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZCPO.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCPY.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZCPY.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCTV.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZCTV.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCXI.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZCXI.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDEL.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZDEL.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDFA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZDFA.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDFZ.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZDFZ.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDRL.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZDRL.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDRW.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZDRW.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDTV.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZDTV.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZEQS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZEQS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZESD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZESD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZEXA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZEXA.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZEXS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZEXS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFDI.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZFDI.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFFS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZFFS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFHP.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZFHP.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFPL.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZFPL.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFSA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZFSA.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFSC.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZFSC.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFSO.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZFSO.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZGAS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZGAS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZGCD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZGCD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZGTM.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZGTM.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZGTS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZGTS.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZABA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/AboveAlphaCut.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZAPA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/ApplyAlpha.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZAPH.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/HedgeMetaController.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZAPN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/ApplyNotOperator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZASC.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/AutoScale.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZBTS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/BetaCurve.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCDS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/CoordinateSeries.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCFP.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/ConditionalProposition.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCHD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/ContrastHedge.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCLS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/CountsAndLists.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCOR.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/Correlation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCPA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/CompensatoryAND.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCPO.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/CompensatoryOR.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCPY.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/CopyFuzzySet.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCTV.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/CopyVector.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZCXI.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/InitCIX.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDEL.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/DeleteSet.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDFA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/DisplayFuzzyWorkArea.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDFZ.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/Defuzzify.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDRL.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/DisplayRule.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDRW.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/DrawFuzzySet.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZDTV.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/DisplayTruthVector.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZEQS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/EquivalentScalar.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZESD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/EquivalentSetData.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZEXA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/ExamineTruthTable.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZEXS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/ExplainSystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFDI.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/InitFuzzySet.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFFS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/FreeFuzzyMemory.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFHD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/FreeHedge.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFHP.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/FindSetHighPoint.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFPL.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/FindPlateau.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFSA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/ApplyAND.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFSC.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/FuzzifyScalar.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZFSO.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/ApplyOR.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZGAS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/GaussianFuzzySet.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZGCD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/GetCoordDataPoints.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZGTM.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/GetSetMembership.CPP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZGTS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/GetScalar.CPP" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZHCR.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZHCR.CPP" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZHDI.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZHDI.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZHGT.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZHGT.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZIHD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZIHD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZIMM.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZIMM.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZINV.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZINV.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZIPD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZIPD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZIPV.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZIPV.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZISN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZISN.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZISS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZISS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZLNS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZLNS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZMLG.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZMLG.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZMSS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZMSS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZNML.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZNML.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZNRM.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZNRM.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZPIS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZPIS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZPLC.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZPLC.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZPLS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZPLS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZPLV.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZPLV.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZSCR.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZSCR.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZSCS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZSCS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZSCX.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZSCX.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZSFS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZSFS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZSPT.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZSPT.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZTRS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZTRS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZTRU.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZTRU.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZUCX.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZUCX.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZUDP.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZUDP.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZUFP.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZUFP.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZUTL.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZUTL.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZWBT.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZWBT.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZXFA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZXFA.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZXFC.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZXFC.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZXFF.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZXFF.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZXFI.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZXFI.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZXFR.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZXFR.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDANW.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDANW.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDCEN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDCEN.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDCLP.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDCLP.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDCTF.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDCTF.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDFDF.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDFDF.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDFDH.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDFDH.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDFDN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDFDN.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDFDP.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDFDP.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDFDV.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDFDV.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDFZD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDFZD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDIHD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDIHD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDINW.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDINW.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDLKF.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDLKF.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDLKH.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDLKH.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDLKM.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDLKM.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDLKP.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDLKP.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDLKV.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDLKV.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDMCR.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDMCR.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDMDI.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDMDI.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDMVM.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDMVM.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDMVP.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDMVP.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDPCR.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDPCR.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDPDI.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDPDI.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDRMF.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDRMF.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDRMH.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDRMH.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDRMN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDRMN.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDRMV.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDRMV.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTMDSTS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTMDSTS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLART.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLART.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLAST.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLAST.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLDTC.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLDTC.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLERD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLERD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLFDA.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLFDA.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLFDO.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLFDO.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLFFL.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLFFL.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLFIN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLFIN.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLFLN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLFLN.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLFSS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLFSS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLFTI.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLFTI.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLGEM.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLGEM.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLGTD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLGTD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLGTF.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLGTF.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLGTS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLGTS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLGTT.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLGTT.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLIPN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLIPN.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLISB.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLISB.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLISN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLISN.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLLFN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLLFN.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLNMK.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLNMK.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLPMT.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLPMT.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLPNS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLPNS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLPRS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLPRS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLRDL.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLRDL.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLSCE.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLSCE.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLSQS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLSQS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLSWM.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLSWM.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLTRC.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLTRC.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLWTF.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLWTF.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTTLWTL.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTTLWTL.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTVRAFD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTVRAFD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTVRCRS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTVRCRS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPPCODE/MTVRVRI.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTVRVRI.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/ABOUT.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/ABOUT.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/ALFACUT.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/ALFACUT.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/ALTANDS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/ALTANDS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/ALTORS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/ALTORS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/COORD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/COORD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/COSNNOT.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/COSNNOT.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/DATETST.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/DATETST.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/DILHEDGE.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/DILHEDGE.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHINV1.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHINV1.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHINV2.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHINV2.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHINV3.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHINV3.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHINV4.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHINV4.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHINV5.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHINV5.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPOL1.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPOL1.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPOL2.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPOL2.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPOL3.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPOL3.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPOL4.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPOL4.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPOL5.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPOL5.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPOL8.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPOL8.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPOL9.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPOL9.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPRA1.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPRA1.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPRC1.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPRC1.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPRC10.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPRC10.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPRC2.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPRC2.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPRC3.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPRC3.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPRC4.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPRC4.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPRC5.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPRC5.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPRC6.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPRC6.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPRC8.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPRC8.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FSHPRC9.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FSHPRC9.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FZYCOORD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FZYCOORD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FZYHEAP.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FZYHEAP.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FZYIFAM.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FZYIFAM.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FZYIFAM2.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FZYIFAM2.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FZYIRD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FZYIRD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FZYPRFV.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FZYPRFV.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FZYSETS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FZYSETS.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/FZYTRBN.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/FZYTRBN.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/HEDGES.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/HEDGES.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/INTHEDGE.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/INTHEDGE.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/INVPOL1.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/INVPOL1.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/INVPOL2.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/INVPOL2.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/INVPOL3.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/INVPOL3.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/INVPOL4.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/INVPOL4.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/INVPOL5.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/INVPOL5.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/LIHEDGE.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/LIHEDGE.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/NORMLZ.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/NORMLZ.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/PIHEDGE.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/PIHEDGE.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/PROPFST.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/PROPFST.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/ROUND.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/ROUND.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/SCHEDGE.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/SCHEDGE.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/SUGENNOT.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/SUGENNOT.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/THLDNOT.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/THLDNOT.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/TRUESET.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/TRUESET.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/WEIGHT1.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/WEIGHT1.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/WEIGHT2.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/WEIGHT2.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/WGT1MOD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/WGT1MOD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/WGT2MOD.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/WGT2MOD.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/YAGERAND.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/YAGERAND.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/YAGERNOT.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/YAGERNOT.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/YAGEROR.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/YAGEROR.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/ZADEHAND.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/ZADEHAND.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEMOS/ZADEHOR.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/DEMOS/ZADEHOR.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FuzzyLogic/TOOLS/GENERRDF.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/FuzzyLogic/TOOLS/GENERRDF.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/EQPACK.HPP" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/EQPACK.HPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/FDB.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/fdb.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/FSV.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/FSV.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/MDLTYPES.HPP" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/MDLTYPES.HPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/MTSPTYPE.HPP" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/mtsptype.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/PDB.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/PDB.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/RXB.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/RXB.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/SSYSCTL.HPP" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/SSYSCTL.HPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/VDB.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/VDB.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/XFZYCTL.HPP" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/XFZYctl.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/XSYSCTL.HPP" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/XSYSctl.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HPPCODE/fdb.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/fdb.hpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -233,109 +65,62 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="XSYSctl.hpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HPPCODE/XSYSctl.hpp">
+      <file leaf-file-name="FindPlateau.CPP" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPPCODE/FindPlateau.CPP">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="ApplyAND.CPP" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPPCODE/ApplyAND.CPP">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="FuzzifyScalar.CPP" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPPCODE/FuzzifyScalar.CPP">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="ApplyOR.CPP" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPPCODE/ApplyOR.CPP">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
-              <folding>
-                <element signature="e#522#540#0" expanded="true" />
-              </folding>
-            </state>
+            <state relative-caret-position="-333" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MTTLROU.CPP" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CPPCODE/MTTLROU.CPP">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#772#790#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+      <file leaf-file-name="GaussianFuzzySet.CPP" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPPCODE/GaussianFuzzySet.CPP">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="MTTLRND.CPP" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CPPCODE/MTTLRND.CPP">
+      <file leaf-file-name="GetCoordDataPoints.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPPCODE/GetCoordDataPoints.cpp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="GetSetMembership.CPP" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPPCODE/GetSetMembership.CPP">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="GetScalar.CPP" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPPCODE/GetScalar.CPP">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="MTFZHCR.CPP" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZHCR.CPP">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="14" />
+              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MTTLPNS.CPP" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CPPCODE/MTTLPNS.CPP">
+      <file leaf-file-name="MTFZHDI.CPP" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZHDI.CPP">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-              <folding>
-                <element signature="e#708#725#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MDLTYPES.HPP" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HPPCODE/MDLTYPES.HPP">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-              <folding>
-                <element signature="e#435#455#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MDB.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HPPCODE/MDB.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XFZYctl.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HPPCODE/XFZYctl.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MTMDCEN.CPP" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CPPCODE/MTMDCEN.CPP">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-              <folding>
-                <element signature="e#836#855#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HDB.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HPPCODE/HDB.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PDB.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HPPCODE/PDB.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-              <folding>
-                <element signature="e#442#460#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="253">
+              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -383,14 +168,12 @@
         <option value="$PROJECT_DIR$/HPPCODE/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/HPPCODE/CIX.HPP" />
-        <option value="$PROJECT_DIR$/CPPCODE/MTFZAPH.CPP" />
         <option value="$PROJECT_DIR$/CPPCODE/MTFZASC.CPP" />
         <option value="$PROJECT_DIR$/HPPCODE/NDB.HPP" />
         <option value="$PROJECT_DIR$/HPPCODE/mtypes.hpp" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/CPPCODE/MTFZABA.CPP" />
         <option value="$PROJECT_DIR$/CPPCODE/MTFZEQS.CPP" />
-        <option value="$PROJECT_DIR$/HPPCODE/fdb.hpp" />
         <option value="$PROJECT_DIR$/HPPCODE/FSV.hpp" />
         <option value="$PROJECT_DIR$/HPPCODE/CIX.hpp" />
         <option value="$PROJECT_DIR$/HPPCODE/EQPACK.HPP" />
@@ -407,6 +190,16 @@
         <option value="$PROJECT_DIR$/CPPCODE/MTFZPLS.CPP" />
         <option value="$PROJECT_DIR$/CPPCODE/MTMDCTF.CPP" />
         <option value="$PROJECT_DIR$/HPPCODE/XSYSctl.hpp" />
+        <option value="$PROJECT_DIR$/CPPCODE/MTFZAPH.CPP" />
+        <option value="$PROJECT_DIR$/CPPCODE/MTFZBTS.CPP" />
+        <option value="$PROJECT_DIR$/CPPCODE/MTFZCFP.CPP" />
+        <option value="$PROJECT_DIR$/CPPCODE/MTFZCOR.CPP" />
+        <option value="$PROJECT_DIR$/CPPCODE/MTFZDFZ.CPP" />
+        <option value="$PROJECT_DIR$/HPPCODE/fdb.hpp" />
+        <option value="$PROJECT_DIR$/CPPCODE/MTFZEXS.CPP" />
+        <option value="$PROJECT_DIR$/CPPCODE/MTFZFSC.CPP" />
+        <option value="$PROJECT_DIR$/CPPCODE/MTFZHCR.CPP" />
+        <option value="$PROJECT_DIR$/CPPCODE/MTFZHDI.CPP" />
       </list>
     </option>
   </component>
@@ -488,12 +281,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1538741284575</updated>
-      <workItem from="1538741285886" duration="4956000" />
+      <workItem from="1538741285886" duration="6945000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4956000" />
+    <option name="totallyTimeSpent" value="6945000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1537" height="912" extended-state="6" />
@@ -501,14 +294,14 @@
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13690476" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="CMake" weight="0.21290323" />
+      <window_info anchor="bottom" id="CMake" weight="0.21216041" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32988358" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Serial Monitor" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32988358" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32988358" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -527,269 +320,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FuzzyLogic/TOOLS/CLIENT.EDF">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZGTM.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="63" selection-start-column="63" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZFPL.CPP">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZAPA.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="56" lean-forward="true" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DEMOS/ALTORS.CPP">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZAPH.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="243" column="47" selection-start-line="243" selection-start-column="47" selection-end-line="243" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZABA.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="e#385#405#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZEQS.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding>
-            <element signature="e#772#790#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/ASSERT.HPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/CIX.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/EQPACK.HPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/fdb.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/FSV.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/fuzzy.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/mtsptype.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/mtypes.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="96" column="14" lean-forward="true" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/NDB.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/RXB.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/SFZYCTL.HPP">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/SSYSCTL.HPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding>
-            <element signature="e#522#540#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/TOKENS.HPP">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/toknode.hpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/VDB.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-          <folding>
-            <element signature="e#423#441#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZASC.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <element signature="e#449#465#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZCHD.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
-          <folding>
-            <element signature="e#469#487#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZCLS.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-312">
-          <caret line="27" column="15" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="15" />
-          <folding>
-            <element signature="e#449#471#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZPLS.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="63" selection-start-column="63" selection-end-column="63" />
-          <folding>
-            <element signature="e#845#863#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTMDCTF.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTTLSIX.CPP">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTTLROU.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#772#790#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTTLRND.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPPCODE/MTTLPNS.CPP">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding>
-            <element signature="e#708#725#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/HDB.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/PDB.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding>
-            <element signature="e#442#460#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HPPCODE/MDLTYPES.HPP">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -807,13 +341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/XFZYctl.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CPPCODE/MTMDCEN.CPP">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -824,13 +351,314 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HPPCODE/ASSERT.HPP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HPPCODE/XFZYctl.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HPPCODE/toknode.hpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HPPCODE/VDB.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+          <folding>
+            <element signature="e#423#441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HPPCODE/XSYSctl.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+        <state relative-caret-position="357">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
           <folding>
             <element signature="e#522#540#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HPPCODE/SSYSCTL.HPP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="e#522#540#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HPPCODE/RXB.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/AboveAlphaCut.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <element signature="e#385#407#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/ApplyAlpha.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/HedgeMetaController.CPP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding>
+            <element signature="e#385#402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/ApplyNotOperator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/AutoScale.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding>
+            <element signature="e#449#465#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/BetaCurve.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/CoordinateSeries.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding>
+            <element signature="e#641#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/ConditionalProposition.CPP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/ContrastHedge.CPP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
+          <folding>
+            <element signature="e#385#402#0" expanded="true" />
+            <element signature="e#469#487#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/Correlation.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#641#660#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/CompensatoryAND.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding>
+            <element signature="e#577#594#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/CompensatoryOR.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/CopyFuzzySet.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/CopyVector.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/InitCIX.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/CountsAndLists.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="15" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="15" />
+          <folding>
+            <element signature="e#449#471#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/DeleteSet.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#385#403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/DisplayFuzzyWorkArea.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/Defuzzify.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding>
+            <element signature="e#769#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/DisplayRule.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/DrawFuzzySet.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#493#511#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/DisplayTruthVector.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HPPCODE/fdb.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/EquivalentScalar.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding>
+            <element signature="e#772#790#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/EquivalentSetData.CPP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-104">
+          <folding>
+            <element signature="e#772#790#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/ExamineTruthTable.CPP">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/ExplainSystem.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/InitFuzzySet.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+          <folding>
+            <element signature="e#708#726#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/FreeFuzzyMemory.CPP">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/FreeHedge.CPP">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/FindSetHighPoint.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/FindPlateau.CPP">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/ApplyAND.CPP">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/FuzzifyScalar.CPP">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/ApplyOR.CPP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-333" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/GaussianFuzzySet.CPP">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/GetCoordDataPoints.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/GetSetMembership.CPP">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/GetScalar.CPP">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZHCR.CPP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPPCODE/MTFZHDI.CPP">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
         </state>
       </provider>
     </entry>

@@ -15,7 +15,7 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <fdb.hpp>
-#include "XFZYctl.hpp"
+#include <XFZYctl.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
 void FzyUnCondProposition(FDB *inFDBptr,FSV *FSVptr)

@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <fdb.hpp>
-#include   <fuzzy.hpp>
+#include <fuzzy.hpp>
 #include <mtsptype.hpp>
 void FzyBetaCurve(
    FDB *FDBptr,double Center,double flexpoint,int *statusPtr)

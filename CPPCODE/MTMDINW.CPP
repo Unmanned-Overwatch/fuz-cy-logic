@@ -13,9 +13,9 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <string.h>
-#include "PDB.hpp"
-#include "NDB.hpp"
-#include "eqpack.hpp"
+#include <PDB.hpp>
+#include <NDB.hpp>
+#include <eqpack.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
 void MdlInsertNWords(PDB *PDBptr,int *NDBcnt,int *statusPtr)

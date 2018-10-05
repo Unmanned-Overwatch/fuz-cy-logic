@@ -7,7 +7,7 @@
 | of the two sets across the domain.                          |
 *-------------------------------------------------------------*/
 #include <fdb.hpp>
-#include "XFZYctl.hpp"
+#include <XFZYctl.hpp>
 #include <XSYSctl.hpp>
 #include   <fuzzy.hpp>
 #include   <mtypes.hpp>

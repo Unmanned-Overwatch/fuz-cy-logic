@@ -15,8 +15,8 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include <stddef.h>
-#include "PDB.hpp"
-#include "NDB.hpp"
+#include <PDB.hpp>
+#include <NDB.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
 NDB *MdlFindNDB(char *Nwrdid,PDB *PDBptr,int *statusPtr)
