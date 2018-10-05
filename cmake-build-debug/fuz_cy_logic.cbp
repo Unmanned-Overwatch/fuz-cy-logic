@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="fuz_cy_logic"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/graham/Source/fuz-cy-logic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/graham/Source/fuz-cy-logic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/graham/Source/fuz-cy-logic/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fuz_cy_lib">
+				<Option output="/home/graham/Source/fuz-cy-logic/cmake-build-debug/libfuz_cy_lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/graham/Source/fuz-cy-logic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/graham/Source/fuz-cy-logic/HPPCODE"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 fuz_cy_lib"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fuz_cy_lib/fast">
+				<Option output="/home/graham/Source/fuz-cy-logic/cmake-build-debug/libfuz_cy_lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/graham/Source/fuz-cy-logic/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/graham/Source/fuz-cy-logic/HPPCODE"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 fuz_cy_lib/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/graham/Source/fuz-cy-logic/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZABA.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZAPA.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZAPH.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZAPN.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZASC.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZBTS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZCDS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZCFP.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZCHD.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZCLS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZCOR.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZCPA.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZCPO.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZCPY.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZCTV.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZCXI.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZDEL.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZDFA.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZDFZ.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZDRL.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZDRW.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZDTV.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZEQS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZESD.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZEXA.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZEXS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZFDI.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZFFS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZFHD.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZFHP.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZFPL.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZFSA.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZFSC.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZFSO.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZGAS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZGCD.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZGTM.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZGTS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZHCR.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZHDI.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZHGT.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZIHD.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZIMM.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZINV.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZIPD.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZIPV.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZISN.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZISS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZLNS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZMLG.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZMSS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZNML.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZNRM.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZPIS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZPLC.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZPLS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZPLV.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZSCR.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZSCS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZSCX.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZSFS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZSPT.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZTRS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZTRU.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZUCX.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZUDP.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZUFP.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZUTL.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZWBT.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZXFA.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZXFC.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZXFF.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZXFI.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZXFR.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZZDA.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTFZZDO.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDANW.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDCEN.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDCLP.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDCTF.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDFDF.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDFDH.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDFDN.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDFDP.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDFDV.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDFZD.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDIHD.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDINW.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDLKF.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDLKH.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDLKM.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDLKP.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDLKV.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDMCR.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDMDI.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDMVM.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDMVP.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDPCR.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDPDI.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDRMF.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDRMH.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDRMN.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDRMV.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDSTS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTMDUTL.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLART.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLAST.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLCLS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLDRM.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLDTC.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLERD.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLFAC.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLFDA.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLFDO.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLFFL.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLFIN.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLFLN.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLFLS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLFSS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLFTI.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLGDA.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLGEM.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLGSS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLGTD.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLGTF.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLGTS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLGTT.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLHSH.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLIPN.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLISB.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLISN.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLLFN.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLLJF.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLNMK.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLPAU.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLPDA.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLPMT.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLPNS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLPRS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLPSS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLRDL.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLRND.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLROU.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLSCE.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLSIX.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLSQS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLSWM.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLTRC.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLWTF.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTTLWTL.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTVRAFD.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTVRCRS.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CPPCODE/MTVRVRI.CPP">
+			<Option target="fuz_cy_lib"/>
+		</Unit>
+		<Unit filename="/home/graham/Source/fuz-cy-logic/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

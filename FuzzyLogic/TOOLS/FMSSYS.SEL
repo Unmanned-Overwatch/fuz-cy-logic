@@ -1,0 +1,196 @@
+0001 20000 System disabled.
+0002 20000 Insufficient memory to allocate block
+0003 20000 Item memory could not be released
+0004 20000 Too many Items
+0005 20000 Item length exceeds buffer space
+0006 20000 Buffer space exceeded
+0007 20000 Item is not numeric
+0008 20000 Item is not recognized in this context
+0009 20000 Unmatched quotes
+0010 20000 Unmatched parens
+0011 20000 Required Item is missing
+0012 18000 Too Many solution variables in model or policy
+0013 18000 Fuzzy Set was not created
+0014 18001 Fuzzy Set was not deleted
+0015 18000 Fuzzy Set not found in database
+0016 18000 Duplicate Fuzzy set
+0017 18000 Unrecognized builtin Hedge
+0018 18000 Unrecognized user Hedge operation
+0019 18000 Hedge function could not be invoked
+0020 18000 Duplicate Hedge
+0021 18000 Redefining Built-in Hedge
+0022 18000 Unrecognized Compensatory Class type
+0023 18000 Invalid Compensatory Class Factor value
+0024 18000 Unrecognized set geometry
+0025 18000 Unrecognized implication method
+0026 18000 Correlation factor is out of bounds
+0027 18000 Output Fuzzy region has zero height
+0028 18000 Unrecognized Defuzzification Method
+0029 18000 Cannot defuzzify output region
+0030 18000 Output region is empty or below alfa cut
+0031 18000 Scalar is outside fuzzy Set domain
+0032 18000 Membership value is not in range [0,1]
+0033 18000 Alfa-cut is not in range [0,1]
+0034 18000 Fuzzy Interpolation failure
+0035 18000 Unknown Fuzzy Set generation type
+0036 18000 Invalid parameters for Linear Fuzzy set
+0037 18000 Membership series does not contain normal [1] value
+0038 18000 Too Many items in membership series
+0039 18000 Invalid Width on PI curve generator
+0040 18000 Center of PI curve lies outside set domain
+0041 18000 Edge of PI curve will fall outside domain
+0042 18000 Invalid parameters for S-curve Fuzzy set
+0043 18000 Invalid parameters for Population curves
+0044 18000 Too many coordinate sets in series
+0045 18000 Illegal coordinate: outside set domain
+0046 18000 Illegal coordinate: invalid membership value
+0047 18000 Unspported Defuzzification technique
+0048 18000 Fuzzy Set vector cell out of range [0>n<256]
+0049 18000 Fuzzy Set domain error: Left edge > Right edge
+0050 18000 Fuzzy Set domain error: Both edges are zero
+0051 18000 Invalid Yager NOT class factor
+0052 18000 Invalid Seugeno NOT class factor
+0053 18000 Invalid Threshold NOT class factor
+0054 18000 Unknown Compensatory NOT type
+0055 18000 Invalid Width on TRIANGLE curve generator
+0056 18000 Center of Triangle curve lies outside set domain
+0057 18000 Edge of Triangle curve will fall outside domain
+0058 20000 Insufficient memory for new Database Physical Page
+0059 20000 Insufficient memory for new Database record buffer
+0060 20000 Insufficient memory for new character buffer
+0061 18000 Name not in dictionary
+0062 18000 Duplicate Policy name
+0063 18000 [unused]
+0064 18000 Duplicate Noise name
+0065 18000 Duplicate Fuzzyset name
+0066 18000 Duplicate Hedge name
+0067 18000 Duplicate Variable name
+0068 18000 [unused]
+0069 12000 [unused]
+0070 12000 [unused]
+0071 12000 [unused]
+0072 12000 [unused]
+0073 12000 [unused]
+0074 12000 [unused]
+0075 12000 [unused]
+0076 12000 [unused]
+0077 12000 [unused]
+0078 12000 [unused]
+0079 12000 [unused]
+0080 12000 [unused]
+0081 12000 [unused]
+0082 12000 [unused]
+0083 12000 [unused]
+0084 12000 [unused]
+0085 12000 [unused]
+0086 12000 [unused]
+0087 12000 [unused]
+0088 12000 Too many hedges
+0089 12000 Incompatible domains
+0090 12000 [unused]
+0091 12000 Non-numeric fuzzy set member candidate
+0092 12000 [unused]
+0093 12000 [unused]
+0094 12000 Too many or too few elements for Domain statement
+0095 12000 Lo > Hi Domain
+0096 15000 [unused]
+0097 15000 System Error--Dictionary address out of bounds
+0098 15000 Fuzzy set is not in current Policy
+0099 15000 Hedge is not in current Policy
+0100 15000 Variable is not in current Policy
+0101 15000 No Model is Active
+0102 15000 No Policy is Active
+0103 20000 You cannot write to specified log file
+0104 20000 Unknown system log file
+0105 20000 [unused]
+0106 20000 [unused]
+0107 60000 [unused]
+0108 60000 [unused]
+0109 25000 [unused]
+0110 25000 [unused]
+0111 25000 [unused]
+0112 25000 [unused]
+0113 25000 [unused]
+0114 60000 [unused]
+0115 60000 [unused]
+0116 60000 [unused]
+0117 60000 [unused]
+0118 60000 [unused]
+0119 60000 [unused]
+0120 60000 [unused]
+0121 60000 [unused]
+0122 60000 [unused]
+0123 60000 [unused]
+0124 60000 [unused]
+0125 60000 [unused]
+0126 60000 [unused]
+0127 60000 [unused]
+0128 60000 [unused]
+0129 60000 [unused]
+0130 60000 [unused]
+0131 60000 [unused]
+0132 60000 [unused]
+0133 60000 [unused]
+0134 60000 [unused]
+0135 60000 [unused]
+0136 60000 [unused]
+0137 60000 [unused]
+0138 60000 [unused]
+0139 60000 [unused]
+0140 60000 [unused]
+0141 60000 [unused]
+0142 60000 [unused]
+0143 60000 [unused]
+0144 60000 [unused]
+0145 60000 [unused]
+0146 60000 [unused]
+0147 60000 [unused]
+0148 60000 [unused]
+0149 17000 Unable to open file [R/W]
+0150 17000 Unable to open file [RO]
+0151 17000 Unable to open file [WO or APPEND]
+0152 17000 [unused]
+0153 17000 [unused]
+0154 17000 [unused]
+0155 17000 [unused]
+0156 17000 Invalid path
+0157 17000 [unused]
+0158 17000 [unused]
+0159 17000 [unused]
+0160 17000 [unused]
+0161 17000 [unused]
+0162 17000 [unused]
+0163 17000 [unused]
+0164 17000 [unused]
+0165 17000 [unused]
+0166 17000 [unused]
+0167 17000 [unused]
+0168 17000 [unused]
+0169 17000 [unused]
+0170 17000 [unused]
+0171 17000 [unused]
+0172 17000 [unused]
+0173 17000 [unused]
+0174 17000 [unused]
+0175 18000 Head of Explanatory list is NULL
+0176 18000 Incoming Explanatory node is NULL
+0177 18000 Explanatory tree is empty
+0178 17000 [unused]
+0179 00000 [unused]
+0180 44000 [unused]
+0181 44000 [unused]
+0182 44000 [unused]
+0183 44000 [unused]
+0184 44000 [unused]
+0185 44000 [unused]
+0186 44000 [unused]
+0187 44000 [unused]
+0188 44000 [unused]
+0189 44000 [unused]
+0190 44000 [unused]
+0191 44000 [unused]
+0192 44000 [unused]
+0193 44000 Unrecognized hedge generator type
+0194 18000 Too many solutions variables in policy
+0195 44000 Insufficient memory for another FSV block
+0196 44000 Insufficient memory for FSV fuzzy set

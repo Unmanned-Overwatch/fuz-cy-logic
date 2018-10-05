@@ -1,0 +1,164 @@
+
+
+
+Compiling and Using the C++ Fuzzy Modelling Code
+in the Fuzzy System Handbook
+
+
+
+The C++ code included with The Fuzzy Systems Handbook comprises 
+a complete low-level fuzzy modelling environment. The 
+functions are designed for inclusion in a larger 
+application framework and, by themselves, do not 
+constitute an operational system. Examining the 
+demonstration pricing model and inventory control 
+demonstration programs, included with the book, will show 
+how this is done. 
+
+However, you should be an experienced C/C++ programmer in 
+order to successfully use this software. 
+
+From an implementation viewpoint, you must understand how 
+to compile C++ programs, how to specify compiler and 
+linker options (and what these options mean), how to 
+resolve external references, how to handle C++ ‘name 
+mangling’, how to link compiled code to your application, 
+and so forth. From a programming viewpoint, you must 
+understand how pointer references work, how to manage and 
+address memory in a C++ program, how parameters are 
+passed to C++ programs, how external and static 
+structures are used, and so forth.
+
+The code attached to the handbook uses the 
+following C++ extensions: (1) the use of the 
+double slash (//) for comments, although the 
+traditional C comment form (/*...*/) is also used;  
+and (2) the use of the new and delete keywords to 
+allocate and release memory. Otherwise the code 
+adheres to standard C coding conventions. Every 
+function has a single associated prototype. No 
+operators have been overloaded.
+
+The C++ code found in The Fuzzy System Handbook has 
+been crafted to remove any explicit operating 
+system dependencies with the exception of file 
+name and path references used to set the error 
+diagnostic, model, and system audit logging files. 
+Under UNIX systems where mixed case file names are 
+generally not permitted, you may need to change 
+the MdlConnecttoFMS function filename references.
+
+Since MS/DOS is not a protected operating system, 
+it is possible to over-write non-program data on 
+your hard disk during program development. 
+Subscript and, to a lesser degree, pointer errors 
+can cause the program to write over disk sectors 
+belonging to such interesting parts of your system 
+as the DOS operating system, the Windows 
+directory, and so forth. Consequently, the library 
+system automatically routes all built-in output-
+-the system and model audit log files--to the 
+"b:" disk. To change this path direction or to 
+rename the built-in files, you must change the 
+disk, path, and/or filenames that are specified in 
+the MdlConnecttoFMS function.
+
+Compiling the code under the Borland C++ 4.0 
+compiler presents some possible problems. Due to 
+the way the min/max functions have been 
+implemented as templates in C++ 4.0, the code will 
+not compile unless you modify the stdlib.h file to 
+remove the new definition for these functions. I 
+do not recommend this! The fuzzy modelling code 
+has its own min and max macros. Since some of the 
+code uses mixed type comparison (integer and 
+float, as an example) these will not map to any 
+available prototype in the new Borland compiler. 
+This raises an error. The solution, of course, is 
+to create your own global template prototypes for 
+the min/max functions.
+
+In order to use the code, you must compile all the 
+source code and create a static library (.lib) 
+file. The examples in the demonstration batch 
+files (.bat) reference the fuzzylib library. This 
+name has no special meaning except that it is the 
+name you must select for your library it you want 
+to use the batch files with making any 
+modifications. These batch files are designed for 
+use with the Borland C++ 3.1 compiler only. In 
+Visual C++ you can simply select all the ".cpp" 
+files into a single project, specify a static 
+library as the target organization, and start the 
+build process.
+
+The source code contained with the handbook 
+contains no make files or other module generating 
+directions (such as Borland projects.) You will 
+need to generate the make files through what ever 
+services are provided by your compiler. For 
+simplicity, the demonstration programs use the 
+Borland command line compiler and resolve all 
+externals through an explicit fuzzylib.lib library 
+reference. This is not sufficient for real-world 
+applications.
+
+It is your responsibility as a programmer and 
+developer to insure that (1) all the paths have 
+been correctly specified for your compiler and its 
+components, (2) all the paths, if any, have been 
+specified for the fuzzy code’s source and include 
+files, and (3) the PATH statement for your DOS 
+environment is properly set.
+
+When you compile and link the C++ code, you must 
+specify the LARGE memory model. You may also need 
+to set such compiler and linker options as (this 
+is taken from my own Visual C++ project settings) 
+the new segment threshold (16), stack size (a 
+minimum of 8192; I often set this to 32000, but 
+you must be careful that stack size plus static 
+data does not exceed the compiler limit [usually 
+64K]), and Max Number of Segments (512). If you 
+are generating a Dynamic Link Library (DLL), do 
+not specify a stack size.
+
+If you are using Microsoft Visual C++ you will 
+need the Professional edition to create DOS 
+".exe" files. 
+
+Remember that, if you are creating a Windows 
+application or a Windows DLL, you will need to 
+remove any fprintf, or printf statements from the 
+code.
+
+The MdlConnecttoFMS function (mtmdctf.cpp) program 
+invokes some low level system calls to fetch the 
+current directory information and parse it into 
+the disk and path components. These services are 
+contained in the <direct.h> header. Under 
+Microsoft Visual C++, these functions (such as 
+_getcwd and _chdir) are preceded by an underscore. 
+Borland provides a version of these functions 
+without the underscore. I believe that, in some 
+compiler environments, the include file is 
+<dir.h>.
+
+The fuzzy modelling and policy management code 
+contains very little in the way of memory clean-up 
+services. Fuzzy sets, hedges, and other structures 
+are created but it is the responsibility of the 
+encapsulating application code to delete (free) 
+unwanted memory. Since fuzzy sets are relatively 
+large structures, failure to clean-up memory will 
+result in out of memory conditions.
+
+If you discover problems in the actual operation of the 
+code, please contact me. My fax number is (914) 238-0837. 
+My e-mail number is 72700.2615@compuserve.com.
+
+
+
+Earl Cox
+CEO
+The Metus System Group

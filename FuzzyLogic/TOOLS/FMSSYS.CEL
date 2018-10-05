@@ -1,0 +1,200 @@
+10/17/1993  2.33pm
+FMS: Compiled Error Diagnostic File
+seq# CLnum                    M  E  S  S  A  G  E               
+---- ----- -----------------------------------------------------
+0001 20001 System disabled.
+0002 20002 Insufficient memory to allocate block
+0003 20003 Item memory could not be released
+0004 20004 Too many Items
+0005 20005 Item length exceeds buffer space
+0006 20006 Buffer space exceeded
+0007 20007 Item is not numeric
+0008 20008 Item is not recognized in this context
+0009 20009 Unmatched quotes
+0010 20010 Unmatched parens
+0011 20011 Required Item is missing
+0012 18001 Too Many solution variables in model or policy
+0013 18002 Fuzzy Set was not created
+0014 18003 Fuzzy Set was not deleted
+0015 18004 Fuzzy Set not found in database
+0016 18005 Duplicate Fuzzy set
+0017 18006 Unrecognized builtin Hedge
+0018 18007 Unrecognized user Hedge operation
+0019 18008 Hedge function could not be invoked
+0020 18009 Duplicate Hedge
+0021 18010 Redefining Built-in Hedge
+0022 18011 Unrecognized Compensatory Class type
+0023 18012 Invalid Compensatory Class Factor value
+0024 18013 Unrecognized set geometry
+0025 18014 Unrecognized implication method
+0026 18015 Correlation factor is out of bounds
+0027 18016 Output Fuzzy region has zero height
+0028 18017 Unrecognized Defuzzification Method
+0029 18018 Cannot defuzzify output region
+0030 18019 Output region is empty or below alfa cut
+0031 18020 Scalar is outside fuzzy Set domain
+0032 18021 Membership value is not in range [0,1]
+0033 18022 Alfa-cut is not in range [0,1]
+0034 18023 Fuzzy Interpolation failure
+0035 18024 Unknown Fuzzy Set generation type
+0036 18025 Invalid parameters for Linear Fuzzy set
+0037 18026 Membership series does not contain normal [1] value
+0038 18027 Too Many items in membership series
+0039 18028 Invalid Width on PI curve generator
+0040 18029 Center of PI curve lies outside set domain
+0041 18030 Edge of PI curve will fall outside domain
+0042 18031 Invalid parameters for S-curve Fuzzy set
+0043 18032 Invalid parameters for Population curves
+0044 18033 Too many coordinate sets in series
+0045 18034 Illegal coordinate: outside set domain
+0046 18035 Illegal coordinate: invalid membership value
+0047 18036 Unspported Defuzzification technique
+0048 18037 Fuzzy Set vector cell out of range [0>n<256]
+0049 18038 Fuzzy Set domain error: Left edge > Right edge
+0050 18039 Fuzzy Set domain error: Both edges are zero
+0051 18040 Invalid Yager NOT class factor
+0052 18041 Invalid Seugeno NOT class factor
+0053 18042 Invalid Threshold NOT class factor
+0054 18043 Unknown Compensatory NOT type
+0055 18044 Invalid Width on TRIANGLE curve generator
+0056 18045 Center of Triangle curve lies outside set domain
+0057 18046 Edge of Triangle curve will fall outside domain
+0058 20012 Insufficient memory for new Database Physical Page
+0059 20013 Insufficient memory for new Database record buffer
+0060 20014 Insufficient memory for new character buffer
+0061 18047 Name not in dictionary
+0062 18048 Duplicate Policy name
+0063 18049 [unused]
+0064 18050 Duplicate Noise name
+0065 18051 Duplicate Fuzzyset name
+0066 18052 Duplicate Hedge name
+0067 18053 Duplicate Variable name
+0068 18054 [unused]
+0069 12001 [unused]
+0070 12002 [unused]
+0071 12003 [unused]
+0072 12004 [unused]
+0073 12005 [unused]
+0074 12006 [unused]
+0075 12007 [unused]
+0076 12008 [unused]
+0077 12009 [unused]
+0078 12010 [unused]
+0079 12011 [unused]
+0080 12012 [unused]
+0081 12013 [unused]
+0082 12014 [unused]
+0083 12015 [unused]
+0084 12016 [unused]
+0085 12017 [unused]
+0086 12018 [unused]
+0087 12019 [unused]
+0088 12020 Too many hedges
+0089 12021 Incompatible domains
+0090 12022 [unused]
+0091 12023 Non-numeric fuzzy set member candidate
+0092 12024 [unused]
+0093 12025 [unused]
+0094 12026 Too many or too few elements for Domain statement
+0095 12027 Lo > Hi Domain
+0096 15001 [unused]
+0097 15002 System Error--Dictionary address out of bounds
+0098 15003 Fuzzy set is not in current Policy
+0099 15004 Hedge is not in current Policy
+0100 15005 Variable is not in current Policy
+0101 15006 No Model is Active
+0102 15007 No Policy is Active
+0103 20015 You cannot write to specified log file
+0104 20016 Unknown system log file
+0105 20017 [unused]
+0106 20018 [unused]
+0107 60001 [unused]
+0108 60002 [unused]
+0109 25001 [unused]
+0110 25002 [unused]
+0111 25003 [unused]
+0112 25004 [unused]
+0113 25005 [unused]
+0114 60003 [unused]
+0115 60004 [unused]
+0116 60005 [unused]
+0117 60006 [unused]
+0118 60007 [unused]
+0119 60008 [unused]
+0120 60009 [unused]
+0121 60010 [unused]
+0122 60011 [unused]
+0123 60012 [unused]
+0124 60013 [unused]
+0125 60014 [unused]
+0126 60015 [unused]
+0127 60016 [unused]
+0128 60017 [unused]
+0129 60018 [unused]
+0130 60019 [unused]
+0131 60020 [unused]
+0132 60021 [unused]
+0133 60022 [unused]
+0134 60023 [unused]
+0135 60024 [unused]
+0136 60025 [unused]
+0137 60026 [unused]
+0138 60027 [unused]
+0139 60028 [unused]
+0140 60029 [unused]
+0141 60030 [unused]
+0142 60031 [unused]
+0143 60032 [unused]
+0144 60033 [unused]
+0145 60034 [unused]
+0146 60035 [unused]
+0147 60036 [unused]
+0148 60037 [unused]
+0149 17001 Unable to open file [R/W]
+0150 17002 Unable to open file [RO]
+0151 17003 Unable to open file [WO or APPEND]
+0152 17004 [unused]
+0153 17005 [unused]
+0154 17006 [unused]
+0155 17007 [unused]
+0156 17008 Invalid path
+0157 17009 [unused]
+0158 17010 [unused]
+0159 17011 [unused]
+0160 17012 [unused]
+0161 17013 [unused]
+0162 17014 [unused]
+0163 17015 [unused]
+0164 17016 [unused]
+0165 17017 [unused]
+0166 17018 [unused]
+0167 17019 [unused]
+0168 17020 [unused]
+0169 17021 [unused]
+0170 17022 [unused]
+0171 17023 [unused]
+0172 17024 [unused]
+0173 17025 [unused]
+0174 17026 [unused]
+0175 18055 Head of Explanatory list is NULL
+0176 18056 Incoming Explanatory node is NULL
+0177 18057 Explanatory tree is empty
+0178 17027 [unused]
+0179 00001 [unused]
+0180 44001 [unused]
+0181 44002 [unused]
+0182 44003 [unused]
+0183 44004 [unused]
+0184 44005 [unused]
+0185 44006 [unused]
+0186 44007 [unused]
+0187 44008 [unused]
+0188 44009 [unused]
+0189 44010 [unused]
+0190 44011 [unused]
+0191 44012 [unused]
+0192 44013 [unused]
+0193 44014 Unrecognized hedge generator type
+0194 18058 Too many solutions variables in policy
+0195 44015 Insufficient memory for another FSV block
+0196 44016 Insufficient memory for FSV fuzzy set
