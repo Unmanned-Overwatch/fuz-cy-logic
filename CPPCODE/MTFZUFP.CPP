@@ -14,28 +14,28 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include <XFZYctl.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-void FzyUnCondProposition(FDB *inFDBptr,FSV *FSVptr)
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+void FzyUnCondProposition(FuzzysetDescriptor *inFuzzysetDescriptorptr,FSV *FSVptr)
  {
    int i;
-   FDB *outFDBptr;
-   outFDBptr=FSVptr->FzySVfdbptr;
-   if(outFDBptr->FDBempty)
+   FuzzysetDescriptor *outFuzzysetDescriptorptr;
+   outFuzzysetDescriptorptr=FSVptr->FzySVFuzzysetDescriptorptr;
+   if(outFuzzysetDescriptorptr->FuzzysetDescriptorempty)
      {
-      FzyCopyVector(outFDBptr->FDBvector,inFDBptr->FDBvector,VECMAX);
-      outFDBptr->FDBempty=FALSE;
+      FzyCopyVector(outFuzzysetDescriptorptr->FuzzysetDescriptorvector,inFuzzysetDescriptorptr->FuzzysetDescriptorvector,VECMAX);
+      outFuzzysetDescriptorptr->FuzzysetDescriptorempty=FALSE;
      }
     else
      {
       for(i=0;i<VECMAX;i++)
-       outFDBptr->FDBvector[i]=
-        min(outFDBptr->FDBvector[i],inFDBptr->FDBvector[i]);
+       outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=
+        min(outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i],inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]);
      }
    FSVptr->FzySVupdcnt++;
    for(i=0;i<VECMAX;i++)
-    if(outFDBptr->FDBvector[i]>0) FSVptr->FzySVcntarray[i]++;
+    if(outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>0) FSVptr->FzySVcntarray[i]++;
    return;
  }

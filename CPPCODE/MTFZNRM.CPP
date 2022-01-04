@@ -12,10 +12,10 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
-#include   <mtypes.hpp>
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
 #include   <fuzzy.hpp>
-bool FzyIsNormalType(FDB *FDBptr,int NormType)
+bool FzyIsNormalType(FuzzysetDescriptor *FuzzysetDescriptorptr,int NormType)
   {
    bool  MinNormal;
    int   i;
@@ -24,7 +24,7 @@ bool FzyIsNormalType(FDB *FDBptr,int NormType)
 //--regardless of which normal level the user has selected.
    MinNormal=FALSE;
    for(i=0;i<VECMAX;i++)
-      if(FDBptr->FDBvector[i]==1.0) MinNormal=TRUE;
+      if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]==1.0) MinNormal=TRUE;
 //--Minimal normal means that the height is [1.0]. So we
 //--just return the state of the MinNormal variable.
 //
@@ -37,6 +37,6 @@ bool FzyIsNormalType(FDB *FDBptr,int NormType)
 //
    if(!MinNormal)                   return(FALSE);
    for(i=0;i<VECMAX;i++)
-      if(FDBptr->FDBvector[i]==0.0) return(TRUE);
+      if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]==0.0) return(TRUE);
    return(FALSE);
   }

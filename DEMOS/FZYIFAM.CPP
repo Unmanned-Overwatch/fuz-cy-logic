@@ -39,15 +39,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include "FSV.hpp"
-#include "VDB.hpp"
+#include "VariableDescriptor.hpp"
 #include "SSYSctl.hpp"
 #include "SFZYctl.hpp"
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-char   *   dmdFDBnames[]=
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+char   *   dmdFuzzysetDescriptornames[]=
   {
    "FALLING",
    "REDUCED",
@@ -55,7 +55,7 @@ char   *   dmdFDBnames[]=
    "INCREASED",
    "RISING"
   };
-char   *   dmdFDBdesc[]=
+char   *   dmdFuzzysetDescriptordesc[]=
   {
    "Significant decrease in product demand",
    "Moderate decrease in product demand",
@@ -63,7 +63,7 @@ char   *   dmdFDBdesc[]=
    "Moderate increase in product demand",
    "Significant increase in product demand"
   };
-char   *   qtyFDBnames[]=
+char   *   qtyFuzzysetDescriptornames[]=
   {
    "MINIMAL",
    "LOW",
@@ -71,7 +71,7 @@ char   *   qtyFDBnames[]=
    "HIGH",
    "EXCESSIVE"
   };
-char   *   qtyFDBdesc[]=
+char   *   qtyFuzzysetDescriptordesc[]=
   {
    "Quantity on hand is near depletion levels",
    "Quantity on hand is below the reorder point",
@@ -79,7 +79,7 @@ char   *   qtyFDBdesc[]=
    "Quantity on hand is above the reorder point",
    "Quantity on hand is well above required stockage"
   };
-char   *   invFDBnames[]=
+char   *   invFuzzysetDescriptornames[]=
   {
    "LN",
    "MN",
@@ -89,7 +89,7 @@ char   *   invFDBnames[]=
    "MP",
    "LP"
   };
-char   *   invFDBdesc[]=
+char   *   invFuzzysetDescriptordesc[]=
   {
    "Make large decrease in surplus inventory",
    "Make moderate decrease in surplus inventory",
@@ -107,14 +107,14 @@ double invPoint[]=
    {-45, -30, -45, -15, -30,   0, -15,  15,  0,   30, 15,   45, 30,   45};
 void main(void)
  {
-  FDB   *dmdFDBptr[FzyTermMax],
-        *qtyFDBptr[FzyTermMax],
-        *invFDBptr[FzyTermMax];
-  int    dmdFDBcnt=5,
-         qtyFDBcnt=5,
-         invFDBcnt=7;
+  FuzzysetDescriptor   *dmdFuzzysetDescriptorptr[FzyTermMax],
+        *qtyFuzzysetDescriptorptr[FzyTermMax],
+        *invFuzzysetDescriptorptr[FzyTermMax];
+  int    dmdFuzzysetDescriptorcnt=5,
+         qtyFuzzysetDescriptorcnt=5,
+         invFuzzysetDescriptorcnt=7;
   char  *PgmId="fzyifam";
-  int    i,j,k,status,FDBcnt;
+  int    i,j,k,status,FuzzysetDescriptorcnt;
   double ERP,
          ERPwidth,
          PIcenter,
@@ -136,22 +136,22 @@ void main(void)
 *-------------------------------------------------------------*/
   printf("%s\n","---Creating quarterly demand volume fuzzy sets");
   k=0;
-  for(i=0;i<dmdFDBcnt;i++)
+  for(i=0;i<dmdFuzzysetDescriptorcnt;i++)
     {
-     dmdFDBptr[i]=new FDB;
-     FzyInitFDB(dmdFDBptr[i]);
-     strcpy(dmdFDBptr[i]->FDBid,  dmdFDBnames[i]);
-     strcpy(dmdFDBptr[i]->FDBdesc,dmdFDBdesc[i]);
-     dmdFDBptr[i]->FDBdomain[0]=dmdPoint[k];
-     dmdFDBptr[i]->FDBdomain[1]=dmdPoint[k+1];
+     dmdFuzzysetDescriptorptr[i]=new FuzzysetDescriptor;
+     FzyInitFuzzysetDescriptor(dmdFuzzysetDescriptorptr[i]);
+     strcpy(dmdFuzzysetDescriptorptr[i]->FuzzysetDescriptorid,  dmdFuzzysetDescriptornames[i]);
+     strcpy(dmdFuzzysetDescriptorptr[i]->FuzzysetDescriptordesc,dmdFuzzysetDescriptordesc[i]);
+     dmdFuzzysetDescriptorptr[i]->FuzzysetDescriptordomain[0]=dmdPoint[k];
+     dmdFuzzysetDescriptorptr[i]->FuzzysetDescriptordomain[1]=dmdPoint[k+1];
      k+=2;
     }
-  FzySCurve (dmdFDBptr[0],-30,-20,-10,DECLINE,&status); //FALLING
-  FzyPiCurve(dmdFDBptr[1],-10, 10            ,&status); //REDUCED
-  FzyPiCurve(dmdFDBptr[2],  0, 10            ,&status); //STEADY
-  FzyPiCurve(dmdFDBptr[3], 10, 10            ,&status); //INCREASED
-  FzySCurve (dmdFDBptr[4], 10, 20, 30,GROWTH ,&status); //RISING
-  FzyPlotVar("ITEM.DEMAND",dmdFDBptr,dmdFDBcnt,SYSMODFILE,&status);
+  FzySCurve (dmdFuzzysetDescriptorptr[0],-30,-20,-10,DECLINE,&status); //FALLING
+  FzyPiCurve(dmdFuzzysetDescriptorptr[1],-10, 10            ,&status); //REDUCED
+  FzyPiCurve(dmdFuzzysetDescriptorptr[2],  0, 10            ,&status); //STEADY
+  FzyPiCurve(dmdFuzzysetDescriptorptr[3], 10, 10            ,&status); //INCREASED
+  FzySCurve (dmdFuzzysetDescriptorptr[4], 10, 20, 30,GROWTH ,&status); //RISING
+  FzyPlotVar("ITEM.DEMAND",dmdFuzzysetDescriptorptr,dmdFuzzysetDescriptorcnt,SYSMODFILE,&status);
 //
 //
 /*------------------------------------------------------------*
@@ -163,44 +163,44 @@ void main(void)
   printf("%s\n","---Creating on-hand quantities fuzzy sets");
   ERP=160;
   ERPwidth    =ERP*.10;
-  for(i=0;i<qtyFDBcnt;i++)
+  for(i=0;i<qtyFuzzysetDescriptorcnt;i++)
     {
-     qtyFDBptr[i]=new FDB;
-     FzyInitFDB(qtyFDBptr[i]);
-     strcpy(qtyFDBptr[i]->FDBid,  qtyFDBnames[i]);
-     strcpy(qtyFDBptr[i]->FDBdesc,qtyFDBdesc[i]);
+     qtyFuzzysetDescriptorptr[i]=new FuzzysetDescriptor;
+     FzyInitFuzzysetDescriptor(qtyFuzzysetDescriptorptr[i]);
+     strcpy(qtyFuzzysetDescriptorptr[i]->FuzzysetDescriptorid,  qtyFuzzysetDescriptornames[i]);
+     strcpy(qtyFuzzysetDescriptorptr[i]->FuzzysetDescriptordesc,qtyFuzzysetDescriptordesc[i]);
     }
 //--Define the center of the fuzzy region.
-     qtyFDBptr[2]->FDBdomain[0]=ERP-ERPwidth;
-     qtyFDBptr[2]->FDBdomain[1]=ERP+ERPwidth;
-  FzyPiCurve(qtyFDBptr[2],ERP,    ERPwidth,             &status);
+     qtyFuzzysetDescriptorptr[2]->FuzzysetDescriptordomain[0]=ERP-ERPwidth;
+     qtyFuzzysetDescriptorptr[2]->FuzzysetDescriptordomain[1]=ERP+ERPwidth;
+  FzyPiCurve(qtyFuzzysetDescriptorptr[2],ERP,    ERPwidth,             &status);
 //
 //--Define the right pi region
-     qtyFDBptr[3]->FDBdomain[0]=ERP;
-     qtyFDBptr[3]->FDBdomain[1]=ERP+(2*ERPwidth);
+     qtyFuzzysetDescriptorptr[3]->FuzzysetDescriptordomain[0]=ERP;
+     qtyFuzzysetDescriptorptr[3]->FuzzysetDescriptordomain[1]=ERP+(2*ERPwidth);
   PIcenter=ERP+ERPwidth;
-  FzyPiCurve(qtyFDBptr[3],PIcenter,ERPwidth,            &status);
+  FzyPiCurve(qtyFuzzysetDescriptorptr[3],PIcenter,ERPwidth,            &status);
 //
 //--Define the right S-curve region
   SCstart=PIcenter; SCend=PIcenter+(2*ERPwidth);
   SCmidpt=SCstart+((SCend-SCstart)/2);
-     qtyFDBptr[4]->FDBdomain[0]=SCstart;
-     qtyFDBptr[4]->FDBdomain[1]=SCend;
-  FzySCurve (qtyFDBptr[4],SCstart,SCmidpt,SCend,GROWTH ,&status);
+     qtyFuzzysetDescriptorptr[4]->FuzzysetDescriptordomain[0]=SCstart;
+     qtyFuzzysetDescriptorptr[4]->FuzzysetDescriptordomain[1]=SCend;
+  FzySCurve (qtyFuzzysetDescriptorptr[4],SCstart,SCmidpt,SCend,GROWTH ,&status);
 //
 //--Define the left pi region
-     qtyFDBptr[1]->FDBdomain[1]=ERP;
-     qtyFDBptr[1]->FDBdomain[0]=ERP-(2*ERPwidth);
+     qtyFuzzysetDescriptorptr[1]->FuzzysetDescriptordomain[1]=ERP;
+     qtyFuzzysetDescriptorptr[1]->FuzzysetDescriptordomain[0]=ERP-(2*ERPwidth);
   PIcenter=ERP-ERPwidth;
-  FzyPiCurve(qtyFDBptr[1],PIcenter,ERPwidth,            &status);
+  FzyPiCurve(qtyFuzzysetDescriptorptr[1],PIcenter,ERPwidth,            &status);
 //
 //--Define the left S-curve region
   SCstart=PIcenter-(2*ERPwidth); SCend=PIcenter;
   SCmidpt=SCstart+((SCend-SCstart)/2);
-     qtyFDBptr[0]->FDBdomain[0]=SCstart;
-     qtyFDBptr[0]->FDBdomain[1]=SCend;
-  FzySCurve (qtyFDBptr[0],SCstart,SCmidpt,SCend,DECLINE,&status);
-  FzyPlotVar("QTY.ON-HAND",qtyFDBptr,qtyFDBcnt,SYSMODFILE,&status);
+     qtyFuzzysetDescriptorptr[0]->FuzzysetDescriptordomain[0]=SCstart;
+     qtyFuzzysetDescriptorptr[0]->FuzzysetDescriptordomain[1]=SCend;
+  FzySCurve (qtyFuzzysetDescriptorptr[0],SCstart,SCmidpt,SCend,DECLINE,&status);
+  FzyPlotVar("QTY.ON-HAND",qtyFuzzysetDescriptorptr,qtyFuzzysetDescriptorcnt,SYSMODFILE,&status);
 //
 //
 /*------------------------------------------------------------*
@@ -212,24 +212,24 @@ void main(void)
 *-------------------------------------------------------------*/
   printf("%s\n","---Creating inventory action fuzzy sets");
   k=0;
-  for(i=0;i<invFDBcnt;i++)
+  for(i=0;i<invFuzzysetDescriptorcnt;i++)
     {
-     invFDBptr[i]=new FDB;
-     FzyInitFDB(invFDBptr[i]);
-     strcpy(invFDBptr[i]->FDBid,invFDBnames[i]);
-     strcpy(invFDBptr[i]->FDBdesc,invFDBdesc[i]);
-     invFDBptr[i]->FDBdomain[0]= -45;
-     invFDBptr[i]->FDBdomain[1]=  45;
+     invFuzzysetDescriptorptr[i]=new FuzzysetDescriptor;
+     FzyInitFuzzysetDescriptor(invFuzzysetDescriptorptr[i]);
+     strcpy(invFuzzysetDescriptorptr[i]->FuzzysetDescriptorid,invFuzzysetDescriptornames[i]);
+     strcpy(invFuzzysetDescriptorptr[i]->FuzzysetDescriptordesc,invFuzzysetDescriptordesc[i]);
+     invFuzzysetDescriptorptr[i]->FuzzysetDescriptordomain[0]= -45;
+     invFuzzysetDescriptorptr[i]->FuzzysetDescriptordomain[1]=  45;
      k+=2;
     }
-  FzySCurve (invFDBptr[0],-45,-37.5,-30,DECLINE,&status); //LN
-  FzyPiCurve(invFDBptr[1],-30,   15,            &status); //MN
-  FzyPiCurve(invFDBptr[2],-15,   15,            &status); //SN
-  FzyPiCurve(invFDBptr[3],  0,   15,            &status); //ZR
-  FzyPiCurve(invFDBptr[4], 15,   15,            &status); //SP
-  FzyPiCurve(invFDBptr[5], 30,   15,            &status); //MP
-  FzySCurve (invFDBptr[6], 30, 37.5, 45,GROWTH ,&status); //LP
-  FzyPlotVar("INV.ACTION",invFDBptr,invFDBcnt,SYSMODFILE,&status);
+  FzySCurve (invFuzzysetDescriptorptr[0],-45,-37.5,-30,DECLINE,&status); //LN
+  FzyPiCurve(invFuzzysetDescriptorptr[1],-30,   15,            &status); //MN
+  FzyPiCurve(invFuzzysetDescriptorptr[2],-15,   15,            &status); //SN
+  FzyPiCurve(invFuzzysetDescriptorptr[3],  0,   15,            &status); //ZR
+  FzyPiCurve(invFuzzysetDescriptorptr[4], 15,   15,            &status); //SP
+  FzyPiCurve(invFuzzysetDescriptorptr[5], 30,   15,            &status); //MP
+  FzySCurve (invFuzzysetDescriptorptr[6], 30, 37.5, 45,GROWTH ,&status); //LP
+  FzyPlotVar("INV.ACTION",invFuzzysetDescriptorptr,invFuzzysetDescriptorcnt,SYSMODFILE,&status);
 
 /*------------------------------------------------------------*
 |      EXECUTE THE FAM-BASED FUZZY INVENTORY MODEL            |
@@ -239,9 +239,9 @@ void main(void)
 | reads a new product demand value and calculates a new QOH   |
 | from the inventory action.                                  |
 *-------------------------------------------------------------*/
-  FDB    *ivaFDBptr,*rsltFDBptr;
+  FuzzysetDescriptor    *ivaFuzzysetDescriptorptr,*rsltFuzzysetDescriptorptr;
   FSV    *FSVptr;
-  VDB    *invVDBptr;
+  VariableDescriptor    *invVariableDescriptorptr;
 //double  ProductDemand[]={40,28,25,15,11,9,3,0,0,-8,-10,-12,-18,-25,-33};
   double  ProductDemand[]={30,25,20,15,10,5,0,0,0,-5,-10,-15,-20,-25,-30};
   int     MAXdemands=15;
@@ -252,20 +252,20 @@ void main(void)
 
   mdllog=MtsGetSystemFile(SYSMODFILE);
 
-  FDB *FAM[5][5]=
+  FuzzysetDescriptor *FAM[5][5]=
    {
-    {invFDBptr[3],invFDBptr[4],invFDBptr[5],invFDBptr[5],invFDBptr[6]},
-    {invFDBptr[3],invFDBptr[4],invFDBptr[5],invFDBptr[6],invFDBptr[6]},
-    {invFDBptr[2],invFDBptr[3],invFDBptr[4],invFDBptr[5],invFDBptr[6]},
-    {invFDBptr[1],invFDBptr[2],invFDBptr[3],invFDBptr[4],invFDBptr[5]},
-    {invFDBptr[0],invFDBptr[1],invFDBptr[2],invFDBptr[3],invFDBptr[4]}
+    {invFuzzysetDescriptorptr[3],invFuzzysetDescriptorptr[4],invFuzzysetDescriptorptr[5],invFuzzysetDescriptorptr[5],invFuzzysetDescriptorptr[6]},
+    {invFuzzysetDescriptorptr[3],invFuzzysetDescriptorptr[4],invFuzzysetDescriptorptr[5],invFuzzysetDescriptorptr[6],invFuzzysetDescriptorptr[6]},
+    {invFuzzysetDescriptorptr[2],invFuzzysetDescriptorptr[3],invFuzzysetDescriptorptr[4],invFuzzysetDescriptorptr[5],invFuzzysetDescriptorptr[6]},
+    {invFuzzysetDescriptorptr[1],invFuzzysetDescriptorptr[2],invFuzzysetDescriptorptr[3],invFuzzysetDescriptorptr[4],invFuzzysetDescriptorptr[5]},
+    {invFuzzysetDescriptorptr[0],invFuzzysetDescriptorptr[1],invFuzzysetDescriptorptr[2],invFuzzysetDescriptorptr[3],invFuzzysetDescriptorptr[4]}
    };
   printf("%s\n","---Executing Inventory Management Policy");
   QOH= 70;
   Domain[0]=-45;Domain[1]=45;
-  invVDBptr=VarCreateScalar("InvAction",REAL,Domain,"0",&status);
+  invVariableDescriptorptr=VarCreateScalar("InvAction",REAL,Domain,"0",&status);
   FzyInitFZYctl(&status);
-  if(!(FzyAddFZYctl(invVDBptr,&ivaFDBptr,&FSVptr,&status)))
+  if(!(FzyAddFZYctl(invVariableDescriptorptr,&ivaFuzzysetDescriptorptr,&FSVptr,&status)))
     {
      MtsSendError(12,PgmId,"InvAction");
      exit(9);
@@ -299,34 +299,34 @@ void main(void)
 //
 //--Look at each demand fuzzy region and find the degree of
 //--membership for the current demand in these FAM columns/
-     for(j=0;j<dmdFDBcnt;j++)
+     for(j=0;j<dmdFuzzysetDescriptorcnt;j++)
        {
         qtymem=0;
-        dmdmem=FzyGetMembership(dmdFDBptr[j],currDemand,&idx,&status);
+        dmdmem=FzyGetMembership(dmdFuzzysetDescriptorptr[j],currDemand,&idx,&status);
         if(dmdmem>0)
-          for(k=0;k<qtyFDBcnt;k++)
+          for(k=0;k<qtyFuzzysetDescriptorcnt;k++)
             {
-             qtymem=FzyGetMembership(qtyFDBptr[k],QOH,&idx,&status);
+             qtymem=FzyGetMembership(qtyFuzzysetDescriptorptr[k],QOH,&idx,&status);
              if(qtymem!=0)
                {
                 fprintf(mdllog,"%3d. %s%s%s%s%s\n",i+1,"Rule [",
-                dmdFDBptr[j]->FDBid,",",qtyFDBptr[k]->FDBid,"]");
+                dmdFuzzysetDescriptorptr[j]->FuzzysetDescriptorid,",",qtyFuzzysetDescriptorptr[k]->FuzzysetDescriptorid,"]");
                 rsltmem=min(dmdmem,qtymem);
-                rsltFDBptr=FAM[k][j];
+                rsltFuzzysetDescriptorptr=FAM[k][j];
                 FzyCondProposition(
-                  rsltFDBptr,FSVptr,thisCorrMethod,rsltmem,&status);
+                  rsltFuzzysetDescriptorptr,FSVptr,thisCorrMethod,rsltmem,&status);
                 fprintf(mdllog,
                  "%s%2d%s%2d%s%s%s%5.3f%s%s%s%s%5.3f%s\n%s%s%s%5.3f%s\n",
                   "FAM(",k,",",j,"): if QOH is ",
-                    qtyFDBptr[k]->FDBid," [",qtymem,"] and ",
-                  "Demand is ",dmdFDBptr[j]->FDBid," [",dmdmem,"]",
+                    qtyFuzzysetDescriptorptr[k]->FuzzysetDescriptorid," [",qtymem,"] and ",
+                  "Demand is ",dmdFuzzysetDescriptorptr[j]->FuzzysetDescriptorid," [",dmdmem,"]",
                   "                then InvAction is ",
-                   rsltFDBptr->FDBid," [",rsltmem,"];");
-                FzyDrawSet(ivaFDBptr,SYSMODFILE,&status);
+                   rsltFuzzysetDescriptorptr->FuzzysetDescriptorid," [",rsltmem,"];");
+                FzyDrawSet(ivaFuzzysetDescriptorptr,SYSMODFILE,&status);
                }
             }
        }
-     invAction[i]=FzyDefuzzify(ivaFDBptr,thisDefuzzMethod,&CIX,&status);
+     invAction[i]=FzyDefuzzify(ivaFuzzysetDescriptorptr,thisDefuzzMethod,&CIX,&status);
      if(invAction[i]<0) adjfactor[i]=1-(fabs(invAction[i])/100);
        else          adjfactor[i]=1+(invAction[i]/100);
      QOH*=adjfactor[i];

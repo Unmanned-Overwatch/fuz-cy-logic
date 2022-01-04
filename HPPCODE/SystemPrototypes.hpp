@@ -28,7 +28,7 @@
 bool    FzyAboveAlfa(truthval,truthval,int);                    //mtfzaba
 bool    FzyAddFZYctl(VariableDescriptor*,FuzzysetDescriptor*,FSV**,int*);                    //mtfzxfa
 float   FzyAND(float,float);                                    //mtfzzda
-void    FzyApplyAlfa(FuzzysetDescriptor* FDBptr,const float Alfa,const int AlfaType);            //mtfzapa
+void    FzyApplyAlfa(FuzzysetDescriptor* FuzzysetDescriptorptr,const float Alfa,const int AlfaType);            //mtfzapa
 FuzzysetDescriptor    *FzyApplyAND(FuzzysetDescriptor*,FuzzysetDescriptor*,int,double,int*);                 //mtfzfsa
 void    FzyApplyHedge(const FuzzysetDescriptor*,const HDB*,FuzzysetDescriptor*,int *);        //mtfzaph
 void    FzyApplyNOT(int,float,FuzzysetDescriptor*,int*);                       //mtfzapn
@@ -70,7 +70,7 @@ void    FzyImplMatrix(FuzzysetDescriptor*,FuzzysetDescriptor*,double[],int,int*)
 void    FzyInitCIX(CompatibilityIndex*);                                       //mtfzcxi
 void    FzyInitFZYctl(int *);                                   //mtfzxfi
 void    FzyInitHDB(HDB*);                                       //mtfzhdi
-void    FzyInitFDB(FuzzysetDescriptor*);                                       //mtfzins
+void    FzyInitFuzzysetDescriptor(FuzzysetDescriptor*);                                       //mtfzins
 void    FzyInitVector(float[],int,float);                       //mtfzinv
 void    FzyInsertHedges(HDB**,int*,int*);                       //mtfzihd
 void    FzyInterpVec(float[],int *);                            //mtfzipv
@@ -153,28 +153,28 @@ void    MdlConnecttoFMS(int*);                                  //mtmdctf
 ModelDescription    *MdlCreateModel(char*,int,int*);                         //mtmdmcr
 PDB    *MdlCreatePolicy(char*,int,int*);                        //mtmdpcr
 void    MdlFindFzyDomain(char*,double*,double*,int*);           //mtmdfzd
-FuzzysetDescriptor    *MdlFindFDB(char*,PDB*,int*);                            //mtmdfdf
+FuzzysetDescriptor    *MdlFindFuzzysetDescriptor(char*,PDB*,int*);                            //mtmdfdf
 HDB    *MdlFindHDB(char*,PDB*,int*);                            //mtmdfdh
 NDB    *MdlFindNDB(char*,PDB*,int*);                            //mtmdfdn
 PDB    *MdlFindPDB(char*,int*);                                 //mtmdfdp
-VariableDescriptor    *MdlFindVDB(char*,PDB*,int*);                            //mtmdfdv
+VariableDescriptor    *MdlFindVariableDescriptor(char*,PDB*,int*);                            //mtmdfdv
 void    MdlGetcurrentEnvironment(ModelDescription**,PDB**,int*);             //mtmdcen
 void    MdlInitMDB(ModelDescription*);                                       //mtmdmdi
 void    MdlInitPDB(PDB*);                                       //mtmdpdi
 void    MdlInitXSYSctl(int*);                                   //mtmdxsi
 void    MdlInsertHedges(PDB*,int*,int*);                        //mtmdihd
 void    MdlInsertNWords(PDB*,int*,int*);                        //mtmdinw
-void    MdlLinkFDB(FuzzysetDescriptor*,PDB*,int*);                             //mtmdlkf
+void    MdlLinkFuzzysetDescriptor(FuzzysetDescriptor*,PDB*,int*);                             //mtmdlkf
 void    MdlLinkHDB(HDB*,PDB*,int*);                             //mtmdlkh
 void    MdlLinkMDB(ModelDescription*,bool,int*);                             //mtmdlkm
 void    MdlLinkPDB(PDB*,int*);                                  //mtmdlkp
-void    MdlLinkVDB(VariableDescriptor*,PDB*,int*);                             //mtmdlkv
+void    MdlLinkVariableDescriptor(VariableDescriptor*,PDB*,int*);                             //mtmdlkv
 ModelDescription    *MdlMakeVirtualModel(char*,char*,char*,PDB**,int*);      //mtmdmvm
 PDB    *MdlMakeVirtualPolicy(char*,char*,int*);                 //mtmdmvp
-void    MdlRemoveFDB(char*,PDB*,int*);                          //mtmdrmf
+void    MdlRemoveFuzzysetDescriptor(char*,PDB*,int*);                          //mtmdrmf
 void    MdlRemoveHDB(char*,PDB*,int*);                          //mtmdrmh
 void    MdlRemoveNDB(char*,PDB*,int*);                          //mtmdrmn
-void    MdlRemoveVDB(char*,PDB*,int*);                          //mtmdrmv
+void    MdlRemoveVariableDescriptor(char*,PDB*,int*);                          //mtmdrmv
 void    MdlSetcurrentEnvironment(ModelDescription*,PDB*,int*);               //mtmdcen
 void    MdlSetTrace(int,int,int*);                              //mtmdsts
 //
@@ -231,8 +231,8 @@ void    MtsWritetoLog(int,char*,int*);                          //mttlwtl
 //
 //-------------------V A R I A B L E    M A N A G E M E N T-----filename
 //
-void    VarAttachFDB(FuzzysetDescriptor*,VariableDescriptor*,int*);                           //mtvrafd
-void    VarInitVDB(VariableDescriptor*,int*);                                  //mtvrvri
+void    VarAttachFuzzysetDescriptor(FuzzysetDescriptor*,VariableDescriptor*,int*);                           //mtvrafd
+void    VarInitVariableDescriptor(VariableDescriptor*,int*);                                  //mtvrvri
 FuzzysetDescriptor    *VarCreateScalar(char*,int,double[],char*,int*);         //mtvrcrs
 //
 //------------------End of Prototype Definitions----------------

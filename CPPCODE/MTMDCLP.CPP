@@ -15,12 +15,12 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <PDB.hpp>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include <HDB.hpp>
-#include "VDB.hpp"
+#include "VariableDescriptor.hpp"
 #include <NDB.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 //--We could probably use a template for these or a void* pointer
 //--with a paramter to indicate casting since they are all exactly
 //--the same except for the pointer type.
@@ -57,22 +57,22 @@ void MdlReleaseVariables(PDB *PDBptr,long *Memory)
 | Release memory for all the formal variables in this policy. |
 *-------------------------------------------------------------*/
   {
-   VDB  *VDBptr,*nextVDBptr;
+   VariableDescriptor  *VariableDescriptorptr,*nextVariableDescriptorptr;
    int   i;
-   int   varbytes=sizeof(VDB);
+   int   varbytes=sizeof(VariableDescriptor);
    long  memAmt=0;
 
-   for(i=0;i<VDBmax;i++)
+   for(i=0;i<VariableDescriptormax;i++)
      if(PDBptr->PDBvariables[i]!=NULL)
        {
-        VDBptr=PDBptr->PDBvariables[i];
+        VariableDescriptorptr=PDBptr->PDBvariables[i];
         while(1)
          {
-          nextVDBptr=VDBptr->VDBnext;
-          delete VDBptr;
+          nextVariableDescriptorptr=VariableDescriptorptr->VariableDescriptornext;
+          delete VariableDescriptorptr;
           memAmt+=varbytes;
-          if(nextVDBptr==NULL) break;
-          VDBptr=nextVDBptr;
+          if(nextVariableDescriptorptr==NULL) break;
+          VariableDescriptorptr=nextVariableDescriptorptr;
          }
         PDBptr->PDBvariables[i]=NULL;
        }
@@ -84,22 +84,22 @@ void MdlReleaseFuzzysets(PDB *PDBptr,long *Memory)
 | Release memory for all the fuzzy sets in this policy        |
 *-------------------------------------------------------------*/
   {
-   FDB  *FDBptr,*nextFDBptr;
+   FuzzysetDescriptor  *FuzzysetDescriptorptr,*nextFuzzysetDescriptorptr;
    int   i;
-   int   fzybytes=sizeof(FDB);
+   int   fzybytes=sizeof(FuzzysetDescriptor);
    long  memAmt=0;
 
-   for(i=0;i<FDBmax;i++)
+   for(i=0;i<FuzzysetDescriptormax;i++)
      if(PDBptr->PDBfuzzysets[i]!=NULL)
        {
-        FDBptr=PDBptr->PDBfuzzysets[i];
+        FuzzysetDescriptorptr=PDBptr->PDBfuzzysets[i];
         while(1)
          {
-          nextFDBptr=FDBptr->FDBnext;
-          delete FDBptr;
+          nextFuzzysetDescriptorptr=FuzzysetDescriptorptr->FuzzysetDescriptornext;
+          delete FuzzysetDescriptorptr;
           memAmt+=fzybytes;
-          if(nextFDBptr==NULL) break;
-          FDBptr=nextFDBptr;
+          if(nextFuzzysetDescriptorptr==NULL) break;
+          FuzzysetDescriptorptr=nextFuzzysetDescriptorptr;
          }
         PDBptr->PDBfuzzysets[i]=NULL;
        }

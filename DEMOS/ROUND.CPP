@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 void main(void)
  {
   char    number[16],prec[8];

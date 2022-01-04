@@ -11,32 +11,32 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <string.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include "SSYSctl.hpp"
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 #include   <fuzzy.hpp>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 void main(void)
  {
-  FDB      *FDB1ptr;
+  FuzzysetDescriptor      *FuzzysetDescriptor1ptr;
   int       i,status;
   double    Left,Right;
 
   MdlConnecttoFMS(&status);              // Connect to modelling system
-  FDB1ptr=new FDB;
-  FzyInitFDB(FDB1ptr);
+  FuzzysetDescriptor1ptr=new FuzzysetDescriptor;
+  FzyInitFuzzysetDescriptor(FuzzysetDescriptor1ptr);
 
-  FzyTrueSet(FDB1ptr);
-  FzyDrawSet(FDB1ptr,1,&status);
+  FzyTrueSet(FuzzysetDescriptor1ptr);
+  FzyDrawSet(FuzzysetDescriptor1ptr,1,&status);
 
-  FDB1ptr->FDBdomain[0]=0.0;
-  FDB1ptr->FDBdomain[1]=1.0;
+  FuzzysetDescriptor1ptr->FuzzysetDescriptordomain[0]=0.0;
+  FuzzysetDescriptor1ptr->FuzzysetDescriptordomain[1]=1.0;
 
   Left  =0;
   Right =1;
-  strcpy(FDB1ptr->FDBid,"Proportional Up");
-  FzyLinearCurve(FDB1ptr,Left,Right,INCREASE,&status);
-  FzyDrawSet(FDB1ptr,1,&status);
-  FzyExamineSet(FDB1ptr,&status);
+  strcpy(FuzzysetDescriptor1ptr->FuzzysetDescriptorid,"Proportional Up");
+  FzyLinearCurve(FuzzysetDescriptor1ptr,Left,Right,INCREASE,&status);
+  FzyDrawSet(FuzzysetDescriptor1ptr,1,&status);
+  FzyExamineSet(FuzzysetDescriptor1ptr,&status);
   return;
  }

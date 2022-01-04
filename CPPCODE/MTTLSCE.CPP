@@ -17,8 +17,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 #include <XSYSctl.hpp>
 #define RECSIZE    80
 static char ErrorRecord[RECSIZE];

@@ -17,7 +17,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "MDB.hpp"
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 void MdlInitMDB(ModelDescription *MDBptr)
   {
     int i;

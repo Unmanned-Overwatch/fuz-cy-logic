@@ -13,14 +13,14 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
-#include <fdb.hpp>       // The Fuzzy Set descriptor
-#include "VDB.hpp"       // A Variable descriptor
+#include <FuzzysetDescriptor.hpp>       // The Fuzzy Set descriptor
+#include "VariableDescriptor.hpp"       // A Variable descriptor
 #include "XFZYctl.hpp"   // The fuzzy parallel processor work area
 #include <XSYSctl.hpp>   // The System control region
-#include   <mtypes.hpp>    // System constants and symbolics
+#include   <SystemTypes.hpp>    // System constants and symbolics
 #include   <fuzzy.hpp>     // Fuzzy Logic constants and symbolics
 #include "mdltypes.hpp"
-#include <mtsptype.hpp>  // Function prototypes
+#include <SystemPrototypes.hpp>  // Function prototypes
 //
 static const char *Rules[]=
  {
@@ -31,11 +31,11 @@ static const Rulemax=2;
 //
 double InvModel1(double Orders,float *CompIdxptr,int *statusPtr)
  {
-  FDB     *HiFDBptr,
-          *LgFDBptr,
-          *aeFDBptr,
-          *BOAFDBptr;
-  VDB     *VDBptr;
+  FuzzysetDescriptor     *HiFuzzysetDescriptorptr,
+          *LgFuzzysetDescriptorptr,
+          *aeFuzzysetDescriptorptr,
+          *BOAFuzzysetDescriptorptr;
+  VariableDescriptor     *VariableDescriptorptr;
   FSV     *FSVptr;
   char    *PgmId="invpol1";
   int      i,
@@ -72,9 +72,9 @@ fputc('\n',mdlout);
 //--and add it to the fuzzy control region.
   Domain[0]=0;
   Domain[1]=300;
-  VDBptr=VarCreateScalar("BOAmt",REAL,Domain,"0",statusPtr);
+  VariableDescriptorptr=VarCreateScalar("BOAmt",REAL,Domain,"0",statusPtr);
   FzyInitFZYctl(statusPtr);
-  if(!(FzyAddFZYctl(VDBptr,&BOAFDBptr,&FSVptr,statusPtr)))
+  if(!(FzyAddFZYctl(VariableDescriptorptr,&BOAFuzzysetDescriptorptr,&FSVptr,statusPtr)))
     {
      *statusPtr=1;
      MtsSendError(12,PgmId,"BOAmt");
@@ -86,18 +86,18 @@ fputc('\n',mdlout);
 //--Hi Orders Fuzzy set
   Domain[0]=90;
   Domain[1]=350;
-  HiFDBptr=FzyCreateSet("HIGH.ORDERS",INCREASE,Domain,Parms,0,statusPtr);
-//FzyDrawSet(HiFDBptr,SYSMODFILE,statusPtr);
+  HiFuzzysetDescriptorptr=FzyCreateSet("HIGH.ORDERS",INCREASE,Domain,Parms,0,statusPtr);
+//FzyDrawSet(HiFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //--Large BOAmt fuzzy set
   Domain[0]=0;
   Domain[1]=300;
-  LgFDBptr=FzyCreateSet("LARGE.BOAmt", GROWTH,Domain,Parms,0,statusPtr);
-//FzyDrawSet(LgFDBptr,SYSMODFILE,statusPtr);
+  LgFuzzysetDescriptorptr=FzyCreateSet("LARGE.BOAmt", GROWTH,Domain,Parms,0,statusPtr);
+//FzyDrawSet(LgFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //--Around the ERP
   Parms[0]=ERP;
   Parms[1]=ERP*.30;
-  aeFDBptr=FzyCreateSet("AROUND.ERP", PI    ,Domain,Parms,2,statusPtr);
-//FzyDrawSet(aeFDBptr,SYSMODFILE,statusPtr);
+  aeFuzzysetDescriptorptr=FzyCreateSet("AROUND.ERP", PI    ,Domain,Parms,2,statusPtr);
+//FzyDrawSet(aeFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //
 //-----------B E G I N    M O D E L    P R O C E S S I N G-------------
 //
@@ -105,24 +105,24 @@ fputc('\n',mdlout);
 
 // Rule 1--BackorderAmt must be near ERP
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
-  FzyUnCondProposition(aeFDBptr,FSVptr);
-  FzyDrawSet(BOAFDBptr,SYSMODFILE,statusPtr);
+  FzyUnCondProposition(aeFuzzysetDescriptorptr,FSVptr);
+  FzyDrawSet(BOAFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Rulecnt++;
 // Rule 2--if orders are high then backorderAmt must be large
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
-  PremiseTruth=FzyGetMembership(HiFDBptr,Orders,&Idxpos,statusPtr);
+  PremiseTruth=FzyGetMembership(HiFuzzysetDescriptorptr,Orders,&Idxpos,statusPtr);
   fprintf(mdlout,"%s%10.2f\n","PremiseTruth= ",PremiseTruth);
   FzyCondProposition(
-       LgFDBptr,FSVptr,thisCorrMethod,PremiseTruth,statusPtr);
-  FzyDrawSet(BOAFDBptr,SYSMODFILE,statusPtr);
+       LgFuzzysetDescriptorptr,FSVptr,thisCorrMethod,PremiseTruth,statusPtr);
+  FzyDrawSet(BOAFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Rulecnt++;
 //
-  BOAmt=FzyDefuzzify(BOAFDBptr,thisDefuzzMethod,CompIdxptr,statusPtr);
-  fsetheight=FzyGetHeight(BOAFDBptr);
+  BOAmt=FzyDefuzzify(BOAFuzzysetDescriptorptr,thisDefuzzMethod,CompIdxptr,statusPtr);
+  fsetheight=FzyGetHeight(BOAFuzzysetDescriptorptr);
   fprintf(mdlout,"%s\n","Model Solution:");
   fprintf(mdlout,"%s%10.2f\n","  BackOrderAmt= ",BOAmt       );
   fprintf(mdlout,"%s%10.2f\n","  CompIdx     = ",*CompIdxptr );
   fprintf(mdlout,"%s%10.2f\n","  surface hght= ",fsetheight  );
-  delete  HiFDBptr,LgFDBptr,aeFDBptr,BOAFDBptr;
+  delete  HiFuzzysetDescriptorptr,LgFuzzysetDescriptorptr,aeFuzzysetDescriptorptr,BOAFuzzysetDescriptorptr;
   return(BOAmt);
  }

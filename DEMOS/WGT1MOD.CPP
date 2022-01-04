@@ -16,12 +16,12 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
-#include <fdb.hpp>       // The Fuzzy Set descriptor
+#include <FuzzysetDescriptor.hpp>       // The Fuzzy Set descriptor
 #include "XFZYctl.hpp"   // The fuzzy parallel processor work area
 #include <XSYSctl.hpp>   // The System control region
-#include   <mtypes.hpp>    // System constants and symbolics
+#include   <SystemTypes.hpp>    // System constants and symbolics
 #include   <fuzzy.hpp>     // Fuzzy Logic constants and symbolics
-#include <mtsptype.hpp>  // Function prototypes
+#include <SystemPrototypes.hpp>  // Function prototypes
 //
 //--These are the "logical" rules. In the high level fuzzy modelling
 //--system we would enter these rules exactly as shown.
@@ -33,9 +33,9 @@ static const Rulemax=1;
 //
 double Weight1Model(double Height,float *PremiseTruth,int *statusPtr)
  {
-  FDB     *TallFDBptr,
-          *WeightFDBptr,
-          *HeavyFDBptr;
+  FuzzysetDescriptor     *TallFuzzysetDescriptorptr,
+          *WeightFuzzysetDescriptorptr,
+          *HeavyFuzzysetDescriptorptr;
   char    *PgmId="Weight1";
   int      i,
            status,
@@ -61,12 +61,12 @@ fputc('\n',mdlout);
 //--Create the basic fuzzy sets (Hi and Low for Weight)
   Domain[0]=5.0;
   Domain[1]=6.5;
-  TallFDBptr=FzyCreateSet("TALL",INCREASE,Domain,Parms,0,statusPtr);
-  FzyDrawSet(TallFDBptr,SYSMODFILE,statusPtr);
+  TallFuzzysetDescriptorptr=FzyCreateSet("TALL",INCREASE,Domain,Parms,0,statusPtr);
+  FzyDrawSet(TallFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Domain[0]=150;
   Domain[1]=240;
-  HeavyFDBptr=FzyCreateSet("HEAVY",GROWTH,Domain,Parms,0,statusPtr);
-  FzyDrawSet(HeavyFDBptr,SYSMODFILE,statusPtr);
+  HeavyFuzzysetDescriptorptr=FzyCreateSet("HEAVY",GROWTH,Domain,Parms,0,statusPtr);
+  FzyDrawSet(HeavyFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //
 //-----------B E G I N    M O D E L    P R O C E S S I N G-------------
 //
@@ -74,14 +74,14 @@ fputc('\n',mdlout);
 //--Rule 1. If Height is TALL then Weight is HEAVY;
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
   Weight=FzyMonotonicLogic(
-     TallFDBptr,HeavyFDBptr,Height,PremiseTruth,statusPtr);
+     TallFuzzysetDescriptorptr,HeavyFuzzysetDescriptorptr,Height,PremiseTruth,statusPtr);
   fprintf(mdlout,"%s\n","Model Solution:");
   fprintf(mdlout,"%s%10.2f\n","  Height       = ",Height       );
   fprintf(mdlout,"%s%10.2f\n","  Weight       = ",Weight       );
   fprintf(mdlout,"%s%10.6f\n","  Truth Grade = ",*PremiseTruth );
   for(i=0;i<VECMAX;i++)
-   if(HeavyFDBptr->FDBvector[i]>*PremiseTruth)
-         HeavyFDBptr->FDBvector[i]=*PremiseTruth;
-  FzyDrawSet(HeavyFDBptr,SYSMODFILE,statusPtr);
+   if(HeavyFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>*PremiseTruth)
+         HeavyFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=*PremiseTruth;
+  FzyDrawSet(HeavyFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   return(Weight);
  }

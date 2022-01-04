@@ -9,11 +9,11 @@
 #define PLOTCOLS   70
 #include <stdio.h>
 #include <string.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-void FzyDrawSet(FDB *FDBptr,int Medium,int *statusPtr)
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+void FzyDrawSet(FuzzysetDescriptor *FuzzysetDescriptorptr,int Medium,int *statusPtr)
   {
     char        WkArea[PLOTROWS][PLOTCOLS+1];
     int         i,j,k,Sidx,PltHgt,N,HorzPos,VertPos;
@@ -27,8 +27,8 @@ void FzyDrawSet(FDB *FDBptr,int Medium,int *statusPtr)
 
     *statusPtr=0;
     outfp=MtsGetSystemFile(Medium);
-    Domain[0]=FDBptr->FDBdomain[0];
-    Domain[1]=FDBptr->FDBdomain[1];
+    Domain[0]=FuzzysetDescriptorptr->FuzzysetDescriptordomain[0];
+    Domain[1]=FuzzysetDescriptorptr->FuzzysetDescriptordomain[1];
 //--Blank out the plot area and then put a string terminator
 //--at the end of each row. This is used in the fprint output.
     for(i=0;i<26;i++)
@@ -40,7 +40,7 @@ void FzyDrawSet(FDB *FDBptr,int Medium,int *statusPtr)
     Sidx=ScalingFactor[ScalingIdx];
     for(k=0;k<VECMAX;k+=ScaleCtl)
       {
-       VertPos=(int)(Sidx*(FDBptr->FDBvector[k]+NUDGE));
+       VertPos=(int)(Sidx*(FuzzysetDescriptorptr->FuzzysetDescriptorvector[k]+NUDGE));
        HorzPos= k / ScaleCtl;
        if((VertPos+1>=0)&&(VertPos+1<PLOTROWS))
             WkArea[VertPos+1][HorzPos]=Symbol;
@@ -48,8 +48,8 @@ void FzyDrawSet(FDB *FDBptr,int Medium,int *statusPtr)
 //--Now we write out the plot area
     fputc('\f',outfp);
     fputc('\n',outfp);
-    fprintf(outfp,"%s%s\n","        FuzzySet:    ",FDBptr->FDBid);
-    fprintf(outfp,"%s%s\n","        Description: ",FDBptr->FDBdesc);
+    fprintf(outfp,"%s%s\n","        FuzzySet:    ",FuzzysetDescriptorptr->FuzzysetDescriptorid);
+    fprintf(outfp,"%s%s\n","        Description: ",FuzzysetDescriptorptr->FuzzysetDescriptordesc);
     PltHgt=PlotHeight[ScalingIdx];
     for(N=PltHgt,i=0;i<PltHgt;i++,--N)
       {
@@ -66,9 +66,9 @@ void FzyDrawSet(FDB *FDBptr,int Medium,int *statusPtr)
     fputc('\n', outfp);
     fprintf(outfp,
       "%s%10.2f%s%10.2f\n", "        Domained:   ",
-         FDBptr->FDBdomain[0]," to ",FDBptr->FDBdomain[1]);
-    if(FDBptr->FDBalfacut>0)
+         FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]," to ",FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]);
+    if(FuzzysetDescriptorptr->FuzzysetDescriptoralfacut>0)
       fprintf(outfp,
-       "%s%10.2f\n",        "         AlphaCut:   ",FDBptr->FDBalfacut);
+       "%s%10.2f\n",        "         AlphaCut:   ",FuzzysetDescriptorptr->FuzzysetDescriptoralfacut);
     fputc('\n',outfp);
   }

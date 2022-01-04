@@ -13,14 +13,14 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
-#include <fdb.hpp>       // The Fuzzy Set descriptor
-#include "VDB.hpp"       // A Variable descriptor
+#include <FuzzysetDescriptor.hpp>       // The Fuzzy Set descriptor
+#include "VariableDescriptor.hpp"       // A Variable descriptor
 #include "XFZYctl.hpp"   // The fuzzy parallel processor work area
 #include <XSYSctl.hpp>   // The System control region
-#include   <mtypes.hpp>    // System constants and symbolics
+#include   <SystemTypes.hpp>    // System constants and symbolics
 #include   <fuzzy.hpp>     // Fuzzy Logic constants and symbolics
 #include "mdltypes.hpp"
-#include <mtsptype.hpp>  // Function prototypes
+#include <SystemPrototypes.hpp>  // Function prototypes
 //
 static const char *Rules[]=
  {
@@ -33,13 +33,13 @@ static const Rulemax=2;
 double InvModel2(
   double Orders,double prevOrders,float *CIXval,int *statusPtr)
  {
-  FDB     *HiFDBptr,
-          *SmFDBptr,
-          *LgFDBptr,
-          *CgFDBptr,
-          *aeFDBptr,
-          *BOAmtFDBptr;
-  VDB     *VDBptr;
+  FuzzysetDescriptor     *HiFuzzysetDescriptorptr,
+          *SmFuzzysetDescriptorptr,
+          *LgFuzzysetDescriptorptr,
+          *CgFuzzysetDescriptorptr,
+          *aeFuzzysetDescriptorptr,
+          *BOAmtFuzzysetDescriptorptr;
+  VariableDescriptor     *VariableDescriptorptr;
   FSV     *FSVptr;
   char    *PgmId="invpol1";
   int      i,
@@ -82,41 +82,41 @@ fputc('\n',mdlout);
 //--and add it to the fuzzy control region.
   Domain[0]=0;
   Domain[1]=300;
-  VDBptr=VarCreateScalar("BOAmt",REAL,Domain,"0",statusPtr);
+  VariableDescriptorptr=VarCreateScalar("BOAmt",REAL,Domain,"0",statusPtr);
   FzyInitFZYctl(statusPtr);
-  if(!(FzyAddFZYctl(VDBptr,&BOAmtFDBptr,&FSVptr,statusPtr)))
+  if(!(FzyAddFZYctl(VariableDescriptorptr,&BOAmtFuzzysetDescriptorptr,&FSVptr,statusPtr)))
     {
      *statusPtr=1;
      MtsSendError(12,PgmId,"BOAmt");
      return(NoBOAmt);
     }
-  strcpy(BOAmtFDBptr->FDBdesc,"Under-Generation Fuzzy Region");
+  strcpy(BOAmtFuzzysetDescriptorptr->FuzzysetDescriptordesc,"Under-Generation Fuzzy Region");
   thisCorrMethod  =FSVptr->FzySVimplMethod;
   thisDefuzzMethod=FSVptr->FzySVdefuzzMethod;
 //
 //--Hi Orders Fuzzy set
   Domain[0]=90;
   Domain[1]=350;
-  HiFDBptr=FzyCreateSet("HIGH.ORDERS",INCREASE,Domain,Parms,0,statusPtr);
-  FzyDrawSet(HiFDBptr,SYSMODFILE,statusPtr);
+  HiFuzzysetDescriptorptr=FzyCreateSet("HIGH.ORDERS",INCREASE,Domain,Parms,0,statusPtr);
+  FzyDrawSet(HiFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //--Large BOAmt fuzzy set
   Domain[0]=0;
   Domain[1]=300;
-  LgFDBptr=FzyCreateSet("LARGE.BOAmt",  GROWTH,Domain,Parms,0,statusPtr);
-  SmFDBptr=FzyCreateSet("SMALL.ORDERS", DECLINE,Domain,Parms,0,statusPtr);
-  FzyDrawSet(LgFDBptr,SYSMODFILE,statusPtr);
+  LgFuzzysetDescriptorptr=FzyCreateSet("LARGE.BOAmt",  GROWTH,Domain,Parms,0,statusPtr);
+  SmFuzzysetDescriptorptr=FzyCreateSet("SMALL.ORDERS", DECLINE,Domain,Parms,0,statusPtr);
+  FzyDrawSet(LgFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //--Small Change in Orders
   Domain[0]=prevOrders;
   Domain[1]=Orders*2;
-  CgFDBptr=FzyCreateSet("LOW.CHANGE", INCREASE,Domain,Parms,0,statusPtr);
-  FzyDrawSet(LgFDBptr,SYSMODFILE,statusPtr);
+  CgFuzzysetDescriptorptr=FzyCreateSet("LOW.CHANGE", INCREASE,Domain,Parms,0,statusPtr);
+  FzyDrawSet(LgFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //--Around the ERP
   Domain[0]=0;
   Domain[1]=300;
   Parms[0]=ERP;
   Parms[1]=ERP*.30;
-  aeFDBptr=FzyCreateSet("AROUND.ERP", PI    ,Domain,Parms,2,statusPtr);
-  FzyDrawSet(aeFDBptr,SYSMODFILE,statusPtr);
+  aeFuzzysetDescriptorptr=FzyCreateSet("AROUND.ERP", PI    ,Domain,Parms,2,statusPtr);
+  FzyDrawSet(aeFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //
 //-----------B E G I N    M O D E L    P R O C E S S I N G-------------
 //
@@ -124,38 +124,38 @@ fputc('\n',mdlout);
 
 // Rule 1--BackorderAmt must be near ERP
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
-  FzyUnCondProposition(aeFDBptr,FSVptr);
+  FzyUnCondProposition(aeFuzzysetDescriptorptr,FSVptr);
   ruletruth[Rulecnt]=1.00;
-  FzyDrawSet(BOAmtFDBptr,SYSMODFILE,statusPtr);
+  FzyDrawSet(BOAmtFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Rulecnt++;
 // Rule 2--if orders are high then backorderAmt must be large
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
-  PremiseTruth=FzyGetMembership(HiFDBptr,Orders,&Idxpos,statusPtr);
+  PremiseTruth=FzyGetMembership(HiFuzzysetDescriptorptr,Orders,&Idxpos,statusPtr);
   fprintf(mdlout,"%s%10.2f\n","PremiseTruth= ",PremiseTruth);
   FzyCondProposition(
-       LgFDBptr,FSVptr,thisCorrMethod,PremiseTruth,statusPtr);
+       LgFuzzysetDescriptorptr,FSVptr,thisCorrMethod,PremiseTruth,statusPtr);
   ruletruth[Rulecnt]=PremiseTruth;
-  FzyDrawSet(BOAmtFDBptr,SYSMODFILE,statusPtr);
+  FzyDrawSet(BOAmtFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Rulecnt++;
 // R3--if orders[t]-orders[t-1] are small then BOAmt should be low
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
-  PremiseTruth=FzyGetMembership(CgFDBptr,DeltaOrders,&Idxpos,statusPtr);
+  PremiseTruth=FzyGetMembership(CgFuzzysetDescriptorptr,DeltaOrders,&Idxpos,statusPtr);
   fprintf(mdlout,"%s%10.2f\n","PremiseTruth= ",PremiseTruth);
   FzyCondProposition(
-       SmFDBptr,FSVptr,thisCorrMethod,PremiseTruth,statusPtr);
+       SmFuzzysetDescriptorptr,FSVptr,thisCorrMethod,PremiseTruth,statusPtr);
   ruletruth[Rulecnt]=PremiseTruth;
-  FzyDrawSet(BOAmtFDBptr,SYSMODFILE,statusPtr);
+  FzyDrawSet(BOAmtFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Rulecnt++;
 //
 
   printf("..Defuzzifying Result:\n");
-  strcpy(BOAmtFDBptr->FDBdesc,"FINAL Financial Risk Tolerance");
+  strcpy(BOAmtFuzzysetDescriptorptr->FuzzysetDescriptordesc,"FINAL Financial Risk Tolerance");
   printf("....Examining Defuzzification Strategies\n");
   dfuzzIX=0;
   for(i=0;i<MaxDefuzz;i++)
    {
     BOAmt[i]=FzyDefuzzify(
-       BOAmtFDBptr,DefuzzMethods[i],CIXval,statusPtr);
+       BOAmtFuzzysetDescriptorptr,DefuzzMethods[i],CIXval,statusPtr);
     BOAmtCIX[i]=*CIXval;
     if(thisDefuzzMethod==DefuzzMethods[i]) dfuzzIX=i;
    }
@@ -173,7 +173,7 @@ fputc('\n',mdlout);
   fprintf(mdlout,"%s\n",     "       ------");
   fprintf(mdlout,"%s%7.4f\n","      ",avgTruth);
   fputc('\n',mdlout);
-  fsetheight=FzyGetHeight(BOAmtFDBptr);
+  fsetheight=FzyGetHeight(BOAmtFuzzysetDescriptorptr);
   fprintf(mdlout,"%s\n","-----------------------------------------");
   fprintf(mdlout,"%s\n","Model Solution:");
   for(i=0;i<MaxDefuzz;i++)
@@ -186,7 +186,7 @@ fputc('\n',mdlout);
   fprintf(mdlout,"%s%10.2f\n",  "SurfaceHght  : ",fsetheight  );
 //
   FzyCloseFZYctl(statusPtr);
-  delete  HiFDBptr,LgFDBptr,aeFDBptr,BOAmtFDBptr;
+  delete  HiFuzzysetDescriptorptr,LgFuzzysetDescriptorptr,aeFuzzysetDescriptorptr,BOAmtFuzzysetDescriptorptr;
   printf("....Selecting BEST Defuzzification Strategy\n");
   *CIXval=BOAmtCIX[dfuzzIX];
   return(BOAmt[dfuzzIX]);

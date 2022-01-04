@@ -1,4 +1,4 @@
-//--fdb.hpp [EDC Rev 1.0 04/01/93]
+//--FuzzysetDescriptor.hpp [EDC Rev 1.0 04/01/93]
 //--------------------------------------------------------------
 
 //--------------------------------------------------------------
@@ -12,15 +12,15 @@
 
 struct FuzzysetDescriptor
   {
-    char        FDBid[IDENLEN+1],    /* Identifier name of Fuzzyset  */
-                FDBdesc[DESCLEN+1];  /* Description of Fuzzyset      */
-    Ctlswitch   FDBgentype;          /* Generator Set type   CPP        */
-    bool        FDBempty;            /* Is this a populated Fuzzyset?*/
-    int         FDBorder;            /* Order of fuzzy set           */
-    domainval   FDBdomain[2],        /* Lo and Hi edges of the set   */
-                FDBparms[4];         /* Generation parameters        */
-    float       FDBalfacut;          /* AlfaCut for this fuzzy set   */
-    truthfunc   FDBvector;           /* The fuzzy set truth vector   */
-    FuzzysetDescriptor        *FDBnext;             /* Pointer to next fuzzyset     */
+    char        FuzzysetDescriptorid[IDENLEN+1],    /* Identifier name of Fuzzyset  */
+                FuzzysetDescriptordesc[DESCLEN+1];  /* Description of Fuzzyset      */
+    Ctlswitch   FuzzysetDescriptorgentype;          /* Generator Set type   CPP        */
+    bool        FuzzysetDescriptorempty;            /* Is this a populated Fuzzyset?*/
+    int         FuzzysetDescriptororder;            /* Order of fuzzy set           */
+    domainval   FuzzysetDescriptordomain[2],        /* Lo and Hi edges of the set   */
+                FuzzysetDescriptorparms[4];         /* Generation parameters        */
+    float       FuzzysetDescriptoralfacut;          /* AlfaCut for this fuzzy set   */
+    truthfunc   FuzzysetDescriptorvector;           /* The fuzzy set truth vector   */
+    FuzzysetDescriptor        *FuzzysetDescriptornext;             /* Pointer to next fuzzyset     */
   };
 #endif

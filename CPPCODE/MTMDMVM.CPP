@@ -18,8 +18,8 @@
 #include "MDB.hpp"
 #include <PDB.hpp>
 #include <XSYSctl.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 ModelDescription *MdlMakeVirtualModel(
    char *Modelid,char *Modeldesc,
     char *Policyid,PDB **PDBptr,int *statusPtr)

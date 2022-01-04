@@ -12,8 +12,8 @@
 #include <direct.h>
 #include <XSYSctl.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void MdlConnecttoFMS(int *statusPtr)
   {
     int     i,cwditems,maxParts=8;

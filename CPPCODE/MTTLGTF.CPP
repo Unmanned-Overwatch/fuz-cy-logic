@@ -16,7 +16,7 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <XSYSctl.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 FILE *MtsGetSystemFile(int FileType)
  {
   switch(FileType)

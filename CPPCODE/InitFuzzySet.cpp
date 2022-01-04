@@ -15,24 +15,24 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <string.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include <XSYSctl.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 #include   <fuzzy.hpp>
-void FzyInitFDB(FDB* FDBptr)
+void FzyInitFuzzysetDescriptor(FuzzysetDescriptor* FuzzysetDescriptorptr)
   {
    int i;
-   memset(FDBptr->FDBid,  '\0',IDENLEN);
-   memset(FDBptr->FDBdesc,'\0',DESCLEN);
-   FDBptr->FDBgentype     = 0;
-   FDBptr->FDBempty       = TRUE;
-   FDBptr->FDBorder       = 1;
-   FDBptr->FDBdomain[0]   = 0;
-   FDBptr->FDBdomain[1]   = 0;
-   FDBptr->FDBalfacut     = XSYSctl.XSYSalfacut;
-   for(i=0;i<PARMMAX;i++) FDBptr->FDBparms[i] =0.0;
-   for(i=0;i<VECMAX; i++) FDBptr->FDBvector[i]=0.0;
-   FDBptr->FDBnext=NULL;
+   memset(FuzzysetDescriptorptr->FuzzysetDescriptorid,  '\0',IDENLEN);
+   memset(FuzzysetDescriptorptr->FuzzysetDescriptordesc,'\0',DESCLEN);
+   FuzzysetDescriptorptr->FuzzysetDescriptorgentype     = 0;
+   FuzzysetDescriptorptr->FuzzysetDescriptorempty       = TRUE;
+   FuzzysetDescriptorptr->FuzzysetDescriptororder       = 1;
+   FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]   = 0;
+   FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]   = 0;
+   FuzzysetDescriptorptr->FuzzysetDescriptoralfacut     = XSYSctl.XSYSalfacut;
+   for(i=0;i<PARMMAX;i++) FuzzysetDescriptorptr->FuzzysetDescriptorparms[i] =0.0;
+   for(i=0;i<VECMAX; i++) FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=0.0;
+   FuzzysetDescriptorptr->FuzzysetDescriptornext=NULL;
    return;
   }
 

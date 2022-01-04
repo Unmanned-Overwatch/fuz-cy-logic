@@ -13,9 +13,9 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-void FzyIsolatePDR(FDB *FDBptr)
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+void FzyIsolatePDR(FuzzysetDescriptor *FuzzysetDescriptorptr)
  {
   //--limit the non-zero region of the fuzzy truth membership array
   //--to those cells that exceed the minimum possibility density for

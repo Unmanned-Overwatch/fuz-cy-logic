@@ -25,16 +25,16 @@
 #define FDpathLEN     81
 #define LINEmax     2047
 #define VECMAX       257
-#define VDBmax       191
+#define VariableDescriptormax       191
 #define PDBmax        31
-#define FDBmax        31
+#define FuzzysetDescriptormax        31
 #define HDBmax        31
 #define NDBmax        31
 #define MDBmax         4
 //--Max extents for arrays of model types
-#define FDBvecmax      8
+#define FuzzysetDescriptorvecmax      8
 #define HDBvecmax      8
-#define VDBvecmax      8
+#define VariableDescriptorvecmax      8
 //---Type definitions for basic system
 typedef int             Ctlswitch;
 typedef unsigned char   byte;

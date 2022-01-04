@@ -11,33 +11,33 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <math.h>
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 float FzyGetMembership(
-   FDB *FDBptr,double Scalar,int *VecPosptr,int *statusPtr)
+   FuzzysetDescriptor *FuzzysetDescriptorptr,double Scalar,int *VecPosptr,int *statusPtr)
  {
    double  Lo,Hi,Range;
    float   Alfacut,memgrade;
 
    *statusPtr=0;
-   Alfacut=FDBptr->FDBalfacut;
-   Lo=FDBptr->FDBdomain[0];
-   Hi=FDBptr->FDBdomain[1];
+   Alfacut=FuzzysetDescriptorptr->FuzzysetDescriptoralfacut;
+   Lo=FuzzysetDescriptorptr->FuzzysetDescriptordomain[0];
+   Hi=FuzzysetDescriptorptr->FuzzysetDescriptordomain[1];
 //--Now check that the scalar values is within the computational
 //--domain of the fuzzy set. If it lies before or after the domain
 //--boundaries we return the truth at these extremis points.
    if(Scalar<Lo)
      {
       *VecPosptr=0;
-      memgrade=(float)(fabs(FDBptr->FDBvector[0]));
+      memgrade=(float)(fabs(FuzzysetDescriptorptr->FuzzysetDescriptorvector[0]));
       if(memgrade<Alfacut) memgrade=0;
       return(memgrade);
      }
    if(Scalar>Hi)
      {
       *VecPosptr=VECMAX-1;
-      memgrade=FDBptr->FDBvector[VECMAX-1];
+      memgrade=FuzzysetDescriptorptr->FuzzysetDescriptorvector[VECMAX-1];
       if(memgrade<Alfacut) memgrade=0;
       return(memgrade);
      }
@@ -48,7 +48,7 @@ float FzyGetMembership(
       return(0);
      }
    *VecPosptr=(int)(((Scalar-Lo)/Range)*(VECMAX-1));
-   memgrade=(float)(fabs(FDBptr->FDBvector[*VecPosptr]));
+   memgrade=(float)(fabs(FuzzysetDescriptorptr->FuzzysetDescriptorvector[*VecPosptr]));
    if(memgrade<Alfacut) memgrade=0;
    return(memgrade);
  }

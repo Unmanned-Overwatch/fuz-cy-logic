@@ -8,11 +8,11 @@
 | setting that cell to the truth. All other cells are set to  |
 | minus one (-1). We then simply call the series expander.    |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void FzyCoordSeries(
-  FDB* FDBptr,
+  FuzzysetDescriptor* FuzzysetDescriptorptr,
    double Scalars[],float Grades[],const int ValCnt,int *statusPtr)
   {
    int     i,Cellpos;
@@ -21,8 +21,8 @@ void FzyCoordSeries(
    bool    Normalset;
 
    *statusPtr=0;
-   Hi=FDBptr->FDBdomain[1];
-   Lo=FDBptr->FDBdomain[0];
+   Hi=FuzzysetDescriptorptr->FuzzysetDescriptordomain[1];
+   Lo=FuzzysetDescriptorptr->FuzzysetDescriptordomain[0];
    Range=Hi-Lo;
    Normalset=FALSE;
    FzyInitVector(tempVector,VECMAX,MINUSONE);
@@ -36,7 +36,7 @@ void FzyCoordSeries(
    if(tempVector[0]==-1) tempVector[0]=0.0;
    FzyInterpVec(tempVector,statusPtr);
 // if(*statusPtr!=0) return;
-   FzyCopyVector(FDBptr->FDBvector,tempVector,VECMAX);
-   if(Normalset==FALSE) FzyNormalizeSet(FDBptr);
+   FzyCopyVector(FuzzysetDescriptorptr->FuzzysetDescriptorvector,tempVector,VECMAX);
+   if(Normalset==FALSE) FzyNormalizeSet(FuzzysetDescriptorptr);
    return;
   }

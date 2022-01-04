@@ -16,12 +16,12 @@
 #include <string.h>
 #include <stddef.h>
 #include <PDB.hpp>
-#include "VDB.hpp"
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-void MdlRemoveVDB(char *Varid,PDB *PDBptr,int *statusPtr)
+#include "VariableDescriptor.hpp"
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+void MdlRemoveVariableDescriptor(char *Varid,PDB *PDBptr,int *statusPtr)
  {
-  VDB    *VDBptr,*VDBprevptr=NULL;
+  VariableDescriptor    *VariableDescriptorptr,*VariableDescriptorprevptr=NULL;
   char   *PgmId="mtmdrmf";
   long    slot;
 
@@ -29,38 +29,38 @@ void MdlRemoveVDB(char *Varid,PDB *PDBptr,int *statusPtr)
 //
 //--Now hash the variable name to get its slot location in
 //--the PDB's variable dictionary.
-  slot=MtsHashString(Varid,VDBmax);
-  if(slot<0||slot>VDBmax)
+  slot=MtsHashString(Varid,VariableDescriptormax);
+  if(slot<0||slot>VariableDescriptormax)
     {
      *statusPtr=1;
      MtsSendError(97,PgmId,Varid);
      return;
     }
 //
-//--Look at the VDB doctionary slot. If it's empty, then
+//--Look at the VariableDescriptor doctionary slot. If it's empty, then
 //--return a null pointer saying that the fuzzyset doesn't
 //--exist. Otherwise look through the remainder of the chain
 //--for the variable name until we come to the chain end.
   *statusPtr=3;
-  VDBptr=PDBptr->PDBvariables[slot];
-  if(VDBptr==NULL) return;
+  VariableDescriptorptr=PDBptr->PDBvariables[slot];
+  if(VariableDescriptorptr==NULL) return;
   for(;;)
     {
-     if(strcmp(VDBptr->VDBid,Varid)==0)
+     if(strcmp(VariableDescriptorptr->VariableDescriptorid,Varid)==0)
        {
         *statusPtr=0;
-        if(VDBprevptr==NULL)
+        if(VariableDescriptorprevptr==NULL)
           {
-           PDBptr->PDBvariables[slot]=VDBptr->VDBnext;
-           delete VDBptr;
+           PDBptr->PDBvariables[slot]=VariableDescriptorptr->VariableDescriptornext;
+           delete VariableDescriptorptr;
            return;
           }
-        VDBprevptr->VDBnext=VDBptr->VDBnext;
-        delete VDBptr;
+        VariableDescriptorprevptr->VariableDescriptornext=VariableDescriptorptr->VariableDescriptornext;
+        delete VariableDescriptorptr;
         return;
        }
-     VDBprevptr=VDBptr;
-     if(VDBptr->VDBnext==NULL) return;
-     VDBptr=VDBptr->VDBnext;
+     VariableDescriptorprevptr=VariableDescriptorptr;
+     if(VariableDescriptorptr->VariableDescriptornext==NULL) return;
+     VariableDescriptorptr=VariableDescriptorptr->VariableDescriptornext;
     }
  }

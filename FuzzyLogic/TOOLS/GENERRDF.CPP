@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 #define RECSIZE 80
 static char inrec[RECSIZE+1],outrec[RECSIZE+1];
 static char fpPath  [_MAX_PATH];

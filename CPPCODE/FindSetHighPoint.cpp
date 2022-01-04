@@ -13,17 +13,17 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include   <fuzzy.hpp>
-#include <fdb.hpp>
-int FzyGetHighPoint(FDB* FDBptr,float *height)
+#include <FuzzysetDescriptor.hpp>
+int FzyGetHighPoint(FuzzysetDescriptor* FuzzysetDescriptorptr,float *height)
   {
    int i,hipoint;
    *height=0;
-   float max_memval=FDBptr->FDBvector[0];
+   float max_memval=FuzzysetDescriptorptr->FuzzysetDescriptorvector[0];
    hipoint         =0;
    for(i=0;i<VECMAX;i++)
-      if(FDBptr->FDBvector[i]>max_memval)
+      if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>max_memval)
         {
-          max_memval=FDBptr->FDBvector[i];
+          max_memval=FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
           hipoint=i;
         }
    *height=hipoint;

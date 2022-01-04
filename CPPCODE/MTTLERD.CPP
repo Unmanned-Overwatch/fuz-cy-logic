@@ -18,8 +18,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <XSYSctl.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 #define RECSIZE    80
 static char ErrorRecord[RECSIZE];
 void MtsSendError(int ErrMsgNo,const char *Pgmid,const char *AnyToken)

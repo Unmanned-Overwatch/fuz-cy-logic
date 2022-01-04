@@ -14,8 +14,8 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void MtsSendWarning(
    char *MsgId,char Severity,char *WrngText,int *statusPtr)
   {

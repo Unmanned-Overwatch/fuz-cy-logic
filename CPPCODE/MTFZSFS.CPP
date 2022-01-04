@@ -13,33 +13,33 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <math.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void FzyShoulderedCurve(
-   FDB* FDBptr,int CurveType,double Edge,double Floor,int *statusPtr)
+   FuzzysetDescriptor* FuzzysetDescriptorptr,int CurveType,double Edge,double Floor,int *statusPtr)
   {
    int     TrgCnt=3;
    char   *PgmId="mtfzsfs";
    double  TrgPoint[5];
    float   TrgGrade[5];
 
-   if((Edge<FDBptr->FDBdomain[0])||(Edge>FDBptr->FDBdomain[1]))
+   if((Edge<FuzzysetDescriptorptr->FuzzysetDescriptordomain[0])||(Edge>FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]))
      {
       *statusPtr=3;
-      MtsSendError(56,PgmId,FDBptr->FDBid);
+      MtsSendError(56,PgmId,FuzzysetDescriptorptr->FuzzysetDescriptorid);
       return;
      }
-   if((Floor<FDBptr->FDBdomain[0])||(Floor>FDBptr->FDBdomain[1]))
+   if((Floor<FuzzysetDescriptorptr->FuzzysetDescriptordomain[0])||(Floor>FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]))
      {
       *statusPtr=3;
-      MtsSendError(56,PgmId,FDBptr->FDBid);
+      MtsSendError(56,PgmId,FuzzysetDescriptorptr->FuzzysetDescriptorid);
       return;
      }
    if(CurveType==LEFTSHOULDER)
      {
-      TrgPoint[0]=FDBptr->FDBdomain[0];
+      TrgPoint[0]=FuzzysetDescriptorptr->FuzzysetDescriptordomain[0];
       TrgGrade[0]=1.0;
 
       TrgPoint[1]=Edge;
@@ -56,12 +56,12 @@ void FzyShoulderedCurve(
       TrgPoint[1]=Edge;
       TrgGrade[1]=1.0;
 
-      TrgPoint[2]=FDBptr->FDBdomain[1];
+      TrgPoint[2]=FuzzysetDescriptorptr->FuzzysetDescriptordomain[1];
       TrgGrade[2]=1.0;
      }
-   FzyCoordSeries(FDBptr,TrgPoint,TrgGrade,TrgCnt,statusPtr);
-   FDBptr->FDBgentype=CurveType;
-   FDBptr->FDBparms[0]=Edge;
-   FDBptr->FDBparms[1]=Floor;
+   FzyCoordSeries(FuzzysetDescriptorptr,TrgPoint,TrgGrade,TrgCnt,statusPtr);
+   FuzzysetDescriptorptr->FuzzysetDescriptorgentype=CurveType;
+   FuzzysetDescriptorptr->FuzzysetDescriptorparms[0]=Edge;
+   FuzzysetDescriptorptr->FuzzysetDescriptorparms[1]=Floor;
    return;
   }

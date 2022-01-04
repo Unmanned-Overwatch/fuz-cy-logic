@@ -13,16 +13,16 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include <HDB.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 #include   <fuzzy.hpp>
 //
 //--Access routines for the Fuzzy set Class structure
 //
-char*  FzySetId(const FDB* FDBptr)        {return((char*)FDBptr->FDBid);}
-char*  FzySetDesc(const FDB* FDBptr)      {return((char*)FDBptr->FDBdesc);}
-char*  FzySetGenDesc(const FDB *FDBptr)
+char*  FzySetId(const FuzzysetDescriptor* FuzzysetDescriptorptr)        {return((char*)FuzzysetDescriptorptr->FuzzysetDescriptorid);}
+char*  FzySetDesc(const FuzzysetDescriptor* FuzzysetDescriptorptr)      {return((char*)FuzzysetDescriptorptr->FuzzysetDescriptordesc);}
+char*  FzySetGenDesc(const FuzzysetDescriptor *FuzzysetDescriptorptr)
   {
    char *Curves[]=
     {
@@ -41,23 +41,23 @@ char*  FzySetGenDesc(const FDB *FDBptr)
      "gaussian curve",
      "triangle curve"
     };
-   return(Curves[FDBptr->FDBgentype]);
+   return(Curves[FuzzysetDescriptorptr->FuzzysetDescriptorgentype]);
   }
-int    FzySetGentype(const FDB* FDBptr)   {return(FDBptr->FDBgentype);}
-bool   FzySetIsEmpty(const FDB* FDBptr)   {return(FDBptr->FDBempty);}
-int    FzySetOrder(const FDB* FDBptr)     {return(FDBptr->FDBorder);}
-double FzySetLeftEdge(const FDB* FDBptr)  {return(FDBptr->FDBdomain[0]);}
-double FzySetRightEdge(const FDB* FDBptr) {return(FDBptr->FDBdomain[1]);}
-float  FzySetAlfaCut(const FDB* FDBptr)   {return(FDBptr->FDBalfacut);}
-float  FzySetTruth(const FDB* FDBptr,const int i,int *status)
+int    FzySetGentype(const FuzzysetDescriptor* FuzzysetDescriptorptr)   {return(FuzzysetDescriptorptr->FuzzysetDescriptorgentype);}
+bool   FzySetIsEmpty(const FuzzysetDescriptor* FuzzysetDescriptorptr)   {return(FuzzysetDescriptorptr->FuzzysetDescriptorempty);}
+int    FzySetOrder(const FuzzysetDescriptor* FuzzysetDescriptorptr)     {return(FuzzysetDescriptorptr->FuzzysetDescriptororder);}
+double FzySetLeftEdge(const FuzzysetDescriptor* FuzzysetDescriptorptr)  {return(FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]);}
+double FzySetRightEdge(const FuzzysetDescriptor* FuzzysetDescriptorptr) {return(FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]);}
+float  FzySetAlfaCut(const FuzzysetDescriptor* FuzzysetDescriptorptr)   {return(FuzzysetDescriptorptr->FuzzysetDescriptoralfacut);}
+float  FzySetTruth(const FuzzysetDescriptor* FuzzysetDescriptorptr,const int i,int *status)
   {
    *status=0;
    if(i<0||i>VECMAX) {*status=1;return((float)0);}
-   return(FDBptr->FDBvector[i]);
+   return(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]);
   }
-void   FzySetGetTruthVec(const FDB *FDBptr,double TruthVec[])
+void   FzySetGetTruthVec(const FuzzysetDescriptor *FuzzysetDescriptorptr,double TruthVec[])
   {
-    for(int i=0;i<VECMAX;i++) TruthVec[i]=FDBptr->FDBvector[i];
+    for(int i=0;i<VECMAX;i++) TruthVec[i]=FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
     return;
   }
 //

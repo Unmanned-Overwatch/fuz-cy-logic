@@ -8,30 +8,30 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <string.h>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 #include   <fuzzy.hpp>
-#include <fdb.hpp>
-#include <mtsptype.hpp>
-void FzyCopySet(const FDB* inFDBptr,FDB* outFDBptr,int *statusPtr)
+#include <FuzzysetDescriptor.hpp>
+#include <SystemPrototypes.hpp>
+void FzyCopySet(const FuzzysetDescriptor* inFuzzysetDescriptorptr,FuzzysetDescriptor* outFuzzysetDescriptorptr,int *statusPtr)
   {
     int i;
     FILE *mdllog;
 
     *statusPtr=0;
     mdllog=MtsGetSystemFile(SYSMODFILE);    // Get default model log file
-    strcpy(outFDBptr->FDBid,inFDBptr->FDBid);
-    strcpy(outFDBptr->FDBdesc,inFDBptr->FDBdesc);
-    outFDBptr->FDBgentype     =inFDBptr->FDBgentype;
-    outFDBptr->FDBempty       =inFDBptr->FDBempty;
-    outFDBptr->FDBorder       =inFDBptr->FDBorder;
-    outFDBptr->FDBdomain[0]   =inFDBptr->FDBdomain[0];
-    outFDBptr->FDBdomain[1]   =inFDBptr->FDBdomain[1];
-    outFDBptr->FDBalfacut     =inFDBptr->FDBalfacut;
-    for(i=0;i<PARMMAX;i++) outFDBptr->FDBparms[i] =inFDBptr->FDBparms[i];
-    for(i=0;i<VECMAX; i++) outFDBptr->FDBvector[i]=inFDBptr->FDBvector[i];
-    outFDBptr->FDBnext=NULL;
+    strcpy(outFuzzysetDescriptorptr->FuzzysetDescriptorid,inFuzzysetDescriptorptr->FuzzysetDescriptorid);
+    strcpy(outFuzzysetDescriptorptr->FuzzysetDescriptordesc,inFuzzysetDescriptorptr->FuzzysetDescriptordesc);
+    outFuzzysetDescriptorptr->FuzzysetDescriptorgentype     =inFuzzysetDescriptorptr->FuzzysetDescriptorgentype;
+    outFuzzysetDescriptorptr->FuzzysetDescriptorempty       =inFuzzysetDescriptorptr->FuzzysetDescriptorempty;
+    outFuzzysetDescriptorptr->FuzzysetDescriptororder       =inFuzzysetDescriptorptr->FuzzysetDescriptororder;
+    outFuzzysetDescriptorptr->FuzzysetDescriptordomain[0]   =inFuzzysetDescriptorptr->FuzzysetDescriptordomain[0];
+    outFuzzysetDescriptorptr->FuzzysetDescriptordomain[1]   =inFuzzysetDescriptorptr->FuzzysetDescriptordomain[1];
+    outFuzzysetDescriptorptr->FuzzysetDescriptoralfacut     =inFuzzysetDescriptorptr->FuzzysetDescriptoralfacut;
+    for(i=0;i<PARMMAX;i++) outFuzzysetDescriptorptr->FuzzysetDescriptorparms[i] =inFuzzysetDescriptorptr->FuzzysetDescriptorparms[i];
+    for(i=0;i<VECMAX; i++) outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
+    outFuzzysetDescriptorptr->FuzzysetDescriptornext=NULL;
     fprintf(mdllog,"%s%s%s%s%s\n",
-     "OK. Fuzzy set '",inFDBptr->FDBid,
-       "' copied into Fuzzy set '",outFDBptr->FDBid,"'");
+     "OK. Fuzzy set '",inFuzzysetDescriptorptr->FuzzysetDescriptorid,
+       "' copied into Fuzzy set '",outFuzzysetDescriptorptr->FuzzysetDescriptorid,"'");
    return;
   }

@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 void MtsWritetoFile(
   char *outrec,int reclen,char *outputfn,char *fnMode,int *statusPtr)
  {

@@ -16,12 +16,12 @@
 #include <string.h>
 #include <stddef.h>
 #include <PDB.hpp>
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-void MdlRemoveFDB(char *Fzyid,PDB *PDBptr,int *statusPtr)
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+void MdlRemoveFuzzysetDescriptor(char *Fzyid,PDB *PDBptr,int *statusPtr)
  {
-  FDB    *FDBptr,*FDBprevptr=NULL;
+  FuzzysetDescriptor    *FuzzysetDescriptorptr,*FuzzysetDescriptorprevptr=NULL;
   char   *PgmId="mtmdrmf";
   long    slot;
 
@@ -29,38 +29,38 @@ void MdlRemoveFDB(char *Fzyid,PDB *PDBptr,int *statusPtr)
 //
 //--Now hash the fuzzy set name to get its slot location in
 //--the PDB's fuzzy set dictionary.
-  slot=MtsHashString(Fzyid,FDBmax);
-  if(slot<0||slot>FDBmax)
+  slot=MtsHashString(Fzyid,FuzzysetDescriptormax);
+  if(slot<0||slot>FuzzysetDescriptormax)
     {
      *statusPtr=1;
      MtsSendError(97,PgmId,Fzyid);
      return;
     }
 //
-//--Look at the fdb doctionary slot. If it's empty, then
+//--Look at the FuzzysetDescriptor doctionary slot. If it's empty, then
 //--return a null pointer saying that the fuzzyset doesn't
 //--exist. Otherwise look through the remainder of the chain
 //--for the fuzzy set name until we come to the chain end.
   *statusPtr=3;
-  FDBptr=PDBptr->PDBfuzzysets[slot];
-  if(FDBptr==NULL) return;
+  FuzzysetDescriptorptr=PDBptr->PDBfuzzysets[slot];
+  if(FuzzysetDescriptorptr==NULL) return;
   for(;;)
     {
-     if(strcmp(FDBptr->FDBid,Fzyid)==0)
+     if(strcmp(FuzzysetDescriptorptr->FuzzysetDescriptorid,Fzyid)==0)
        {
         *statusPtr=0;
-        if(FDBprevptr==NULL)
+        if(FuzzysetDescriptorprevptr==NULL)
           {
-           PDBptr->PDBfuzzysets[slot]=FDBptr->FDBnext;
-           delete FDBptr;
+           PDBptr->PDBfuzzysets[slot]=FuzzysetDescriptorptr->FuzzysetDescriptornext;
+           delete FuzzysetDescriptorptr;
            return;
           }
-        FDBprevptr->FDBnext=FDBptr->FDBnext;
-        delete FDBptr;
+        FuzzysetDescriptorprevptr->FuzzysetDescriptornext=FuzzysetDescriptorptr->FuzzysetDescriptornext;
+        delete FuzzysetDescriptorptr;
         return;
        }
-     FDBprevptr=FDBptr;
-     if(FDBptr->FDBnext==NULL) return;
-     FDBptr=FDBptr->FDBnext;
+     FuzzysetDescriptorprevptr=FuzzysetDescriptorptr;
+     if(FuzzysetDescriptorptr->FuzzysetDescriptornext==NULL) return;
+     FuzzysetDescriptorptr=FuzzysetDescriptorptr->FuzzysetDescriptornext;
     }
  }

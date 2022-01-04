@@ -18,8 +18,8 @@
 #include <stddef.h>
 #include "MDB.hpp"
 #include <XSYSctl.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void MdlLinkMDB(ModelDescription *MDBptr,bool ReqdLink,int *statusPtr)
  {
   ModelDescription    *wrkMDBptr;

@@ -11,21 +11,21 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <math.h>
-#include <fdb.hpp>
-#include   <mtypes.hpp>
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
 void FzyGaussianCurve(
-  FDB *FDBptr,double Center,double WFactor,int *statusPtr)
+  FuzzysetDescriptor *FuzzysetDescriptorptr,double Center,double WFactor,int *statusPtr)
  {
   int    i;
-  double dwidth=FDBptr->FDBdomain[1]-FDBptr->FDBdomain[0];
+  double dwidth=FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]-FuzzysetDescriptorptr->FuzzysetDescriptordomain[0];
   double thisScalar,GaussPt;
 
   *statusPtr=0;
   for(i=0;i<VECMAX;i++)
     {
-     thisScalar=FDBptr->FDBdomain[0]+(float)i/(VECMAX-1)*dwidth;
+     thisScalar=FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]+(float)i/(VECMAX-1)*dwidth;
      GaussPt=-WFactor*pow((Center-thisScalar),2);
-     FDBptr->FDBvector[i]=(float)pow(E,GaussPt);
+     FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)pow(E,GaussPt);
     }
   return;
  }

@@ -15,12 +15,12 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void FzyMemSeries(
-      FDB* FDBptr,float TruthSeries[],const int Scnt,int *statusPtr)
+      FuzzysetDescriptor* FuzzysetDescriptorptr,float TruthSeries[],const int Scnt,int *statusPtr)
    {
     bool   Normal;
     int    i,
@@ -45,6 +45,6 @@ void FzyMemSeries(
        }
     FzyInterpVec(TempVector,statusPtr);
     if(*statusPtr!=0) {*statusPtr=88;return;}
-    FzyCopyVector(FDBptr->FDBvector,TempVector,VECMAX);
+    FzyCopyVector(FuzzysetDescriptorptr->FuzzysetDescriptorvector,TempVector,VECMAX);
     return;
    }

@@ -52,7 +52,7 @@
       <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZGTS.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/GetScalar.CPP" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZHCR.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZHCR.CPP" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPPCODE/MTFZHDI.CPP" beforeDir="false" afterPath="$PROJECT_DIR$/CPPCODE/MTFZHDI.CPP" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HPPCODE/fdb.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/fdb.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HPPCODE/FuzzysetDescriptor.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/HPPCODE/FuzzysetDescriptor.hpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -185,7 +185,7 @@
         <option value="$PROJECT_DIR$/HPPCODE/PDB.hpp" />
         <option value="$PROJECT_DIR$/HPPCODE/RXB.hpp" />
         <option value="$PROJECT_DIR$/HPPCODE/SSYSCTL.HPP" />
-        <option value="$PROJECT_DIR$/HPPCODE/VDB.hpp" />
+        <option value="$PROJECT_DIR$/HPPCODE/VariableDescriptor.hpp" />
         <option value="$PROJECT_DIR$/HPPCODE/XSYSCTL.HPP" />
         <option value="$PROJECT_DIR$/CPPCODE/MTFZPLS.CPP" />
         <option value="$PROJECT_DIR$/CPPCODE/MTMDCTF.CPP" />
@@ -195,7 +195,7 @@
         <option value="$PROJECT_DIR$/CPPCODE/MTFZCFP.CPP" />
         <option value="$PROJECT_DIR$/CPPCODE/MTFZCOR.CPP" />
         <option value="$PROJECT_DIR$/CPPCODE/MTFZDFZ.CPP" />
-        <option value="$PROJECT_DIR$/HPPCODE/fdb.hpp" />
+        <option value="$PROJECT_DIR$/HPPCODE/FuzzysetDescriptor.hpp" />
         <option value="$PROJECT_DIR$/CPPCODE/MTFZEXS.CPP" />
         <option value="$PROJECT_DIR$/CPPCODE/MTFZFSC.CPP" />
         <option value="$PROJECT_DIR$/CPPCODE/MTFZHCR.CPP" />
@@ -368,7 +368,7 @@
     <entry file="file://$PROJECT_DIR$/HPPCODE/toknode.hpp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/VDB.hpp">
+    <entry file="file://$PROJECT_DIR$/HPPCODE/VariableDescriptor.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
@@ -567,7 +567,7 @@
     <entry file="file://$PROJECT_DIR$/CPPCODE/DisplayTruthVector.cpp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/HPPCODE/fdb.hpp">
+    <entry file="file://$PROJECT_DIR$/HPPCODE/FuzzysetDescriptor.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />

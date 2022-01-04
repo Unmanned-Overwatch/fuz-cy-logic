@@ -15,14 +15,14 @@
 #include <string.h>
 #include <stdio.h>
 #include <XFZYctl.hpp>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include <FSV.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 #include   <fuzzy.hpp>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 void FzyCloseFZYctl(int *statusPtr)
  {
-  FDB  *FDBptr;
+  FuzzysetDescriptor  *FuzzysetDescriptorptr;
   FSV  *FSVptr;
   int   i,status;
   char  wrkBuff[80];
@@ -33,13 +33,13 @@ void FzyCloseFZYctl(int *statusPtr)
       FSVptr=XFZYctl.XFZYoutvars[i];
       if(FSVptr!=NULL)
         {
-         FDBptr=FSVptr->FzySVfdbptr;
-         if(FDBptr!=NULL)
+         FuzzysetDescriptorptr=FSVptr->FzySVFuzzysetDescriptorptr;
+         if(FuzzysetDescriptorptr!=NULL)
            {
             sprintf(wrkBuff,"%s%s%s",
-              "....Releasing '",FDBptr->FDBid,"'");
+              "....Releasing '",FuzzysetDescriptorptr->FuzzysetDescriptorid,"'");
             MtsWritetoLog(SYSMODFILE,wrkBuff,&status);
-            delete FDBptr;
+            delete FuzzysetDescriptorptr;
            }
          delete FSVptr;
         }

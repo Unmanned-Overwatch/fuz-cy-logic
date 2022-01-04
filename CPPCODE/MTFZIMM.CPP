@@ -17,15 +17,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void FzyImplMatrix(
-   FDB *FDBptr1,FDB *FDBptr2,
+   FuzzysetDescriptor *FuzzysetDescriptorptr1,FuzzysetDescriptor *FuzzysetDescriptorptr2,
     double DomValues[],int DomCnt,int *statusPtr)
   {
-   FDB    WrkFDB;
+   FuzzysetDescriptor    WrkFuzzysetDescriptor;
    char   FSname1[IDENLEN+1],FSname2[IDENLEN+1];
    char   PrtBuff[256];
    int    i,j,m,n;
@@ -43,14 +43,14 @@ void FzyImplMatrix(
    for(i=0,n=0;i<VECMAX;i+=32,n++)
     for(j=0,m=0;j<VECMAX;j+=32,m++)
      TheMatrix[n][m]=
-      min(FDBptr1->FDBvector[i],FDBptr2->FDBvector[j]);
+      min(FuzzysetDescriptorptr1->FuzzysetDescriptorvector[i],FuzzysetDescriptorptr2->FuzzysetDescriptorvector[j]);
 //--Pick up the names and domains of the two fuzzy sets.
-   strcpy(FSname1,FDBptr1->FDBid);
-   strcpy(FSname2,FDBptr2->FDBid);
-   Lo[0]=FDBptr1->FDBdomain[0];
-   Hi[0]=FDBptr1->FDBdomain[1];
-   Lo[1]=FDBptr2->FDBdomain[0];
-   Hi[1]=FDBptr2->FDBdomain[1];
+   strcpy(FSname1,FuzzysetDescriptorptr1->FuzzysetDescriptorid);
+   strcpy(FSname2,FuzzysetDescriptorptr2->FuzzysetDescriptorid);
+   Lo[0]=FuzzysetDescriptorptr1->FuzzysetDescriptordomain[0];
+   Hi[0]=FuzzysetDescriptorptr1->FuzzysetDescriptordomain[1];
+   Lo[1]=FuzzysetDescriptorptr2->FuzzysetDescriptordomain[0];
+   Hi[1]=FuzzysetDescriptorptr2->FuzzysetDescriptordomain[1];
 //--Calculate any autoscaling necessary to fit the domains
 //--into the current default print width for the report
    scale1=FzyAutoScale(Hi[0],Lo[0]);
@@ -63,10 +63,10 @@ void FzyImplMatrix(
    fputs("\n",mdlout);
    for(n=0,i=0;i<VECMAX;i+=32,n++)
      {
-      value1[n]=FzyGetScalar(FDBptr1,i,statusPtr);
-      truth1[n]=FDBptr1->FDBvector[i];
-      value2[n]=FzyGetScalar(FDBptr2,i,statusPtr);
-      truth2[n]=FDBptr2->FDBvector[i];
+      value1[n]=FzyGetScalar(FuzzysetDescriptorptr1,i,statusPtr);
+      truth1[n]=FuzzysetDescriptorptr1->FuzzysetDescriptorvector[i];
+      value2[n]=FzyGetScalar(FuzzysetDescriptorptr2,i,statusPtr);
+      truth2[n]=FuzzysetDescriptorptr2->FuzzysetDescriptorvector[i];
      }
    memset(PrtBuff,'\0',PrtBufflen);
    strcpy(PrtBuff,FSname1);
@@ -100,13 +100,13 @@ void FzyImplMatrix(
    for(i=0;i<DomCnt;i++)
     {
       Scalar=DomValues[i];
-      memvalue=FzyGetMembership(FDBptr1,Scalar,&j,statusPtr);
-      FzyCopySet(FDBptr2,&WrkFDB,statusPtr);
+      memvalue=FzyGetMembership(FuzzysetDescriptorptr1,Scalar,&j,statusPtr);
+      FzyCopySet(FuzzysetDescriptorptr2,&WrkFuzzysetDescriptor,statusPtr);
       for(j=0;j<VECMAX;j++)
-       WrkFDB.FDBvector[j]=min(memvalue,WrkFDB.FDBvector[j]);
+       WrkFuzzysetDescriptor.FuzzysetDescriptorvector[j]=min(memvalue,WrkFuzzysetDescriptor.FuzzysetDescriptorvector[j]);
       fprintf(mdlout,"%s%s%s%s%s%10.2f\n",
        "        '",FSname2,"' when '",FSname1,"' is ",Scalar);
-      FzyDrawSet(&WrkFDB,SYSMODFILE,statusPtr);
+      FzyDrawSet(&WrkFuzzysetDescriptor,SYSMODFILE,statusPtr);
     }
    return;
   }

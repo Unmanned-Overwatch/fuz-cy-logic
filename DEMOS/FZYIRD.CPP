@@ -15,12 +15,12 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include "SSYSctl.hpp"
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-char *FDBnames[]=
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+char *FuzzysetDescriptornames[]=
   {
    "COLD",
    "COOL",
@@ -32,31 +32,31 @@ const int FzyTermMax=5;
 double Point[]={100,120,180,240,300,360,380};
 void main(void)
  {
-  FDB   *tempFDBptr[FzyTermMax];
-  int    i,k,status,FDBcnt=5;
+  FuzzysetDescriptor   *tempFuzzysetDescriptorptr[FzyTermMax];
+  int    i,k,status,FuzzysetDescriptorcnt=5;
 
   status=0;
   MdlConnecttoFMS(&status);
 
   for(i=0;i<FzyTermMax;i++)
     {
-     tempFDBptr[i]=new FDB;
-     FzyInitFDB(tempFDBptr[i]);
-     strcpy(tempFDBptr[i]->FDBid,FDBnames[i]);
-     tempFDBptr[i]->FDBdomain[0]=Point[i];
-     tempFDBptr[i]->FDBdomain[1]=Point[i+2];
+     tempFuzzysetDescriptorptr[i]=new FuzzysetDescriptor;
+     FzyInitFuzzysetDescriptor(tempFuzzysetDescriptorptr[i]);
+     strcpy(tempFuzzysetDescriptorptr[i]->FuzzysetDescriptorid,FuzzysetDescriptornames[i]);
+     tempFuzzysetDescriptorptr[i]->FuzzysetDescriptordomain[0]=Point[i];
+     tempFuzzysetDescriptorptr[i]->FuzzysetDescriptordomain[1]=Point[i+2];
     }
-  FzySCurve(tempFDBptr[0],100,140,180,DECLINE,&status);
-  FzyDrawSet(tempFDBptr[0],1,&status);
+  FzySCurve(tempFuzzysetDescriptorptr[0],100,140,180,DECLINE,&status);
+  FzyDrawSet(tempFuzzysetDescriptorptr[0],1,&status);
   k=2;
   for(i=1;i<4;i++)
      {
-      FzyPiCurve(tempFDBptr[i],Point[k],Point[k+1]-Point[k],&status);
-      FzyDrawSet(tempFDBptr[i],1,&status);
+      FzyPiCurve(tempFuzzysetDescriptorptr[i],Point[k],Point[k+1]-Point[k],&status);
+      FzyDrawSet(tempFuzzysetDescriptorptr[i],1,&status);
       k++;
      }
-  FzySCurve(tempFDBptr[4],300,340,380,GROWTH,&status);
-  FzyDrawSet(tempFDBptr[4],1,&status);
-  FzyPlotVar("TEMPERATURE",tempFDBptr,FDBcnt,SYSLOGFILE,&status);
+  FzySCurve(tempFuzzysetDescriptorptr[4],300,340,380,GROWTH,&status);
+  FzyDrawSet(tempFuzzysetDescriptorptr[4],1,&status);
+  FzyPlotVar("TEMPERATURE",tempFuzzysetDescriptorptr,FuzzysetDescriptorcnt,SYSLOGFILE,&status);
   return;
  }

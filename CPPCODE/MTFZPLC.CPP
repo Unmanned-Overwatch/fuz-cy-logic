@@ -12,9 +12,9 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-int FzyPlateauCnt(FDB *FDBptr,float height,int *statusPtr)
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+int FzyPlateauCnt(FuzzysetDescriptor *FuzzysetDescriptorptr,float height,int *statusPtr)
  {
   bool   inPlateau;
   int    i,StartIDX,pCount=0;
@@ -23,7 +23,7 @@ int FzyPlateauCnt(FDB *FDBptr,float height,int *statusPtr)
   //--locate the start of a plateau
   StartIDX=(int)MINUSONE;
   for(i=0;i<VECMAX;i++)
-    if(FDBptr->FDBvector[i]!=0) StartIDX=i;
+    if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]!=0) StartIDX=i;
   if(StartIDX==MINUSONE) return(0);
 
 //--We found trhe start of the first plateau. We now say
@@ -35,7 +35,7 @@ int FzyPlateauCnt(FDB *FDBptr,float height,int *statusPtr)
 //--the next nonzero we hit will be start of another plateau.
 //
   for(i=StartIDX;i<VECMAX;i++)
-    if(FDBptr->FDBvector[i]==0) inPlateau=FALSE;
+    if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]==0) inPlateau=FALSE;
         else
          {
           if(inPlateau==FALSE)

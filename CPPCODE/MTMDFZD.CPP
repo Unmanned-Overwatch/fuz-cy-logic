@@ -15,14 +15,14 @@
 *-------------------------------------------------------------*/
 #include <stddef.h>
 #include <PDB.hpp>
-#include "VDB.hpp"
+#include "VariableDescriptor.hpp"
 #include <XSYSctl.hpp>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 void MdlFindFzyDomain(
   char *Varid,double *Hi,double *Lo,int *statusPtr)
  {
    PDB    *PDBptr;
-   VDB    *VDBptr;
+   VariableDescriptor    *VariableDescriptorptr;
    char   *PgmId="mtmdfzd";
 
    *statusPtr=0;
@@ -34,13 +34,13 @@ void MdlFindFzyDomain(
       MtsSendError(102,PgmId,Varid);
       return;
      }
-   if((VDBptr=MdlFindVDB(Varid,PDBptr,statusPtr))==NULL)
+   if((VariableDescriptorptr=MdlFindVariableDescriptor(Varid,PDBptr,statusPtr))==NULL)
      {
       *statusPtr=3;
       MtsSendError(100,PgmId,Varid);
       return;
      }
-   *Lo=VDBptr->VDBdomain[0];
-   *Hi=VDBptr->VDBdomain[1];
+   *Lo=VariableDescriptorptr->VariableDescriptordomain[0];
+   *Hi=VariableDescriptorptr->VariableDescriptordomain[1];
    return;
  }

@@ -6,7 +6,7 @@
 | mtmdfdv.cpp  Earl Cox  04/01/93 Find Variable in Policy     |
 | This function takes a character string containing the name  |
 | of a variable in the policy's  dictionary. On finding the   |
-| variable, we return the VDB address.                        |
+| variable, we return the VariableDescriptor address.                        |
 *----------------Modification Audit/Change Log----------------*
 | Rev  Sar                                                    |
 | No   Code  Date      Rellvl  Mod  Description               |
@@ -16,12 +16,12 @@
 #include <string.h>
 #include <stddef.h>
 #include <PDB.hpp>
-#include "VDB.hpp"
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-VDB *MdlFindVDB(char *Varid,PDB *PDBptr,int *statusPtr)
+#include "VariableDescriptor.hpp"
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+VariableDescriptor *MdlFindVariableDescriptor(char *Varid,PDB *PDBptr,int *statusPtr)
  {
-  VDB    *VDBptr,*VDBnull=NULL;
+  VariableDescriptor    *VariableDescriptorptr,*VariableDescriptornull=NULL;
   char   *PgmId="mtmdfdv";
   long    slot;
 
@@ -29,29 +29,29 @@ VDB *MdlFindVDB(char *Varid,PDB *PDBptr,int *statusPtr)
 //
 //--Now hash the variable name to get its slot location in
 //--the PDB's variable dictionary.
-  slot=MtsHashString(Varid,VDBmax);
-  if(slot<0||slot>VDBmax)
+  slot=MtsHashString(Varid,VariableDescriptormax);
+  if(slot<0||slot>VariableDescriptormax)
     {
      *statusPtr=1;
      MtsSendError(97,PgmId,Varid);
-     return(VDBnull);
+     return(VariableDescriptornull);
     }
 //
-//--Look at the VDB doctionary slot. If it's empty, then
+//--Look at the VariableDescriptor doctionary slot. If it's empty, then
 //--return a null pointer saying that the variable doesn't
 //--exist. Otherwise look through the remainder of the chain
 //--for the variable name until we come to the chain end.
   *statusPtr=3;
-  VDBptr=PDBptr->PDBvariables[slot];
-  if(VDBptr==NULL) return(VDBnull);
+  VariableDescriptorptr=PDBptr->PDBvariables[slot];
+  if(VariableDescriptorptr==NULL) return(VariableDescriptornull);
   for(;;)
     {
-     if(strcmp(VDBptr->VDBid,Varid)==0)
+     if(strcmp(VariableDescriptorptr->VariableDescriptorid,Varid)==0)
        {
         *statusPtr=0;
-        return(VDBptr);
+        return(VariableDescriptorptr);
        }
-     if(VDBptr->VDBnext==NULL) return(VDBnull);
-     VDBptr=VDBptr->VDBnext;
+     if(VariableDescriptorptr->VariableDescriptornext==NULL) return(VariableDescriptornull);
+     VariableDescriptorptr=VariableDescriptorptr->VariableDescriptornext;
     }
  }

@@ -15,55 +15,55 @@
 *-------------------------------------------------------------*/
 #include <stddef.h>
 #include <string.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-void Complete_Fuzzyset(const FDB*);
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+void Complete_Fuzzyset(const FuzzysetDescriptor*);
 //
-FDB* FzyCreateSet(
+FuzzysetDescriptor* FzyCreateSet(
    char *SetId,int SetType,double Domain[],double Parms[],
     int ParmCnt, int *statusPtr)
   {
     FILE   *mdllog;
-    FDB*    FDBptr;
+    FuzzysetDescriptor*    FuzzysetDescriptorptr;
     char   *PgmId="mtfzscr";
     int     i,MaxParms=4;
     float   TruthSeries[128];
     double  Hi,Lo,Center,Width;
 
     *statusPtr=0;
-    FDBptr=NULL;
+    FuzzysetDescriptorptr=NULL;
     Lo=Domain[0];
     Hi=Domain[1];
     if(Lo==0&&Hi==0)
       {
        *statusPtr=1;
        MtsSendError(50,PgmId,SetId);
-       return(FDBptr);
+       return(FuzzysetDescriptorptr);
       }
     if(Lo>=Hi)
       {
        *statusPtr=1;
        MtsSendError(49,PgmId,SetId);
-       return(FDBptr);
+       return(FuzzysetDescriptorptr);
       }
 //--Create a new fuzzy set and initialize it to the default state
-    if(!(FDBptr=new FDB))
+    if(!(FuzzysetDescriptorptr=new FuzzysetDescriptor))
       {
        *statusPtr=1;
        MtsSendError(2,PgmId,SetId);
-       return(FDBptr);
+       return(FuzzysetDescriptorptr);
       }
-    FzyInitFDB(FDBptr);
+    FzyInitFuzzysetDescriptor(FuzzysetDescriptorptr);
     mdllog=MtsGetSystemFile(SYSMODFILE);
 //
 //--Now copy in the parameters to complete the general properties
 //--of the fuzzy set.
-    strcpy(FDBptr->FDBid,SetId);
-    FDBptr->FDBgentype=SetType;
-    FDBptr->FDBdomain[0]=Domain[0];
-    FDBptr->FDBdomain[1]=Domain[1];
+    strcpy(FuzzysetDescriptorptr->FuzzysetDescriptorid,SetId);
+    FuzzysetDescriptorptr->FuzzysetDescriptorgentype=SetType;
+    FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]=Domain[0];
+    FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]=Domain[1];
 //
 //--If any of the standard curve types have been specified we
 //--create the fuzzy set surface topolgies at this point. At
@@ -76,7 +76,7 @@ FDB* FzyCreateSet(
           Lo=Parms[0];
           Hi=Parms[1];
          }
-       FzyLinearCurve(FDBptr,Lo,Hi,INCREASE,statusPtr);
+       FzyLinearCurve(FuzzysetDescriptorptr,Lo,Hi,INCREASE,statusPtr);
        break;
       case DECREASE:
        if(ParmCnt!=0)
@@ -84,17 +84,17 @@ FDB* FzyCreateSet(
           Lo=Parms[0];
           Hi=Parms[1];
          }
-       FzyLinearCurve(FDBptr,Lo,Hi,DECREASE,statusPtr);
+       FzyLinearCurve(FuzzysetDescriptorptr,Lo,Hi,DECREASE,statusPtr);
        break;
       case DECLINE:
        if(ParmCnt==0) Parms[0]=Lo+((Hi-Lo)/2);
        Center=Parms[0];
-       FzySCurve(FDBptr,Lo,Center,Hi,DECLINE,statusPtr);
+       FzySCurve(FuzzysetDescriptorptr,Lo,Center,Hi,DECLINE,statusPtr);
        break;
       case GROWTH:
        if(ParmCnt==0) Parms[0]=Lo+((Hi-Lo)/2);
        Center=Parms[0];
-       FzySCurve(FDBptr,Lo,Center,Hi,GROWTH,statusPtr);
+       FzySCurve(FuzzysetDescriptorptr,Lo,Center,Hi,GROWTH,statusPtr);
        break;
       case PI:
       case BETA:
@@ -105,26 +105,26 @@ FDB* FzyCreateSet(
          }
        Center=Parms[0];
        Width=Parms[1];
-       if(SetType==PI)  FzyPiCurve(FDBptr,Center,Width,statusPtr);
-          else          FzyBetaCurve(FDBptr,Center,Width,statusPtr);
+       if(SetType==PI)  FzyPiCurve(FuzzysetDescriptorptr,Center,Width,statusPtr);
+          else          FzyBetaCurve(FuzzysetDescriptorptr,Center,Width,statusPtr);
        break;
       case MEMSERIES:
        for(i=0;i<ParmCnt;i++) TruthSeries[i]=(float)Parms[i];
-       FzyMemSeries(FDBptr,TruthSeries,ParmCnt,statusPtr);
+       FzyMemSeries(FuzzysetDescriptorptr,TruthSeries,ParmCnt,statusPtr);
        break;
       case EMPTYSET:
        break;
       default:
        *statusPtr=3;
        MtsSendError(35,PgmId,MtsFormatInt(SetType));
-       delete FDBptr;
-       FDBptr=NULL;
+       delete FuzzysetDescriptorptr;
+       FuzzysetDescriptorptr=NULL;
        break;
      }
-    Complete_Fuzzyset(FDBptr);
-    return(FDBptr);
+    Complete_Fuzzyset(FuzzysetDescriptorptr);
+    return(FuzzysetDescriptorptr);
   }
-void Complete_Fuzzyset(const FDB* FDBptr)
+void Complete_Fuzzyset(const FuzzysetDescriptor* FuzzysetDescriptorptr)
  {
   char *SetType[]=
    {
@@ -142,8 +142,8 @@ void Complete_Fuzzyset(const FDB* FDBptr)
   char    wrkBuff[180];
 
   sprintf(wrkBuff,"%s%s%s%s",
-     SetType[FDBptr->FDBgentype],
-      " FuzzySet '",FDBptr->FDBid,"' created.");
+     SetType[FuzzysetDescriptorptr->FuzzysetDescriptorgentype],
+      " FuzzySet '",FuzzysetDescriptorptr->FuzzysetDescriptorid,"' created.");
   MtsWritetoLog(SYSMODFILE,wrkBuff,&status);
   return;
  }

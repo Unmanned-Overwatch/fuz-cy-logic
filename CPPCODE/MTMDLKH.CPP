@@ -18,8 +18,8 @@
 #include <stddef.h>
 #include <PDB.hpp>
 #include <HDB.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void MdlLinkHDB(HDB *HDBptr,PDB *PDBptr,int *statusPtr)
  {
   HDB    *HDBwrkptr;

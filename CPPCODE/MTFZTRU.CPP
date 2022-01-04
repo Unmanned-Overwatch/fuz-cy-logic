@@ -13,19 +13,19 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <string.h>
-#include <fdb.hpp>
-#include <mtsptype.hpp>
-#include   <mtypes.hpp>
-void FzyTrueSet(FDB* FDBptr)
+#include <FuzzysetDescriptor.hpp>
+#include <SystemPrototypes.hpp>
+#include   <SystemTypes.hpp>
+void FzyTrueSet(FuzzysetDescriptor* FuzzysetDescriptorptr)
   {
     int     i;
 
-    FzyInitFDB(FDBptr);
-    strcpy(FDBptr->FDBid,"TRUE");
-    strcpy(FDBptr->FDBdesc,"The Orthogonal Truth Fuzzyset");
-    FDBptr->FDBdomain[0]=0;
-    FDBptr->FDBdomain[1]=1;
+    FzyInitFuzzysetDescriptor(FuzzysetDescriptorptr);
+    strcpy(FuzzysetDescriptorptr->FuzzysetDescriptorid,"TRUE");
+    strcpy(FuzzysetDescriptorptr->FuzzysetDescriptordesc,"The Orthogonal Truth Fuzzyset");
+    FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]=0;
+    FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]=1;
     for(i=0;i<VECMAX;i++)
-       FDBptr->FDBvector[i]=((float)i)/(VECMAX-1);
+       FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=((float)i)/(VECMAX-1);
     return;
    }

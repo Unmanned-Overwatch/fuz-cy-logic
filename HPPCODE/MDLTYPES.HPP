@@ -14,7 +14,7 @@
 //
 //---------------------------------INCLUDES
 //
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include "RXB.hpp"
 #include "PDB.hpp"
 //
@@ -66,7 +66,7 @@ static int    VDictCnt,
               VDmax=32,
               pRXBcnt,
               pRXBvaridx[16];
-static fdb   *pRXBfdb[16];
+static FuzzysetDescriptor   *pRXBFuzzysetDescriptor[16];
 static float  pRXBvart[16];
 //
 //---------------------------------DATA ELEMENTS
@@ -82,7 +82,7 @@ static float      ruletruth[32],
                   avgTruth;
 static double     Domain[2],
                   Parms[6];
-static int        FDBcnt,
+static int        FuzzysetDescriptorcnt,
                   Idxpos,
                   dfuzzIX,
                   Firedcnt,
@@ -92,16 +92,16 @@ static int        FDBcnt,
                   thisDefuzzMethod;
 static const int  FzySetMax=8;
 static FILE      *mdlout;
-static fdb       *WrkFDBptr,
-                 *FDBarray[FzySetMax];
+static FuzzysetDescriptor       *WrkFuzzysetDescriptorptr,
+                 *FuzzysetDescriptorarray[FzySetMax];
 static FSV       *FSVptr;
 static HDB       *HDBptr;
-static VDB       *VDBptr;
+static VariableDescriptor       *VariableDescriptorptr;
 //
 //---------------------------------PROTOTYPES
 //
-void ConcludeRule(fdb*,int*);
-void ImplicitELSE(fdb*);
+void ConcludeRule(FuzzysetDescriptor*,int*);
+void ImplicitELSE(FuzzysetDescriptor*);
 void DisplayRule(int);
 //
 #endif

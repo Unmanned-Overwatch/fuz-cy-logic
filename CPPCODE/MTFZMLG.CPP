@@ -13,11 +13,11 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 double FzyMonotonicLogic(
-  FDB *fromFDBptr,FDB *toFDBptr,
+  FuzzysetDescriptor *fromFuzzysetDescriptorptr,FuzzysetDescriptor *toFuzzysetDescriptorptr,
     double fromValue,float *PremiseTruth,int *statusPtr)
  {
   int     Idxpos;
@@ -25,8 +25,8 @@ double FzyMonotonicLogic(
   double  Scalar;
 
   *statusPtr=0;
-  PTruth=FzyGetMembership(fromFDBptr,fromValue,&Idxpos,statusPtr);
-  Scalar=FzyEquivalentScalar(toFDBptr,PTruth,statusPtr);
+  PTruth=FzyGetMembership(fromFuzzysetDescriptorptr,fromValue,&Idxpos,statusPtr);
+  Scalar=FzyEquivalentScalar(toFuzzysetDescriptorptr,PTruth,statusPtr);
   *PremiseTruth=PTruth;
   return(Scalar);
  }

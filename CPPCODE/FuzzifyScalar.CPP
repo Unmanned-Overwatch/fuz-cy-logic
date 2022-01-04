@@ -14,14 +14,14 @@
 *-------------------------------------------------------------*/
 #include <stddef.h>
 #include <string.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-FDB *FzyFuzzyScalar(
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+FuzzysetDescriptor *FzyFuzzyScalar(
    char *Varid,double Scalar,int SetType,int *statusPtr)
  {
-   FDB    *FDBptr,*nullFDB=NULL;
+   FuzzysetDescriptor    *FuzzysetDescriptorptr,*nullFuzzysetDescriptor=NULL;
    char   *PgmId="mtfzfsc";
    char   *option;
    int     k;
@@ -36,16 +36,16 @@ FDB *FzyFuzzyScalar(
 //
 //--Allocate a new fuzzy set descriptor and complete it with
 //--the the information from the variable and domain/
-   if(!(FDBptr=new FDB))
+   if(!(FuzzysetDescriptorptr=new FuzzysetDescriptor))
      {
       *statusPtr=1;
       MtsSendError(2,PgmId,Varid);
-      return(nullFDB);
+      return(nullFuzzysetDescriptor);
      }
-   FzyInitFDB(FDBptr);
-   strcpy(FDBptr->FDBid,Varid);
-   FDBptr->FDBdomain[0]=Lo;
-   FDBptr->FDBdomain[1]=Hi;
+   FzyInitFuzzysetDescriptor(FuzzysetDescriptorptr);
+   strcpy(FuzzysetDescriptorptr->FuzzysetDescriptorid,Varid);
+   FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]=Lo;
+   FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]=Hi;
 //
 //--Calculate the basic curve parameters.
    Range=Hi-Lo;
@@ -59,23 +59,23 @@ FDB *FzyFuzzyScalar(
    switch(SetType)
     {
      case FZYPOINT:
-       FDBptr->FDBvector[k]=1.0;
-       return(FDBptr);
+       FuzzysetDescriptorptr->FuzzysetDescriptorvector[k]=1.0;
+       return(FuzzysetDescriptorptr);
      case FZYPI:
-       FzyPiCurve(FDBptr,Center,Width,statusPtr);
-       return(FDBptr);
+       FzyPiCurve(FuzzysetDescriptorptr,Center,Width,statusPtr);
+       return(FuzzysetDescriptorptr);
      case FZYBETA:
-       FzyBetaCurve(FDBptr,Center,Inflexpoint,statusPtr);
-       return(FDBptr);
+       FzyBetaCurve(FuzzysetDescriptorptr,Center,Inflexpoint,statusPtr);
+       return(FuzzysetDescriptorptr);
      case FZYTRIANGLE:
        Left=Center-Width;
        Right=Center+Width;
-       FzyTriangleCurve(FDBptr,Left,Center,Right,statusPtr);
-       return(FDBptr);
+       FzyTriangleCurve(FuzzysetDescriptorptr,Left,Center,Right,statusPtr);
+       return(FuzzysetDescriptorptr);
      default:
        *statusPtr=3;
        option=MtsFormatInt(SetType);
        MtsSendError(8,PgmId,option);
-       return(nullFDB);
+       return(nullFuzzysetDescriptor);
     }
  }

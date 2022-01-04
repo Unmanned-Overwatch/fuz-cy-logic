@@ -18,12 +18,12 @@
 #include <string.h>
 #include <math.h>
 #include "PDB.hpp"
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include "SFZYctl.hpp"
 #include "SSYSctl.hpp"
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 //
 //--These are the "logical" rules. In the high level fuzzy modelling
 //--system we would enter these rules exactly as shown.
@@ -41,10 +41,10 @@ double fshpr3policy(const char**,double,double,float*,int*);
 void main(void)
  {
   PDB     *prcPDBptr;
-  FDB     *FDBptr[FDBvecmax],*wrkFDBptr;
+  FuzzysetDescriptor     *FuzzysetDescriptorptr[FuzzysetDescriptorvecmax],*wrkFuzzysetDescriptorptr;
   HDB     *vryHDBptr;
-  VDB     *VDBptr;
-  int      i,status,FDBcnt,Hdgcnt,TryCtl[2];
+  VariableDescriptor     *VariableDescriptorptr;
+  int      i,status,FuzzysetDescriptorcnt,Hdgcnt,TryCtl[2];
   float    compidx;
   double   TwiceMfgCosts,mfgcosts=0,compprice=0,Price;
   double   Domain[2],Parms[4];
@@ -60,34 +60,34 @@ void main(void)
 //
   Domain[0]=16;
   Domain[1]=36;
-  VDBptr=VarCreateScalar("PRICE",REAL,Domain,"0",&status);
-  MdlLinkVDB(VDBptr,prcPDBptr,&status);
+  VariableDescriptorptr=VarCreateScalar("PRICE",REAL,Domain,"0",&status);
+  MdlLinkVariableDescriptor(VariableDescriptorptr,prcPDBptr,&status);
 //
 //--Create the basic fuzzy sets (very High and somewhat Low for Price)
 //
-  FDBptr[0]=FzyCreateSet("VERY.HIGH",INCREASE,Domain,Parms,0,&status);
-  strcpy(FDBptr[0]->FDBdesc,"Very High for Price");
+  FuzzysetDescriptorptr[0]=FzyCreateSet("VERY.HIGH",INCREASE,Domain,Parms,0,&status);
+  strcpy(FuzzysetDescriptorptr[0]->FuzzysetDescriptordesc,"Very High for Price");
   for(i=0;i<VECMAX;i++)
-   FDBptr[0]->FDBvector[i]=(float)pow(FDBptr[0]->FDBvector[i],2);
-  MdlLinkFDB(FDBptr[0],prcPDBptr,&status);
+   FuzzysetDescriptorptr[0]->FuzzysetDescriptorvector[i]=(float)pow(FuzzysetDescriptorptr[0]->FuzzysetDescriptorvector[i],2);
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[0],prcPDBptr,&status);
 
-  FDBptr[1]=FzyCreateSet("SOMEWHAT.LOW", DECREASE,Domain,Parms,0,&status);
-  strcpy(FDBptr[1]->FDBdesc,"Somewhat Low for Price");
+  FuzzysetDescriptorptr[1]=FzyCreateSet("SOMEWHAT.LOW", DECREASE,Domain,Parms,0,&status);
+  strcpy(FuzzysetDescriptorptr[1]->FuzzysetDescriptordesc,"Somewhat Low for Price");
   for(i=0;i<VECMAX;i++)
-   FDBptr[1]->FDBvector[i]=(float)pow(FDBptr[1]->FDBvector[i],.5);
-  MdlLinkFDB(FDBptr[1],prcPDBptr,&status);
+   FuzzysetDescriptorptr[1]->FuzzysetDescriptorvector[i]=(float)pow(FuzzysetDescriptorptr[1]->FuzzysetDescriptorvector[i],.5);
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[1],prcPDBptr,&status);
 
-  FDBcnt=2;
-  FzyPlotVar("PRICE",FDBptr,FDBcnt,SYSMODFILE,&status);
+  FuzzysetDescriptorcnt=2;
+  FzyPlotVar("PRICE",FuzzysetDescriptorptr,FuzzysetDescriptorcnt,SYSMODFILE,&status);
 
 //--create and store the ordinary LOW fuzzy set
-  FDBptr[1]=FzyCreateSet("LOW", DECREASE,Domain,Parms,0,&status);
-  strcpy(FDBptr[1]->FDBdesc,"Low for Price");
-  MdlLinkFDB(FDBptr[1],prcPDBptr,&status);
+  FuzzysetDescriptorptr[1]=FzyCreateSet("LOW", DECREASE,Domain,Parms,0,&status);
+  strcpy(FuzzysetDescriptorptr[1]->FuzzysetDescriptordesc,"Low for Price");
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[1],prcPDBptr,&status);
 //
 //--Create an empty fuzzy set as a working area
-  wrkFDBptr=FzyCreateSet("NULL",EMPTYSET,Domain,Parms,0,&status);
-  MdlLinkFDB(wrkFDBptr,prcPDBptr,&status);
+  wrkFuzzysetDescriptorptr=FzyCreateSet("NULL",EMPTYSET,Domain,Parms,0,&status);
+  MdlLinkFuzzysetDescriptor(wrkFuzzysetDescriptorptr,prcPDBptr,&status);
 //
 //--Prompt for the model Data
 //
@@ -113,24 +113,24 @@ void main(void)
   TwiceMfgCosts=2*mfgcosts;
   Parms[0]=TwiceMfgCosts;
   Parms[1]=TwiceMfgCosts*.10;
-  FDBptr[0]=FzyCreateSet("Near.2*MfgCosts",PI,Domain,Parms,2,&status);
-  FzyDrawSet(FDBptr[0],SYSMODFILE,&status);
+  FuzzysetDescriptorptr[0]=FzyCreateSet("Near.2*MfgCosts",PI,Domain,Parms,2,&status);
+  FzyDrawSet(FuzzysetDescriptorptr[0],SYSMODFILE,&status);
   vryHDBptr=MdlFindHDB("above",prcPDBptr,&status);
-  FDBptr[1]=FzyCreateSet("NULL",EMPTYSET,Domain,Parms,0,&status);
-  FzyApplyHedge(FDBptr[0],vryHDBptr,FDBptr[1],&status);
-  strcpy(FDBptr[1]->FDBdesc,"Above Near (Around) Twice MfgCosts");
-  MdlLinkFDB(FDBptr[1],prcPDBptr,&status);
-  FzyDrawSet(FDBptr[1],SYSMODFILE,&status);
-  FDBcnt=2;
-  FzyPlotVar("2*MfgCosts",FDBptr,FDBcnt,SYSMODFILE,&status);
+  FuzzysetDescriptorptr[1]=FzyCreateSet("NULL",EMPTYSET,Domain,Parms,0,&status);
+  FzyApplyHedge(FuzzysetDescriptorptr[0],vryHDBptr,FuzzysetDescriptorptr[1],&status);
+  strcpy(FuzzysetDescriptorptr[1]->FuzzysetDescriptordesc,"Above Near (Around) Twice MfgCosts");
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[1],prcPDBptr,&status);
+  FzyDrawSet(FuzzysetDescriptorptr[1],SYSMODFILE,&status);
+  FuzzysetDescriptorcnt=2;
+  FzyPlotVar("2*MfgCosts",FuzzysetDescriptorptr,FuzzysetDescriptorcnt,SYSMODFILE,&status);
 //
 //--Now create the fuzzy number for around compprice
   Parms[0]=compprice;
   Parms[1]=compprice*.15;
-  FDBptr[0]=FzyCreateSet("Near.CompPrice",PI,Domain,Parms,2,&status);
-  strcpy(FDBptr[0]->FDBdesc,"Near (Around) Competition Price");
-  MdlLinkFDB(FDBptr[0],prcPDBptr,&status);
-  FzyDrawSet(FDBptr[0],SYSMODFILE,&status);
+  FuzzysetDescriptorptr[0]=FzyCreateSet("Near.CompPrice",PI,Domain,Parms,2,&status);
+  strcpy(FuzzysetDescriptorptr[0]->FuzzysetDescriptordesc,"Near (Around) Competition Price");
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[0],prcPDBptr,&status);
+  FzyDrawSet(FuzzysetDescriptorptr[0],SYSMODFILE,&status);
 //
 //--Display the rules on the model log and invoke the policy
 //

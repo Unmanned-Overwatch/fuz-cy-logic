@@ -13,11 +13,11 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <math.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-void FzyPiCurve(FDB* FDBptr,double Center,double Width,int *statusPtr)
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+void FzyPiCurve(FuzzysetDescriptor* FuzzysetDescriptorptr,double Center,double Width,int *statusPtr)
   {
    int     i;
    char   *PgmId="mtfzpis";
@@ -28,37 +28,37 @@ void FzyPiCurve(FDB* FDBptr,double Center,double Width,int *statusPtr)
    if(Width<0)
      {
       *statusPtr=1;
-      MtsSendError(39,PgmId,FDBptr->FDBid);
+      MtsSendError(39,PgmId,FuzzysetDescriptorptr->FuzzysetDescriptorid);
       return;
      }
-   if((Center<FDBptr->FDBdomain[0])||(Center>FDBptr->FDBdomain[1]))
+   if((Center<FuzzysetDescriptorptr->FuzzysetDescriptordomain[0])||(Center>FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]))
      {
       *statusPtr=3;
-      MtsSendError(40,PgmId,FDBptr->FDBid);
-      printf("%s%10.2f\n","lo domain  = ",FDBptr->FDBdomain[0]);
-      printf("%s%10.2f\n","hi domain  = ",FDBptr->FDBdomain[1]);
+      MtsSendError(40,PgmId,FuzzysetDescriptorptr->FuzzysetDescriptorid);
+      printf("%s%10.2f\n","lo domain  = ",FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]);
+      printf("%s%10.2f\n","hi domain  = ",FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]);
       return;
      }
-   if((Center-fabs(Width)<FDBptr->FDBdomain[0])&&
-      (Center+fabs(Width)>FDBptr->FDBdomain[1]))
+   if((Center-fabs(Width)<FuzzysetDescriptorptr->FuzzysetDescriptordomain[0])&&
+      (Center+fabs(Width)>FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]))
      {
       *statusPtr=5;
-      MtsSendError(41,PgmId,FDBptr->FDBid);
-      printf("%s%10.2f\n","lo domain  = ",FDBptr->FDBdomain[0]);
-      printf("%s%10.2f\n","hi domain  = ",FDBptr->FDBdomain[1]);
+      MtsSendError(41,PgmId,FuzzysetDescriptorptr->FuzzysetDescriptorid);
+      printf("%s%10.2f\n","lo domain  = ",FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]);
+      printf("%s%10.2f\n","hi domain  = ",FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]);
       return;
      }
    inflexpoint=Center+(Width/2);
    boundarypoint=Center+Width;
-   FzySCurve(FDBptr,Center,inflexpoint,boundarypoint,GROWTH,statusPtr);
-   for(i=0;i<VECMAX;i++) tempVector[i]=(float)1.0-FDBptr->FDBvector[i];
+   FzySCurve(FuzzysetDescriptorptr,Center,inflexpoint,boundarypoint,GROWTH,statusPtr);
+   for(i=0;i<VECMAX;i++) tempVector[i]=(float)1.0-FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
    inflexpoint=Center-Width;
    boundarypoint=Center-(Width/2);
-   FzySCurve(FDBptr,inflexpoint,boundarypoint,Center,GROWTH,statusPtr);
+   FzySCurve(FuzzysetDescriptorptr,inflexpoint,boundarypoint,Center,GROWTH,statusPtr);
    for(i=0;i<VECMAX;i++)
-    FDBptr->FDBvector[i]=min(FDBptr->FDBvector[i],tempVector[i]);
-   FDBptr->FDBgentype=PI;
-   FDBptr->FDBparms[0]=Center;
-   FDBptr->FDBparms[1]=Width;
+    FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=min(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i],tempVector[i]);
+   FuzzysetDescriptorptr->FuzzysetDescriptorgentype=PI;
+   FuzzysetDescriptorptr->FuzzysetDescriptorparms[0]=Center;
+   FuzzysetDescriptorptr->FuzzysetDescriptorparms[1]=Width;
    return;
   }

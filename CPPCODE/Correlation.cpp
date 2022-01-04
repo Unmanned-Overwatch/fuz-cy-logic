@@ -10,9 +10,9 @@
 *-------------------------------------------------------------*/
 #include <stdlib.h>
 #include   <fuzzy.hpp>
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void FzyCorrMinimum(float vector[],const float PredTruth,int *statusPtr)
    {
     int i;

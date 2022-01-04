@@ -20,7 +20,7 @@
 #include   <SystemTypes.hpp>
 #include <SystemPrototypes.hpp>
 void FzyExtractSetdata(
-  FDB   *FDBptr,       // target fuzzy set
+  FuzzysetDescriptor   *FuzzysetDescriptorptr,       // target fuzzy set
   int    CompFactor,   // compression factor
   double Domain[],     // table of domain values
   float  TFvalue[],    // table of membership values
@@ -32,8 +32,8 @@ void FzyExtractSetdata(
   *statusPtr=0;
   for(i=0;i<VECMAX;i+=CompFactor)
     {
-     Domain[j] =FzyGetScalar(FDBptr,i,statusPtr);
-     TFvalue[j]=FDBptr->FDBvector[i];
+     Domain[j] =FzyGetScalar(FuzzysetDescriptorptr,i,statusPtr);
+     TFvalue[j]=FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
      j++;
     }
   *Extcnt=j;

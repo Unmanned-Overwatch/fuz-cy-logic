@@ -19,7 +19,7 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <string.h>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 bool stringsEqual(char*,char*,int,int);
 //
 int MtsFindsubstr(char *tgtStr,char *srcStr,int strOffset)

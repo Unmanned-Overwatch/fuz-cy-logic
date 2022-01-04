@@ -14,11 +14,11 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 #include "CIX.hpp"
-bool FzyStatCompIndex(FDB *FDBptr,float ExpValTruth,CIX *CIXptr)
+bool FzyStatCompIndex(FuzzysetDescriptor *FuzzysetDescriptorptr,float ExpValTruth,CIX *CIXptr)
   {
    const bool InCompatible=0;
    const bool   Compatible=1;
@@ -29,8 +29,8 @@ bool FzyStatCompIndex(FDB *FDBptr,float ExpValTruth,CIX *CIXptr)
    min_tv=1.00;
    for(i=0;i<VECMAX;i++)
     {
-     if(FDBptr->FDBvector[i]>max_tv) max_tv=FDBptr->FDBvector[i];
-     if(FDBptr->FDBvector[i]<min_tv) min_tv=FDBptr->FDBvector[i];
+     if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>max_tv) max_tv=FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
+     if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]<min_tv) min_tv=FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
     }
    CIXptr->CIXruncount++;
    CIXptr->CIXCummaxTruth+=max_tv;

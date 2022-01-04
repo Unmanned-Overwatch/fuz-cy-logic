@@ -18,12 +18,12 @@
 #define BIGNUMBER  999999999
 #include <stdio.h>
 #include <string.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void FzyPlotVar(
-   char *Varid,FDB *FDBptr[],int FzySetCnt,int Medium,int *statusPtr)
+   char *Varid,FuzzysetDescriptor *FuzzysetDescriptorptr[],int FzySetCnt,int Medium,int *statusPtr)
   {
     char        WkArea[PLOTROWS][PLOTCOLS+1];
     int         i,j,k,PltHgt,Sidx,N,HorzPos,VertPos,Lochp;
@@ -53,8 +53,8 @@ void FzyPlotVar(
    Domain[1]=0;
    for(i=0;i<FzySetCnt;i++)
     {
-     Domain[0]=min(FDBptr[i]->FDBdomain[0],Domain[0]);
-     Domain[1]=max(FDBptr[i]->FDBdomain[1],Domain[1]);
+     Domain[0]=min(FuzzysetDescriptorptr[i]->FuzzysetDescriptordomain[0],Domain[0]);
+     Domain[1]=max(FuzzysetDescriptorptr[i]->FuzzysetDescriptordomain[1],Domain[1]);
     }
    Range=Domain[1]-Domain[0];
    for(i=0;i<FzySetCnt;i++)
@@ -62,9 +62,9 @@ void FzyPlotVar(
      for(k=0;k<VECMAX;k+=ScaleCtl)
        {
         Sidx=ScalingFactor[ScalingIdx];
-        VertPos=(int)(Sidx*(FDBptr[i]->FDBvector[k]+NUDGE));
+        VertPos=(int)(Sidx*(FuzzysetDescriptorptr[i]->FuzzysetDescriptorvector[k]+NUDGE));
         //--what is scalar value associated with local fuzzy set
-        Scalar=FzyGetScalar(FDBptr[i],k,statusPtr);
+        Scalar=FzyGetScalar(FuzzysetDescriptorptr[i],k,statusPtr);
         //--where does scalar lie on horizontal axis
         Lochp=(int)(((Scalar-Domain[0])/Range)*VECMAX);
         HorzPos= Lochp / ScaleCtl;
@@ -97,14 +97,14 @@ void FzyPlotVar(
     for(i=0;i<FzySetCnt;i++)
      {
       fprintf(outfp,"%s%c%s%s\n",
-       "     ",Symbol[i],          "   FuzzySet:    ",FDBptr[i]->FDBid);
-      fprintf(outfp,"%s%s\n","         Description: ",FDBptr[i]->FDBdesc);
+       "     ",Symbol[i],          "   FuzzySet:    ",FuzzysetDescriptorptr[i]->FuzzysetDescriptorid);
+      fprintf(outfp,"%s%s\n","         Description: ",FuzzysetDescriptorptr[i]->FuzzysetDescriptordesc);
       fprintf(outfp,
         "%s%10.2f%s%10.2f\n","         Domained:   ",
-           FDBptr[i]->FDBdomain[0]," to ",FDBptr[i]->FDBdomain[1]);
-      if(FDBptr[i]->FDBalfacut>0)
+           FuzzysetDescriptorptr[i]->FuzzysetDescriptordomain[0]," to ",FuzzysetDescriptorptr[i]->FuzzysetDescriptordomain[1]);
+      if(FuzzysetDescriptorptr[i]->FuzzysetDescriptoralfacut>0)
         fprintf(outfp,
-         "%s%10.2f\n",         "         AlphaCut:   ",FDBptr[i]->FDBalfacut);
+         "%s%10.2f\n",         "         AlphaCut:   ",FuzzysetDescriptorptr[i]->FuzzysetDescriptoralfacut);
      }
     fputc('\n',outfp);
   }

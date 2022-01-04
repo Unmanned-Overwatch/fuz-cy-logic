@@ -15,7 +15,7 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 char *MtsFormatDbl(double Number,int decimals)
   {
     int   i,j,k;

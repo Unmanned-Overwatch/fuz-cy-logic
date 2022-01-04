@@ -15,15 +15,15 @@
 struct  FSV
   {
    char   FzySVvarid[IDENLEN+1]; /* Name of the Consequent variable   */
-   VDB   *FzySVvarptr;           /* Pointer to variable's vdb         */
+   VariableDescriptor   *FzySVvarptr;           /* Pointer to variable's VariableDescriptor         */
    long   FzySVupdcnt;           /* Count of fuzzy region updates     */
-   int    FzySVdefuzzMethod,     /* Method of defuzzification for vdb */
+   int    FzySVdefuzzMethod,     /* Method of defuzzification for VariableDescriptor */
           FzySVgeometry,         /* Nature of output geometry         */
           FzySVcorrMethod,       /* Correlation Method                */
           FzySVimplMethod;       /* Implication Method                */
-   double FzySVresult;           /* Defuzzified result [also in VDB]  */
+   double FzySVresult;           /* Defuzzified result [also in VariableDescriptor]  */
    float  FzySValfacut;          /* Output space alfa cut (def=0.0)   */
-   fdb   *FzySVfdbptr;           /* Pointer to consequent fuzzy set   */
+   FuzzysetDescriptor   *FzySVFuzzysetDescriptorptr;           /* Pointer to consequent fuzzy set   */
    long   FzySVcntarray[VECMAX]; /* Possibility Density count array   */
   };
 #endif

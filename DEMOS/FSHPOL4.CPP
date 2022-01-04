@@ -21,32 +21,32 @@
 #include <stdio.h>
 #include <string.h>
 #include "PDB.hpp"       // The Policy descriptor
-#include <fdb.hpp>       // The Fuzzy Set descriptor
+#include <FuzzysetDescriptor.hpp>       // The Fuzzy Set descriptor
 #include "HDB.hpp"       // The Hedge descriptor
-#include "VDB.hpp"       // A Variable descriptor
+#include "VariableDescriptor.hpp"       // A Variable descriptor
 #include "XFZYctl.hpp"   // The fuzzy parallel processor work area
 #include <XSYSctl.hpp>   // The System control region
-#include   <mtypes.hpp>    // System constants and symbolics
+#include   <SystemTypes.hpp>    // System constants and symbolics
 #include   <fuzzy.hpp>     // Fuzzy Logic constants and symbolics
-#include <mtsptype.hpp>  // Function prototypes
+#include <SystemPrototypes.hpp>  // Function prototypes
 //
 double fshpr4policy(const char **Rules,
    double MfgCosts,double CompPrice,float *CompIdxptr,int *statusPtr)
  {
   PDB     *prcPDBptr;
-  FDB     *HiFDBptr,
-          *LoFDBptr,
-          *amFDBptr,
-          *ncFDBptr,
-          *PriceFDBptr,
-          *FDBarray[8],
-          *wkFDBptr;
+  FuzzysetDescriptor     *HiFuzzysetDescriptorptr,
+          *LoFuzzysetDescriptorptr,
+          *amFuzzysetDescriptorptr,
+          *ncFuzzysetDescriptorptr,
+          *PriceFuzzysetDescriptorptr,
+          *FuzzysetDescriptorarray[8],
+          *wkFuzzysetDescriptorptr;
   HDB     *veryHDBptr;
-  VDB     *VDBptr;
+  VariableDescriptor     *VariableDescriptorptr;
   FSV     *FSVptr;
   char    *PgmId="fshpol4";
   int      i,
-           FDBcnt,
+           FuzzysetDescriptorcnt,
            status,
            Index,
            Idxpos,
@@ -63,9 +63,9 @@ double fshpr4policy(const char **Rules,
   prcPDBptr=XSYSctl.XSYScurrPDBptr;
   mdlout=MtsGetSystemFile(SYSMODFILE);
   fprintf(mdlout,"%s\n","Price Estimation Policy Begins....");
-  VDBptr=MdlFindVDB("PRICE",prcPDBptr,statusPtr);
+  VariableDescriptorptr=MdlFindVariableDescriptor("PRICE",prcPDBptr,statusPtr);
   FzyInitFZYctl(statusPtr);
-  if(!(FzyAddFZYctl(VDBptr,&PriceFDBptr,&FSVptr,statusPtr)))
+  if(!(FzyAddFZYctl(VariableDescriptorptr,&PriceFuzzysetDescriptorptr,&FSVptr,statusPtr)))
     {
      *statusPtr=1;
      MtsSendError(12,PgmId,"PRICE");
@@ -76,11 +76,11 @@ double fshpr4policy(const char **Rules,
 //
 //--Find the fuzzy sets in the policy dictionary
 //
-  HiFDBptr=MdlFindFDB("HIGH",           prcPDBptr,statusPtr);
-  LoFDBptr=MdlFindFDB("LOW",            prcPDBptr,statusPtr);
-  amFDBptr=MdlFindFDB("Near.2*MfgCosts",prcPDBptr,statusPtr);
-  ncFDBptr=MdlFindFDB("Near.CompPrice" ,prcPDBptr,statusPtr);
-  wkFDBptr=MdlFindFDB("NULL",           prcPDBptr,statusPtr);
+  HiFuzzysetDescriptorptr=MdlFindFuzzysetDescriptor("HIGH",           prcPDBptr,statusPtr);
+  LoFuzzysetDescriptorptr=MdlFindFuzzysetDescriptor("LOW",            prcPDBptr,statusPtr);
+  amFuzzysetDescriptorptr=MdlFindFuzzysetDescriptor("Near.2*MfgCosts",prcPDBptr,statusPtr);
+  ncFuzzysetDescriptorptr=MdlFindFuzzysetDescriptor("Near.CompPrice" ,prcPDBptr,statusPtr);
+  wkFuzzysetDescriptorptr=MdlFindFuzzysetDescriptor("NULL",           prcPDBptr,statusPtr);
 //
 //--Find the hedge very in the poilcy dictionary
 //
@@ -94,71 +94,71 @@ double fshpr4policy(const char **Rules,
 //             then our price should be near the competition.price
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
   fprintf(mdlout,"%s\n",Rules[Rulecnt+1]);
-  FzyInitFDB(wkFDBptr);
+  FzyInitFuzzysetDescriptor(wkFuzzysetDescriptorptr);
 //
 //--------------Evaluate Predicate of rule-------------------------
 //
 //--Apply the hedge VERY to the High fuzzy set
-  FzyApplyHedge(HiFDBptr,veryHDBptr,wkFDBptr,statusPtr);
-  FzyDrawSet(wkFDBptr,SYSMODFILE,statusPtr);
+  FzyApplyHedge(HiFuzzysetDescriptorptr,veryHDBptr,wkFuzzysetDescriptorptr,statusPtr);
+  FzyDrawSet(wkFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //--Apply the operator NOT to the hedged fuzzy set
-  FzyApplyNOT(ZADEHNOT,0,wkFDBptr,statusPtr);
-  FzyDrawSet(wkFDBptr,SYSMODFILE,statusPtr);
+  FzyApplyNOT(ZADEHNOT,0,wkFuzzysetDescriptorptr,statusPtr);
+  FzyDrawSet(wkFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //--computed membership of competiton price in this fuzzy region
-  PremiseTruth=FzyGetMembership(wkFDBptr,CompPrice,&Idxpos,statusPtr);
+  PremiseTruth=FzyGetMembership(wkFuzzysetDescriptorptr,CompPrice,&Idxpos,statusPtr);
   fprintf(mdlout,"%s%10.2f\n","PremiseTruth= ",PremiseTruth);
 //
 //--------------Perform consequent proposition---------------------
 //
-  FDBcnt=2;
-  FDBarray[0]=wkFDBptr;
-  FDBarray[1]=ncFDBptr;
-  FzyPlotVar("",FDBarray,FDBcnt,SYSMODFILE,&status);
+  FuzzysetDescriptorcnt=2;
+  FuzzysetDescriptorarray[0]=wkFuzzysetDescriptorptr;
+  FuzzysetDescriptorarray[1]=ncFuzzysetDescriptorptr;
+  FzyPlotVar("",FuzzysetDescriptorarray,FuzzysetDescriptorcnt,SYSMODFILE,&status);
   FzyCondProposition(
-     ncFDBptr,FSVptr,thisCorrMethod,PremiseTruth,statusPtr);
-  FDBcnt=2;
-  FDBarray[0]=wkFDBptr;
-  FDBarray[1]=PriceFDBptr;
-  FzyDrawSet(PriceFDBptr,SYSMODFILE,statusPtr);
+     ncFuzzysetDescriptorptr,FSVptr,thisCorrMethod,PremiseTruth,statusPtr);
+  FuzzysetDescriptorcnt=2;
+  FuzzysetDescriptorarray[0]=wkFuzzysetDescriptorptr;
+  FuzzysetDescriptorarray[1]=PriceFuzzysetDescriptorptr;
+  FzyDrawSet(PriceFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //
 //--Rule 2. Our Price must be High
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
-  FDBcnt=2;
-  FDBarray[0]=HiFDBptr;
-  FDBarray[1]=PriceFDBptr;
-  FzyPlotVar("",FDBarray,FDBcnt,SYSMODFILE,&status);
-  FzyUnCondProposition(HiFDBptr,FSVptr);
-  FzyPlotVar("",FDBarray,FDBcnt,SYSMODFILE,&status);
-  FzyDrawSet(PriceFDBptr,SYSMODFILE,statusPtr);
+  FuzzysetDescriptorcnt=2;
+  FuzzysetDescriptorarray[0]=HiFuzzysetDescriptorptr;
+  FuzzysetDescriptorarray[1]=PriceFuzzysetDescriptorptr;
+  FzyPlotVar("",FuzzysetDescriptorarray,FuzzysetDescriptorcnt,SYSMODFILE,&status);
+  FzyUnCondProposition(HiFuzzysetDescriptorptr,FSVptr);
+  FzyPlotVar("",FuzzysetDescriptorarray,FuzzysetDescriptorcnt,SYSMODFILE,&status);
+  FzyDrawSet(PriceFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Rulecnt++;
 //
 //--Rule 3. Our Price must be Low
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
-  FDBcnt=2;
-  FDBarray[0]=LoFDBptr;
-  FDBarray[1]=PriceFDBptr;
-  FzyPlotVar("",FDBarray,FDBcnt,SYSMODFILE,&status);
-  FzyUnCondProposition(LoFDBptr,FSVptr);
-  FzyPlotVar("",FDBarray,FDBcnt,SYSMODFILE,&status);
-  FzyDrawSet(PriceFDBptr,SYSMODFILE,statusPtr);
+  FuzzysetDescriptorcnt=2;
+  FuzzysetDescriptorarray[0]=LoFuzzysetDescriptorptr;
+  FuzzysetDescriptorarray[1]=PriceFuzzysetDescriptorptr;
+  FzyPlotVar("",FuzzysetDescriptorarray,FuzzysetDescriptorcnt,SYSMODFILE,&status);
+  FzyUnCondProposition(LoFuzzysetDescriptorptr,FSVptr);
+  FzyPlotVar("",FuzzysetDescriptorarray,FuzzysetDescriptorcnt,SYSMODFILE,&status);
+  FzyDrawSet(PriceFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Rulecnt++;
 //
 //--Rule 4. Our Price must be around 2*MfgCosts
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
-  FDBcnt=2;
-  FDBarray[0]=amFDBptr;
-  FDBarray[1]=PriceFDBptr;
-  FzyPlotVar("",FDBarray,FDBcnt,SYSMODFILE,&status);
-  FzyUnCondProposition(amFDBptr,FSVptr);
-  FzyPlotVar("",FDBarray,FDBcnt,SYSMODFILE,&status);
-  FzyDrawSet(PriceFDBptr,SYSMODFILE,statusPtr);
+  FuzzysetDescriptorcnt=2;
+  FuzzysetDescriptorarray[0]=amFuzzysetDescriptorptr;
+  FuzzysetDescriptorarray[1]=PriceFuzzysetDescriptorptr;
+  FzyPlotVar("",FuzzysetDescriptorarray,FuzzysetDescriptorcnt,SYSMODFILE,&status);
+  FzyUnCondProposition(amFuzzysetDescriptorptr,FSVptr);
+  FzyPlotVar("",FuzzysetDescriptorarray,FuzzysetDescriptorcnt,SYSMODFILE,&status);
+  FzyDrawSet(PriceFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Rulecnt++;
 //
 //
 //--Defuzzify to find expected value for price
 //
-  Price=FzyDefuzzify(PriceFDBptr,thisDefuzzMethod,CompIdxptr,statusPtr);
-  fsetheight=FzyGetHeight(PriceFDBptr);
+  Price=FzyDefuzzify(PriceFuzzysetDescriptorptr,thisDefuzzMethod,CompIdxptr,statusPtr);
+  fsetheight=FzyGetHeight(PriceFuzzysetDescriptorptr);
   fprintf(mdlout,"%s\n","Model Solution:");
   fprintf(mdlout,"%s%10.2f\n","  Price       = ",Price       );
   fprintf(mdlout,"%s%10.2f\n","  CompIdx     = ",*CompIdxptr );

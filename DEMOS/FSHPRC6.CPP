@@ -17,12 +17,12 @@
 #include <stdio.h>
 #include <string.h>
 #include "PDB.hpp"
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include "SFZYctl.hpp"
 #include "SSYSctl.hpp"
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 //
 //--These are the "logical" rules. In the high level fuzzy modelling
 //--system we would enter these rules exactly as shown.
@@ -42,9 +42,9 @@ double fshpr6policy(const char**,double,double,float*,int*);
 void main(void)
  {
   PDB     *prcPDBptr;
-  FDB     *FDBptr[FDBvecmax];
-  VDB     *VDBptr;
-  int      i,status,FDBcnt,Hdgcnt,TryCtl[2];
+  FuzzysetDescriptor     *FuzzysetDescriptorptr[FuzzysetDescriptorvecmax];
+  VariableDescriptor     *VariableDescriptorptr;
+  int      i,status,FuzzysetDescriptorcnt,Hdgcnt,TryCtl[2];
   float    compidx;
   double   TwiceMfgCosts,mfgcosts=0,compprice=0,Price;
   double   Domain[2],Parms[4];
@@ -60,22 +60,22 @@ void main(void)
 //
   Domain[0]=16;
   Domain[1]=36;
-  VDBptr=VarCreateScalar("PRICE",REAL,Domain,"0",&status);
-  MdlLinkVDB(VDBptr,prcPDBptr,&status);
+  VariableDescriptorptr=VarCreateScalar("PRICE",REAL,Domain,"0",&status);
+  MdlLinkVariableDescriptor(VariableDescriptorptr,prcPDBptr,&status);
 //
 //--Create the basic fuzzy sets (High and Low for Price)
 //
-  FDBptr[0]=FzyCreateSet("HIGH",INCREASE,Domain,Parms,0,&status);
-  strcpy(FDBptr[0]->FDBdesc,"High for Price");
-  MdlLinkFDB(FDBptr[0],prcPDBptr,&status);
-  FDBptr[1]=FzyCreateSet("LOW", DECREASE,Domain,Parms,0,&status);
-  strcpy(FDBptr[1]->FDBdesc,"Low for Price");
-  MdlLinkFDB(FDBptr[1],prcPDBptr,&status);
-  FDBcnt=2;
-  FzyPlotVar("PRICE",FDBptr,FDBcnt,SYSMODFILE,&status);
+  FuzzysetDescriptorptr[0]=FzyCreateSet("HIGH",INCREASE,Domain,Parms,0,&status);
+  strcpy(FuzzysetDescriptorptr[0]->FuzzysetDescriptordesc,"High for Price");
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[0],prcPDBptr,&status);
+  FuzzysetDescriptorptr[1]=FzyCreateSet("LOW", DECREASE,Domain,Parms,0,&status);
+  strcpy(FuzzysetDescriptorptr[1]->FuzzysetDescriptordesc,"Low for Price");
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[1],prcPDBptr,&status);
+  FuzzysetDescriptorcnt=2;
+  FzyPlotVar("PRICE",FuzzysetDescriptorptr,FuzzysetDescriptorcnt,SYSMODFILE,&status);
 //--Create an empty fuzzy set as a working area
-  FDBptr[0]=FzyCreateSet("NULL",EMPTYSET,Domain,Parms,0,&status);
-  MdlLinkFDB(FDBptr[0],prcPDBptr,&status);
+  FuzzysetDescriptorptr[0]=FzyCreateSet("NULL",EMPTYSET,Domain,Parms,0,&status);
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[0],prcPDBptr,&status);
 //
 //--Prompt for the model Data
 //
@@ -101,19 +101,19 @@ void main(void)
   TwiceMfgCosts=2*mfgcosts;
   Parms[0]=TwiceMfgCosts;
   Parms[1]=TwiceMfgCosts*.25;
-  FDBptr[0]=FzyCreateSet("Near.2*MfgCosts",PI,Domain,Parms,2,&status);
-  strcpy(FDBptr[0]->FDBdesc,"Near (Around) Twice MfgCosts");
-  MdlLinkFDB(FDBptr[0],prcPDBptr,&status);
-  FzyDrawSet(FDBptr[0],SYSMODFILE,&status);
-  FDBcnt++;
+  FuzzysetDescriptorptr[0]=FzyCreateSet("Near.2*MfgCosts",PI,Domain,Parms,2,&status);
+  strcpy(FuzzysetDescriptorptr[0]->FuzzysetDescriptordesc,"Near (Around) Twice MfgCosts");
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[0],prcPDBptr,&status);
+  FzyDrawSet(FuzzysetDescriptorptr[0],SYSMODFILE,&status);
+  FuzzysetDescriptorcnt++;
 //
 //--Now create the fuzzy number for around compprice
   Parms[0]=compprice;
   Parms[1]=compprice*.15;
-  FDBptr[0]=FzyCreateSet("Near.CompPrice",PI,Domain,Parms,2,&status);
-  strcpy(FDBptr[0]->FDBdesc,"Near (Around) Competition Price");
-  MdlLinkFDB(FDBptr[0],prcPDBptr,&status);
-  FzyDrawSet(FDBptr[0],SYSMODFILE,&status);
+  FuzzysetDescriptorptr[0]=FzyCreateSet("Near.CompPrice",PI,Domain,Parms,2,&status);
+  strcpy(FuzzysetDescriptorptr[0]->FuzzysetDescriptordesc,"Near (Around) Competition Price");
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[0],prcPDBptr,&status);
+  FzyDrawSet(FuzzysetDescriptorptr[0],SYSMODFILE,&status);
 //
 //--Display the rules on the model log and invoke the policy
 //

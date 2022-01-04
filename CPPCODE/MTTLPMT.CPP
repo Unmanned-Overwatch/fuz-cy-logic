@@ -16,8 +16,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void DisplayValues(char*,char**,int,int);
 //
 double MtsAskforDBL(

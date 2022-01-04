@@ -13,7 +13,7 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <math.h>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 bool MtsIsPrime(long N)
  {
    long   M=2;                      // Two is the smallest prime

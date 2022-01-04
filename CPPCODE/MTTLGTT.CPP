@@ -15,8 +15,8 @@
 #include <stddef.h>
 #include <string.h>
 #include <dos.h>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 char *MtsGetTime(int *statusPtr)
  {
   dostime_t   thisTime;

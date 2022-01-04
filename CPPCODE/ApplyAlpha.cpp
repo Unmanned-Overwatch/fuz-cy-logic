@@ -7,10 +7,10 @@
 #include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
 #include <SystemPrototypes.hpp>
-void FzyApplyAlfa(FuzzysetDescriptor* FDBptr,const float Alfa,const int AlfaType)
+void FzyApplyAlfa(FuzzysetDescriptor* FuzzysetDescriptorptr,const float Alfa,const int AlfaType)
    {
      int i;
      for(i=0;i<VECMAX;i++)
-       if(!FzyAboveAlfa(FDBptr->FDBvector[i],Alfa,AlfaType))
-             FDBptr->FDBvector[i]=0;
+       if(!FzyAboveAlfa(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i],Alfa,AlfaType))
+             FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=0;
    }

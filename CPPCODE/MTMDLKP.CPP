@@ -18,8 +18,8 @@
 #include <stddef.h>
 #include <PDB.hpp>
 #include <XSYSctl.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void MdlLinkPDB(PDB *PDBptr,int *statusPtr)
  {
   PDB    *PDBwrkptr;

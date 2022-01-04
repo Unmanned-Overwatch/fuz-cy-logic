@@ -17,7 +17,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <PDB.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 void MdlInitPDB(PDB *PDBptr)
   {
     int i,j;
@@ -25,14 +25,14 @@ void MdlInitPDB(PDB *PDBptr)
 //--slots. These will be set as the system starts.
     memset(PDBptr->PDBid,       ' ',IDENLEN);
     memset(PDBptr->PDBdesc,     ' ',DESCLEN);
-    PDBptr->PDBvdbcnt=     0;
-    PDBptr->PDBfdbcnt=     0;
+    PDBptr->PDBVariableDescriptorcnt=     0;
+    PDBptr->PDBFuzzysetDescriptorcnt=     0;
     PDBptr->PDBhdbcnt=     0;
     PDBptr->PDBndbcnt=     0;
 //--Clear all the hash dictionaries associated with
 //--the environment and the currently active model
-    for(i=0;i<VDBmax;i++) PDBptr->PDBvariables[i]= NULL;
-    for(i=0;i<FDBmax;i++) PDBptr->PDBfuzzysets[i]= NULL;
+    for(i=0;i<VariableDescriptormax;i++) PDBptr->PDBvariables[i]= NULL;
+    for(i=0;i<FuzzysetDescriptormax;i++) PDBptr->PDBfuzzysets[i]= NULL;
     for(i=0;i<HDBmax;i++) PDBptr->PDBhedges[i]=    NULL;
     for(i=0;i<NDBmax;i++) PDBptr->PDBnoise[i]=     NULL;
     PDBptr->PDBnext=NULL;

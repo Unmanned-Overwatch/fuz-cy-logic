@@ -14,8 +14,8 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void _MtsAssert(char * strNote,char *strFile,unsigned uLine)
  {
    FILE *syslog=MtsGetSystemFile(SYSLOGFILE);

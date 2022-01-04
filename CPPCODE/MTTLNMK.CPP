@@ -15,8 +15,8 @@
 *-------------------------------------------------------------*/
 #include "string.h"
 #include "ctype.h"
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void MtsNormalizeKey(char *hashKey)
  {
   char   tempKey[128],byte;

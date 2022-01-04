@@ -4,7 +4,7 @@
 
 *--------------------Procedure Description--------------------*
 | mtmdlkv.cpp  Earl Cox  04/01/93 Link Variable to Policy     |
-| This function takes a VDB and links it into the hash        |
+| This function takes a VariableDescriptor and links it into the hash        |
 | dictionary of a policy. Even though this is a variable      |
 | function we keep it under the general modelling functions   |
 | for uniformity and control.                                 |
@@ -17,12 +17,12 @@
 #include <string.h>
 #include <stddef.h>
 #include <PDB.hpp>
-#include "VDB.hpp"
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-void MdlLinkVDB(VDB *VDBptr,PDB *PDBptr,int *statusPtr)
+#include "VariableDescriptor.hpp"
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+void MdlLinkVariableDescriptor(VariableDescriptor *VariableDescriptorptr,PDB *PDBptr,int *statusPtr)
  {
-  VDB    *VDBwrkptr;
+  VariableDescriptor    *VariableDescriptorwrkptr;
   char   *PgmId="mtmdlkv";
   char    Varid[IDENLEN+1];
   long    slot;
@@ -32,37 +32,37 @@ void MdlLinkVDB(VDB *VDBptr,PDB *PDBptr,int *statusPtr)
 //--Copy the variable identifier into a working area. We use
 //--this with the hashing function to generate an address in
 //--the PDB variable dictionary.
-  strcpy(Varid,VDBptr->VDBid);
-  slot=MtsHashString(Varid,VDBmax);
-  if(slot<0||slot>VDBmax)
+  strcpy(Varid,VariableDescriptorptr->VariableDescriptorid);
+  slot=MtsHashString(Varid,VariableDescriptormax);
+  if(slot<0||slot>VariableDescriptormax)
     {
      *statusPtr=1;
      MtsSendError(97,PgmId,Varid);
      return;
     }
 //
-//--Look at the VDB doctionary slot. If it's empty, then
+//--Look at the VariableDescriptor doctionary slot. If it's empty, then
 //--simply link in the variable and return. Otherwise, find
 //--the last node and link this one into the end of the chain.
-  VDBwrkptr=PDBptr->PDBvariables[slot];
-  if(VDBwrkptr==NULL)
+  VariableDescriptorwrkptr=PDBptr->PDBvariables[slot];
+  if(VariableDescriptorwrkptr==NULL)
     {
-     PDBptr->PDBvariables[slot]=VDBptr;
+     PDBptr->PDBvariables[slot]=VariableDescriptorptr;
      return;
     }
   for(;;)
     {
-     if(strcmp(VDBwrkptr->VDBid,VDBptr->VDBid)==0)
+     if(strcmp(VariableDescriptorwrkptr->VariableDescriptorid,VariableDescriptorptr->VariableDescriptorid)==0)
        {
         *statusPtr=3;
-        MtsSendError(67,PgmId,VDBptr->VDBid);
+        MtsSendError(67,PgmId,VariableDescriptorptr->VariableDescriptorid);
         return;
        }
-     if(VDBwrkptr->VDBnext==NULL)   // Is there a next VDB node?
+     if(VariableDescriptorwrkptr->VariableDescriptornext==NULL)   // Is there a next VariableDescriptor node?
        {                            // No...
-        VDBwrkptr->VDBnext=VDBptr;  // Link this VDB into chain
+        VariableDescriptorwrkptr->VariableDescriptornext=VariableDescriptorptr;  // Link this VariableDescriptor into chain
         return;                     // Return to caller
        }
-     VDBwrkptr=VDBwrkptr->VDBnext;  // Move to next VDB node in chain
+     VariableDescriptorwrkptr=VariableDescriptorwrkptr->VariableDescriptornext;  // Move to next VariableDescriptor node in chain
     }
  }

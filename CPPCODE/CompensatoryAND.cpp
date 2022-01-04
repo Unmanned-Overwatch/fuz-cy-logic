@@ -8,9 +8,9 @@
 | actual class generator function.                            |
 *-------------------------------------------------------------*/
 #include <math.h>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 #include   <fuzzy.hpp>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 double pow(double,double);
 float FzyCompAND(
   int ANDClass,double ANDCoeff,float truth1,float truth2,int *statusPtr)

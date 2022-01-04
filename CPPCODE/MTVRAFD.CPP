@@ -3,7 +3,7 @@
 
 
 *--------------------Procedure Description--------------------*
-| mtvrafd.cpp  Earl Cox  04/01/93 Attach fdb to VDB           |
+| mtvrafd.cpp  Earl Cox  04/01/93 Attach FuzzysetDescriptor to VariableDescriptor           |
 | This function inserts a fuzzy set description into the      |
 | specified variable descriptor.                              |
 *----------------Modification Audit/Change Log----------------*
@@ -12,20 +12,20 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
-#include "VDB.hpp"
+#include <FuzzysetDescriptor.hpp>
+#include "VariableDescriptor.hpp"
 #define  FzysetMax  16
-void VarAttachFDB(FDB *FDBptr,VDB *VDBptr,int *statusPtr)
+void VarAttachFuzzysetDescriptor(FuzzysetDescriptor *FuzzysetDescriptorptr,VariableDescriptor *VariableDescriptorptr,int *statusPtr)
  {
   *statusPtr=0;
-  int fcnt=VDBptr->VDBfsetcnt;
+  int fcnt=VariableDescriptorptr->VariableDescriptorfsetcnt;
   if(fcnt==FzysetMax)
     {
      *statusPtr=1;
      return;
     }
    fcnt++;
-   VDBptr->VDBfuzzysets[fcnt]=FDBptr;
-   VDBptr->VDBfsetcnt=fcnt;
+   VariableDescriptorptr->VariableDescriptorfuzzysets[fcnt]=FuzzysetDescriptorptr;
+   VariableDescriptorptr->VariableDescriptorfsetcnt=fcnt;
    return;
  }

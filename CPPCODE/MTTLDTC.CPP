@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "toknode.hpp"
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 #define  VERYBIG  1024
 static char   *   TokenType[] =
      {

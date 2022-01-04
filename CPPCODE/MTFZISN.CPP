@@ -12,13 +12,13 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
-#include   <mtypes.hpp>
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
 #include   <fuzzy.hpp>
-bool FzyIsNormal(FDB *FDBptr)
+bool FzyIsNormal(FuzzysetDescriptor *FuzzysetDescriptorptr)
   {
    int i;
    for(i=0;i<VECMAX;i++)
-      if(FDBptr->FDBvector[i]==1.0) return(TRUE);
+      if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]==1.0) return(TRUE);
    return(FALSE);
   }

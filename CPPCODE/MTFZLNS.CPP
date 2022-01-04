@@ -13,10 +13,10 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include   <fuzzy.hpp>
-#include <fdb.hpp>
-#include <mtsptype.hpp>
+#include <FuzzysetDescriptor.hpp>
+#include <SystemPrototypes.hpp>
 void FzyLinearCurve(
-  FDB* FDBptr,double low,double high,int LineType,int *statusPtr)
+  FuzzysetDescriptor* FuzzysetDescriptorptr,double low,double high,int LineType,int *statusPtr)
   {
     int     i,j;
     double  swidth,
@@ -28,24 +28,24 @@ void FzyLinearCurve(
     if((low==high)||(low>high))
       {
        *statusPtr=1;
-       MtsSendError(36,PgmId,FDBptr->FDBid);
+       MtsSendError(36,PgmId,FuzzysetDescriptorptr->FuzzysetDescriptorid);
        return;
       }
     swidth=high-low;
-    dwidth=FDBptr->FDBdomain[1]-FDBptr->FDBdomain[0];
+    dwidth=FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]-FuzzysetDescriptorptr->FuzzysetDescriptordomain[0];
     for(i=0;i<VECMAX;i++)
        {
-        memval=FDBptr->FDBdomain[0]+(float)i/VECMAX*dwidth;
-        FDBptr->FDBvector[i]=0.0;
-        if(memval>high) FDBptr->FDBvector[i]=1.00;
+        memval=FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]+(float)i/VECMAX*dwidth;
+        FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=0.0;
+        if(memval>high) FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=1.00;
           else if(memval>low)
-                FDBptr->FDBvector[i]=(float)((memval-low)/swidth);
+                FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)((memval-low)/swidth);
        }
     if(LineType==DECREASE)
        for(j=0;j<VECMAX;j++)
-          FDBptr->FDBvector[j]=1-FDBptr->FDBvector[j];
-    FDBptr->FDBgentype=LineType;
-    FDBptr->FDBparms[0]=low;
-    FDBptr->FDBparms[1]=high;
+          FuzzysetDescriptorptr->FuzzysetDescriptorvector[j]=1-FuzzysetDescriptorptr->FuzzysetDescriptorvector[j];
+    FuzzysetDescriptorptr->FuzzysetDescriptorgentype=LineType;
+    FuzzysetDescriptorptr->FuzzysetDescriptorparms[0]=low;
+    FuzzysetDescriptorptr->FuzzysetDescriptorparms[1]=high;
     return;
   }

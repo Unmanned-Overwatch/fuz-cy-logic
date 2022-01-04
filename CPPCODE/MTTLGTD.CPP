@@ -16,8 +16,8 @@
 #include <stddef.h>
 #include <string.h>
 #include <dos.h>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 char *MtsGetDate(char *DayofWeek,int *statusPtr)
  {
   dosdate_t   thisDate;

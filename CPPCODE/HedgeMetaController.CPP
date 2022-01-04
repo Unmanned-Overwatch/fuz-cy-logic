@@ -8,14 +8,14 @@
 #include <stdio.h>
 #include <string.h>
 double max(double,double);
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include <HDB.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 #include   <fuzzy.hpp>
-#include <mtsptype.hpp>
-void Complete_hedge(const HDB*,const FDB*,FDB*);
+#include <SystemPrototypes.hpp>
+void Complete_hedge(const HDB*,const FuzzysetDescriptor*,FuzzysetDescriptor*);
 void FzyApplyHedge(
-   const FDB* inFDBptr,const HDB* HDBptr,FDB* outFDBptr,int *statusPtr)
+   const FuzzysetDescriptor* inFuzzysetDescriptorptr,const HDB* HDBptr,FuzzysetDescriptor* outFuzzysetDescriptorptr,int *statusPtr)
   {
    int      i,j,k,n;
    double   x,
@@ -27,8 +27,8 @@ void FzyApplyHedge(
    // FILE    *mdllog;
 
    *statusPtr=0;
-   FzyCopySet(inFDBptr,outFDBptr,statusPtr);
-   double  range=inFDBptr->FDBdomain[1]-inFDBptr->FDBdomain[0];
+   FzyCopySet(inFuzzysetDescriptorptr,outFuzzysetDescriptorptr,statusPtr);
+   double  range=inFuzzysetDescriptorptr->FuzzysetDescriptordomain[1]-inFuzzysetDescriptorptr->FuzzysetDescriptordomain[0];
    double  hedgeval=HDBptr->HDBvalue;
    if(HDBptr->HDBmode==0)
      {
@@ -36,23 +36,23 @@ void FzyApplyHedge(
         {
          case ADD:
           for(i=0;i<VECMAX;i++)
-           outFDBptr->FDBvector[i]=inFDBptr->FDBvector[i]+(float)hedgeval;
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]+(float)hedgeval;
           break;
          case SUBTRACT:
           for(i=0;i<VECMAX;i++)
-           outFDBptr->FDBvector[i]=inFDBptr->FDBvector[i]-(float)hedgeval;
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]-(float)hedgeval;
           break;
          case MULTIPLY:
           for(i=0;i<VECMAX;i++)
-           outFDBptr->FDBvector[i]=inFDBptr->FDBvector[i]*(float)hedgeval;
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]*(float)hedgeval;
           break;
          case DIVIDE:
           for(i=0;i<VECMAX;i++)
-           outFDBptr->FDBvector[i]=inFDBptr->FDBvector[i]/(float)hedgeval;
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]/(float)hedgeval;
           break;
          case POWER:
           for(i=0;i<VECMAX;i++)
-           outFDBptr->FDBvector[i]=(float)pow(inFDBptr->FDBvector[i],hedgeval);
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)pow(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i],hedgeval);
           break;
          default:
           {
@@ -61,7 +61,7 @@ void FzyApplyHedge(
             return;
           }
         }/* Usertype */
-      Complete_hedge(HDBptr,inFDBptr,outFDBptr);
+      Complete_hedge(HDBptr,inFuzzysetDescriptorptr,outFuzzysetDescriptorptr);
       return;
      }
    switch(HDBptr->HDBmode)
@@ -75,27 +75,27 @@ void FzyApplyHedge(
       for(i=0;i<VECMAX;++i) local[i]=0.0;
       for(i=0;i<VECMAX;i++)
        {
-        if(inFDBptr->FDBvector[i]!=0)
+        if(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]!=0)
           {
            x=(double)i;
            for(j=0;j<VECMAX;j++)
             {
              part1=(float)(fabs(float(j)-(float)x)*range/VECMAX);
-             part2=(float)((1.000/(1+pow(part1,EXPval)))*inFDBptr->FDBvector[i]);
+             part2=(float)((1.000/(1+pow(part1,EXPval)))*inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]);
              local[j]=max(local[j],part2);
             }
           }
        }
-      for(i=0;i<VECMAX;++i) outFDBptr->FDBvector[i]=local[i];
+      for(i=0;i<VECMAX;++i) outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=local[i];
       break;
      case ABOVE:
       x=0.0;
       j=0;
       for(i=0;i<VECMAX;++i)
-       if(inFDBptr->FDBvector[i] >= x)
+       if(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i] >= x)
           {
            j=i;
-           x=inFDBptr->FDBvector[i];
+           x=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
            if(x==1.00)
              goto above_exit;
           }
@@ -103,58 +103,58 @@ void FzyApplyHedge(
        for(i=0;i<VECMAX;++i)
         {
          if(i <= j)
-           outFDBptr->FDBvector[i]=0.0;
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=0.0;
           else
-           outFDBptr->FDBvector[i]=1-inFDBptr->FDBvector[i];
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=1-inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
         }
       break;
      case POSITIVE:
       x=.5;
       for(i=0;i<VECMAX;++i)
-       if(inFDBptr->FDBvector[i] >= x)
+       if(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i] >= x)
            {
-            hv=inFDBptr->FDBvector[i];
+            hv=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
             hv=(float)2*pow(hv,TWO);
-            outFDBptr->FDBvector[i]=(float)hv;
+            outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)hv;
            }
          else
            {
-            hv=inFDBptr->FDBvector[i];
+            hv=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
             hv=(float)1-(2*(pow(1-hv,TWO)));
-            outFDBptr->FDBvector[i]=(float)hv;
+            outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)hv;
            }
       break;
      case AFTER:
       n=0;
-      m=inFDBptr->FDBvector[0];
+      m=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[0];
       for(i=0;i<VECMAX;i++)
          {
-          if(inFDBptr->FDBvector[i]>m)m=inFDBptr->FDBvector[i];
-          if(inFDBptr->FDBvector[i]>0) if(n==0) n=i;
+          if(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>m)m=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
+          if(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>0) if(n==0) n=i;
          }
-      for(i=0;i<VECMAX;++i) outFDBptr->FDBvector[i]=0.0;
+      for(i=0;i<VECMAX;++i) outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=0.0;
       for(i=0;i<VECMAX;++i)
-       if(inFDBptr->FDBvector[i] >= m)
+       if(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i] >= m)
            {
             for(j=i,k=n+1;j<VECMAX;++j,k++)
-                outFDBptr->FDBvector[j]=inFDBptr->FDBvector[k];
+                outFuzzysetDescriptorptr->FuzzysetDescriptorvector[j]=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[k];
            }
       break;
      case BEFORE:
       n=0;
-      m=inFDBptr->FDBvector[0];
+      m=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[0];
       for(i=0;i<VECMAX;i++)
-          if(inFDBptr->FDBvector[i]>m)m=inFDBptr->FDBvector[i];
+          if(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>m)m=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
       for(i=VECMAX-1;i>=0;i--)
-          if(inFDBptr->FDBvector[i]>0) if(n==0) n=i;
-      for(i=0;i<VECMAX;++i) outFDBptr->FDBvector[i]=0.0;
+          if(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>0) if(n==0) n=i;
+      for(i=0;i<VECMAX;++i) outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=0.0;
       for(i=VECMAX-1;i>=0;--i)
-       if(inFDBptr->FDBvector[i] >= m)
+       if(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i] >= m)
            {
             for(j=i,k=n-1;j>=0,k>=0;--j,k--)
                {
                 if(j>=0 && k>=0)
-                  outFDBptr->FDBvector[j]=inFDBptr->FDBvector[k];
+                  outFuzzysetDescriptorptr->FuzzysetDescriptorvector[j]=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[k];
                }
            }
       break;
@@ -162,10 +162,10 @@ void FzyApplyHedge(
       x=0.0;
       j=VECMAX;
       for(i=0;i<VECMAX;++i)
-       if(inFDBptr->FDBvector[i] >= x)
+       if(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i] >= x)
           {
            j=i;
-           x=inFDBptr->FDBvector[i];
+           x=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
            if(x==1.00)
              goto below_exit;
           }
@@ -173,46 +173,46 @@ void FzyApplyHedge(
        for(i=0;i<VECMAX;++i)
         {
          if(i >= j)
-           outFDBptr->FDBvector[i]=0.0;
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=0.0;
           else
-           outFDBptr->FDBvector[i]=1-inFDBptr->FDBvector[i];
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=1-inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
         }
       break;
      case GENERALLY:
       x=.5;
       for(i=0;i<VECMAX;++i)
-       if(inFDBptr->FDBvector[i] >= x)
+       if(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i] >= x)
            {
-            hv=inFDBptr->FDBvector[i];
+            hv=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
             hv=(float)0.8*pow(hv,.5);
-            outFDBptr->FDBvector[i]=(float)hv;
+            outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)hv;
            }
          else
            {
-            hv=inFDBptr->FDBvector[i];
+            hv=inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
             hv=(float)1-(0.8*(pow(1-hv,.5)));
-            outFDBptr->FDBvector[i]=(float)hv;
+            outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)hv;
            }
       break;
      case NOT:
       for(i=0;i<VECMAX;++i)
-       outFDBptr->FDBvector[i]=1-inFDBptr->FDBvector[i];
+       outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=1-inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
       break;
      case SOMEWHAT:
       for(i=0;i<VECMAX;++i)
-       outFDBptr->FDBvector[i]=(float)pow(inFDBptr->FDBvector[i],POINTFIVE);
+       outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)pow(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i],POINTFIVE);
       break;
      case VERY:
       for(i=0;i<VECMAX;++i)
-       outFDBptr->FDBvector[i]=(float)pow(inFDBptr->FDBvector[i],TWO);
+       outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)pow(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i],TWO);
       break;
      case EXTREMELY:
       for(i=0;i<VECMAX;++i)
-       outFDBptr->FDBvector[i]=(float)pow(inFDBptr->FDBvector[i],THREE);
+       outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)pow(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i],THREE);
       break;
      case SLIGHTLY:
       for(i=0;i<VECMAX;++i)
-       outFDBptr->FDBvector[i]=(float)pow(inFDBptr->FDBvector[i],POINTTHREE);
+       outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)pow(inFuzzysetDescriptorptr->FuzzysetDescriptorvector[i],POINTTHREE);
       break;
      default:
       {
@@ -221,7 +221,7 @@ void FzyApplyHedge(
         return;
       }
     }
-   Complete_hedge(HDBptr,inFDBptr,outFDBptr);
+   Complete_hedge(HDBptr,inFuzzysetDescriptorptr,outFuzzysetDescriptorptr);
    return;
   }
 
@@ -232,7 +232,7 @@ void FzyApplyHedge(
 | active plot window state has been specified)                |
 *-------------------------------------------------------------*/
   void Complete_hedge(
-      const HDB* HDBptr,const FDB* inFDBptr,FDB* outFDBptr)
+      const HDB* HDBptr,const FuzzysetDescriptor* inFuzzysetDescriptorptr,FuzzysetDescriptor* outFuzzysetDescriptorptr)
     {
      int     status;
      char    NameBuf[DESCLEN+1];
@@ -240,14 +240,14 @@ void FzyApplyHedge(
 
      sprintf(wrkBuff,"%s%s%s%s%s",
       "Hedge '",HDBptr->HDBid,"' applied to Fuzzy Set \"",
-        inFDBptr->FDBid,"\"");
+        inFuzzysetDescriptorptr->FuzzysetDescriptorid,"\"");
      MtsWritetoLog(SYSMODFILE,wrkBuff,&status);
     //--Now update the name and the description of the new
     //--hedged fuzzy set.
-     strcpy(outFDBptr->FDBid,inFDBptr->FDBid);
+     strcpy(outFuzzysetDescriptorptr->FuzzysetDescriptorid,inFuzzysetDescriptorptr->FuzzysetDescriptorid);
      strcpy(NameBuf,HDBptr->HDBid);
      strcat(NameBuf," ");
-     strcat(NameBuf,inFDBptr->FDBid);
-     strcpy(outFDBptr->FDBdesc,NameBuf);
+     strcat(NameBuf,inFuzzysetDescriptorptr->FuzzysetDescriptorid);
+     strcpy(outFuzzysetDescriptorptr->FuzzysetDescriptordesc,NameBuf);
      return;
     }

@@ -16,7 +16,7 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <string.h>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 int MtsSerialSearch(
      char *Word,const char **Table,int TblCnt,int CompType)
   {

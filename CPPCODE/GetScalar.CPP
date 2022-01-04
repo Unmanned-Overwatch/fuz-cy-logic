@@ -13,10 +13,10 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-double FzyGetScalar(const FDB* FDBptr,const int CellNo,int* statusPtr)
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+double FzyGetScalar(const FuzzysetDescriptor* FuzzysetDescriptorptr,const int CellNo,int* statusPtr)
  {
    char *PgmId="mtfzgts";
    *statusPtr=1;
@@ -26,7 +26,7 @@ double FzyGetScalar(const FDB* FDBptr,const int CellNo,int* statusPtr)
       MtsSendError(48,PgmId,MtsFormatInt(CellNo));
      }
    *statusPtr=0;
-   double Range=FDBptr->FDBdomain[1]-FDBptr->FDBdomain[0];
-   double Scalar=FDBptr->FDBdomain[0]+(CellNo*Range)/(VECMAX-1);
+   double Range=FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]-FuzzysetDescriptorptr->FuzzysetDescriptordomain[0];
+   double Scalar=FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]+(CellNo*Range)/(VECMAX-1);
    return(Scalar);
  }

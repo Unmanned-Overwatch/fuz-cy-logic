@@ -15,11 +15,11 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <math.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 void FzySCurve(
-       FDB* FDBptr,
+       FuzzysetDescriptor* FuzzysetDescriptorptr,
        double left,
        double flexpoint,
        double right,
@@ -34,37 +34,37 @@ void FzySCurve(
       if((left>right)||(right<flexpoint))
          {
           *statusPtr=1;
-          MtsSendError(42,PgmId,FDBptr->FDBid);
+          MtsSendError(42,PgmId,FuzzysetDescriptorptr->FuzzysetDescriptorid);
           return;
          }
       swidth=right-left;
-      dwidth=FDBptr->FDBdomain[1]-FDBptr->FDBdomain[0];
+      dwidth=FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]-FuzzysetDescriptorptr->FuzzysetDescriptordomain[0];
       for(i=0;i<VECMAX;i++)
          {
-          memval=FDBptr->FDBdomain[0]+(float)i/(VECMAX-1)*dwidth;
+          memval=FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]+(float)i/(VECMAX-1)*dwidth;
           if(memval>=right)
-              FDBptr->FDBvector[i]=1.00;
+              FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=1.00;
             else
           if(memval>flexpoint)
              {
               temp1=(memval-right)/swidth;
-              FDBptr->FDBvector[i]=(float)(1-(2*(pow(temp1,2))));
+              FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)(1-(2*(pow(temp1,2))));
              }
             else
           if(memval>left)
              {
               temp1=(memval-left)/swidth;
-              FDBptr->FDBvector[i]=(float)(2*(pow(temp1,2)));
+              FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)(2*(pow(temp1,2)));
              }
             else
-             FDBptr->FDBvector[i]=0.0;
+             FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=0.0;
          }
       if(CurveType==DECLINE)
          for(i=0;i<VECMAX;i++)
-            FDBptr->FDBvector[i]=1-FDBptr->FDBvector[i];
-      FDBptr->FDBgentype=CurveType;
-      FDBptr->FDBparms[0]=left;
-      FDBptr->FDBparms[1]=flexpoint;
-      FDBptr->FDBparms[2]=right;
+            FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=1-FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
+      FuzzysetDescriptorptr->FuzzysetDescriptorgentype=CurveType;
+      FuzzysetDescriptorptr->FuzzysetDescriptorparms[0]=left;
+      FuzzysetDescriptorptr->FuzzysetDescriptorparms[1]=flexpoint;
+      FuzzysetDescriptorptr->FuzzysetDescriptorparms[2]=right;
       return;
     }

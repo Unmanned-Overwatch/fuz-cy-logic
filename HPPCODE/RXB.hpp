@@ -13,7 +13,7 @@
 struct RXC
  {
   char   *RXCvarID,       // Name of Variable
-         *RXCfdbID,       // Name of Fuzzy Set
+         *RXCFuzzysetDescriptorID,       // Name of Fuzzy Set
          *RXChedgeID;     // Name of Hedge(s)
   float   RXCpropTV;      // Truth of this fuzzy proposition
   RXC    *RXCnext;

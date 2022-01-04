@@ -16,29 +16,29 @@
 #include <FuzzysetDescriptor.hpp>
 #include   <SystemTypes.hpp>
 #include <SystemPrototypes.hpp>
-FDB *FzyApplyAND(
-   FDB *FDBptr1,FDB *FDBptr2,int ANDClass,double ANDCoeff,int *statusPtr)
+FuzzysetDescriptor *FzyApplyAND(
+   FuzzysetDescriptor *FuzzysetDescriptorptr1,FuzzysetDescriptor *FuzzysetDescriptorptr2,int ANDClass,double ANDCoeff,int *statusPtr)
  {
-   FDB  *FDBoutptr,*FDBnull=NULL;
+   FuzzysetDescriptor  *FuzzysetDescriptoroutptr,*FuzzysetDescriptornull=NULL;
    char *PgmId="mtfzfsa";
    int   i;
 
    *statusPtr=0;
-   if(!(FDBoutptr=new FDB))
+   if(!(FuzzysetDescriptoroutptr=new FuzzysetDescriptor))
      {
       *statusPtr=1;
       MtsSendError(2,PgmId,"");
-      return(FDBnull);
+      return(FuzzysetDescriptornull);
      }
-   FzyInitFDB(FDBoutptr);
-   FzyCopySet(FDBptr1,FDBoutptr,statusPtr);
+   FzyInitFuzzysetDescriptor(FuzzysetDescriptoroutptr);
+   FzyCopySet(FuzzysetDescriptorptr1,FuzzysetDescriptoroutptr,statusPtr);
    for(i=0;i<VECMAX;i++)
       {
-       FDBoutptr->FDBvector[i]=
+       FuzzysetDescriptoroutptr->FuzzysetDescriptorvector[i]=
          FzyCompAND(
           ANDClass,ANDCoeff,
-            FDBptr1->FDBvector[i],FDBptr2->FDBvector[i],statusPtr);
-       if(*statusPtr!=0) return(FDBnull);
+            FuzzysetDescriptorptr1->FuzzysetDescriptorvector[i],FuzzysetDescriptorptr2->FuzzysetDescriptorvector[i],statusPtr);
+       if(*statusPtr!=0) return(FuzzysetDescriptornull);
       }
-   return(FDBoutptr);
+   return(FuzzysetDescriptoroutptr);
  }

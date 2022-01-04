@@ -14,18 +14,18 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <string.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include "SSYSctl.hpp"
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 #include   <fuzzy.hpp>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 void main(void)
  {
-  FDB      *FDB1ptr,
-           *FDB2ptr,
-           *FDB3ptr,
-           *FDB4ptr,
-           *FDBarray[5];
+  FuzzysetDescriptor      *FuzzysetDescriptor1ptr,
+           *FuzzysetDescriptor2ptr,
+           *FuzzysetDescriptor3ptr,
+           *FuzzysetDescriptor4ptr,
+           *FuzzysetDescriptorarray[5];
   char      wrkBuff[16];
   int       i,status,SetCnt;
   int       maxSets;
@@ -38,45 +38,45 @@ void main(void)
   double    Percents[]={.40,.25,.15,.10,.05};
 
   MdlConnecttoFMS(&status);              // Connect to modelling system
-  FDB1ptr=new FDB;
-  FzyInitFDB(FDB1ptr);
-  FDB1ptr->FDBdomain[0]=16;
-  FDB1ptr->FDBdomain[1]=42;
+  FuzzysetDescriptor1ptr=new FuzzysetDescriptor;
+  FzyInitFuzzysetDescriptor(FuzzysetDescriptor1ptr);
+  FuzzysetDescriptor1ptr->FuzzysetDescriptordomain[0]=16;
+  FuzzysetDescriptor1ptr->FuzzysetDescriptordomain[1]=42;
 //
 //--------------   Line curves -----------------------------------------
 //
   Left  =18;
   Right =36;
-  strcpy(FDB1ptr->FDBid,"Linear Up");
-  FzyLinearCurve(FDB1ptr,Left,Right,INCREASE,&status);
-  FzyDrawSet(FDB1ptr,SYSMODFILE,&status);
-  FzyExamineSet(FDB1ptr,&status);
+  strcpy(FuzzysetDescriptor1ptr->FuzzysetDescriptorid,"Linear Up");
+  FzyLinearCurve(FuzzysetDescriptor1ptr,Left,Right,INCREASE,&status);
+  FzyDrawSet(FuzzysetDescriptor1ptr,SYSMODFILE,&status);
+  FzyExamineSet(FuzzysetDescriptor1ptr,&status);
 //
   Left  =18;
   Right =36;
-  strcpy(FDB1ptr->FDBid,"Linear Down");
-  FzyLinearCurve(FDB1ptr,Left,Right,DECREASE,&status);
-  FzyDrawSet(FDB1ptr,SYSMODFILE,&status);
-  FzyExamineSet(FDB1ptr,&status);
+  strcpy(FuzzysetDescriptor1ptr->FuzzysetDescriptorid,"Linear Down");
+  FzyLinearCurve(FuzzysetDescriptor1ptr,Left,Right,DECREASE,&status);
+  FzyDrawSet(FuzzysetDescriptor1ptr,SYSMODFILE,&status);
+  FzyExamineSet(FuzzysetDescriptor1ptr,&status);
 //
 //--------------   S  curves   -----------------------------------------
 //
   Left=18;
   Center=29;
   Right=40;
-  FDB4ptr=new FDB;
-  FzyInitFDB(FDB4ptr);
-  FDB4ptr->FDBdomain[0]=16;
-  FDB4ptr->FDBdomain[1]=42;
-  strcpy(FDB4ptr->FDBid,"SCgrw[18,29,40]");
-  FzySCurve(FDB4ptr,Left,Center,Right,GROWTH,&status);
-  FzyDrawSet(FDB4ptr,SYSMODFILE,&status);
-  FzyExamineSet(FDB4ptr,&status);
+  FuzzysetDescriptor4ptr=new FuzzysetDescriptor;
+  FzyInitFuzzysetDescriptor(FuzzysetDescriptor4ptr);
+  FuzzysetDescriptor4ptr->FuzzysetDescriptordomain[0]=16;
+  FuzzysetDescriptor4ptr->FuzzysetDescriptordomain[1]=42;
+  strcpy(FuzzysetDescriptor4ptr->FuzzysetDescriptorid,"SCgrw[18,29,40]");
+  FzySCurve(FuzzysetDescriptor4ptr,Left,Center,Right,GROWTH,&status);
+  FzyDrawSet(FuzzysetDescriptor4ptr,SYSMODFILE,&status);
+  FzyExamineSet(FuzzysetDescriptor4ptr,&status);
 //
-  strcpy(FDB4ptr->FDBid,"SCdcl[18,29,40]");
-  FzySCurve(FDB4ptr,Left,Center,Right,DECLINE,&status);
-  FzyDrawSet(FDB4ptr,SYSMODFILE,&status);
-  FzyExamineSet(FDB4ptr,&status);
+  strcpy(FuzzysetDescriptor4ptr->FuzzysetDescriptorid,"SCdcl[18,29,40]");
+  FzySCurve(FuzzysetDescriptor4ptr,Left,Center,Right,DECLINE,&status);
+  FzyDrawSet(FuzzysetDescriptor4ptr,SYSMODFILE,&status);
+  FzyExamineSet(FuzzysetDescriptor4ptr,&status);
 //
 //--------------   PI  curves   ----------------------------------------
 //
@@ -85,9 +85,9 @@ void main(void)
   for(i=0;i<maxSets;i++)
     {
      flexpoint=Center*Percents[i];
-     sprintf(FDB1ptr->FDBid,"%s%5.0f%s","PI Set[",Percents[i]*100,"%]");
-     FzyPiCurve(FDB1ptr,Center,flexpoint,&status);
-     FzyDrawSet(FDB1ptr,SYSMODFILE,&status);
+     sprintf(FuzzysetDescriptor1ptr->FuzzysetDescriptorid,"%s%5.0f%s","PI Set[",Percents[i]*100,"%]");
+     FzyPiCurve(FuzzysetDescriptor1ptr,Center,flexpoint,&status);
+     FzyDrawSet(FuzzysetDescriptor1ptr,SYSMODFILE,&status);
     }
 //
 //--------------   Beta curves  ----------------------------------------
@@ -97,9 +97,9 @@ void main(void)
   for(i=0;i<maxSets;i++)
     {
      flexpoint=Center*Percents[i];
-     sprintf(FDB1ptr->FDBid,"%s%5.0f%s","Beta Set[",Percents[i]*100,"%]");
-     FzyBetaCurve(FDB1ptr,Center,flexpoint,&status);
-     FzyDrawSet(FDB1ptr,SYSMODFILE,&status);
+     sprintf(FuzzysetDescriptor1ptr->FuzzysetDescriptorid,"%s%5.0f%s","Beta Set[",Percents[i]*100,"%]");
+     FzyBetaCurve(FuzzysetDescriptor1ptr,Center,flexpoint,&status);
+     FzyDrawSet(FuzzysetDescriptor1ptr,SYSMODFILE,&status);
     }
 //
 //--------------   Weighted Beta Curves  -------------------------------
@@ -110,9 +110,9 @@ void main(void)
     {
      Wfactor=GaussWgt[i];
      sprintf(wrkBuff,"%s%7.2f","WBeta-",Wfactor);
-     strcpy(FDB4ptr->FDBid,wrkBuff);
-     FzyWgtdBetaCurve(FDB4ptr,Center,flexpoint,Wfactor,&status);
-     FzyDrawSet(FDB4ptr,SYSMODFILE,&status);
+     strcpy(FuzzysetDescriptor4ptr->FuzzysetDescriptorid,wrkBuff);
+     FzyWgtdBetaCurve(FuzzysetDescriptor4ptr,Center,flexpoint,Wfactor,&status);
+     FzyDrawSet(FuzzysetDescriptor4ptr,SYSMODFILE,&status);
     }
 //
 //--------------   Gaussian curves  ------------------------------------
@@ -123,10 +123,10 @@ void main(void)
     {
      Wfactor=GaussWgt[i];
      sprintf(wrkBuff,"%s%7.2f","Gauss-",Wfactor);
-     strcpy(FDB4ptr->FDBid,wrkBuff);
-     FzyGaussianCurve(FDB4ptr,Center,Wfactor,&status);
-     FzyDrawSet(FDB4ptr,SYSMODFILE,&status);
-     FzyExamineSet(FDB4ptr,&status);
+     strcpy(FuzzysetDescriptor4ptr->FuzzysetDescriptorid,wrkBuff);
+     FzyGaussianCurve(FuzzysetDescriptor4ptr,Center,Wfactor,&status);
+     FzyDrawSet(FuzzysetDescriptor4ptr,SYSMODFILE,&status);
+     FzyExamineSet(FuzzysetDescriptor4ptr,&status);
     }
   return;
  }

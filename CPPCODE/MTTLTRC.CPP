@@ -14,7 +14,7 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <XSYSctl.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 bool MtsStartTrace(int TraceType,int Tracedepth)
  {
 

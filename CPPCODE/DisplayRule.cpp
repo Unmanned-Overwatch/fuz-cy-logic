@@ -3,7 +3,7 @@
 | mtfmdrl.cpp  Earl Cox  04/01/93 Display a Rule in Array     |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 void FzyDisplayRule(
   char **Rules,
   int RuleNo,int RuleIDX[],int RuleSLN[],int FileMedium,int *statusPtr)

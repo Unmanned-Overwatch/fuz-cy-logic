@@ -14,11 +14,11 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 bool FzyUnitCompIndex(
-   FDB* FDBptr,float mintv,float maxtv,float* avgtv,float* deltatv)
+   FuzzysetDescriptor* FuzzysetDescriptorptr,float mintv,float maxtv,float* avgtv,float* deltatv)
   {
    const bool InCompatible=0;
    const bool   Compatible=1;
@@ -35,10 +35,10 @@ bool FzyUnitCompIndex(
 //--truth memberships and also the sum of the membership values.
    for(i=0;i<VECMAX;i++)
     {
-     if(FDBptr->FDBvector[i]>max_tv) max_tv=FDBptr->FDBvector[i];
-     if(FDBptr->FDBvector[i]<min_tv) min_tv=FDBptr->FDBvector[i];
+     if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>max_tv) max_tv=FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
+     if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]<min_tv) min_tv=FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
      ++tvcount;
-     sum_tv=sum_tv+FDBptr->FDBvector[i];
+     sum_tv=sum_tv+FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
     }
 //
 //--calculate the unit run compatibility information.

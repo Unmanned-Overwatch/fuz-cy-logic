@@ -13,10 +13,10 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include <mtypes.hpp>
-#include <mtsptype.hpp>
-double FzyEquivalentScalar(FDB *FDBptr,float Grade,int *statusPtr)
+#include <SystemPrototypes.hpp>
+double FzyEquivalentScalar(FuzzysetDescriptor *FuzzysetDescriptorptr,float Grade,int *statusPtr)
  {
   int    i;
   double scalar=0;
@@ -24,9 +24,9 @@ double FzyEquivalentScalar(FDB *FDBptr,float Grade,int *statusPtr)
   *statusPtr=0;
   for(i=0;i<VECMAX;i++)
     {
-     if(Grade>=FDBptr->FDBvector[i])
+     if(Grade>=FuzzysetDescriptorptr->FuzzysetDescriptorvector[i])
        {
-        scalar=FzyGetScalar(FDBptr,i,statusPtr);
+        scalar=FzyGetScalar(FuzzysetDescriptorptr,i,statusPtr);
         return(scalar);
        }
     }

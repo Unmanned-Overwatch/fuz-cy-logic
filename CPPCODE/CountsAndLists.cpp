@@ -6,7 +6,7 @@
 | that return the lists of these elements.                    |
 *-------------------------------------------------------------*/
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 //--Counting procedures--These procedures are the gateway for DLLs
 //--into the fundamental static units of the fuzzy system. The
 //--counts do NOT (currently) return information about items stored

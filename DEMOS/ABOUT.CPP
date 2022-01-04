@@ -16,22 +16,22 @@
 *-------------------------------------------------------------*/
 #include <string.h>
 #include <stddef.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include "HDB.hpp"
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 #include "SSYSctl.hpp"
 void main(void)
  {
-  FDB    *FDBptr,
-         *outFDBptr,
-         *FDBarray[4];
+  FuzzysetDescriptor    *FuzzysetDescriptorptr,
+         *outFuzzysetDescriptorptr,
+         *FuzzysetDescriptorarray[4];
   HDB    *HDBptr;
   int     i,
           status,
           HdgCnt,
-          FDBcnt,
+          FuzzysetDescriptorcnt,
           Hedgemax=12;
   char   *PgmId="hedges";
   char    wrkBuff[128];
@@ -48,42 +48,42 @@ void main(void)
      return;
     }
   FzyInitHDB(HDBptr);
-  if(!(outFDBptr=new FDB))
+  if(!(outFuzzysetDescriptorptr=new FuzzysetDescriptor))
     {
      status=1;
-     MtsSendError(2,PgmId,"outFDB");
+     MtsSendError(2,PgmId,"outFuzzysetDescriptor");
      return;
     }
-  FzyInitFDB(outFDBptr);
-  strcpy(outFDBptr->FDBid,"outCurve");
-  outFDBptr->FDBdomain[0]=16;
-  outFDBptr->FDBdomain[1]=48;
-  if(!(FDBptr=new FDB))
+  FzyInitFuzzysetDescriptor(outFuzzysetDescriptorptr);
+  strcpy(outFuzzysetDescriptorptr->FuzzysetDescriptorid,"outCurve");
+  outFuzzysetDescriptorptr->FuzzysetDescriptordomain[0]=16;
+  outFuzzysetDescriptorptr->FuzzysetDescriptordomain[1]=48;
+  if(!(FuzzysetDescriptorptr=new FuzzysetDescriptor))
     {
      status=1;
-     MtsSendError(2,PgmId,"FDB");
+     MtsSendError(2,PgmId,"FuzzysetDescriptor");
      return;
     }
-  FzyInitFDB(FDBptr);
-  strcpy(FDBptr->FDBid,"LI.Curve");
-  FDBptr->FDBdomain[0]=16;
-  FDBptr->FDBdomain[1]=48;
+  FzyInitFuzzysetDescriptor(FuzzysetDescriptorptr);
+  strcpy(FuzzysetDescriptorptr->FuzzysetDescriptorid,"LI.Curve");
+  FuzzysetDescriptorptr->FuzzysetDescriptordomain[0]=16;
+  FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]=48;
   fprintf(mdllog,"%s\n","ABOUT a point                    ");
 //Center=32;
 //Width=Center*.15;
-//FzyPiCurve(FDBptr,Center,Width,&status);
+//FzyPiCurve(FuzzysetDescriptorptr,Center,Width,&status);
   Center=VECMAX/2;
-  FDBptr->FDBvector[Center]=1.00;
-  FzyDrawSet(FDBptr,SYSMODFILE,&status);
-  FzyExamineSet(FDBptr,&status);
+  FuzzysetDescriptorptr->FuzzysetDescriptorvector[Center]=1.00;
+  FzyDrawSet(FuzzysetDescriptorptr,SYSMODFILE,&status);
+  FzyExamineSet(FuzzysetDescriptorptr,&status);
      strcpy(HDBptr->HDBid,"about"      );
      HDBptr->HDBmode=1;
      HDBptr->HDBop=0;
      HDBptr->HDBvalue=0.0;
-    FzyApplyHedge(FDBptr,HDBptr,outFDBptr,&status);
-    FzyDrawSet(FDBptr,SYSMODFILE,&status);
-    FDBarray[0]=FDBptr;
-    FDBarray[1]=outFDBptr;
-    FDBcnt=2;
-    FzyPlotSets("",FDBarray,FDBcnt,SYSMODFILE,&status);
+    FzyApplyHedge(FuzzysetDescriptorptr,HDBptr,outFuzzysetDescriptorptr,&status);
+    FzyDrawSet(FuzzysetDescriptorptr,SYSMODFILE,&status);
+    FuzzysetDescriptorarray[0]=FuzzysetDescriptorptr;
+    FuzzysetDescriptorarray[1]=outFuzzysetDescriptorptr;
+    FuzzysetDescriptorcnt=2;
+    FzyPlotSets("",FuzzysetDescriptorarray,FuzzysetDescriptorcnt,SYSMODFILE,&status);
  }

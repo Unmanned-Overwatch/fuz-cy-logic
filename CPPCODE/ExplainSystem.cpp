@@ -19,8 +19,8 @@
 #include <time.h>
 #include <RXB.hpp>
 #include <XSYSctl.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 //
 static char *PgmId="mtfzexs";
 //
@@ -157,7 +157,7 @@ void FzyXPSInitRXB(RXB *RXBptr)
 void FzyXPSInitRXC(RXC *RXCptr)
  {
   RXCptr->RXCvarID      =NULL;
-  RXCptr->RXCfdbID      =NULL;
+  RXCptr->RXCFuzzysetDescriptorID      =NULL;
   RXCptr->RXChedgeID    =NULL;
   RXCptr->RXCpropTV     =0.0;
   RXCptr->RXCnext       =NULL;
@@ -183,7 +183,7 @@ RXB *FzyXPScreateRXB(int ruleno,int varcnt,float premisetv)
 //
 //
 RXC *FzyXPScreateRXC(
-  char *varid,char *fdbid,char *hedgeid,float proptv)
+  char *varid,char *FuzzysetDescriptorid,char *hedgeid,float proptv)
  {
   RXC    *RXCptr;
   int     j;
@@ -198,9 +198,9 @@ RXC *FzyXPScreateRXC(
   RXCptr->RXCvarID      =new char[j+1];
   strcpy(RXCptr->RXCvarID,varid);
 
-  j=strlen(fdbid);
-  RXCptr->RXCfdbID      =new char[j+1];
-  strcpy(RXCptr->RXCfdbID,fdbid);
+  j=strlen(FuzzysetDescriptorid);
+  RXCptr->RXCFuzzysetDescriptorID      =new char[j+1];
+  strcpy(RXCptr->RXCFuzzysetDescriptorID,FuzzysetDescriptorid);
 
   j=strlen(hedgeid);
   RXCptr->RXChedgeID    =new char[j+1];
@@ -365,7 +365,7 @@ void FzyXPSexplain(RXB *RXBptr)
           RXCptr->RXCvarID," is",FzyXPSmemtext(memval));
          if(strlen(RXCptr->RXChedgeID)>0)
             fprintf(mdlout,"%s ",RXCptr->RXChedgeID);
-         fprintf(mdlout,"%s",RXCptr->RXCfdbID);
+         fprintf(mdlout,"%s",RXCptr->RXCFuzzysetDescriptorID);
          RXCptr=RXCptr->RXCnext;
         }
        fprintf(mdlout,"\n%s%s",buff,FzyXPSthentext());
@@ -376,7 +376,7 @@ void FzyXPSexplain(RXB *RXBptr)
     RXCptr->RXCvarID," is",FzyXPSmemtext(memval));
    if(strlen(RXCptr->RXChedgeID)>0)
       fprintf(mdlout,"%s ",RXCptr->RXChedgeID);
-   fprintf(mdlout,"%s",RXCptr->RXCfdbID);
+   fprintf(mdlout,"%s",RXCptr->RXCFuzzysetDescriptorID);
    fputc('\n',mdlout);
    delete buff;
    return;

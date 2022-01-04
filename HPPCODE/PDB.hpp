@@ -18,12 +18,12 @@ struct PDB
  {
   char       PDBid[IDENLEN+1],        // Policy Identifier
              PDBdesc[DESCLEN+1];      // Description
-  int        PDBvdbcnt,               // Count of variables
-             PDBfdbcnt,               // Count of fuzzy sets
+  int        PDBVariableDescriptorcnt,               // Count of variables
+             PDBFuzzysetDescriptorcnt,               // Count of fuzzy sets
              PDBhdbcnt,               // Count of hedges
              PDBndbcnt;               // Count of noise words
-  VDB       *PDBvariables[VDBmax];    // Variable dictionary for policy
-  fdb       *PDBfuzzysets[FDBmax];    // Fuzzyset dictionary
+  VariableDescriptor       *PDBvariables[VariableDescriptormax];    // Variable dictionary for policy
+  FuzzysetDescriptor       *PDBfuzzysets[FuzzysetDescriptormax];    // Fuzzyset dictionary
   HDB       *PDBhedges[HDBmax];       // Hedge dictionary
   NDB       *PDBnoise[NDBmax];        // Noise words for this policy
   PDB       *PDBnext;                 // Pointer to next policy

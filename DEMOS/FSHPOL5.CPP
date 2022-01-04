@@ -21,27 +21,27 @@
 #include <stdio.h>
 #include <string.h>
 #include "PDB.hpp"       // The Policy descriptor
-#include <fdb.hpp>       // The Fuzzy Set descriptor
+#include <FuzzysetDescriptor.hpp>       // The Fuzzy Set descriptor
 #include "HDB.hpp"       // The Hedge descriptor
-#include "VDB.hpp"       // A Variable descriptor
+#include "VariableDescriptor.hpp"       // A Variable descriptor
 #include "XFZYctl.hpp"   // The fuzzy parallel processor work area
 #include <XSYSctl.hpp>   // The System control region
-#include   <mtypes.hpp>    // System constants and symbolics
+#include   <SystemTypes.hpp>    // System constants and symbolics
 #include   <fuzzy.hpp>     // Fuzzy Logic constants and symbolics
-#include <mtsptype.hpp>  // Function prototypes
+#include <SystemPrototypes.hpp>  // Function prototypes
 //
 double fshpr5policy(const char **Rules,
    double MfgCosts,double CompPrice,float *CompIdxptr,int *statusPtr)
  {
   PDB     *prcPDBptr;
-  FDB     *HiFDBptr,
-          *LoFDBptr,
-          *amFDBptr,
-          *ncFDBptr,
-          *PriceFDBptr,
-          *wkFDBptr;
+  FuzzysetDescriptor     *HiFuzzysetDescriptorptr,
+          *LoFuzzysetDescriptorptr,
+          *amFuzzysetDescriptorptr,
+          *ncFuzzysetDescriptorptr,
+          *PriceFuzzysetDescriptorptr,
+          *wkFuzzysetDescriptorptr;
   HDB     *veryHDBptr;
-  VDB     *VDBptr;
+  VariableDescriptor     *VariableDescriptorptr;
   FSV     *FSVptr;
   char    *PgmId="fshpol1";
   int      i,
@@ -64,9 +64,9 @@ double fshpr5policy(const char **Rules,
   prcPDBptr=XSYSctl.XSYScurrPDBptr;
   mdlout=MtsGetSystemFile(SYSMODFILE);
   fprintf(mdlout,"%s\n","Price Estimation Policy Begins....");
-  VDBptr=MdlFindVDB("PRICE",prcPDBptr,statusPtr);
+  VariableDescriptorptr=MdlFindVariableDescriptor("PRICE",prcPDBptr,statusPtr);
   FzyInitFZYctl(statusPtr);
-  if(!(FzyAddFZYctl(VDBptr,&PriceFDBptr,&FSVptr,statusPtr)))
+  if(!(FzyAddFZYctl(VariableDescriptorptr,&PriceFuzzysetDescriptorptr,&FSVptr,statusPtr)))
     {
      *statusPtr=1;
      MtsSendError(12,PgmId,"PRICE");
@@ -77,10 +77,10 @@ double fshpr5policy(const char **Rules,
 //
 //--Find the fuzzy sets in the policy dictionary
 //
-  HiFDBptr=MdlFindFDB("HIGH",           prcPDBptr,statusPtr);
-  if(HiFDBptr==NULL) printf("HIGH   fuzzy set not found\n");
-  LoFDBptr=MdlFindFDB("LOW",            prcPDBptr,statusPtr);
-  if(LoFDBptr==NULL) printf("LOW    fuzzy set not found\n");
+  HiFuzzysetDescriptorptr=MdlFindFuzzysetDescriptor("HIGH",           prcPDBptr,statusPtr);
+  if(HiFuzzysetDescriptorptr==NULL) printf("HIGH   fuzzy set not found\n");
+  LoFuzzysetDescriptorptr=MdlFindFuzzysetDescriptor("LOW",            prcPDBptr,statusPtr);
+  if(LoFuzzysetDescriptorptr==NULL) printf("LOW    fuzzy set not found\n");
 //
 //--Now create the fuzzy number for around 2*mfgcosts
 //
@@ -88,17 +88,17 @@ double fshpr5policy(const char **Rules,
      TwiceMfgCosts=2*MfgCosts;
      Parms[0]=TwiceMfgCosts;
      Parms[1]=TwiceMfgCosts*.25;
-     amFDBptr=FzyCreateSet("Near.2*MfgCosts",PI,Domain,Parms,2,&status);
-     strcpy(amFDBptr->FDBdesc,"Near (Around) Twice MfgCosts");
-     FzyDrawSet(amFDBptr,SYSMODFILE,&status);
+     amFuzzysetDescriptorptr=FzyCreateSet("Near.2*MfgCosts",PI,Domain,Parms,2,&status);
+     strcpy(amFuzzysetDescriptorptr->FuzzysetDescriptordesc,"Near (Around) Twice MfgCosts");
+     FzyDrawSet(amFuzzysetDescriptorptr,SYSMODFILE,&status);
 //--Now create the fuzzy number for around compprice
      Parms[0]=CompPrice;
      Parms[1]=CompPrice*.15;
-     ncFDBptr=FzyCreateSet("Near.CompPrice",PI,Domain,Parms,2,&status);
-     strcpy(ncFDBptr->FDBdesc,"Near (Around) Competition Price");
-     FzyDrawSet(ncFDBptr,SYSMODFILE,&status);
+     ncFuzzysetDescriptorptr=FzyCreateSet("Near.CompPrice",PI,Domain,Parms,2,&status);
+     strcpy(ncFuzzysetDescriptorptr->FuzzysetDescriptordesc,"Near (Around) Competition Price");
+     FzyDrawSet(ncFuzzysetDescriptorptr,SYSMODFILE,&status);
 //
-     wkFDBptr=FzyCreateSet("NULL",EMPTYSET,Domain,Parms,2,&status);
+     wkFuzzysetDescriptorptr=FzyCreateSet("NULL",EMPTYSET,Domain,Parms,2,&status);
 //
 //--Find the hedge very in the poilcy dictionary
 //
@@ -111,56 +111,56 @@ double fshpr5policy(const char **Rules,
   fprintf(mdlout,"%s\n","Rule Execution....");
 //--Rule 1. Our Price must be High
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
-  FzyUnCondProposition(HiFDBptr,FSVptr);
-  FzyDrawSet(PriceFDBptr,SYSMODFILE,statusPtr);
+  FzyUnCondProposition(HiFuzzysetDescriptorptr,FSVptr);
+  FzyDrawSet(PriceFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Rulecnt++;
 //
 //--Rule 2. Our Price must be Low
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
-  FzyUnCondProposition(LoFDBptr,FSVptr);
-  FzyDrawSet(PriceFDBptr,SYSMODFILE,statusPtr);
+  FzyUnCondProposition(LoFuzzysetDescriptorptr,FSVptr);
+  FzyDrawSet(PriceFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Rulecnt++;
 //
 //--Rule 3. Our Price must be around 2*MfgCosts
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
-  FzyUnCondProposition(amFDBptr,FSVptr);
-  FzyDrawSet(PriceFDBptr,SYSMODFILE,statusPtr);
+  FzyUnCondProposition(amFuzzysetDescriptorptr,FSVptr);
+  FzyDrawSet(PriceFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
   Rulecnt++;
 //
 //--Rule 4. If the Competition.price is not very high,
 //             then our price should be near the competition.price
   fprintf(mdlout,"%s\n",Rules[Rulecnt]);
   fprintf(mdlout,"%s\n",Rules[Rulecnt+1]);
-  FzyInitFDB(wkFDBptr);
+  FzyInitFuzzysetDescriptor(wkFuzzysetDescriptorptr);
 //
 //--------------Evaluate Predicate of rule-------------------------
 //
 //--Apply the hedge VERY to the High fuzzy set
-  FzyApplyHedge(HiFDBptr,veryHDBptr,wkFDBptr,statusPtr);
-  FzyDrawSet(wkFDBptr,SYSMODFILE,statusPtr);
+  FzyApplyHedge(HiFuzzysetDescriptorptr,veryHDBptr,wkFuzzysetDescriptorptr,statusPtr);
+  FzyDrawSet(wkFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //--Apply the operator NOT to the hedged fuzzy set
-  FzyApplyNOT(ZADEHNOT,0,wkFDBptr,statusPtr);
-  FzyDrawSet(wkFDBptr,SYSMODFILE,statusPtr);
+  FzyApplyNOT(ZADEHNOT,0,wkFuzzysetDescriptorptr,statusPtr);
+  FzyDrawSet(wkFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //--computed membership of competiton price in this fuzzy region
-  PremiseTruth=FzyGetMembership(wkFDBptr,CompPrice,&Idxpos,statusPtr);
+  PremiseTruth=FzyGetMembership(wkFuzzysetDescriptorptr,CompPrice,&Idxpos,statusPtr);
   fprintf(mdlout,"%s%10.2f\n","PremiseTruth= ",PremiseTruth);
 //
 //--------------Perform consequent proposition---------------------
 //
   FzyCondProposition(
-     ncFDBptr,FSVptr,thisCorrMethod,PremiseTruth,statusPtr);
-  FzyDrawSet(PriceFDBptr,SYSMODFILE,statusPtr);
+     ncFuzzysetDescriptorptr,FSVptr,thisCorrMethod,PremiseTruth,statusPtr);
+  FzyDrawSet(PriceFuzzysetDescriptorptr,SYSMODFILE,statusPtr);
 //
 //--Defuzzify to find expected value for price
 //
-  Price=FzyDefuzzify(PriceFDBptr,thisDefuzzMethod,CompIdxptr,statusPtr);
-  fsetheight=FzyGetHeight(PriceFDBptr);
+  Price=FzyDefuzzify(PriceFuzzysetDescriptorptr,thisDefuzzMethod,CompIdxptr,statusPtr);
+  fsetheight=FzyGetHeight(PriceFuzzysetDescriptorptr);
   fprintf(mdlout,"%s\n","Model Solution:");
   fprintf(mdlout,"%s%10.2f\n","  Price       = ",Price       );
   fprintf(mdlout,"%s%10.2f\n","  CompIdx     = ",*CompIdxptr );
   fprintf(mdlout,"%s%10.2f\n","  SurfaceHght = ",fsetheight  );
 //
   FzyCloseFZYctl(statusPtr);
-  delete amFDBptr,ncFDBptr,wkFDBptr;
+  delete amFuzzysetDescriptorptr,ncFuzzysetDescriptorptr,wkFuzzysetDescriptorptr;
   return(Price);
  }

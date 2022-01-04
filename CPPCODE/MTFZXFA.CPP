@@ -16,16 +16,16 @@
 #include <string.h>
 #include <stdio.h>
 #include <XFZYctl.hpp>
-#include "VDB.hpp"
-#include <fdb.hpp>
-#include   <mtypes.hpp>
+#include "VariableDescriptor.hpp"
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
 #include   <fuzzy.hpp>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 #define Maxoutvars  32
-bool FzyAddFZYctl(VDB *VDBptr,FDB **FDBptr,FSV **FSVptr,int *statusPtr)
+bool FzyAddFZYctl(VariableDescriptor *VariableDescriptorptr,FuzzysetDescriptor **FuzzysetDescriptorptr,FSV **FSVptr,int *statusPtr)
  {
   FSV    *tempFSVptr;
-  FDB    *tempFDBptr;
+  FuzzysetDescriptor    *tempFuzzysetDescriptorptr;
   int     j;
   char   *Pgmid="mtfzafs";
   char    wrkBuff[128];
@@ -39,10 +39,10 @@ bool FzyAddFZYctl(VDB *VDBptr,FDB **FDBptr,FSV **FSVptr,int *statusPtr)
   if(XFZYctl.XFZYvarcnt>Maxoutvars)
     {
      *statusPtr=1;
-     MtsSendError(194,Pgmid,VDBptr->VDBid);
+     MtsSendError(194,Pgmid,VariableDescriptorptr->VariableDescriptorid);
      return(FAILED);
     }
-  VDBptr->VDBfsvslot= XFZYctl.XFZYvarcnt;
+  VariableDescriptorptr->VariableDescriptorfsvslot= XFZYctl.XFZYvarcnt;
   XFZYctl.XFZYthisvar=XFZYctl.XFZYvarcnt;
 //
 //--Allocate a new FSV block and link it itno the work slot
@@ -50,46 +50,46 @@ bool FzyAddFZYctl(VDB *VDBptr,FDB **FDBptr,FSV **FSVptr,int *statusPtr)
   if(!(tempFSVptr=new FSV))
     {
      *statusPtr=3;
-     MtsSendError(195,Pgmid,VDBptr->VDBid);
+     MtsSendError(195,Pgmid,VariableDescriptorptr->VariableDescriptorid);
      return(FAILED);
     }
   XFZYctl.XFZYoutvars[XFZYctl.XFZYvarcnt]=tempFSVptr;
 //
-//--Now fill out this slot with information from the VDB
+//--Now fill out this slot with information from the VariableDescriptor
 //
-  strcpy(tempFSVptr->FzySVvarid,VDBptr->VDBid);
-  tempFSVptr->FzySVvarptr       =VDBptr;
+  strcpy(tempFSVptr->FzySVvarid,VariableDescriptorptr->VariableDescriptorid);
+  tempFSVptr->FzySVvarptr       =VariableDescriptorptr;
   tempFSVptr->FzySVupdcnt       =0;
-  tempFSVptr->FzySVdefuzzMethod =VDBptr->VDBdefuzzmethod;
-  tempFSVptr->FzySVgeometry     =VDBptr->VDBfzygeometry;
-  tempFSVptr->FzySVcorrMethod   =VDBptr->VDBfzycorrmethod;
-  tempFSVptr->FzySVimplMethod   =VDBptr->VDBfzyimplmethod;
-  tempFSVptr->FzySValfacut      =VDBptr->VDBalfacut;
+  tempFSVptr->FzySVdefuzzMethod =VariableDescriptorptr->VariableDescriptordefuzzmethod;
+  tempFSVptr->FzySVgeometry     =VariableDescriptorptr->VariableDescriptorfzygeometry;
+  tempFSVptr->FzySVcorrMethod   =VariableDescriptorptr->VariableDescriptorfzycorrmethod;
+  tempFSVptr->FzySVimplMethod   =VariableDescriptorptr->VariableDescriptorfzyimplmethod;
+  tempFSVptr->FzySValfacut      =VariableDescriptorptr->VariableDescriptoralfacut;
 //
 //--Every output variable is represented by a fuzzy set. We now
 //--create a new fuzzy set, initialize it to an empty region and
 //--link it into the output slot.
 //
-  tempFDBptr=FzyCreateSet(
-    VDBptr->VDBid,EMPTYSET,VDBptr->VDBdomain,Parms,0,statusPtr);
-  if(tempFDBptr==NULL)
+  tempFuzzysetDescriptorptr=FzyCreateSet(
+    VariableDescriptorptr->VariableDescriptorid,EMPTYSET,VariableDescriptorptr->VariableDescriptordomain,Parms,0,statusPtr);
+  if(tempFuzzysetDescriptorptr==NULL)
     {
      *statusPtr=5;
-     MtsSendError(196,Pgmid,VDBptr->VDBid);
+     MtsSendError(196,Pgmid,VariableDescriptorptr->VariableDescriptorid);
      return(FAILED);
     }
-  tempFSVptr->FzySVfdbptr=tempFDBptr;
+  tempFSVptr->FzySVFuzzysetDescriptorptr=tempFuzzysetDescriptorptr;
   for(j=0;j<VECMAX;j++) tempFSVptr->FzySVcntarray[j]=0;
 //
-//--Now update the actual pointers to the FSV and the FDBs
+//--Now update the actual pointers to the FSV and the FuzzysetDescriptors
 //
   *FSVptr=tempFSVptr;
-  *FDBptr=tempFDBptr;
+  *FuzzysetDescriptorptr=tempFuzzysetDescriptorptr;
 //
 //--All done. Send a message to the log.
 //
  sprintf(wrkBuff,"%s%s%s",
-   "FMSNote(005): Output Variable '",VDBptr->VDBid,
+   "FMSNote(005): Output Variable '",VariableDescriptorptr->VariableDescriptorid,
    "' added to Fuzzy Model.");
  MtsWritetoLog(SYSMODFILE,wrkBuff,statusPtr);
  return(SUCCESS);

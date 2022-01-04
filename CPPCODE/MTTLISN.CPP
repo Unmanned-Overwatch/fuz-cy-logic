@@ -13,7 +13,7 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <ctype.h>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 bool MtsIsNumeric(char *Item,int *NumType)
  {
    int i;

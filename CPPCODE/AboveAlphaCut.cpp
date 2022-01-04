@@ -5,7 +5,7 @@
 | either a strong or weak alpha cut.                          |
 *-------------------------------------------------------------*/
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 bool FzyAboveAlfa(float memval,float Alfa,int AlfaType)
   {
    switch(AlfaType)

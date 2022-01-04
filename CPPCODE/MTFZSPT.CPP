@@ -13,25 +13,25 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include <fdb.hpp>
-#include <mtsptype.hpp>
+#include <FuzzysetDescriptor.hpp>
+#include <SystemPrototypes.hpp>
 void FzySupportSet(
-       FDB* FDBptr,double Scalars[],int Truth[],int* statusPtr)
+       FuzzysetDescriptor* FuzzysetDescriptorptr,double Scalars[],int Truth[],int* statusPtr)
   {
    *statusPtr=0;
    int i,j;
    for(i=0;i<VECMAX;i++)
     {
-      if(FDBptr->FDBvector[i]>0)
+      if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>0)
         {
          for(j=VECMAX-1;j>=0;j--)
           {
-           if(FDBptr->FDBvector[j]>0)
+           if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[j]>0)
              {
               Truth[0]  =i;
-              Scalars[0]=FzyGetScalar(FDBptr,i,statusPtr);
+              Scalars[0]=FzyGetScalar(FuzzysetDescriptorptr,i,statusPtr);
               Truth[1]  =j;
-              Scalars[1]=FzyGetScalar(FDBptr,j,statusPtr);
+              Scalars[1]=FzyGetScalar(FuzzysetDescriptorptr,j,statusPtr);
               return;
              }
           }

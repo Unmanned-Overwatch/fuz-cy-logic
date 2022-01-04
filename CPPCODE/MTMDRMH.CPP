@@ -16,9 +16,9 @@
 #include <string.h>
 #include <stddef.h>
 #include <PDB.hpp>
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void MdlRemoveHDB(char *Hdgid,PDB *PDBptr,int *statusPtr)
  {
   HDB    *HDBptr,*HDBprevptr=NULL;

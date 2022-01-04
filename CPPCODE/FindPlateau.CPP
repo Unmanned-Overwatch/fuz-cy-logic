@@ -14,15 +14,15 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 static char   wrkBuff[225];
-void IssueWarning(FDB*,float,int);
+void IssueWarning(FuzzysetDescriptor*,float,int);
 void FzyFindPlateau(
-   FDB* FDBptr,int Edges[],int *EdgeCnt,int *statusPtr)
+   FuzzysetDescriptor* FuzzysetDescriptorptr,int Edges[],int *EdgeCnt,int *statusPtr)
   {
-   FDB    *WrkFDBptr;
+   FuzzysetDescriptor    *WrkFuzzysetDescriptorptr;
    char   *PgmId="mtfzfpl";
    int     i,j,pCount,pRight=(VECMAX-1);
    float   SetHeight;
@@ -31,39 +31,39 @@ void FzyFindPlateau(
    *EdgeCnt=0;
     Edges[0]=0;
     Edges[1]=0;
-   SetHeight=FzyGetHeight(FDBptr);
+   SetHeight=FzyGetHeight(FuzzysetDescriptorptr);
    if(SetHeight==0)
      {
       sprintf(wrkBuff,"%s%s%s%6.4f",
-       "IMPORTANT: Solution Fuzzy Set '",FDBptr->FDBid,
+       "IMPORTANT: Solution Fuzzy Set '",FuzzysetDescriptorptr->FuzzysetDescriptorid,
         "' is empty (set height == ",SetHeight);
       MtsWritetoLog(SYSMODFILE,wrkBuff,statusPtr);
       return;
      }
-   if(!(WrkFDBptr=new FDB))
+   if(!(WrkFuzzysetDescriptorptr=new FuzzysetDescriptor))
      {
       *statusPtr=1;
-      MtsSendError(2,PgmId,"WrkFDB");
+      MtsSendError(2,PgmId,"WrkFuzzysetDescriptor");
       return;
      }
-   FzyCopySet(FDBptr,WrkFDBptr,statusPtr);
+   FzyCopySet(FuzzysetDescriptorptr,WrkFuzzysetDescriptorptr,statusPtr);
    for(i=0;i<VECMAX;i++)
-     if(WrkFDBptr->FDBvector[i]<SetHeight) WrkFDBptr->FDBvector[i]=0.0;
-   if((pCount=FzyPlateauCnt(FDBptr,SetHeight,statusPtr))>1)
-       IssueWarning(FDBptr,SetHeight,pCount);
+     if(WrkFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]<SetHeight) WrkFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=0.0;
+   if((pCount=FzyPlateauCnt(FuzzysetDescriptorptr,SetHeight,statusPtr))>1)
+       IssueWarning(FuzzysetDescriptorptr,SetHeight,pCount);
    for(i=0;i<pRight;i++)
     {
-      if(WrkFDBptr->FDBvector[i]>0)
+      if(WrkFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>0)
         {
          for(j=pRight;j>=0;j--)
           {
            if(j<i)
              {
               *statusPtr=3;
-              MtsSendError(94,PgmId,FDBptr->FDBid);
+              MtsSendError(94,PgmId,FuzzysetDescriptorptr->FuzzysetDescriptorid);
               return;
              }
-           if(WrkFDBptr->FDBvector[j]>0)
+           if(WrkFuzzysetDescriptorptr->FuzzysetDescriptorvector[j]>0)
              {
               Edges[0]=i;
               Edges[1]=j;
@@ -73,7 +73,7 @@ void FzyFindPlateau(
              //--the fuzzy set, then this is a double edged plateau.
               if(i>0&&j<pRight)  *EdgeCnt=2;
                 else             *EdgeCnt=1;
-              delete WrkFDBptr;
+              delete WrkFuzzysetDescriptorptr;
               return;
              }
           }
@@ -82,12 +82,12 @@ void FzyFindPlateau(
   }
 //
 //
-void IssueWarning(FDB *FDBptr,float SetHeight,int pCount)
+void IssueWarning(FuzzysetDescriptor *FuzzysetDescriptorptr,float SetHeight,int pCount)
  {
   int    status;
 
   sprintf(wrkBuff,"%s%s%s%4d%s%6.4f",
-   "CAUTION: Solution Fuzzy Set '",FDBptr->FDBid,
+   "CAUTION: Solution Fuzzy Set '",FuzzysetDescriptorptr->FuzzysetDescriptorid,
     "' has ",pCount," plateau(s) at height: ",SetHeight);
   MtsWritetoLog(SYSMODFILE,wrkBuff,&status);
  }

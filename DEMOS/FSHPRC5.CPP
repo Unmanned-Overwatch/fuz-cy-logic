@@ -22,12 +22,12 @@
 #include <stdio.h>
 #include <string.h>
 #include "PDB.hpp"
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include "SFZYctl.hpp"
 #include "SSYSctl.hpp"
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 //
 //--These are the "logical" rules. In the high level fuzzy modelling
 //--system we would enter these rules exactly as shown.
@@ -62,9 +62,9 @@ double SVolpolicy(double,float*,int*);
 void main(void)
  {
   PDB     *prcPDBptr;
-  FDB     *FDBptr[FDBvecmax],*svFDBptr;
-  VDB     *VDBptr;
-  int      i,status,FDBcnt,Hdgcnt,TryCtl[2];
+  FuzzysetDescriptor     *FuzzysetDescriptorptr[FuzzysetDescriptorvecmax],*svFuzzysetDescriptorptr;
+  VariableDescriptor     *VariableDescriptorptr;
+  int      i,status,FuzzysetDescriptorcnt,Hdgcnt,TryCtl[2];
   float    compidx[12],cindex;
   double   compprice,Price[12],mfgcosts;
   double   salesMargin[12],grossSales[12],grossProfit[12];
@@ -82,30 +82,30 @@ void main(void)
 //
   Domain[0]=16;
   Domain[1]=36;
-  VDBptr=VarCreateScalar("PRICE",REAL,Domain,"0",&status);
-  MdlLinkVDB(VDBptr,prcPDBptr,&status);
+  VariableDescriptorptr=VarCreateScalar("PRICE",REAL,Domain,"0",&status);
+  MdlLinkVariableDescriptor(VariableDescriptorptr,prcPDBptr,&status);
 //
 //--Create the basic fuzzy sets (High and Low for Price)
 //
-  FDBptr[0]=FzyCreateSet("HIGH",INCREASE,Domain,Parms,0,&status);
-  strcpy(FDBptr[0]->FDBdesc,"High for Price");
-  MdlLinkFDB(FDBptr[0],prcPDBptr,&status);
+  FuzzysetDescriptorptr[0]=FzyCreateSet("HIGH",INCREASE,Domain,Parms,0,&status);
+  strcpy(FuzzysetDescriptorptr[0]->FuzzysetDescriptordesc,"High for Price");
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[0],prcPDBptr,&status);
 
-  FDBptr[1]=FzyCreateSet("LOW", DECREASE,Domain,Parms,0,&status);
-  strcpy(FDBptr[1]->FDBdesc,"Low for Price");
-  MdlLinkFDB(FDBptr[1],prcPDBptr,&status);
-  FDBcnt=2;
-  FzyPlotVar("PRICE",FDBptr,FDBcnt,SYSMODFILE,&status);
+  FuzzysetDescriptorptr[1]=FzyCreateSet("LOW", DECREASE,Domain,Parms,0,&status);
+  strcpy(FuzzysetDescriptorptr[1]->FuzzysetDescriptordesc,"Low for Price");
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[1],prcPDBptr,&status);
+  FuzzysetDescriptorcnt=2;
+  FzyPlotVar("PRICE",FuzzysetDescriptorptr,FuzzysetDescriptorcnt,SYSMODFILE,&status);
 //
 //--Create an empty fuzzy set as a working area
-  FDBptr[0]=FzyCreateSet("NULL",EMPTYSET,Domain,Parms,0,&status);
-  MdlLinkFDB(FDBptr[0],prcPDBptr,&status);
+  FuzzysetDescriptorptr[0]=FzyCreateSet("NULL",EMPTYSET,Domain,Parms,0,&status);
+  MdlLinkFuzzysetDescriptor(FuzzysetDescriptorptr[0],prcPDBptr,&status);
 //
   Domain[0]=0;Domain[1]=100;
-  svFDBptr=FzyCreateSet("HIGH.VOLUME",INCREASE,Domain,Parms,0,&status);
-  strcpy(svFDBptr->FDBdesc,"High Sales Volumes");
-  FzyDrawSet(svFDBptr,SYSMODFILE,&status);
-  MdlLinkFDB(svFDBptr,prcPDBptr,&status);
+  svFuzzysetDescriptorptr=FzyCreateSet("HIGH.VOLUME",INCREASE,Domain,Parms,0,&status);
+  strcpy(svFuzzysetDescriptorptr->FuzzysetDescriptordesc,"High Sales Volumes");
+  FzyDrawSet(svFuzzysetDescriptorptr,SYSMODFILE,&status);
+  MdlLinkFuzzysetDescriptor(svFuzzysetDescriptorptr,prcPDBptr,&status);
 //
 //--Display the rules on the model log and invoke the policy
 //
@@ -159,8 +159,8 @@ fprintf(mdlout,"%s%10.2f\n",
 double SVolpolicy(double Price,float *CIX,int *statusPtr)
  {
   PDB     *prcPDBptr;
-  FDB     *svFDBptr,*LoFDBptr,*FDBptr[2];
-  int      FDBcnt,Valcnt;
+  FuzzysetDescriptor     *svFuzzysetDescriptorptr,*LoFuzzysetDescriptorptr,*FuzzysetDescriptorptr[2];
+  int      FuzzysetDescriptorcnt,Valcnt;
   double   volume,Values[2];
   float    PremiseTruth;
   FILE    *mdlout;
@@ -172,14 +172,14 @@ double SVolpolicy(double Price,float *CIX,int *statusPtr)
 //
 //--Find the fuzzy sets in the policy dictionary
 //
-  svFDBptr=MdlFindFDB("HIGH.VOLUME",    prcPDBptr,statusPtr);
-  LoFDBptr=MdlFindFDB("LOW",            prcPDBptr,statusPtr);
+  svFuzzysetDescriptorptr=MdlFindFuzzysetDescriptor("HIGH.VOLUME",    prcPDBptr,statusPtr);
+  LoFuzzysetDescriptorptr=MdlFindFuzzysetDescriptor("LOW",            prcPDBptr,statusPtr);
 //
 //--if price is low then sales volume is high
 //
   volume=FzyMonotonicLogic(
-      LoFDBptr,svFDBptr,Price,&PremiseTruth,statusPtr);
+      LoFuzzysetDescriptorptr,svFuzzysetDescriptorptr,Price,&PremiseTruth,statusPtr);
   Values[0]=Price; Valcnt=1;
-  FzyImplMatrix(LoFDBptr,svFDBptr,Values,Valcnt,statusPtr);
+  FzyImplMatrix(LoFuzzysetDescriptorptr,svFuzzysetDescriptorptr,Values,Valcnt,statusPtr);
   return(volume);
  }

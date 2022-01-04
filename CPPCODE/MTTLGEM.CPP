@@ -17,7 +17,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <XSYSctl.hpp>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 #define RECSIZE    80
 static char ErrorRecord[RECSIZE];
 static char *PgmId="mttlgem";

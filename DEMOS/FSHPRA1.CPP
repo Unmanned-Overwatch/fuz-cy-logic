@@ -15,12 +15,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include "SFZYctl.hpp"
 #include "SSYSctl.hpp"
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 //
 //--These are the "logical" rules. In the high level fuzzy modelling
 //--system we would enter these rules exactly as shown.
@@ -36,12 +36,12 @@ extern unsigned _stklen=50000;
 double fshpj1policy(const char**,double,double,float*,int*);
 void main(void)
  {
-  FDB     *ldFDBptr,
-          *lsFDBptr,
-          *lfFDBptr,
-          *hpFDBptr,
-          *irFDBptr,
-          *hrFDBptr;
+  FuzzysetDescriptor     *ldFuzzysetDescriptorptr,
+          *lsFuzzysetDescriptorptr,
+          *lfFuzzysetDescriptorptr,
+          *hpFuzzysetDescriptorptr,
+          *irFuzzysetDescriptorptr,
+          *hrFuzzysetDescriptorptr;
   int      i,
            status,
            Idxpos,
@@ -68,36 +68,36 @@ void main(void)
 //--Create the basic fuzzy sets
 //
   Domain[0]=0;Domain[1]=30;
-  ldFDBptr=FzyCreateSet("LONG.DURATION",GROWTH  ,Domain,Parms,0,&status);
-  strcpy(ldFDBptr->FDBdesc,"Long Duration (in weeks)");
-  FzyDrawSet(ldFDBptr,SYSMODFILE,&status);
+  ldFuzzysetDescriptorptr=FzyCreateSet("LONG.DURATION",GROWTH  ,Domain,Parms,0,&status);
+  strcpy(ldFuzzysetDescriptorptr->FuzzysetDescriptordesc,"Long Duration (in weeks)");
+  FzyDrawSet(ldFuzzysetDescriptorptr,SYSMODFILE,&status);
 
   Domain[0]=0;Domain[1]=24;
-  lsFDBptr=FzyCreateSet("LARGE.STAFFING",INCREASE,Domain,Parms,0,&status);
-  strcpy(lsFDBptr->FDBdesc,"Large Staffing");
-  FzyDrawSet(lsFDBptr,SYSMODFILE,&status);
+  lsFuzzysetDescriptorptr=FzyCreateSet("LARGE.STAFFING",INCREASE,Domain,Parms,0,&status);
+  strcpy(lsFuzzysetDescriptorptr->FuzzysetDescriptordesc,"Large Staffing");
+  FzyDrawSet(lsFuzzysetDescriptorptr,SYSMODFILE,&status);
 
   Domain[0]=0;Domain[1]=100;
-  lfFDBptr=FzyCreateSet("LOW.FUNDING",DECREASE,Domain,Parms,0,&status);
-  strcpy(lfFDBptr->FDBdesc,"Low for Funding");
-  FzyDrawSet(lfFDBptr,SYSMODFILE,&status);
+  lfFuzzysetDescriptorptr=FzyCreateSet("LOW.FUNDING",DECREASE,Domain,Parms,0,&status);
+  strcpy(lfFuzzysetDescriptorptr->FuzzysetDescriptordesc,"Low for Funding");
+  FzyDrawSet(lfFuzzysetDescriptorptr,SYSMODFILE,&status);
 
   Domain[0]=0;Domain[1]=10;
-  hpFDBptr=FzyCreateSet("HIGH.PRIORITY",DECREASE,Domain,Parms,0,&status);
-  strcpy(hpFDBptr->FDBdesc,"High for Priority");
-  FzyDrawSet(hpFDBptr,SYSMODFILE,&status);
+  hpFuzzysetDescriptorptr=FzyCreateSet("HIGH.PRIORITY",DECREASE,Domain,Parms,0,&status);
+  strcpy(hpFuzzysetDescriptorptr->FuzzysetDescriptordesc,"High for Priority");
+  FzyDrawSet(hpFuzzysetDescriptorptr,SYSMODFILE,&status);
 
   Domain[0]=0;Domain[1]=1000;
-  irFDBptr=FzyCreateSet("INCREASED",GROWTH,Domain,Parms,0,&status);
+  irFuzzysetDescriptorptr=FzyCreateSet("INCREASED",GROWTH,Domain,Parms,0,&status);
   for(i=0;i<VECMAX;i++)
-     irFDBptr->FDBvector[i]=(float)(pow(irFDBptr->FDBvector[i],1.1));
-  strcpy(irFDBptr->FDBdesc,"Increased Risk");
-  FzyDrawSet(irFDBptr,SYSMODFILE,&status);
+     irFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)(pow(irFuzzysetDescriptorptr->FuzzysetDescriptorvector[i],1.1));
+  strcpy(irFuzzysetDescriptorptr->FuzzysetDescriptordesc,"Increased Risk");
+  FzyDrawSet(irFuzzysetDescriptorptr,SYSMODFILE,&status);
 
   Domain[0]=0;Domain[1]=5000;
-  hrFDBptr=FzyCreateSet("HIGH.RISK",GROWTH,Domain,Parms,0,&status);
-  strcpy(hrFDBptr->FDBdesc,"Increased Risk");
-  FzyDrawSet(hrFDBptr,SYSMODFILE,&status);
+  hrFuzzysetDescriptorptr=FzyCreateSet("HIGH.RISK",GROWTH,Domain,Parms,0,&status);
+  strcpy(hrFuzzysetDescriptorptr->FuzzysetDescriptordesc,"Increased Risk");
+  FzyDrawSet(hrFuzzysetDescriptorptr,SYSMODFILE,&status);
 
 //
 //--Prompt for the model Data
@@ -151,25 +151,25 @@ void main(void)
 
   totgrade=0;
   durRisk=FzyMonotonicLogic(
-   ldFDBptr,irFDBptr,prjDUR,&memgrade,&status);
+   ldFuzzysetDescriptorptr,irFuzzysetDescriptorptr,prjDUR,&memgrade,&status);
   fprintf(mdlout,"%s%7.2f%s%5.3f%s\n",
     "Duration Risk           : ",durRisk," [",memgrade,"]");
   totgrade+=memgrade;
 
   sllRisk=FzyMonotonicLogic(
-   lsFDBptr,irFDBptr,prjSLL,&memgrade,&status);
+   lsFuzzysetDescriptorptr,irFuzzysetDescriptorptr,prjSLL,&memgrade,&status);
   fprintf(mdlout,"%s%7.2f%s%5.3f%s\n",
     "Staffing Risk           : ",sllRisk," [",memgrade,"]");
   totgrade+=memgrade;
 
   funRisk=FzyMonotonicLogic(
-   lfFDBptr,irFDBptr,prjFUN,&memgrade,&status);
+   lfFuzzysetDescriptorptr,irFuzzysetDescriptorptr,prjFUN,&memgrade,&status);
   fprintf(mdlout,"%s%7.2f%s%5.3f%s\n",
     "Funding  Risk           : ",funRisk," [",memgrade,"]");
   totgrade+=memgrade;
 
   priRisk=FzyMonotonicLogic(
-   hpFDBptr,irFDBptr,prjPRI,&memgrade,&status);
+   hpFuzzysetDescriptorptr,irFuzzysetDescriptorptr,prjPRI,&memgrade,&status);
   fprintf(mdlout,"%s%7.2f%s%5.3f%s\n",
     "Priority Risk           : ",priRisk," [",memgrade,"]");
   totgrade+=memgrade;
@@ -178,10 +178,10 @@ void main(void)
   fprintf(mdlout,"%s%7.2f%s%5.3f%s\n",
     "CUMULATIVE Risk         : ",cumRisk," [",totgrade/4,"]");
 
-  totDofRisk=FzyGetMembership(hrFDBptr,cumRisk,&Idxpos,&status);
+  totDofRisk=FzyGetMembership(hrFuzzysetDescriptorptr,cumRisk,&Idxpos,&status);
   fprintf(mdlout,"%s%7.2f\n",
     "Project Risk Assessment : ",totDofRisk*1000);
   return;
  }
 //for(i=0;i<VECMAX;i++)
-//   ldFDBptr->FDBvector[i]=(float)(pow(ldFDBptr->FDBvector[i],1.8));
+//   ldFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)(pow(ldFuzzysetDescriptorptr->FuzzysetDescriptorvector[i],1.8));

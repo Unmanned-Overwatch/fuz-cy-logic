@@ -5,16 +5,16 @@
 | area at the specified address.                              |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include "VDB.hpp"
-#include <fdb.hpp>
+#include "VariableDescriptor.hpp"
+#include <FuzzysetDescriptor.hpp>
 #include <XFZYctl.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void FzyDisplayFSV(FSV *FSVptr,char *DisplayTitle)
  {
-  VDB  *VDBptr;
-  FDB  *FDBptr;
+  VariableDescriptor  *VariableDescriptorptr;
+  FuzzysetDescriptor  *FuzzysetDescriptorptr;
   int   status;
   FILE *mdlout;
 
@@ -24,8 +24,8 @@ void FzyDisplayFSV(FSV *FSVptr,char *DisplayTitle)
      return;
     }
   mdlout=MtsGetSystemFile(SYSMODFILE);
-  VDBptr=FSVptr->FzySVvarptr;
-  FDBptr=FSVptr->FzySVfdbptr;
+  VariableDescriptorptr=FSVptr->FzySVvarptr;
+  FuzzysetDescriptorptr=FSVptr->FzySVFuzzysetDescriptorptr;
   fputc('\f',mdlout);
   fputc('\n',mdlout);
   fprintf(mdlout,"%s\n","Fuzzy Model Output Variable Generation Area");
@@ -33,7 +33,7 @@ void FzyDisplayFSV(FSV *FSVptr,char *DisplayTitle)
   fprintf(mdlout,"%s%s\n",
    "Variable Name..............",FSVptr->FzySVvarid);
   fprintf(mdlout,"%s%8.2d\n",
-   "   datatype................",VDBptr->VDBdatatype);
+   "   datatype................",VariableDescriptorptr->VariableDescriptordatatype);
   fprintf(mdlout,"%s%8.2d\n",
    "  Defuzzification..........",FSVptr->FzySVdefuzzMethod);
   fprintf(mdlout,"%s%8.2d\n",
@@ -44,7 +44,7 @@ void FzyDisplayFSV(FSV *FSVptr,char *DisplayTitle)
    "  Update Count.............",FSVptr->FzySVupdcnt);
   fprintf(mdlout,"%s%8.2f\n",
    "  Alfa Cut.................",FSVptr->FzySValfacut);
-  FzyDrawSet(FDBptr,SYSMODFILE,&status);
+  FzyDrawSet(FuzzysetDescriptorptr,SYSMODFILE,&status);
   fprintf(mdlout,"%s\n",
    "--------------E  N  D      O F     D I S P L A Y--------------");
   return;

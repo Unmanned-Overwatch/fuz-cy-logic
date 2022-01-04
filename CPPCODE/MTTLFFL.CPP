@@ -15,7 +15,7 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 char *MtsFormatFlt(float Number,int decimals)
   {
     int   i,j,k;

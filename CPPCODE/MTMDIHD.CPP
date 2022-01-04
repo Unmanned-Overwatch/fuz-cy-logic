@@ -16,8 +16,8 @@
 #include <stddef.h>
 #include <HDB.hpp>
 #include <PDB.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void MdlInsertHedges(PDB *PDBptr,int *HdgCnt,int *statusPtr)
  {
   HDB  *HDBptr;

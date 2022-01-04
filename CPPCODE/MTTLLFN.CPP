@@ -13,7 +13,7 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 char *MtsLogFileName(int FileType)
  {
   switch(FileType)

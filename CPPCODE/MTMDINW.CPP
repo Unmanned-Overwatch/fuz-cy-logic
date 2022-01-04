@@ -16,8 +16,8 @@
 #include <PDB.hpp>
 #include <NDB.hpp>
 #include <eqpack.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void MdlInsertNWords(PDB *PDBptr,int *NDBcnt,int *statusPtr)
  {
   NDB    *NDBptr,*NDBwrkptr;

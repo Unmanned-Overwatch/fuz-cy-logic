@@ -15,8 +15,8 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void FzyInterpVec(float TempVector[],int *statusPtr)
    {
     int    i,j,k,Pnt1,Pnt2;

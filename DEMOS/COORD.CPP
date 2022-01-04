@@ -16,7 +16,7 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include "SSYSctl.hpp"
-#include <mtsptype.hpp>
+#include <SystemPrototypes.hpp>
 void main(void)
  {
    char  coords[128];

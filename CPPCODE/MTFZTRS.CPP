@@ -13,28 +13,28 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <math.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void FzyTriangleCurve(
-   FDB* FDBptr,double Left,double Center,double Right,int *statusPtr)
+   FuzzysetDescriptor* FuzzysetDescriptorptr,double Left,double Center,double Right,int *statusPtr)
   {
    int     TrgCnt=3;
    char   *PgmId="mtfztrs";
    double  TrgPoint[5];
    float   TrgGrade[5];
 
-   if((Center<FDBptr->FDBdomain[0])||(Center>FDBptr->FDBdomain[1]))
+   if((Center<FuzzysetDescriptorptr->FuzzysetDescriptordomain[0])||(Center>FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]))
      {
       *statusPtr=3;
-      MtsSendError(56,PgmId,FDBptr->FDBid);
+      MtsSendError(56,PgmId,FuzzysetDescriptorptr->FuzzysetDescriptorid);
       return;
      }
-   if((Left<FDBptr->FDBdomain[0])||(Right>FDBptr->FDBdomain[1]))
+   if((Left<FuzzysetDescriptorptr->FuzzysetDescriptordomain[0])||(Right>FuzzysetDescriptorptr->FuzzysetDescriptordomain[1]))
      {
       *statusPtr=5;
-      MtsSendError(57,PgmId,FDBptr->FDBid);
+      MtsSendError(57,PgmId,FuzzysetDescriptorptr->FuzzysetDescriptorid);
       return;
      }
    TrgPoint[0]=Left;
@@ -45,10 +45,10 @@ void FzyTriangleCurve(
 
    TrgPoint[2]=Right;
    TrgGrade[2]=0.0;
-   FzyCoordSeries(FDBptr,TrgPoint,TrgGrade,TrgCnt,statusPtr);
-   FDBptr->FDBgentype=TRIANGLE;
-   FDBptr->FDBparms[0]=Left;
-   FDBptr->FDBparms[1]=Center;
-   FDBptr->FDBparms[2]=Right;
+   FzyCoordSeries(FuzzysetDescriptorptr,TrgPoint,TrgGrade,TrgCnt,statusPtr);
+   FuzzysetDescriptorptr->FuzzysetDescriptorgentype=TRIANGLE;
+   FuzzysetDescriptorptr->FuzzysetDescriptorparms[0]=Left;
+   FuzzysetDescriptorptr->FuzzysetDescriptorparms[1]=Center;
+   FuzzysetDescriptorptr->FuzzysetDescriptorparms[2]=Right;
    return;
   }

@@ -13,10 +13,10 @@
 #include   <SystemTypes.hpp>
 #include <SystemPrototypes.hpp>
 void FzyCondProposition(
-  FDB *inFDBptr,FSV *FSVptr,
+  FuzzysetDescriptor *inFuzzysetDescriptorptr,FSV *FSVptr,
       int CorrMethod,float PredTruth,int *statusPtr)
  {
-   FDB   *outFDBptr;
+   FuzzysetDescriptor   *outFuzzysetDescriptorptr;
    char   wrkBuff[80];
    int    i,thisCorrMethod,thisImplMethod;
    float  memvector[VECMAX];
@@ -36,7 +36,7 @@ void FzyCondProposition(
 //--we make a copy of the method and then change it if necessary.
 //--If CORRNONE is specified we simply drop through without any
 //--restriction on the incoming fuzzy set.
-   FzyCopyVector(memvector,inFDBptr->FDBvector,VECMAX);
+   FzyCopyVector(memvector,inFuzzysetDescriptorptr->FuzzysetDescriptorvector,VECMAX);
    thisCorrMethod=CorrMethod;
    if(CorrMethod==CORRDEFAULT)
        thisCorrMethod=FSVptr->FzySVimplMethod;
@@ -51,11 +51,11 @@ void FzyCondProposition(
 //--proposition method. This is equivalent to ORing the two
 //--fuzzy regions.
    thisImplMethod=FSVptr->FzySVimplMethod;
-   outFDBptr=FSVptr->FzySVfdbptr;
-   if(outFDBptr->FDBempty)
+   outFuzzysetDescriptorptr=FSVptr->FzySVFuzzysetDescriptorptr;
+   if(outFuzzysetDescriptorptr->FuzzysetDescriptorempty)
      {
-      FzyCopyVector(outFDBptr->FDBvector,memvector,VECMAX);
-      outFDBptr->FDBempty=FALSE;
+      FzyCopyVector(outFuzzysetDescriptorptr->FuzzysetDescriptorvector,memvector,VECMAX);
+      outFuzzysetDescriptorptr->FuzzysetDescriptorempty=FALSE;
       return;
      }
     else
@@ -64,23 +64,23 @@ void FzyCondProposition(
        {
         case MINMAX:
           for(i=0;i<VECMAX;i++)
-           outFDBptr->FDBvector[i]=
-             max(outFDBptr->FDBvector[i],memvector[i]);
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=
+             max(outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i],memvector[i]);
           break;
         case BOUNDEDADD:
           for(i=0;i<VECMAX;i++)
-           outFDBptr->FDBvector[i]=
-             min(1,outFDBptr->FDBvector[i]+memvector[i]);
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=
+             min(1,outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]+memvector[i]);
           break;
         case BOUNDEDMEAN:
           for(i=0;i<VECMAX;i++)
-           outFDBptr->FDBvector[i]=
-             min(1,(outFDBptr->FDBvector[i]+memvector[i])/2);
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=
+             min(1,(outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]+memvector[i])/2);
           break;
         case PRODUCTSUM:
           for(i=0;i<VECMAX;i++)
-           outFDBptr->FDBvector[i]=
-             max(0,outFDBptr->FDBvector[i]*memvector[i]);
+           outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=
+             max(0,outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]*memvector[i]);
           break;
         default:
           sprintf(wrkBuff,"%s%4d",
@@ -96,6 +96,6 @@ void FzyCondProposition(
 //--will be available.
    FSVptr->FzySVupdcnt++;
    for(i=0;i<VECMAX;i++)
-    if(outFDBptr->FDBvector[i]>0) FSVptr->FzySVcntarray[i]++;
+    if(outFuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>0) FSVptr->FzySVcntarray[i]++;
    return;
  }

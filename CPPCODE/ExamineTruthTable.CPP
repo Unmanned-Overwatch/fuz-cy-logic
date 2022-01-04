@@ -14,10 +14,10 @@
 |                                                             |
 *-------------------------------------------------------------*/
 #include <stdio.h>
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-void FzyExamineSet(FDB *FDBptr,int *statusPtr)
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+void FzyExamineSet(FuzzysetDescriptor *FuzzysetDescriptorptr,int *statusPtr)
   {
    int        L,M,i,k,n,cellno,N1,N2;
    float      scale;
@@ -42,14 +42,14 @@ void FzyExamineSet(FDB *FDBptr,int *statusPtr)
 //--factor, if any, we want to use.
    for(i=0;i<2;i++) Scalars[i]=0.0;
    for(i=0;i<2;i++) Truth[i]=0;
-   lo=FDBptr->FDBdomain[0];
-   hi=FDBptr->FDBdomain[1];
+   lo=FuzzysetDescriptorptr->FuzzysetDescriptordomain[0];
+   hi=FuzzysetDescriptorptr->FuzzysetDescriptordomain[1];
    range=hi-lo;
    scale=FzyAutoScale(hi,lo);
    xo=lo/scale;
 //--find the underlying support set. This is the non-zero part
 //--of the fuzzy set domain.
-   FzySupportSet(FDBptr,Scalars,Truth,statusPtr);
+   FzySupportSet(FuzzysetDescriptorptr,Scalars,Truth,statusPtr);
    if(*statusPtr!=0) return;
    Pedge1=Truth[0];
    Pedge2=Truth[1];
@@ -57,8 +57,8 @@ void FzyExamineSet(FDB *FDBptr,int *statusPtr)
 //--the fuzzy set description and the domain/plateau values.
    fputc('\f',mdlout);
    fputc('\n',mdlout);
-   fprintf(mdlout,"%s%s\n","FuzzySet:    ",FDBptr->FDBid);
-   fprintf(mdlout,"%s%s\n","Description: ",FDBptr->FDBdesc);
+   fprintf(mdlout,"%s%s\n","FuzzySet:    ",FuzzysetDescriptorptr->FuzzysetDescriptorid);
+   fprintf(mdlout,"%s%s\n","Description: ",FuzzysetDescriptorptr->FuzzysetDescriptordesc);
    fprintf(mdlout,"%s%10.2f%s%10.2f\n",
       "Domain     : ",lo," to ",hi);
    fprintf(mdlout,"%s%10.2f%s%10.2f\n",
@@ -67,8 +67,8 @@ void FzyExamineSet(FDB *FDBptr,int *statusPtr)
    fprintf(mdlout,"%s",
     " % Value                    Truth                         ");
    fprintf(mdlout,"%s\n","  Value  %");
-   if(FDBptr->FDBvector[0]!=0)
-      fprintf(mdlout,"%s%6.2f%5.2f\n"," 0",xo,FDBptr->FDBvector[0]);
+   if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[0]!=0)
+      fprintf(mdlout,"%s%6.2f%5.2f\n"," 0",xo,FuzzysetDescriptorptr->FuzzysetDescriptorvector[0]);
     else
       fprintf(mdlout,"%s%6.2f%s\n"," 0",xo," ");
    for(k=0;k<10;k++)
@@ -86,16 +86,16 @@ void FzyExamineSet(FDB *FDBptr,int *statusPtr)
       for(n=N1;n<N2+1;n++)
        {
          if(n>=VECMAX) {fputs("ABORT!!",mdlout); return;}
-         if(FDBptr->FDBvector[cellno]!=0)
-             fprintf(mdlout,"%5.2f",FDBptr->FDBvector[cellno]);
+         if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[cellno]!=0)
+             fprintf(mdlout,"%5.2f",FuzzysetDescriptorptr->FuzzysetDescriptorvector[cellno]);
            else
              fprintf(mdlout,"%s","     ");
         ++cellno;
        }
       fprintf(mdlout,"%6.2f%4.0d\n",XM,M);
      }
-   if(FDBptr->FDBalfacut!=0)
-     fprintf(mdlout,"%s%6.2f\n","AlphaCut:  ",FDBptr->FDBalfacut);
+   if(FuzzysetDescriptorptr->FuzzysetDescriptoralfacut!=0)
+     fprintf(mdlout,"%s%6.2f\n","AlphaCut:  ",FuzzysetDescriptorptr->FuzzysetDescriptoralfacut);
    if(scale==1) return;
    fputc('\n',mdlout);
    fprintf(mdlout,"%s%6.2f%s\n","Scaling:   ",scale,"(x)");

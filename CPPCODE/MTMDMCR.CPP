@@ -15,8 +15,8 @@
 #include <stddef.h>
 #include <string.h>
 #include "MDB.hpp"
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void Complete_Model(const ModelDescription*);
 ModelDescription *MdlCreateModel(char *Mdlid,int StoreAction,int *statusPtr)
  {

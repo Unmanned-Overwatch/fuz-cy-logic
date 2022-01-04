@@ -12,10 +12,10 @@
 *-------------------------------------------------------------*/
 #include <stdio.h>
 #include <strings.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 static char  wrkBuff[128];
 static char* DefuzzNames[]=
  {
@@ -30,7 +30,7 @@ static char* DefuzzNames[]=
  };
 void CompleteDefuzz(char*,double,float);
 double FzyDefuzzify(
-     FDB* FDBptr,const int DefuzzMethod,float *Grade,int *statusPtr)
+     FuzzysetDescriptor* FuzzysetDescriptorptr,const int DefuzzMethod,float *Grade,int *statusPtr)
    {
     int        i,j,k,n,tvpos,EdgeCnt;
     int        Edges[2];
@@ -44,20 +44,20 @@ double FzyDefuzzify(
     EdgeCnt=0;
 
   /* Apply alpha-cut pruning to the solution fuzzy set */
-    FzyApplyAlfa(FDBptr,FDBptr->FDBalfacut,STRONG);
+    FzyApplyAlfa(FuzzysetDescriptorptr,FuzzysetDescriptorptr->FuzzysetDescriptoralfacut,STRONG);
   /*
      Check to make sure that, either originally or after
      the aspplication of the alfa cut, the solution fuzzy
      set is not empty (max value == 0)
   */
-    if(FzyGetHeight(FDBptr)==0)
+    if(FzyGetHeight(FuzzysetDescriptorptr)==0)
       {
        *Grade=0.0;
        Scalar=0.0;
        sprintf(wrkBuff,"%s%s%s%s%s%s",
         "Cannot Apply \"",DefuzzNames[DefuzzMethod-1],
           "\" Defuzzification--",
-        "'",FDBptr->FDBid,"' is empty. [height==0].");
+        "'",FuzzysetDescriptorptr->FuzzysetDescriptorid,"' is empty. [height==0].");
        MtsWritetoLog(SYSMODFILE,wrkBuff,statusPtr);
        *statusPtr=99;
        return(Scalar);
@@ -66,14 +66,14 @@ double FzyDefuzzify(
     switch(DefuzzMethod)
      {
         case BESTEVIDENCE:
-         FzyIsolatePDR(FDBptr);
+         FzyIsolatePDR(FuzzysetDescriptorptr);
         case CENTROID:
          x=0.0;
          y=0.0;
          for(i=0;i<VECMAX;i++)
           {
-            x=x+FDBptr->FDBvector[i]*(float)i;
-            y=y+FDBptr->FDBvector[i];
+            x=x+FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]*(float)i;
+            y=y+FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
           }
          tvpos=(int)(x/y);
          if(y==0)
@@ -81,18 +81,18 @@ double FzyDefuzzify(
             *Grade=0.0;
             Scalar=0.0;
             sprintf(wrkBuff,"%s%s%s",
-             "CENTROID Failed. '",FDBptr->FDBid,"' is empty. [height==0].");
+             "CENTROID Failed. '",FuzzysetDescriptorptr->FuzzysetDescriptorid,"' is empty. [height==0].");
             MtsWritetoLog(SYSMODFILE,wrkBuff,statusPtr);
             *statusPtr=99;
             return(Scalar);
            }
-         Scalar=FzyGetScalar(FDBptr,tvpos,statusPtr);
-         *Grade=FDBptr->FDBvector[tvpos];
+         Scalar=FzyGetScalar(FuzzysetDescriptorptr,tvpos,statusPtr);
+         *Grade=FuzzysetDescriptorptr->FuzzysetDescriptorvector[tvpos];
          CompleteDefuzz("CENTROID",Scalar,*Grade);
          return(Scalar);
 
         case MAXPLATEAU:
-         FzyFindPlateau(FDBptr,Edges,&EdgeCnt,statusPtr);
+         FzyFindPlateau(FuzzysetDescriptorptr,Edges,&EdgeCnt,statusPtr);
          if(EdgeCnt==2)
              tvpos=(Edges[Left]+Edges[Right])/2;
             else
@@ -101,11 +101,11 @@ double FzyDefuzzify(
               if(Edges[Left]==0) tvpos=Edges[Right];
               if(Edges[Right]>=VECMAX) tvpos=Edges[Left];
              }
-         Scalar=FzyGetScalar(FDBptr,tvpos,statusPtr);
-         *Grade=FDBptr->FDBvector[tvpos];
+         Scalar=FzyGetScalar(FuzzysetDescriptorptr,tvpos,statusPtr);
+         *Grade=FuzzysetDescriptorptr->FuzzysetDescriptorvector[tvpos];
          CompleteDefuzz("MAXPLATEAU",Scalar,*Grade);
          sprintf(wrkBuff,"%s%s%2d%s",
-           FDBptr->FDBid," is a ",EdgeCnt," edged surface.");
+           FuzzysetDescriptorptr->FuzzysetDescriptorid," is a ",EdgeCnt," edged surface.");
          MtsWritetoLog(SYSMODFILE,wrkBuff,statusPtr);
          return(Scalar);
 
@@ -114,20 +114,20 @@ double FzyDefuzzify(
 //        if this is a plateau, then we look along the surface
 //        until we find its end and take the midpoint of the
 //        plateau.
-         x=FDBptr->FDBvector[0];
+         x=FuzzysetDescriptorptr->FuzzysetDescriptorvector[0];
          k=0;
          for(i=0;i<VECMAX;i++)
-          if(FDBptr->FDBvector[i]>x)
+          if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>x)
             {
-             x=FDBptr->FDBvector[i];
+             x=FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
              k=i;
             }
          for(j=k+1;j<VECMAX;j++)
-           if(FDBptr->FDBvector[j]!=x) break;
+           if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[j]!=x) break;
          tvpos=(int)(((float)j-(float)k)/2);
          if(tvpos==0) tvpos=k;
-         Scalar=FzyGetScalar(FDBptr,tvpos,statusPtr);
-         *Grade=FDBptr->FDBvector[tvpos];
+         Scalar=FzyGetScalar(FuzzysetDescriptorptr,tvpos,statusPtr);
+         *Grade=FuzzysetDescriptorptr->FuzzysetDescriptorvector[tvpos];
          CompleteDefuzz("MAXIMUM",Scalar,*Grade);
          return(Scalar);
 
@@ -137,11 +137,11 @@ double FzyDefuzzify(
          n=0;
          for(i=0;i<VECMAX;i++)
           {
-            if(FDBptr->FDBvector[i]>0)
+            if(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]>0)
               {
                n++;
-               tval=tval+FDBptr->FDBvector[i];
-               Scalar=FzyGetScalar(FDBptr,i,statusPtr);
+               tval=tval+FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
+               Scalar=FzyGetScalar(FuzzysetDescriptorptr,i,statusPtr);
                SumofScalars=SumofScalars+Scalar;
               }
           }
@@ -156,18 +156,18 @@ double FzyDefuzzify(
          return(Scalar);
 
         case NEAREDGE:
-         FzyFindPlateau(FDBptr,Edges,&EdgeCnt,statusPtr);
+         FzyFindPlateau(FuzzysetDescriptorptr,Edges,&EdgeCnt,statusPtr);
          tvpos=Edges[Left];
-         Scalar=FzyGetScalar(FDBptr,tvpos,statusPtr);
-         *Grade=FDBptr->FDBvector[tvpos];
+         Scalar=FzyGetScalar(FuzzysetDescriptorptr,tvpos,statusPtr);
+         *Grade=FuzzysetDescriptorptr->FuzzysetDescriptorvector[tvpos];
          CompleteDefuzz("NEAREDGE",Scalar,*Grade);
          return(Scalar);
 
         case  FAREDGE:
-         FzyFindPlateau(FDBptr,Edges,&EdgeCnt,statusPtr);
+         FzyFindPlateau(FuzzysetDescriptorptr,Edges,&EdgeCnt,statusPtr);
          tvpos=Edges[Right];
-         *Grade=FDBptr->FDBvector[tvpos];
-         Scalar=FzyGetScalar(FDBptr,tvpos,statusPtr);
+         *Grade=FuzzysetDescriptorptr->FuzzysetDescriptorvector[tvpos];
+         Scalar=FzyGetScalar(FuzzysetDescriptorptr,tvpos,statusPtr);
          CompleteDefuzz("FAREDGE",Scalar,*Grade);
          return(Scalar);
 

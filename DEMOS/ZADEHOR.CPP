@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 void ZadehMinMaxOR(void);
 void main(void)
  {

@@ -4,7 +4,7 @@
 
 *--------------------Procedure Description--------------------*
 | mtmdlkf.cpp  Earl Cox  04/01/93 Link Fuzzyset to Policy     |
-| This function takes a fdb and links it into the hash        |
+| This function takes a FuzzysetDescriptor and links it into the hash        |
 | dictionary of a policy. Every policy has its own            |
 | dictionary of fuzzy sets (forming the basic vocabulary of   |
 | the model in the policy.)                                   |
@@ -18,12 +18,12 @@
 #include <string.h>
 #include <stddef.h>
 #include <PDB.hpp>
-#include <fdb.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-void MdlLinkFDB(FDB *FDBptr,PDB *PDBptr,int *statusPtr)
+#include <FuzzysetDescriptor.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+void MdlLinkFuzzysetDescriptor(FuzzysetDescriptor *FuzzysetDescriptorptr,PDB *PDBptr,int *statusPtr)
  {
-  FDB    *FDBwrkptr;
+  FuzzysetDescriptor    *FuzzysetDescriptorwrkptr;
   char   *PgmId="mtmdlkf";
   char    Fsetid[IDENLEN+1];
   long    slot;
@@ -33,37 +33,37 @@ void MdlLinkFDB(FDB *FDBptr,PDB *PDBptr,int *statusPtr)
 //--Copy the fuzzy set identifier into a working area. We use
 //--this with the hashing function to generate an address in
 //--the PDB fuzzy set dictionary.
-  strcpy(Fsetid,FDBptr->FDBid);
-  slot=MtsHashString(Fsetid,FDBmax);
-  if(slot<0||slot>FDBmax)
+  strcpy(Fsetid,FuzzysetDescriptorptr->FuzzysetDescriptorid);
+  slot=MtsHashString(Fsetid,FuzzysetDescriptormax);
+  if(slot<0||slot>FuzzysetDescriptormax)
     {
      *statusPtr=1;
      MtsSendError(97,PgmId,Fsetid);
      return;
     }
 //
-//--Look at the fdb doctionary slot. If it's empty, then
+//--Look at the FuzzysetDescriptor doctionary slot. If it's empty, then
 //--simply link in the fuzzy set and return. Otherwise, find
 //--the last node and link this one into the end of the chain.
-  FDBwrkptr=PDBptr->PDBfuzzysets[slot];
-  if(FDBwrkptr==NULL)
+  FuzzysetDescriptorwrkptr=PDBptr->PDBfuzzysets[slot];
+  if(FuzzysetDescriptorwrkptr==NULL)
     {
-     PDBptr->PDBfuzzysets[slot]=FDBptr;
+     PDBptr->PDBfuzzysets[slot]=FuzzysetDescriptorptr;
      return;
     }
   for(;;)
     {
-     if(strcmp(FDBwrkptr->FDBid,FDBptr->FDBid)==0)
+     if(strcmp(FuzzysetDescriptorwrkptr->FuzzysetDescriptorid,FuzzysetDescriptorptr->FuzzysetDescriptorid)==0)
        {
         *statusPtr=3;
-        MtsSendError(65,PgmId,FDBptr->FDBid);
+        MtsSendError(65,PgmId,FuzzysetDescriptorptr->FuzzysetDescriptorid);
         return;
        }
-     if(FDBwrkptr->FDBnext==NULL)   // Is there a next fdb node?
+     if(FuzzysetDescriptorwrkptr->FuzzysetDescriptornext==NULL)   // Is there a next FuzzysetDescriptor node?
        {                            // No...
-        FDBwrkptr->FDBnext=FDBptr;  // Link this fdb into chain
+        FuzzysetDescriptorwrkptr->FuzzysetDescriptornext=FuzzysetDescriptorptr;  // Link this FuzzysetDescriptor into chain
         return;                     // Return to caller
        }
-     FDBwrkptr=FDBwrkptr->FDBnext;  // Move to next fdb node in chain
+     FuzzysetDescriptorwrkptr=FuzzysetDescriptorwrkptr->FuzzysetDescriptornext;  // Move to next FuzzysetDescriptor node in chain
     }
  }

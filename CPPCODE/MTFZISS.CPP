@@ -13,19 +13,19 @@
 | --   ----- --------  ------  ---  --------------------------|
 |                                                             |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
+#include   <SystemTypes.hpp>
 #include <XSYSctl.hpp>
-#include <mtsptype.hpp>
-bool FzyIsMemberof(FDB *FDBptr,double Scalar,float *grade,int *statusPtr)
+#include <SystemPrototypes.hpp>
+bool FzyIsMemberof(FuzzysetDescriptor *FuzzysetDescriptorptr,double Scalar,float *grade,int *statusPtr)
  {
   int  i;
   *statusPtr=0;
 //--a scalar is not a member of the fuzzy set if its actual or its
 //--extended membership value is zero. An extended or implied membership
 //--is a value that falls along the projected zero membership axis.
-  *grade=FzyGetMembership(FDBptr,Scalar,&i,statusPtr);
+  *grade=FzyGetMembership(FuzzysetDescriptorptr,Scalar,&i,statusPtr);
   if(*grade==0) return(FALSE);
   if(*grade<XSYSctl.XSYSalfacut) return(FALSE);
   return(TRUE);

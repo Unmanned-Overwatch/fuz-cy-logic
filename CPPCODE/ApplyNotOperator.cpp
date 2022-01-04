@@ -9,13 +9,13 @@
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
-void CompleteNot(char*,FDB*);
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
+void CompleteNot(char*,FuzzysetDescriptor*);
 void FzyApplyNOT(
-   int NotClass,float NotWeight,FDB *FDBptr,int *statusPtr)
+   int NotClass,float NotWeight,FuzzysetDescriptor *FuzzysetDescriptorptr,int *statusPtr)
   {
    char       *PgmId="mtfzapn";
    int        i;
@@ -29,8 +29,8 @@ void FzyApplyNOT(
    switch(NotClass)
     {
      case ZADEHNOT:
-      for(i=0;i<VECMAX;i++) FDBptr->FDBvector[i]=1-FDBptr->FDBvector[i];
-      CompleteNot("ZADEH",FDBptr);
+      for(i=0;i<VECMAX;i++) FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=1-FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
+      CompleteNot("ZADEH",FuzzysetDescriptorptr);
       return;
      case YAGERNOT:
       if(NotWeight<1||NotWeight>MaxWeight)
@@ -42,9 +42,9 @@ void FzyApplyNOT(
       Power=NotWeight;
       InversePower=(1/Power);
       for(i=0;i<VECMAX;i++)
-          FDBptr->FDBvector[i]=
-           (float)(pow(1-pow(FDBptr->FDBvector[i],Power),InversePower));
-      CompleteNot("YAGER",FDBptr);
+          FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=
+           (float)(pow(1-pow(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i],Power),InversePower));
+      CompleteNot("YAGER",FuzzysetDescriptorptr);
       return;
      case SUGENONOT:
       if(NotWeight<-1||NotWeight>MaxWeight)
@@ -55,10 +55,10 @@ void FzyApplyNOT(
         }
       for(i=0;i<VECMAX;i++)
          {
-          thisMV=FDBptr->FDBvector[i];
-          FDBptr->FDBvector[i]=(1-thisMV)/(1+(NotWeight*thisMV));
+          thisMV=FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
+          FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(1-thisMV)/(1+(NotWeight*thisMV));
          }
-      CompleteNot("SUGENO",FDBptr);
+      CompleteNot("SUGENO",FuzzysetDescriptorptr);
       return;
      case THRESHOLDNOT:
       if(NotWeight<0||NotWeight>VECMAX)
@@ -69,21 +69,21 @@ void FzyApplyNOT(
         }
       for(i=0;i<VECMAX;i++)
          {
-          thisMV=FDBptr->FDBvector[i];
+          thisMV=FuzzysetDescriptorptr->FuzzysetDescriptorvector[i];
           if(thisMV<=NotWeight)
-              FDBptr->FDBvector[i]=1;
+              FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=1;
              else
-              FDBptr->FDBvector[i]=0;
+              FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=0;
          }
-      CompleteNot("THRESHOLD",FDBptr);
+      CompleteNot("THRESHOLD",FuzzysetDescriptorptr);
       return;
      case COSINENOT:
       for(i=0;i<VECMAX;i++)
          {
-          thisMV=(float)(FDBptr->FDBvector[i]);
-          FDBptr->FDBvector[i]=(float)(.5*(1+cos(Pi*thisMV)));
+          thisMV=(float)(FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]);
+          FuzzysetDescriptorptr->FuzzysetDescriptorvector[i]=(float)(.5*(1+cos(Pi*thisMV)));
          }
-      CompleteNot("COSINE",FDBptr);
+      CompleteNot("COSINE",FuzzysetDescriptorptr);
       return;
      default:
       *statusPtr=7;
@@ -93,7 +93,7 @@ void FzyApplyNOT(
   }
 //--Update the fuzzy set to indicate the the NOT hedge has been
 //--applied. The NOT is a fuzzy operator buttreated like a hedge.
-  void CompleteNot(char *TypeofNot,FDB *FDBptr)
+  void CompleteNot(char *TypeofNot,FuzzysetDescriptor *FuzzysetDescriptorptr)
     {
      int        status;
      char       NameBuf[DESCLEN+1];
@@ -101,13 +101,13 @@ void FzyApplyNOT(
 
      sprintf(wrkBuff,"%s%s%s%s%s",
       "Hedge '",TypeofNot,"' NOT applied to Fuzzy Set \"",
-        FDBptr->FDBid,"\"");
+        FuzzysetDescriptorptr->FuzzysetDescriptorid,"\"");
      MtsWritetoLog(SYSMODFILE,wrkBuff,&status);
     //--Now update the name and the description of the new
     //--hedged fuzzy set.
      strcpy(NameBuf,TypeofNot);
      strcat(NameBuf," NOT ");
-     strcat(NameBuf,FDBptr->FDBid);
-     strcpy(FDBptr->FDBdesc,NameBuf);
+     strcat(NameBuf,FuzzysetDescriptorptr->FuzzysetDescriptorid);
+     strcpy(FuzzysetDescriptorptr->FuzzysetDescriptordesc,NameBuf);
      return;
     }

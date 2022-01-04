@@ -16,8 +16,8 @@
 #include <stdio.h>
 #include "SFZYctl.hpp"
 #include "SSYSctl.hpp"
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 double Weight1Model(double,float*,int*);
 void main(void)
  {
