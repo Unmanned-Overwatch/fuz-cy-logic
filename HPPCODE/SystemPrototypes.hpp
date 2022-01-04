@@ -6,97 +6,97 @@
 //--The system Prototypes Header contains all the prototype definitions
 //--for the system. This is included in any file that calls any of the
 //--external procedures used in the system.
-#ifndef __mtsptype
-#define __mtsptype
+#ifndef __SystemPrototypes
+#define __SystemPrototypes
 #include <stdio.h>
 //----Major control blocks and structures
-#include "CIX.hpp"
-#include "fdb.hpp"
+#include "CompatibilityIndex.hpp"
+#include "FuzzysetDescriptor.hpp"
 #include "FSV.hpp"
 #include "HDB.hpp"
 #include "MDB.hpp"
 #include "NDB.hpp"
 #include "RXB.hpp"
 #include "PDB.hpp"
-#include "VDB.hpp"
+#include "VariableDescriptor.hpp"
 //----Minor control blocks and structures
 #include "toknode.hpp"
-#include   <mtypes.hpp>
+#include  "SystemTypes.hpp"
 //
 //-----------F U Z Z Y   L O G I C   S E R V I C E S------------filename
 //
 bool    FzyAboveAlfa(truthval,truthval,int);                    //mtfzaba
-bool    FzyAddFZYctl(VDB*,fdb**,FSV**,int*);                    //mtfzxfa
+bool    FzyAddFZYctl(VariableDescriptor*,FuzzysetDescriptor*,FSV**,int*);                    //mtfzxfa
 float   FzyAND(float,float);                                    //mtfzzda
-void    FzyApplyAlfa(fdb*,const truthval,const int);            //mtfzapa
-fdb    *FzyApplyAND(fdb*,fdb*,int,double,int*);                 //mtfzfsa
-void    FzyApplyHedge(const fdb*,const HDB*,fdb*,int *);        //mtfzaph
-void    FzyApplyNOT(int,float,fdb*,int*);                       //mtfzapn
-fdb    *FzyApplyOR(fdb*,fdb*,int,double,int*);                  //mtfzfso
+void    FzyApplyAlfa(FuzzysetDescriptor* FDBptr,const float Alfa,const int AlfaType);            //mtfzapa
+FuzzysetDescriptor    *FzyApplyAND(FuzzysetDescriptor*,FuzzysetDescriptor*,int,double,int*);                 //mtfzfsa
+void    FzyApplyHedge(const FuzzysetDescriptor*,const HDB*,FuzzysetDescriptor*,int *);        //mtfzaph
+void    FzyApplyNOT(int,float,FuzzysetDescriptor*,int*);                       //mtfzapn
+FuzzysetDescriptor    *FzyApplyOR(FuzzysetDescriptor*,FuzzysetDescriptor*,int,double,int*);                  //mtfzfso
 float   FzyAutoScale(double,double);                            //mtfzasc
-void    FzyBetaCurve(fdb*,double,double,int*);                  //mtfzbts
+void    FzyBetaCurve(FuzzysetDescriptor*,double,double,int*);                  //mtfzbts
 void    FzyCloseFZYctl(int *);                                  //mtfzxfc
 void    FzyResetFZYctl(int *);                                  //mtfzxfr
 float   FzyCompAND(int,double,float,float,int*);                //mtfzcpa
 float   FzyCompOR(int,double,float,float,int*);                 //mtfzcpo
-void    FzyCondProposition(fdb*,FSV*,int,float,int*);           //mtfzcfp
-void    FzyCoordSeries(fdb*,double[],float[],const int,int*);   //mtfzcds
-void    FzyCopySet(const fdb*,fdb*,int*);                       //mtfzcpy
+void    FzyCondProposition(FuzzysetDescriptor*,FSV*,int,float,int*);           //mtfzcfp
+void    FzyCoordSeries(FuzzysetDescriptor*,double[],float[],const int,int*);   //mtfzcds
+void    FzyCopySet(const FuzzysetDescriptor*,FuzzysetDescriptor*,int*);                       //mtfzcpy
 void    FzyCopyVector(float[],float[],int);                     //mtfzctv
 void    FzyCorrAverage(float[],const truthval,int*);            //mtfzcor
 void    FzyCorrMinimum(float[],const truthval,int*);            //mtfzcor
 void    FzyCorrProduct(float[],const truthval,int*);            //mtfzcor
-fdb    *FzyCreateSet(char*,int,double[],double[],int,int*);     //mtfzscr
+FuzzysetDescriptor    *FzyCreateSet(char*,int,double[],double[],int,int*);     //mtfzscr
 HDB    *FzyCreateHedge(char*,int,double,int*);                  //mtfzhcr
-double  FzyDefuzzify(fdb*,const int,float*,int*);               //mtfzdfz
-bool    FzyDeleteSet(fdb*);                                     //mtfzdel
+double  FzyDefuzzify(FuzzysetDescriptor*,const int,float*,int*);               //mtfzdfz
+bool    FzyDeleteSet(FuzzysetDescriptor*);                                     //mtfzdel
 void    FzyDisplayFSV(FSV*,char*);                              //mtfzdfa
-void    FzyDisplayMemVector(fdb*,float,int*);                   //mtfzdtv
+void    FzyDisplayMemVector(FuzzysetDescriptor*,float,int*);                   //mtfzdtv
 void    FzyDisplayRule(char**,int,int[],int[],int,int*);        //mtfzdrl
-void    FzyDrawSet(fdb*,int,int*);                              //mtfzdrw
-double  FzyEquivalentScalar(fdb*,float,int*);                   //mtfzeqs
-void    FzyExamineSet(fdb*,int*);                               //mtfzexa
-void    FzyExtractSetdata(fdb*,int,double[],float[],int*,int*); //mtfzesd
-FSV    *FzyFindFzyctl(char*,VDB**);                             //mtfzxff
-void    FzyFindPlateau(fdb*,int[],int*,int*);                   //mtfzfpl
-fdb    *FzyFuzzyScalar(char*,double,int,int*);                  //mtfzfsc
-void    FzyGaussianCurve(fdb*,double,double,int*);              //mtfzgas
+void    FzyDrawSet(FuzzysetDescriptor*,int,int*);                              //mtfzdrw
+double  FzyEquivalentScalar(FuzzysetDescriptor*,float,int*);                   //mtfzeqs
+void    FzyExamineSet(FuzzysetDescriptor*,int*);                               //mtfzexa
+void    FzyExtractSetdata(FuzzysetDescriptor*,int,double[],float[],int*,int*); //mtfzesd
+FSV    *FzyFindFzyctl(char*,VariableDescriptor**);                             //mtfzxff
+void    FzyFindPlateau(FuzzysetDescriptor*,int[],int*,int*);                   //mtfzfpl
+FuzzysetDescriptor    *FzyFuzzyScalar(char*,double,int,int*);                  //mtfzfsc
+void    FzyGaussianCurve(FuzzysetDescriptor*,double,double,int*);              //mtfzgas
 void    FzyGetCoordinates(char*,double[],float[],int*,int*);    //mtfzgcd
-float   FzyGetHeight(fdb*);                                     //mtfzhgt
-int     FzyGetHighPoint(fdb*,float*);                           //mtfzfhp
-float   FzyGetMembership(fdb*,double,int*,int*);                //mtfzgtm
-double  FzyGetScalar(const fdb*,const int,int*);                //mtfzgts
-void    FzyImplMatrix(fdb*,fdb*,double[],int,int*);             //mtfzimm
-void    FzyInitCIX(CIX*);                                       //mtfzcxi
+float   FzyGetHeight(FuzzysetDescriptor*);                                     //mtfzhgt
+int     FzyGetHighPoint(FuzzysetDescriptor*,float*);                           //mtfzfhp
+float   FzyGetMembership(FuzzysetDescriptor*,double,int*,int*);                //mtfzgtm
+double  FzyGetScalar(const FuzzysetDescriptor*,const int,int*);                //mtfzgts
+void    FzyImplMatrix(FuzzysetDescriptor*,FuzzysetDescriptor*,double[],int,int*);             //mtfzimm
+void    FzyInitCIX(CompatibilityIndex*);                                       //mtfzcxi
 void    FzyInitFZYctl(int *);                                   //mtfzxfi
 void    FzyInitHDB(HDB*);                                       //mtfzhdi
-void    FzyInitFDB(fdb*);                                       //mtfzins
+void    FzyInitFDB(FuzzysetDescriptor*);                                       //mtfzins
 void    FzyInitVector(float[],int,float);                       //mtfzinv
 void    FzyInsertHedges(HDB**,int*,int*);                       //mtfzihd
 void    FzyInterpVec(float[],int *);                            //mtfzipv
-bool    FzyIsMemberof(fdb*,double,float*,int*);                 //mtfziss
-bool    FzyIsNormal(fdb*);                                      //mtfzisn
-bool    FzyIsNormalType(fdb*,int);                              //mtfznrm
-void    FzyIsolatePDR(fdb*);                                    //mtfzipd
-bool    FzyIsUndecidable(fdb*);                                 //mtfzudp
-void    FzyLinearCurve(fdb*,double,double,int,int*);            //mtfzlns
-void    FzyMemSeries(fdb*,float[],const int,int*);              //mtfzmss
-double  FzyMonotonicLogic(fdb*,fdb*,double,float*,int*);        //mtfzmlg
-void    FzyNormalizeSet(fdb*);                                  //mtfznml
+bool    FzyIsMemberof(FuzzysetDescriptor*,double,float*,int*);                 //mtfziss
+bool    FzyIsNormal(FuzzysetDescriptor*);                                      //mtfzisn
+bool    FzyIsNormalType(FuzzysetDescriptor*,int);                              //mtfznrm
+void    FzyIsolatePDR(FuzzysetDescriptor*);                                    //mtfzipd
+bool    FzyIsUndecidable(FuzzysetDescriptor*);                                 //mtfzudp
+void    FzyLinearCurve(FuzzysetDescriptor*,double,double,int,int*);            //mtfzlns
+void    FzyMemSeries(FuzzysetDescriptor*,float[],const int,int*);              //mtfzmss
+double  FzyMonotonicLogic(FuzzysetDescriptor*,FuzzysetDescriptor*,double,float*,int*);        //mtfzmlg
+void    FzyNormalizeSet(FuzzysetDescriptor*);                                  //mtfznml
 float   FzyOR(float,float);                                     //mtfzzdo
-void    FzyPiCurve(fdb*,double,double,int*);                    //mtfzpis
-int     FzyPlateauCnt(fdb*,float,int*);                         //mtfzplc
-void    FzyPlotSets(char*,fdb*[],int,int,int*);                  //mtfzpls
-void    FzyPlotVar(char*,fdb*[],int,int,int*);                   //mtfzplv
-void    FzySCurve(fdb*,double,double,double,int,int*);          //mtfzscs
-void    FzyShoulderedCurve(fdb*,int,double,double,int*);        //mtfzsfs
-bool    FzyStatCompIndex(fdb*,float,CIX*);                      //mtfzscx
-void    FzySupportSet(fdb*,double[],int[],int*);                //mtfzspt
-void    FzyTriangleCurve(fdb*,double,double,double,int*);       //mtfztrs
-void    FzyTrueSet(fdb*);                                       //mtfztru
-void    FzyUnCondProposition(fdb*,FSV*);                        //mtfzufp
-bool    FzyUnitCompIndex(fdb*,float,float,float*,float*);       //mtfzucx
-void    FzyWgtdBetaCurve(fdb*,double,double,double,int*);       //mtfzwbt
+void    FzyPiCurve(FuzzysetDescriptor*,double,double,int*);                    //mtfzpis
+int     FzyPlateauCnt(FuzzysetDescriptor*,float,int*);                         //mtfzplc
+void    FzyPlotSets(char*,FuzzysetDescriptor*[],int,int,int*);                  //mtfzpls
+void    FzyPlotVar(char*,FuzzysetDescriptor*[],int,int,int*);                   //mtfzplv
+void    FzySCurve(FuzzysetDescriptor*,double,double,double,int,int*);          //mtfzscs
+void    FzyShoulderedCurve(FuzzysetDescriptor*,int,double,double,int*);        //mtfzsfs
+bool    FzyStatCompIndex(FuzzysetDescriptor*,float,CompatibilityIndex*);                      //mtfzscx
+void    FzySupportSet(FuzzysetDescriptor*,double[],int[],int*);                //mtfzspt
+void    FzyTriangleCurve(FuzzysetDescriptor*,double,double,double,int*);       //mtfztrs
+void    FzyTrueSet(FuzzysetDescriptor*);                                       //mtfztru
+void    FzyUnCondProposition(FuzzysetDescriptor*,FSV*);                        //mtfzufp
+bool    FzyUnitCompIndex(FuzzysetDescriptor*,float,float,float*,float*);       //mtfzucx
+void    FzyWgtdBetaCurve(FuzzysetDescriptor*,double,double,double,int*);       //mtfzwbt
 char   *FzyXPSacctext(int);                                     //mtfzexs
 void    FzyXPSaddRXC(RXB*,RXC*,int,int*);                       //mtfzexs
 char   *FzyXPSandtext(void);                                    //mtfzexs
@@ -121,7 +121,7 @@ int     FzyCntDefuzzMeth(void);                                 //mtfzcls
 int     FzyCntHdgs(void);                                       //mtfzcls
 int     FzyCntImpMeth(void);                                    //mtfzcls
 int     FzyCntORClass(void);                                    //mtfzcls
-char   *FzySetId(const fdb*);                                   //mtfzutl
+char   *FzySetId(const FuzzysetDescriptor*);                                   //mtfzutl
 char   *FzyIdOfANDClass(int);                                   //mtfzcls
 char   *FzyIdOfDfuzzMeth(int);                                  //mtfzcls
 char   *FzyIdOfHdgs(int);                                       //mtfzcls
@@ -132,15 +132,15 @@ void    FzyListDefuzzMeth(int[]);                               //mtfzcls
 void    FzyListHdgs(int[]);                                     //mtfzcls
 void    FzyListImplMeth(int[]);                                 //mtfzcls
 void    FzyListORClass(int[]);                                  //mtfzcls
-float   FzySetAlfaCut(const fdb*);                              //mtfzutl
-char   *FzySetDesc(const fdb*);                                 //mtfzutl
-char   *FzySetGenDesc(const fdb*);                              //mtfzutl
-int     FzySetGentype(const fdb*);                              //mtfzutl
-bool    FzySetIsEmpty(const fdb*);                              //mtfzutl
-double  FzySetLeftEdge(const fdb*);                             //mtfzutl
-int     FzySetOrder(const fdb*);                                //mtfzutl
-double  FzySetRightEdge(const fdb*);                            //mtfzutl
-float   FzySetTruth(const fdb*,const int,int*);                 //mtfzutl
+float   FzySetAlfaCut(const FuzzysetDescriptor*);                              //mtfzutl
+char   *FzySetDesc(const FuzzysetDescriptor*);                                 //mtfzutl
+char   *FzySetGenDesc(const FuzzysetDescriptor*);                              //mtfzutl
+int     FzySetGentype(const FuzzysetDescriptor*);                              //mtfzutl
+bool    FzySetIsEmpty(const FuzzysetDescriptor*);                              //mtfzutl
+double  FzySetLeftEdge(const FuzzysetDescriptor*);                             //mtfzutl
+int     FzySetOrder(const FuzzysetDescriptor*);                                //mtfzutl
+double  FzySetRightEdge(const FuzzysetDescriptor*);                            //mtfzutl
+float   FzySetTruth(const FuzzysetDescriptor*,const int,int*);                 //mtfzutl
 char   *MtsLicense(void);                                       //mtmtutl
 char   *MtsOwner(void);                                         //mtfzutl
 char   *MtsVersion(void);                                       //mtmtutl
@@ -150,32 +150,32 @@ char   *MtsVersion(void);                                       //mtmtutl
 void    MdlAddNoiseWord(char*,PDB*,int*);                       //mtmdanw
 void    MdlClosePolicy(PDB*,long*,int*);                        //mtmdclp
 void    MdlConnecttoFMS(int*);                                  //mtmdctf
-MDB    *MdlCreateModel(char*,int,int*);                         //mtmdmcr
+ModelDescription    *MdlCreateModel(char*,int,int*);                         //mtmdmcr
 PDB    *MdlCreatePolicy(char*,int,int*);                        //mtmdpcr
 void    MdlFindFzyDomain(char*,double*,double*,int*);           //mtmdfzd
-fdb    *MdlFindFDB(char*,PDB*,int*);                            //mtmdfdf
+FuzzysetDescriptor    *MdlFindFDB(char*,PDB*,int*);                            //mtmdfdf
 HDB    *MdlFindHDB(char*,PDB*,int*);                            //mtmdfdh
 NDB    *MdlFindNDB(char*,PDB*,int*);                            //mtmdfdn
 PDB    *MdlFindPDB(char*,int*);                                 //mtmdfdp
-VDB    *MdlFindVDB(char*,PDB*,int*);                            //mtmdfdv
-void    MdlGetcurrentEnvironment(MDB**,PDB**,int*);             //mtmdcen
-void    MdlInitMDB(MDB*);                                       //mtmdmdi
+VariableDescriptor    *MdlFindVDB(char*,PDB*,int*);                            //mtmdfdv
+void    MdlGetcurrentEnvironment(ModelDescription**,PDB**,int*);             //mtmdcen
+void    MdlInitMDB(ModelDescription*);                                       //mtmdmdi
 void    MdlInitPDB(PDB*);                                       //mtmdpdi
 void    MdlInitXSYSctl(int*);                                   //mtmdxsi
 void    MdlInsertHedges(PDB*,int*,int*);                        //mtmdihd
 void    MdlInsertNWords(PDB*,int*,int*);                        //mtmdinw
-void    MdlLinkFDB(fdb*,PDB*,int*);                             //mtmdlkf
+void    MdlLinkFDB(FuzzysetDescriptor*,PDB*,int*);                             //mtmdlkf
 void    MdlLinkHDB(HDB*,PDB*,int*);                             //mtmdlkh
-void    MdlLinkMDB(MDB*,bool,int*);                             //mtmdlkm
+void    MdlLinkMDB(ModelDescription*,bool,int*);                             //mtmdlkm
 void    MdlLinkPDB(PDB*,int*);                                  //mtmdlkp
-void    MdlLinkVDB(VDB*,PDB*,int*);                             //mtmdlkv
-MDB    *MdlMakeVirtualModel(char*,char*,char*,PDB**,int*);      //mtmdmvm
+void    MdlLinkVDB(VariableDescriptor*,PDB*,int*);                             //mtmdlkv
+ModelDescription    *MdlMakeVirtualModel(char*,char*,char*,PDB**,int*);      //mtmdmvm
 PDB    *MdlMakeVirtualPolicy(char*,char*,int*);                 //mtmdmvp
 void    MdlRemoveFDB(char*,PDB*,int*);                          //mtmdrmf
 void    MdlRemoveHDB(char*,PDB*,int*);                          //mtmdrmh
 void    MdlRemoveNDB(char*,PDB*,int*);                          //mtmdrmn
 void    MdlRemoveVDB(char*,PDB*,int*);                          //mtmdrmv
-void    MdlSetcurrentEnvironment(MDB*,PDB*,int*);               //mtmdcen
+void    MdlSetcurrentEnvironment(ModelDescription*,PDB*,int*);               //mtmdcen
 void    MdlSetTrace(int,int,int*);                              //mtmdsts
 //
 //-------------T O O L S   A N D   U T I L I T I E S------------filename
@@ -231,9 +231,9 @@ void    MtsWritetoLog(int,char*,int*);                          //mttlwtl
 //
 //-------------------V A R I A B L E    M A N A G E M E N T-----filename
 //
-void    VarAttachFDB(fdb*,VDB*,int*);                           //mtvrafd
-void    VarInitVDB(VDB*,int*);                                  //mtvrvri
-VDB    *VarCreateScalar(char*,int,double[],char*,int*);         //mtvrcrs
+void    VarAttachFDB(FuzzysetDescriptor*,VariableDescriptor*,int*);                           //mtvrafd
+void    VarInitVDB(VariableDescriptor*,int*);                                  //mtvrvri
+FuzzysetDescriptor    *VarCreateScalar(char*,int,double[],char*,int*);         //mtvrcrs
 //
 //------------------End of Prototype Definitions----------------
 #endif

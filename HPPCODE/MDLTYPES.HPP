@@ -10,7 +10,7 @@
 #ifndef __mdltypes
 #define __mdltypes
 #include "fuzzy.hpp"
-#include "mtypes.hpp"
+#include "SystemTypes.hpp"
 //
 //---------------------------------INCLUDES
 //

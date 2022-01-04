@@ -5,11 +5,11 @@
 //--The Compatibility Index statistics block. We use this
 //--block to maintain compatibility information for a series of
 //--model runs against the same rule set.
-#ifndef __cix
-#define __cix
-#include "mtypes.hpp"
+#ifndef __CompatibilityIndex
+#define __CompatibilityIndex
+#include "SystemTypes.hpp"
 
-struct CIX
+struct CompatibilityIndex
  {
   char      *CIXmodelid,        /* Name of the active model         */
             *CIXsegmentid,      /* Name of the active segment       */

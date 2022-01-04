@@ -14,7 +14,7 @@
 #include "MDB.hpp"
 #include "PDB.hpp"
 #include "RXB.hpp"
-#include "mtypes.hpp"
+#include "SystemTypes.hpp"
 
 #ifndef XSYSctl_HPP
 #define XSYSctl_HPP
@@ -50,7 +50,7 @@ public:
              *XSYSfpClientErrors,      /* Client error diagnostics    */
              *XSYSfpSyslog,            /* System log                  */
              *XSYSfpModellog;          /* Model log                   */
-   static MDB       *XSYScurrMDBptr;          /* Pointer to current Model    */
+   static ModelDescription       *XSYScurrMDBptr;          /* Pointer to current Model    */
    static PDB       *XSYScurrPDBptr;          /* Pointer to current Policy   */
    static RXB       *XSYSexplainptr;          /* Pointer to explanations     */
    static PDB       *XSYSpolicies[PDBmax];    /* The policy  dictionary      */

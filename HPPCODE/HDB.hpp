@@ -8,7 +8,7 @@
 //--the shape of a fuzzy set.
 #ifndef __hdb
 #define __hdb
-#include "mtypes.hpp"
+#include "SystemTypes.hpp"
 struct HDB
   {
     char        HDBid[IDENLEN+1],    /* Identifier name of Hedge     */

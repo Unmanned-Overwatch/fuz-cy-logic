@@ -9,7 +9,7 @@
 //--words used in the policy management routines.
 #ifndef __eqpack
 #define __eqpack
-#include "mtypes.hpp"
+#include "SystemTypes.hpp"
 //--The basic operators as string for rapid indexing
 const char   EQBasicDelimiters[]=" \t,;+-*/=<>!()[]{}~|\0";
 //--Table of all the valid  operators

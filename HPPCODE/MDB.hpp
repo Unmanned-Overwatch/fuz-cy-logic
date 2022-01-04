@@ -6,10 +6,11 @@
 //--The Model Description Block. Each model in the system
 //--is described by an MDB. The currently active MDB is linked
 //--into the 'xsysctl' control area.
-#ifndef __mdb
-#define __mdb
-#include "mtypes.hpp"
-struct MDB
+#ifndef __ModelDescription
+#define __ModelDescription
+#include "SystemTypes.hpp"
+
+struct ModelDescription
   {
    char        MDBid[IDENLEN+1],      /* Name of the model        */
                MDBdesc[DESCLEN+1],    /* Description of model     */
@@ -18,6 +19,6 @@ struct MDB
    Ctlswitch   MDBmdltype;            /* Type of model            */
    bool        MDBprivate,            /* Is this a private model? */
                MDBdynvars;            /* Allow dynamic variables  */
-   MDB        *MDBnext;               /* Pointer to next model    */
+   ModelDescription        *MDBnext;               /* Pointer to next model    */
   };
 #endif

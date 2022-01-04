@@ -8,7 +8,7 @@
 //--can later invoke the explanatory facilty.
 #ifndef __rxb
 #define __rxb
-#include "fdb.hpp"
+#include "FuzzysetDescriptor.hpp"
 //
 struct RXC
  {

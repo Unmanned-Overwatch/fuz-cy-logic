@@ -23,7 +23,7 @@
 PDB *MdlMakeVirtualModel(char *Policyid,char *Policydesc,int *statusPtr)
  {
   PDB     *PDBptr,*nullPDB=NULL;
-  MDB     *MDBptr;
+  ModelDescription     *MDBptr;
   char    *PgmId="mtmdmvp";
   char    wrkbuff[120];
 

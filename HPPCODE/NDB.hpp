@@ -8,7 +8,7 @@
 //--ignored by the rule processor.
 #ifndef __ndb
 #define __ndb
-#include "mtypes.hpp"
+#include "SystemTypes.hpp"
 struct NDB
  {
   char    NDBid[WORDLEN+1];       /* Noise Word identifier           */

@@ -8,9 +8,9 @@
 //--the fuzzy control block and link in one of these FSV structures.
 #ifndef __fsv
 #define __fsv
-#include "fdb.hpp"
-#include "VDB.hpp"
-#include "mtypes.hpp"
+#include "FuzzysetDescriptor.hpp"
+#include "VariableDescriptor.hpp"
+#include "SystemTypes.hpp"
 //--This is the entry node for each solution variable
 struct  FSV
   {

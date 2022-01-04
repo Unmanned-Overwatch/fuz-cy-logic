@@ -20,17 +20,17 @@
 #include <XSYSctl.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
-MDB *MdlMakeVirtualModel(
+ModelDescription *MdlMakeVirtualModel(
    char *Modelid,char *Modeldesc,
     char *Policyid,PDB **PDBptr,int *statusPtr)
  {
   PDB     *tempPDBptr;
-  MDB     *MDBptr,*nullMDB=NULL;
+  ModelDescription     *MDBptr,*nullMDB=NULL;
   char    *PgmId="mtmdvm";
   char    wrkbuff[120];
 
   *statusPtr=0;
-  if(!(MDBptr=new MDB))
+  if(!(MDBptr=new ModelDescription))
     {
      *statusPtr=1;
      MtsSendError(2,PgmId,Modelid);

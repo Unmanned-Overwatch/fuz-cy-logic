@@ -6,12 +6,12 @@
 | just copy over the fuzzy set, otherwise we take the maximum |
 | of the two sets across the domain.                          |
 *-------------------------------------------------------------*/
-#include <fdb.hpp>
+#include <FuzzysetDescriptor.hpp>
 #include <XFZYctl.hpp>
 #include <XSYSctl.hpp>
 #include   <fuzzy.hpp>
-#include   <mtypes.hpp>
-#include <mtsptype.hpp>
+#include   <SystemTypes.hpp>
+#include <SystemPrototypes.hpp>
 void FzyCondProposition(
   FDB *inFDBptr,FSV *FSVptr,
       int CorrMethod,float PredTruth,int *statusPtr)

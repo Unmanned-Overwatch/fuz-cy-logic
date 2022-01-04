@@ -20,7 +20,7 @@
 #include <XSYSctl.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
-void MdlGetcurrentEnvironment(MDB **MDBptr,PDB **PDBptr,int *statusPtr)
+void MdlGetcurrentEnvironment(ModelDescription **MDBptr,PDB **PDBptr,int *statusPtr)
  {
   char  *PgmId="mtmdcen";
 
@@ -39,7 +39,7 @@ void MdlGetcurrentEnvironment(MDB **MDBptr,PDB **PDBptr,int *statusPtr)
     }
   return;
  }
-void MdlSetcurrentEnvironment(MDB *MDBptr,PDB *PDBptr,int *statusPtr)
+void MdlSetcurrentEnvironment(ModelDescription *MDBptr,PDB *PDBptr,int *statusPtr)
  {
   char  *PgmId="mtmdcen";
 

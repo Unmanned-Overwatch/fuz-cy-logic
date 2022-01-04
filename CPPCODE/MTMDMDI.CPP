@@ -18,7 +18,7 @@
 #include <stdlib.h>
 #include "MDB.hpp"
 #include   <mtypes.hpp>
-void MdlInitMDB(MDB *MDBptr)
+void MdlInitMDB(ModelDescription *MDBptr)
   {
     int i;
 //--Blank out the model and environment identification

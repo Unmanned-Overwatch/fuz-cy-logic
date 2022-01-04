@@ -9,11 +9,11 @@
 //--knowledge and processing objects.
 #ifndef __pdb
 #define __pdb
-#include "VDB.hpp"
-#include "fdb.hpp"
+#include "VariableDescriptor.hpp"
+#include "FuzzysetDescriptor.hpp"
 #include "HDB.hpp"
 #include "NDB.hpp"
-#include "mtypes.hpp"
+#include "SystemTypes.hpp"
 struct PDB
  {
   char       PDBid[IDENLEN+1],        // Policy Identifier

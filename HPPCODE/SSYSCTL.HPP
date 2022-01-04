@@ -14,7 +14,7 @@
 #include "MDB.hpp"
 #include "PDB.hpp"
 #include "RXB.hpp"
-#include "mtypes.hpp"
+#include "SystemTypes.hpp"
 struct
   {
    char       XSYSmodel[IDENLEN+1],    /* Current model identifier    */
@@ -45,7 +45,7 @@ struct
              *XSYSfpClientErrors,      /* Client error diagnostics    */
              *XSYSfpSyslog,            /* System log                  */
              *XSYSfpModellog;          /* Model log                   */
-   MDB       *XSYScurrMDBptr;          /* Pointer to current Model    */
+   ModelDescription       *XSYScurrMDBptr;          /* Pointer to current Model    */
    PDB       *XSYScurrPDBptr;          /* Pointer to current Policy   */
    RXB       *XSYSexplainptr;          /* Pointer to explanations     */
    PDB       *XSYSpolicies[PDBmax];    /* The policy  dictionary      */

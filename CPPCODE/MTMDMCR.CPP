@@ -17,16 +17,16 @@
 #include "MDB.hpp"
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
-void Complete_Model(const MDB*);
-MDB *MdlCreateModel(char *Mdlid,int StoreAction,int *statusPtr)
+void Complete_Model(const ModelDescription*);
+ModelDescription *MdlCreateModel(char *Mdlid,int StoreAction,int *statusPtr)
  {
-  MDB*    MDBptr;
+  ModelDescription*    MDBptr;
   char   *PgmId="mtmdpcr";
 
   *statusPtr=0;
   MDBptr=NULL;
 //--Create a new model and initialize it to the default state
-  if(!(MDBptr=new MDB))
+  if(!(MDBptr=new ModelDescription))
     {
      *statusPtr=1;
      MtsSendError(2,PgmId,Mdlid);
@@ -41,7 +41,7 @@ MDB *MdlCreateModel(char *Mdlid,int StoreAction,int *statusPtr)
     Complete_Model(MDBptr);
     return(MDBptr);
   }
-void Complete_Model(const MDB* MDBptr)
+void Complete_Model(const ModelDescription* MDBptr)
  {
   int     status;
   char    wrkBuff[180];

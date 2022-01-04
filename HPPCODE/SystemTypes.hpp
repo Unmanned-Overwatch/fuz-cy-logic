@@ -7,8 +7,8 @@
 //--constants, and macro definitions used throughout the system.
 //--[see the fuzzy.hpp] file for data directly associated with
 //--fuzzy logic and approximate reasoning.
-#ifndef __mtypes
-#define __mtypes
+#ifndef __SystemTypes
+#define __SystemTypes
 #ifndef __DEBUG
 #define __DEBUG       1
 #endif

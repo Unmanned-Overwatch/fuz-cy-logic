@@ -20,9 +20,9 @@
 #include <XSYSctl.hpp>
 #include   <mtypes.hpp>
 #include <mtsptype.hpp>
-void MdlLinkMDB(MDB *MDBptr,bool ReqdLink,int *statusPtr)
+void MdlLinkMDB(ModelDescription *MDBptr,bool ReqdLink,int *statusPtr)
  {
-  MDB    *wrkMDBptr;
+  ModelDescription    *wrkMDBptr;
   char    wrkBuff[128];
 
   *statusPtr=0;

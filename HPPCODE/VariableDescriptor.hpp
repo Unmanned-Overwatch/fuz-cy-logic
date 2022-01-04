@@ -9,9 +9,9 @@
 //--associated with the PDB (Policy Descriptor Block)
 #ifndef __vdb
 #define __vdb
-#include "fdb.hpp"
-#include "mtypes.hpp"
-struct VDB
+#include "FuzzysetDescriptor.hpp"
+#include "SystemTypes.hpp"
+struct VariableDescriptor
  {
   char       VDBid[IDENLEN+1],   /* Variable identifier                */
              VDBdesc[DESCLEN+1]; /* Description (for prompt/explain)   */
@@ -32,8 +32,8 @@ struct VDB
              VDBtrace[8];        /* Autotrace switches                 */
   bool       VDBAlwaysask;       /* Always Ask (no Backward Chaining)  */
   float      VDBtruth;           /* Resolved truth of the variable     */
-  fdb       *VDBfuzzysets[16];   /* Associated fuzzy sets              */
+  FuzzysetDescriptor       *VDBfuzzysets[16];   /* Associated fuzzy sets              */
   void      *VDBowner;           /* Policy that owns this variable     */
-  VDB       *VDBnext;            /* Pointer to next VDB in hash bucket */
+  VariableDescriptor       *VDBnext;            /* Pointer to next VDB in hash bucket */
  };
 #endif
